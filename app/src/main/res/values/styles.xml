@@ -1,0 +1,63 @@
+<resources>
+
+    <!--    new pix font-->
+
+    <style name="spacemono_regular">
+        <item name="android:fontFamily">@font/spacemono_regular</item>
+    </style>
+
+
+    <style name="roboto_italic">
+        <item name="android:fontFamily">@font/roboto_italic</item>
+    </style>
+
+
+
+    <style name="signikanegative_medium">
+        <item name="android:fontFamily">@font/signikanegative_medium</item>
+    </style>
+
+    <style name="CustomToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:fontFamily">@font/signikanegative_medium</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+
+
+
+    <!--    <style name="oneregular">-->
+<!--        <item name="android:fontFamily">@font/oneregular</item>-->
+<!--    </style>-->
+
+
+<!--    &lt;!&ndash;    app bar text&ndash;&gt;-->
+
+<!--    <style name="MyAppBarLayout" parent="Widget.Material3.Toolbar">-->
+<!--        <item name="fontFamily">@font/bold</item>-->
+<!--        <item name="android:textSize">28sp</item>-->
+
+<!--    </style>-->
+
+<!--    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">-->
+<!--        <item name="android:textAppearance">@style/AlertDialogTextAppearance</item>-->
+<!--    </style>-->
+
+<!--    <style name="AlertDialogTextAppearance" parent="TextAppearance.MaterialComponents.Subtitle2">-->
+<!--        <item name="android:fontFamily">@font/oneregular</item>-->
+<!--    </style>-->
+
+
+<!--    <style name="CalculatorButton.Function">-->
+<!--        <item name="android:textSize">@dimen/calculator_button_function_text_size</item>-->
+<!--        <item name="android:fontFamily">sans-serif-medium</item>-->
+<!--        <item name="android:background">@drawable/circle_ripple_only</item>-->
+<!--        &lt;!&ndash; PI breaks without this &ndash;&gt;-->
+<!--        <item name="android:textAllCaps">false</item>-->
+<!--    </style>-->
+
+
+<!--    <style name="Widget.Material3.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">-->
+<!--        <item name="android:popupBackground">@drawable/rounded</item>-->
+<!--    </style>-->
+
+</resources>
