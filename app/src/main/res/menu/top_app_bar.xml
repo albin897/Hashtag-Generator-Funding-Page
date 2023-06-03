@@ -9,8 +9,8 @@
 <!--        app:showAsAction="ifRoom" />-->
 
     <item
-        android:id="@+id/favorite"
-        android:icon="@drawable/favorite_filled"
+        android:id="@+id/searchItem"
+        android:icon="@drawable/zoom_in"
         android:title="favorite"
         android:contentDescription="favorite"
         app:showAsAction="ifRoom" />
