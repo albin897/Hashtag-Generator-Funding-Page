@@ -32,6 +32,7 @@
                 android:layout_marginLeft="19dp"
                 android:textColor="@color/text_color"
                 android:text="Love"
+                android:fontFamily="@font/opensans_medium"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textSize="22sp" />
 

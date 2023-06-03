@@ -26,10 +26,14 @@
 
 
 
-    <!--    <style name="oneregular">-->
-<!--        <item name="android:fontFamily">@font/oneregular</item>-->
-<!--    </style>-->
+        <style name="opensans_bold">
+        <item name="android:fontFamily">@font/opensans_bold</item>
+    </style>
 
+
+    <style name="opensans_medium">
+        <item name="android:fontFamily">@font/opensans_medium</item>
+    </style>
 
 <!--    &lt;!&ndash;    app bar text&ndash;&gt;-->
 
