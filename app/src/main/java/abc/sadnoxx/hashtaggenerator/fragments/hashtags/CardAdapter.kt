@@ -1,10 +1,15 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class CardAdapter(private var cardDataList: List<Card>) :
@@ -16,6 +21,7 @@ class CardAdapter(private var cardDataList: List<Card>) :
         // Define references to the views in the card item layout
         val mainTextView: TextView = itemView.findViewById(R.id.mainTagText)
         val tagsTextView: TextView = itemView.findViewById(R.id.tagTagText)
+        val copyButton: ImageView = itemView.findViewById(R.id.btn)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
@@ -29,6 +35,20 @@ class CardAdapter(private var cardDataList: List<Card>) :
         // Bind the data to the views in the card item
         holder.mainTextView.text = cardData.mainText
         holder.tagsTextView.text = cardData.tags.joinToString(" ")
+
+        holder.copyButton.setOnClickListener {
+            val tagsText = cardData.tags.joinToString(" ")
+
+            // Copy tags text to clipboard
+            val clipboardManager = holder.itemView.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("Tags", tagsText)
+            clipboardManager.setPrimaryClip(clipData)
+
+            // Show a toast message indicating that the text has been copied
+            Toast.makeText(holder.itemView.context, "Tags copied", Toast.LENGTH_SHORT).show()
+        }
+
+
     }
 
     override fun getItemCount(): Int {

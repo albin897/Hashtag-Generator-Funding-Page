@@ -2,6 +2,8 @@ package abc.sadnoxx.hashtaggenerator.fragments.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.Context
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,9 +12,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -24,6 +29,7 @@ class HashtagsFragment : Fragment() {
     private lateinit var searchBarTop: TextInputLayout
 
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,6 +40,7 @@ class HashtagsFragment : Fragment() {
 
         searchBarTop = rootView.findViewById(R.id.searchbartop)
         val topAppBar: MaterialToolbar = rootView.findViewById(R.id.topAppBar)
+
 
         topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {

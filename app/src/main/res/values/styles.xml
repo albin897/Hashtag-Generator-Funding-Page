@@ -17,11 +17,12 @@
         <item name="android:fontFamily">@font/signikanegative_medium</item>
     </style>
 
-    <style name="CustomToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
-        <item name="android:fontFamily">@font/signikanegative_medium</item>
-        <item name="android:textSize">28sp</item>
-    </style>
 
+    <style name="MyAppBarLayout" parent="Widget.Material3.Toolbar">
+        <item name="fontFamily">@font/signikanegative_medium</item>
+        <item name="android:textSize">28sp</item>
+
+    </style>
 
 
 

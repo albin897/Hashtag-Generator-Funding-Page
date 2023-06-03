@@ -69,10 +69,10 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // Set the status bar color
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.material_statusbar)
+                window.statusBarColor = ContextCompat.getColor(this, R.color.material_navbar)
             } else {
                 window.javaClass.getDeclaredMethod("setStatusBarColor", Int::class.java)
-                    .invoke(window, ContextCompat.getColor(this, R.color.material_statusbar))
+                    .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
             }
 
             // Set the navigation bar color

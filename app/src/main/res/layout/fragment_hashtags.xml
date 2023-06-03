@@ -7,18 +7,21 @@
     tools:context=".fragments.hashtags.HashtagsFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-
             app:menu="@menu/top_app_bar"
             app:navigationIcon="@drawable/hashtag_title"
+            android:background="@color/material_navbar"
             app:title="Hashtags"
-
+            app:titleTextColor="@color/text_color"
+            app:titleTextAppearance="@style/MyAppBarLayout"
             />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -32,6 +35,7 @@
             android:id="@+id/divider_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/material_navbar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -49,17 +53,16 @@
             app:endIconMode="clear_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_one"
-            >
+            app:layout_constraintTop_toBottomOf="@id/divider_one">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="search"
-                android:text=""
+                android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:imeOptions="actionSearch"/>
+                android:text="" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

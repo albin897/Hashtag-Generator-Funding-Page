@@ -8,17 +8,19 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="@color/material_navbar"
             app:menu="@menu/top_app_bar"
             app:navigationIcon="@drawable/fonts"
             app:title="Fonts"
-
-            />
+            app:titleTextAppearance="@style/MyAppBarLayout"
+            app:titleTextColor="@color/text_color" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -50,7 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Input Text"
-                android:text="" />
+                android:text=""
+                android:textColor="@color/text_color" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
