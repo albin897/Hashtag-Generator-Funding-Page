@@ -1,4 +1,4 @@
-package abc.sadnoxx.hashtaggenerator
+package abc.sadnoxx.hashtaggenerator.fragments.fonts
 
 data class Font(
     val name: String,

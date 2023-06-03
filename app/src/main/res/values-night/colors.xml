@@ -4,10 +4,8 @@
     <color name="white">#FFFFFFFF</color>
 
 
+    <!--    material theme-->
 
-<!--    material theme-->
-
-    <color name="material_statusbar">#FFFBFE</color>
-    <color name="material_navbar">#F2ECF6</color>
-
+    <color name="material_statusbar">#1C1B1F</color>
+    <color name="material_navbar">#2A2831</color>
 </resources>

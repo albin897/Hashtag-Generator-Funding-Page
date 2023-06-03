@@ -1,5 +1,6 @@
-package abc.sadnoxx.hashtaggenerator
+package abc.sadnoxx.hashtaggenerator.fragments.fonts
 
+import abc.sadnoxx.hashtaggenerator.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,10 +8,8 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(private val fontList: ArrayList<abc.sadnoxx.hashtaggenerator.Font>) :
+class MyAdapter(private val fontList: ArrayList<Font>, private val sampleText: String) :
     RecyclerView.Adapter<MyAdapter.FontViewHolder>() {
-
-    private var textChangeListener: TextChangeListener? = null
 
 
 
@@ -32,7 +31,7 @@ class MyAdapter(private val fontList: ArrayList<abc.sadnoxx.hashtaggenerator.Fon
         val currentFont = fontList[position]
 
         holder.supText.text = currentFont.name
-        holder.mainText.text = "Sample Text"
+        holder.mainText.text = sampleText
 
         // Set font family
         val typeface = ResourcesCompat.getFont(holder.itemView.context, getResourceId(currentFont.fontFile))
@@ -59,12 +58,6 @@ class MyAdapter(private val fontList: ArrayList<abc.sadnoxx.hashtaggenerator.Fon
         val mainText: TextView = itemView.findViewById(R.id.mainText)
     }
 
-    interface TextChangeListener {
-        fun onTextChanged(position: Int, text: String)
-    }
-    fun setTextChangeListener(listener: TextChangeListener) {
-        this.textChangeListener = listener
-    }
 
 
 

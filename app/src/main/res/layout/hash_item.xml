@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="7dp"
+            android:paddingBottom="17dp">
+
+            <TextView
+                android:id="@+id/mainTagText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="19dp"
+                android:text="Love"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tagTagText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="19dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="5dp"
+                android:text="#love #instagood #me #cute #tbt #photooftheday #instamood #iphonesia #tweegram #picoftheday #igers #girl #beautiful #instadaily #summer #instagramhub #iphoneonly #follow #igdaily #bestoftheday #happy #picstitch #instagramer #jj #sky #nofilter #fashion #followme #fun #su"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="19dp"
+                android:paddingTop="10dp"
+
+                android:layout_gravity="end"
+                android:paddingEnd="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/favorite"
+                android:paddingRight="20dp" />
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
