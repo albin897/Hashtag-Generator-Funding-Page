@@ -1,6 +1,5 @@
 package abc.sadnoxx.hashtaggenerator
 
-
 import abc.sadnoxx.hashtaggenerator.fragments.fonts.FontsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.hashtags.HashtagsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.ToolsFragment
@@ -9,21 +8,64 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
 
-
     private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var viewPager: ViewPager
+    private lateinit var pagerAdapter: ViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        replaceFragment(HashtagsFragment())
 
+        viewPager = findViewById(R.id.viewPager)
+        bottomNavigationView = findViewById(R.id.bottom_navigation)
 
-// for setting color to the status and nav bars
+        pagerAdapter = ViewPagerAdapter(supportFragmentManager)
+        viewPager.adapter = pagerAdapter
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.item_1 -> {
+                    viewPager.currentItem = 0
+                    true
+                }
+                R.id.item_2 -> {
+                    viewPager.currentItem = 1
+                    true
+                }
+                R.id.item_3 -> {
+                    viewPager.currentItem = 2
+                    true
+                }
+                else -> false
+            }
+        }
+
+        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                // Not needed
+            }
+
+            override fun onPageSelected(position: Int) {
+                bottomNavigationView.menu.getItem(position).isChecked = true
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+                // Not needed
+            }
+        })
+
+        // Set initial selection
+        viewPager.currentItem = 1
+
+        // for setting color to the status and nav bars
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // Set the status bar color
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -41,42 +83,21 @@ class MainActivity : AppCompatActivity() {
                     .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
             }
         }
-
-
-
-
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
-
-        bottomNavigationView.selectedItemId = R.id.item_2
-
-        bottomNavigationView.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.item_1 -> {
-                    replaceFragment(ToolsFragment())
-                    true
-                }
-
-                R.id.item_2 -> {
-                    replaceFragment(HashtagsFragment())
-                    true
-                }
-
-                R.id.item_3 -> {
-                    replaceFragment(FontsFragment())
-                    true
-                }
-
-                else -> false
-            }
-        }
-
-
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout, fragment)
-        fragmentTransaction.commit()
+    inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+
+        override fun getCount(): Int {
+            return 3 // Number of fragments in your ViewPager
+        }
+
+        override fun getItem(position: Int): Fragment {
+            return when (position) {
+                0 -> ToolsFragment()
+                1 -> HashtagsFragment()
+                2 -> FontsFragment()
+                else -> throw IllegalArgumentException("Invalid position")
+            }
+        }
     }
 }
