@@ -4,27 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.hashtags.HashtagsFragment">
+    tools:context=".fragments.hashtag.hashtags.HashtagsFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/top_app_bar"
-            app:navigationIcon="@drawable/hashtag_title"
-            android:background="@color/material_navbar"
-            app:title="Hashtags"
-            app:titleTextColor="@color/text_color"
-            app:titleTextAppearance="@style/MyAppBarLayout"
-            />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,7 +25,11 @@
             android:id="@+id/searchbartop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:background="@color/material_navbar"
+            android:paddingLeft="25dp"
+            android:paddingTop="1dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="5dp"
             android:visibility="gone"
             app:boxCornerRadiusBottomEnd="25dp"
             app:boxCornerRadiusBottomStart="25dp"
@@ -60,11 +45,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="search"
+                android:fontFamily="@font/opensans_medium"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:text="" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material_navbar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchbartop" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -79,8 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
+                android:paddingBottom="85dp">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
@@ -94,6 +88,24 @@
 
         </androidx.core.widget.NestedScrollView>
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:text="Search"
+        android:fontFamily="@font/opensans_bold"
+        app:icon="@drawable/search"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+         />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

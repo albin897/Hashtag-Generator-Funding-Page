@@ -1,7 +1,7 @@
 package abc.sadnoxx.hashtaggenerator
 
 import abc.sadnoxx.hashtaggenerator.fragments.fonts.FontsFragment
-import abc.sadnoxx.hashtaggenerator.fragments.hashtags.HashtagsFragment
+import abc.sadnoxx.hashtaggenerator.fragments.hashtag.HashtagMainFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.ToolsFragment
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             return when (position) {
                 0 -> ToolsFragment()
-                1 -> HashtagsFragment()
+                1 -> HashtagMainFragment()
                 2 -> FontsFragment()
                 else -> throw IllegalArgumentException("Invalid position")
             }

@@ -1,8 +1,7 @@
-package abc.sadnoxx.hashtaggenerator.fragments.hashtags
+package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.Context
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.text.Editable
@@ -15,9 +14,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -27,6 +24,8 @@ class HashtagsFragment : Fragment() {
     private lateinit var searchBar: TextInputEditText
     private lateinit var cardAdapter: CardAdapter
     private lateinit var searchBarTop: TextInputLayout
+    private lateinit var fab: ExtendedFloatingActionButton
+
 
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -39,29 +38,16 @@ class HashtagsFragment : Fragment() {
 
 
         searchBarTop = rootView.findViewById(R.id.searchbartop)
-        val topAppBar: MaterialToolbar = rootView.findViewById(R.id.topAppBar)
+        fab = rootView.findViewById(R.id.floating_action_button)
 
 
-        topAppBar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.searchItem -> {
-                    if (searchBarTop.visibility == View.VISIBLE) {
+
+        fab.setOnClickListener {
+            if (searchBarTop.visibility == View.VISIBLE) {
                         searchBarTop.visibility = View.GONE
-                        menuItem.setIcon(R.drawable.zoom_in) // Set the search item icon when searchBarTop is hidden
                     } else {
                         searchBarTop.visibility = View.VISIBLE
-                        menuItem.setIcon(R.drawable.zoom_out) // Set the close item icon when searchBarTop is visible
                     }
-                    true
-                }
-
-                R.id.more -> {
-                    // Handle more item (inside overflow menu) press
-                    true
-                }
-
-                else -> false
-            }
         }
 
 

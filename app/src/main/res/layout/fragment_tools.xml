@@ -12,7 +12,7 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
-            app:menu="@menu/top_app_bar"
+            app:menu="@menu/tools_top_app_bar"
             app:navigationIcon="@drawable/tools_title"
             app:titleTextColor="@color/text_color"
             app:title="Tools"

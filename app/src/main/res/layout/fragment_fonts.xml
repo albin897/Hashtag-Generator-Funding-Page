@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/material_navbar"
-            app:menu="@menu/top_app_bar"
+            app:menu="@menu/tools_top_app_bar"
             app:navigationIcon="@drawable/fonts"
             app:title="Fonts"
             app:titleTextAppearance="@style/MyAppBarLayout"
@@ -52,7 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Input Text"
-                android:text=""
+                android:text="Write something here..."
+                android:maxLines="2"
                 android:textColor="@color/text_color" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -79,21 +80,19 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card"
+                    android:id="@+id/card1"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
                     >
 
                     <TextView
-                        android:id="@+id/supText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
@@ -102,7 +101,7 @@
                         android:fontFamily="@font/signikanegative_medium"
                         android:paddingTop="5dp"
                         android:paddingBottom="3dp"
-                        android:text="space mono regular"
+                        android:text="Mathematical Bold Script"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textSize="12sp" />
 
@@ -114,15 +113,15 @@
                         android:paddingBottom="15dp">
 
                         <TextView
-                            android:id="@+id/mainText"
+                            android:id="@+id/mainText1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/spacemono_regular"
                             android:paddingTop="5dp"
-                            android:text="Main text"
+                            android:text=""
+                            android:maxLines="2"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
@@ -140,6 +139,801 @@
 
 
                 </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card2"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Sans"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card3"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Sans Bold"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card4"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Sans Italic"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card5"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Sans Bold Italic"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card6"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Monospace"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card7"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Fraktur"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card8"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Bold Fraktur"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card9"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Circled"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card10"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Circled Negative"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card11"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Subscript"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card12"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Superscript"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card13"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Script"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card14"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginLeft="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="3dp"
+                        android:text="Double Struck"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/favorite"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
 
 
             </LinearLayout>

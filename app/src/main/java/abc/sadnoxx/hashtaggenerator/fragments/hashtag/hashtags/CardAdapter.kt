@@ -1,4 +1,4 @@
-package abc.sadnoxx.hashtaggenerator.fragments.hashtags
+package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.ClipData
