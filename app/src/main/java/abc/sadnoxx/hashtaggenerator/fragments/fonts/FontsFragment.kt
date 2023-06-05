@@ -98,6 +98,39 @@ class FontsFragment : Fragment() {
         inputTextBox.setText(R.string.fonts_input_box_hint)
 
 
+        val styleSets = arrayOf(
+            StyledTextConverter.Companion.StyleSet.MATHEMATICAL_BOLD_SCRIPT,
+            StyledTextConverter.Companion.StyleSet.SANS,
+            StyledTextConverter.Companion.StyleSet.SANS_BOLD,
+            StyledTextConverter.Companion.StyleSet.SANS_ITALIC,
+            StyledTextConverter.Companion.StyleSet.SANS_BOLD_ITALIC,
+            StyledTextConverter.Companion.StyleSet.MONOSPACE,
+            StyledTextConverter.Companion.StyleSet.FRAKTUR,
+            StyledTextConverter.Companion.StyleSet.BOLD_FRAKTUR,
+            StyledTextConverter.Companion.StyleSet.CIRCLED,
+            StyledTextConverter.Companion.StyleSet.CIRCLED_NEGATIVE,
+            StyledTextConverter.Companion.StyleSet.SUBSCRIPT,
+            StyledTextConverter.Companion.StyleSet.SUPERSCRIPT,
+            StyledTextConverter.Companion.StyleSet.SCRIPT,
+            StyledTextConverter.Companion.StyleSet.DOUBLE_STRUCK
+        )
+
+        val copyButtons = arrayOf(
+            copyButton1, copyButton2, copyButton3, copyButton4, copyButton5,
+            copyButton6, copyButton7, copyButton8, copyButton9, copyButton10,
+            copyButton11, copyButton12, copyButton13, copyButton14
+        )
+
+
+        val contentTextViews = arrayOf(
+            contentTxt1, contentTxt2, contentTxt3, contentTxt4, contentTxt5,
+            contentTxt6, contentTxt7, contentTxt8, contentTxt9, contentTxt10,
+            contentTxt11, contentTxt12, contentTxt13, contentTxt14
+        )
+
+
+
+
 // Add a text change listener to the inputTextBox
         inputTextBox.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -106,31 +139,11 @@ class FontsFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val styleSets = arrayOf(
-                    StyledTextConverter.Companion.StyleSet.MATHEMATICAL_BOLD_SCRIPT,
-                    StyledTextConverter.Companion.StyleSet.SANS,
-                    StyledTextConverter.Companion.StyleSet.SANS_BOLD,
-                    StyledTextConverter.Companion.StyleSet.SANS_ITALIC,
-                    StyledTextConverter.Companion.StyleSet.SANS_BOLD_ITALIC,
-                    StyledTextConverter.Companion.StyleSet.MONOSPACE,
-                    StyledTextConverter.Companion.StyleSet.FRAKTUR,
-                    StyledTextConverter.Companion.StyleSet.BOLD_FRAKTUR,
-                    StyledTextConverter.Companion.StyleSet.CIRCLED,
-                    StyledTextConverter.Companion.StyleSet.CIRCLED_NEGATIVE,
-                    StyledTextConverter.Companion.StyleSet.SUBSCRIPT,
-                    StyledTextConverter.Companion.StyleSet.SUPERSCRIPT,
-                    StyledTextConverter.Companion.StyleSet.SCRIPT,
-                    StyledTextConverter.Companion.StyleSet.DOUBLE_STRUCK
-                )
 
-                val contentTextViews = arrayOf(
-                    contentTxt1, contentTxt2, contentTxt3, contentTxt4, contentTxt5,
-                    contentTxt6, contentTxt7, contentTxt8, contentTxt9, contentTxt10,
-                    contentTxt11, contentTxt12, contentTxt13, contentTxt14
-                )
 
                 for (i in styleSets.indices) {
-                    val styledText = StyledTextConverter.convertToStyledText(s.toString(), styleSets[i])
+                    val styledText =
+                        StyledTextConverter.convertToStyledText(s.toString(), styleSets[i])
                     contentTextViews[i].text = styledText
                 }
 
@@ -140,14 +153,6 @@ class FontsFragment : Fragment() {
                 // This method is called after the text has been changed
             }
         })
-
-        val copyButtons = arrayOf(copyButton1, copyButton2, copyButton3, copyButton4, copyButton5,
-            copyButton6, copyButton7, copyButton8, copyButton9, copyButton10,
-            copyButton11, copyButton12, copyButton13, copyButton14)
-
-        val contentTextViews = arrayOf(contentTxt1, contentTxt2, contentTxt3, contentTxt4, contentTxt5,
-            contentTxt6, contentTxt7, contentTxt8, contentTxt9, contentTxt10,
-            contentTxt11, contentTxt12, contentTxt13, contentTxt14)
 
         for (i in copyButtons.indices) {
             copyButtons[i].setOnClickListener {
