@@ -128,7 +128,13 @@ class FontsFragment : Fragment() {
             contentTxt11, contentTxt12, contentTxt13, contentTxt14
         )
 
+         val welcometext =   inputTextBox.text
 
+        for (i in styleSets.indices) {
+            val styledText =
+                StyledTextConverter.convertToStyledText(welcometext.toString(), styleSets[i])
+            contentTextViews[i].text = styledText
+        }
 
 
 // Add a text change listener to the inputTextBox
