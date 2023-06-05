@@ -1,5 +1,6 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
+import abc.sadnoxx.hashtaggenerator.MyBottomSheetDialogFragment
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.Context
 import android.os.Build
@@ -25,6 +26,7 @@ class HashtagsFragment : Fragment() {
     private lateinit var cardAdapter: CardAdapter
     private lateinit var searchBarTop: TextInputLayout
     private lateinit var fab: ExtendedFloatingActionButton
+    private lateinit var fab0: ExtendedFloatingActionButton
 
 
 
@@ -39,7 +41,14 @@ class HashtagsFragment : Fragment() {
 
         searchBarTop = rootView.findViewById(R.id.searchbartop)
         fab = rootView.findViewById(R.id.floating_action_button)
+        fab0 = rootView.findViewById(R.id.floating_action_button0)
 
+
+
+        fab0.setOnClickListener {
+            val bottomSheetFragment = MyBottomSheetDialogFragment()
+            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+        }
 
 
         fab.setOnClickListener {
