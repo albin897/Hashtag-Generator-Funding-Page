@@ -34,13 +34,15 @@
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/material_navbar"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:tabIndicatorAnimationMode="elastic"
-        app:tabMode="fixed" />
+        app:tabMode="fixed"
+        android:gravity="center_horizontal" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"

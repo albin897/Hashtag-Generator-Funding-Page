@@ -49,7 +49,6 @@
                 android:layout_marginLeft="19dp"
                 android:layout_weight="1"
                 android:textColor="@color/text_color"
-                android:fontFamily="@font/spacemono_regular"
                 android:paddingTop="5dp"
                 android:text="Main text"
                 android:textAppearance="?attr/textAppearanceTitleMedium"

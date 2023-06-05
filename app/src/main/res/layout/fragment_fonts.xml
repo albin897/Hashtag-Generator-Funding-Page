@@ -52,8 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Input Text"
-                android:text="Write something here..."
                 android:maxLines="2"
+                android:text=""
                 android:textColor="@color/text_color" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -93,17 +93,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Mathematical Bold Script"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -119,9 +112,9 @@
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
+                            android:maxLines="2"
                             android:paddingTop="5dp"
                             android:text=""
-                            android:maxLines="2"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
@@ -131,7 +124,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -155,17 +148,11 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Sans"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -192,7 +179,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -216,17 +203,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Sans Bold"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -253,7 +233,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -277,17 +257,11 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Sans Italic"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -314,7 +288,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -338,17 +312,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Sans Bold Italic"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -375,7 +342,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -399,17 +366,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Monospace"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -436,7 +396,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -460,17 +420,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Fraktur"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -497,7 +450,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -521,17 +474,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Bold Fraktur"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -558,7 +504,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -582,17 +528,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Circled"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -619,7 +558,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -643,17 +582,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Circled Negative"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -680,7 +612,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -704,17 +636,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Subscript"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -741,7 +666,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -765,17 +690,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Superscript"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -802,7 +720,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -826,17 +744,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Script"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -863,7 +774,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -887,17 +798,10 @@
                     >
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginLeft="19dp"
+                        style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:paddingTop="5dp"
-                        android:paddingBottom="3dp"
                         android:text="Double Struck"
-                        android:textAppearance="?attr/textAppearanceTitleMedium"
-                        android:textSize="12sp" />
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -924,7 +828,7 @@
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
                             android:paddingRight="10dp"
-                            android:src="@drawable/favorite"
+                            android:src="@drawable/copy"
                             tools:ignore="RtlSymmetry" />
 
 
@@ -932,8 +836,6 @@
 
 
                 </com.google.android.material.card.MaterialCardView>
-
-
 
 
             </LinearLayout>

@@ -1,15 +1,5 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-
-
-    <style name="spacemono_regular">
-        <item name="android:fontFamily">@font/spacemono_regular</item>
-    </style>
-
-
-    <style name="roboto_italic">
-        <item name="android:fontFamily">@font/roboto_italic</item>
-    </style>
 
 
 
@@ -25,8 +15,7 @@
     </style>
 
 
-
-        <style name="opensans_bold">
+    <style name="opensans_bold">
         <item name="android:fontFamily">@font/opensans_bold</item>
     </style>
 
@@ -36,11 +25,15 @@
     </style>
 
 
-
-    <style name="BottomNavigationViewStyle" parent="Widget.Design.BottomNavigationView">
-        <item name="android:fontFamily">@font/opensans_bold</item>
+    <style name="headingFontText">
+        <item name="android:fontFamily">@font/signikanegative_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">12dp</item>
+        <item name="android:layout_marginLeft">19dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">3dp</item>
     </style>
-
-
 
 </resources>

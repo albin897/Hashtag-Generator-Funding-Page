@@ -53,8 +53,8 @@ class HashtagMainFragment : Fragment() {
 
             adapter = HashtagPageAdapter(childFragmentManager, lifecycle)
 
-            tabLayout.addTab(tabLayout.newTab().setText("Hashtags"))
-            tabLayout.addTab(tabLayout.newTab().setText("Saved"))
+            tabLayout.addTab(tabLayout.newTab().setText(R.string.Hashtags))
+            tabLayout.addTab(tabLayout.newTab().setText(R.string.Saved))
 
             viewPager2.adapter = adapter
 

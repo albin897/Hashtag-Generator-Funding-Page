@@ -4,16 +4,16 @@
         android:id="@+id/item_1"
         android:enabled="true"
         android:icon="@drawable/tools"
-        android:title="Tools"/>
+        android:title="@string/tools"/>
     <item
         android:id="@+id/item_2"
         android:enabled="true"
         android:icon="@drawable/hashtag"
-        android:title="Hashtags"
+        android:title="@string/Hashtags"
         />
     <item
         android:id="@+id/item_3"
         android:enabled="true"
         android:icon="@drawable/fonts"
-        android:title="Fonts"/>
+        android:title="@string/fonts"/>
 </menu>

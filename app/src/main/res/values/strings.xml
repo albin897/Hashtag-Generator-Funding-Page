@@ -2,4 +2,9 @@
     <string name="app_name">Hashtag Generator</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Saved"><b>Saved</b></string>
+    <string name="Hashtags"><b>Hashtags</b></string>
+    <string name="tools"><b>Tools</b></string>
+    <string name="fonts"><b>Fonts</b></string>
+    <string name="fonts_input_box_hint">Write something here...</string>
 </resources>

@@ -95,9 +95,13 @@ class FontsFragment : Fragment() {
         copyButton14 = rootView.findViewById(R.id.copyButton14)
 
 
+        inputTextBox.setText(R.string.fonts_input_box_hint)
+
+
 // Add a text change listener to the inputTextBox
         inputTextBox.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
 
             }
 
