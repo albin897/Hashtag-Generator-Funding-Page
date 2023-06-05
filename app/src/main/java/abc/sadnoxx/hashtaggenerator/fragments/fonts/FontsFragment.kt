@@ -106,80 +106,34 @@ class FontsFragment : Fragment() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val styledText1 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.MATHEMATICAL_BOLD_SCRIPT
-                )
-                val styledText2 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.SANS
-                )
-                val styledText3 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.SANS_BOLD
-                )
-                val styledText4 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.SANS_ITALIC
-                )
-                val styledText5 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.SANS_BOLD_ITALIC
-                )
-                val styledText6 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.MONOSPACE
-                )
-                val styledText7 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.FRAKTUR
-                )
-                val styledText8 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.BOLD_FRAKTUR
-                )
-                val styledText9 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.CIRCLED
-                )
-                val styledText10 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.CIRCLED_NEGATIVE
-                )
-                val styledText11 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.SUBSCRIPT
-                )
-                val styledText12 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.SUPERSCRIPT
-                )
-                val styledText13 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
-                    StyledTextConverter.Companion.StyleSet.SCRIPT
-                )
-                val styledText14 = StyledTextConverter.convertToStyledText(
-                    s.toString(),
+                val styleSets = arrayOf(
+                    StyledTextConverter.Companion.StyleSet.MATHEMATICAL_BOLD_SCRIPT,
+                    StyledTextConverter.Companion.StyleSet.SANS,
+                    StyledTextConverter.Companion.StyleSet.SANS_BOLD,
+                    StyledTextConverter.Companion.StyleSet.SANS_ITALIC,
+                    StyledTextConverter.Companion.StyleSet.SANS_BOLD_ITALIC,
+                    StyledTextConverter.Companion.StyleSet.MONOSPACE,
+                    StyledTextConverter.Companion.StyleSet.FRAKTUR,
+                    StyledTextConverter.Companion.StyleSet.BOLD_FRAKTUR,
+                    StyledTextConverter.Companion.StyleSet.CIRCLED,
+                    StyledTextConverter.Companion.StyleSet.CIRCLED_NEGATIVE,
+                    StyledTextConverter.Companion.StyleSet.SUBSCRIPT,
+                    StyledTextConverter.Companion.StyleSet.SUPERSCRIPT,
+                    StyledTextConverter.Companion.StyleSet.SCRIPT,
                     StyledTextConverter.Companion.StyleSet.DOUBLE_STRUCK
                 )
 
+                val contentTextViews = arrayOf(
+                    contentTxt1, contentTxt2, contentTxt3, contentTxt4, contentTxt5,
+                    contentTxt6, contentTxt7, contentTxt8, contentTxt9, contentTxt10,
+                    contentTxt11, contentTxt12, contentTxt13, contentTxt14
+                )
 
+                for (i in styleSets.indices) {
+                    val styledText = StyledTextConverter.convertToStyledText(s.toString(), styleSets[i])
+                    contentTextViews[i].text = styledText
+                }
 
-
-                contentTxt1.text = styledText1 // Update the contentTxt with the styled text
-                contentTxt2.text = styledText2
-                contentTxt3.text = styledText3
-                contentTxt4.text = styledText4
-                contentTxt5.text = styledText5
-                contentTxt6.text = styledText6
-                contentTxt7.text = styledText7
-                contentTxt8.text = styledText8
-                contentTxt9.text = styledText9
-                contentTxt10.text = styledText10
-                contentTxt11.text = styledText11
-                contentTxt12.text = styledText12
-                contentTxt13.text = styledText13
-                contentTxt14.text = styledText14
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -187,64 +141,19 @@ class FontsFragment : Fragment() {
             }
         })
 
-        // Add click listeners to the copy buttons
-        copyButton1.setOnClickListener {
-            copyTextToClipboard(contentTxt1.text.toString())
-        }
+        val copyButtons = arrayOf(copyButton1, copyButton2, copyButton3, copyButton4, copyButton5,
+            copyButton6, copyButton7, copyButton8, copyButton9, copyButton10,
+            copyButton11, copyButton12, copyButton13, copyButton14)
 
-        // Add click listeners to the copy buttons
-        copyButton2.setOnClickListener {
-            copyTextToClipboard(contentTxt2.text.toString())
-        }
+        val contentTextViews = arrayOf(contentTxt1, contentTxt2, contentTxt3, contentTxt4, contentTxt5,
+            contentTxt6, contentTxt7, contentTxt8, contentTxt9, contentTxt10,
+            contentTxt11, contentTxt12, contentTxt13, contentTxt14)
 
-        copyButton3.setOnClickListener {
-            copyTextToClipboard(contentTxt3.text.toString())
+        for (i in copyButtons.indices) {
+            copyButtons[i].setOnClickListener {
+                copyTextToClipboard(contentTextViews[i].text.toString())
+            }
         }
-
-        copyButton4.setOnClickListener {
-            copyTextToClipboard(contentTxt4.text.toString())
-        }
-
-        copyButton5.setOnClickListener {
-            copyTextToClipboard(contentTxt5.text.toString())
-        }
-
-        copyButton6.setOnClickListener {
-            copyTextToClipboard(contentTxt6.text.toString())
-        }
-
-        copyButton7.setOnClickListener {
-            copyTextToClipboard(contentTxt7.text.toString())
-        }
-
-        copyButton8.setOnClickListener {
-            copyTextToClipboard(contentTxt8.text.toString())
-        }
-
-        copyButton9.setOnClickListener {
-            copyTextToClipboard(contentTxt9.text.toString())
-        }
-
-        copyButton10.setOnClickListener {
-            copyTextToClipboard(contentTxt10.text.toString())
-        }
-
-        copyButton11.setOnClickListener {
-            copyTextToClipboard(contentTxt11.text.toString())
-        }
-
-        copyButton12.setOnClickListener {
-            copyTextToClipboard(contentTxt12.text.toString())
-        }
-
-        copyButton13.setOnClickListener {
-            copyTextToClipboard(contentTxt13.text.toString())
-        }
-
-        copyButton14.setOnClickListener {
-            copyTextToClipboard(contentTxt14.text.toString())
-        }
-
 
 
 
