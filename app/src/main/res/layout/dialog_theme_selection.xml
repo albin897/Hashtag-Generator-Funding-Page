@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+
+        <RadioButton
+            android:id="@+id/radioInstagram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="Instagram" />
+
+        <RadioButton
+            android:id="@+id/radioInstagramStories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="Instagram Stories" />
+
+        <RadioButton
+            android:id="@+id/radioTiktok"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Tiktok" />
+
+        <RadioButton
+            android:id="@+id/radioTwitter"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Twitter" />
+
+        <RadioButton
+            android:id="@+id/radioYoutube"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Youtube" />
+
+        <RadioButton
+            android:id="@+id/radioFacebook"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Facebook" />
+
+        <RadioButton
+            android:id="@+id/radioLinkedin"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Linkedin" />
+
+        <RadioButton
+            android:id="@+id/radioPinterest"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Pinterest" />
+
+        <RadioButton
+            android:id="@+id/radioSnapchat"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Snapchat" />
+    </RadioGroup>
+
+</LinearLayout>
+

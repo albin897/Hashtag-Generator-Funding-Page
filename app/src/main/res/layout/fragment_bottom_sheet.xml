@@ -3,120 +3,253 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black">
+    android:layout_height="match_parent">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Bottom sheet"
+    <ImageView
+        android:id="@+id/drawerBar"
+        android:layout_width="32dp"
+        android:layout_height="4dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/handle_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+        android:id="@+id/categorySelector"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="16dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        app:layout_constraintTop_toBottomOf="@id/drawerBar">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="7dp"
-            android:paddingBottom="17dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/mainTagText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="19dp"
-                android:fontFamily="@font/open_sans_bold"
-                android:text="Love"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:textColor="@color/text_color"
-                android:textSize="22sp" />
+                android:fontFamily="@font/jaldi_bold"
+                android:paddingStart="29dp"
+                android:paddingLeft="29dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="15dp"
+                android:text="Select your preferred Platform"
+                android:textSize="16sp"
+                tools:ignore="RtlSymmetry" />
 
-            <TextView
-                android:id="@+id/tagTagText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="18dp"
-                android:layout_marginLeft="19dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginRight="19dp"
-                android:paddingTop="9dp"
-                android:paddingBottom="5dp"
-                android:text="#love #instagood #me #cute #tbt #photooftheday #instamood #iphonesia #tweegram #picoftheday #igers #girl #beautiful #instadaily #summer #instagramhub #iphoneonly #follow #igdaily #bestoftheday #happy #picstitch #instagramer #jj #sky #nofilter #fashion #followme #fun #su"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:textColor="@color/text_color"
-                android:textSize="15sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/divider_vertical" />
 
             <LinearLayout
-                android:id="@+id/saveBtn"
+                android:id="@+id/selectPlatformTab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <ImageView
+                    android:id="@+id/platformImage"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ig" />
+
+                <TextView
+                    android:id="@+id/platformName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jaldi_bold"
+                    android:paddingStart="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="15dp"
+                    android:text="Instagram"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/seperatorOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categorySelector" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutItemNameHolder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingLeft="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seperatorOne"
+        tools:ignore="RtlSymmetry">
+
+        <ImageView
+            android:id="@+id/platformImage1"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ig" />
+
+        <TextView
+            android:id="@+id/platformName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jaldi_bold"
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="11dp"
+            android:paddingBottom="15dp"
+            android:text="Instagram"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/itemContentDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jaldi_bold"
+        android:paddingStart="8dp"
+        android:paddingLeft="8dp"
+        android:paddingEnd="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="15dp"
+        android:text="You can use up to 30 hashtags on Instagram, and we suggest using all of them as they can be hidden within the caption."
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutItemNameHolder" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/seperatorTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/itemContentDescription" />
+
+    <TextView
+        android:id="@+id/customizations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jaldi_bold"
+        android:gravity="start"
+        android:paddingStart="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="15dp"
+        android:text="Customizations"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seperatorTwo" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/customization1"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customizations">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
 
-                <LinearLayout
+                <TextView
+                    android:layout_weight="3"
+                    android:id="@+id/tagSeperator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:fontFamily="@font/jaldi_bold"
 
-                    <ImageView
-                        android:id="@+id/btnBookmark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:src="@drawable/bookmark" />
+                    android:paddingStart="10dp"
+                    android:paddingLeft="8dp"
+                    android:paddingEnd="10dp"
+                    android:paddingRight="8dp"
+                    android:text="Select the separator you want to use to separate the hashtags"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearLayoutItemNameHolder" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/text_color"
-                        android:text="@string/save" />
-                </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/btnCopy"
+                <Space
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:src="@drawable/copy" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/text_color"
-                        android:text="@string/copy" />
-                </LinearLayout>
+                    android:layout_weight="10"/>
 
 
             </LinearLayout>
 
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tagSeperatorEg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_medium"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="15dp"
+                android:text="eg: #tag1 #tag2 #tag3"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linearLayoutItemNameHolder" />
 
+
+        </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
 

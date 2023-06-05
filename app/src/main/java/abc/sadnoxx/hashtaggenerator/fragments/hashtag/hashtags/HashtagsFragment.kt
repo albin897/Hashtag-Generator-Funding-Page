@@ -1,6 +1,5 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
-import abc.sadnoxx.hashtaggenerator.MyBottomSheetDialogFragment
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.Context
 import android.os.Build

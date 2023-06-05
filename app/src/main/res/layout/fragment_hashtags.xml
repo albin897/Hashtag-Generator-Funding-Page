@@ -29,7 +29,7 @@
             android:paddingTop="7dp"
             android:paddingRight="25dp"
             android:paddingBottom="5dp"
-            android:visibility="visible"
+            android:visibility="gone"
             app:boxCornerRadiusBottomEnd="25dp"
             app:boxCornerRadiusBottomStart="25dp"
             app:boxCornerRadiusTopEnd="25dp"

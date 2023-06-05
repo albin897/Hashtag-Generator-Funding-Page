@@ -10,4 +10,16 @@
     <string name="search">Search</string>
     <string name="save"><b>Save</b></string>
     <string name="copy"><b>Copy</b></string>
+    <string name="instagram"><b>Instagram</b></string>
+    <string name="instagram_stories"><b>Instagram Stories</b></string>
+    <string name="tikTok"><b>TikTok</b></string>
+    <string name="twitter"><b>Twitter</b></string>
+    <string name="youTube"><b>YouTube</b></string>
+    <string name="facebook"><b>Facebook</b></string>
+    <string name="linkedIn"><b>LinkedIn</b></string>
+    <string name="pinterest"><b>Pinterest</b></string>
+    <string name="snapchat"><b>Snapchat</b></string>
+    <string name="dialog_title_theme_selection">\t\n\nChoose Platform\n</string>
+    <string name="ok"><b>OK</b></string>
+    <string name="cancel"><b>Cancel</b></string>
 </resources>
