@@ -128,11 +128,11 @@ class FontsFragment : Fragment() {
             contentTxt11, contentTxt12, contentTxt13, contentTxt14
         )
 
-         val welcometext =   inputTextBox.text
+        val welcomeText = inputTextBox.text
 
         for (i in styleSets.indices) {
             val styledText =
-                StyledTextConverter.convertToStyledText(welcometext.toString(), styleSets[i])
+                StyledTextConverter.convertToStyledText(welcomeText.toString(), styleSets[i])
             contentTextViews[i].text = styledText
         }
 

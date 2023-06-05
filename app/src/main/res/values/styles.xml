@@ -16,12 +16,12 @@
 
 
     <style name="opensans_bold">
-        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
 
 
     <style name="opensans_medium">
-        <item name="android:fontFamily">@font/opensans_medium</item>
+        <item name="android:fontFamily">@font/open_sans_medium</item>
     </style>
 
 

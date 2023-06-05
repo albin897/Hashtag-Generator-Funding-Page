@@ -7,4 +7,7 @@
     <string name="tools"><b>Tools</b></string>
     <string name="fonts"><b>Fonts</b></string>
     <string name="fonts_input_box_hint">Write something here...</string>
+    <string name="search">Search</string>
+    <string name="save"><b>Save</b></string>
+    <string name="copy"><b>Copy</b></string>
 </resources>

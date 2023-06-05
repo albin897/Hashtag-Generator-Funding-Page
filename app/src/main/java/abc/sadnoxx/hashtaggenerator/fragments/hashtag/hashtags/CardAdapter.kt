@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -21,7 +22,8 @@ class CardAdapter(private var cardDataList: List<Card>) :
         // Define references to the views in the card item layout
         val mainTextView: TextView = itemView.findViewById(R.id.mainTagText)
         val tagsTextView: TextView = itemView.findViewById(R.id.tagTagText)
-        val copyButton: ImageView = itemView.findViewById(R.id.btn)
+        val copyButton: LinearLayout = itemView.findViewById(R.id.btnCopy)
+//        val saveButton: LinearLayout = itemView.findViewById(R.id.saveBtn)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {

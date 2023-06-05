@@ -25,12 +25,11 @@
             android:id="@+id/searchbartop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/material_navbar"
             android:paddingLeft="25dp"
-            android:paddingTop="1dp"
+            android:paddingTop="7dp"
             android:paddingRight="25dp"
             android:paddingBottom="5dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:boxCornerRadiusBottomEnd="25dp"
             app:boxCornerRadiusBottomStart="25dp"
             app:boxCornerRadiusTopEnd="25dp"
@@ -44,22 +43,23 @@
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="search"
-                android:fontFamily="@font/opensans_medium"
+                android:fontFamily="@font/open_sans_medium"
+                android:hint="@string/search"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
-                android:text="" />
+                android:text=""
+                tools:ignore="DuplicateSpeakableTextCheck,VisualLintTextFieldSize" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/material_navbar"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchbartop" />
+<!--        <com.google.android.material.divider.MaterialDivider-->
+<!--            android:id="@+id/divider_two"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/material_navbar"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/searchbartop" />-->
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -93,27 +93,27 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/floating_action_button0"
+        style="?attr/floatingActionButtonSmallStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:fontFamily="@font/opensans_bold"
-        app:icon="@drawable/tune"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:layout_marginBottom="88dp"
-        style="?attr/floatingActionButtonSmallStyle"
-        />
+        android:fontFamily="@font/open_sans_bold"
+        app:icon="@drawable/tune"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/floating_action_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:text="Search"
-        android:fontFamily="@font/opensans_bold"
+        android:text="@string/search"
+        android:fontFamily="@font/open_sans_bold"
         app:icon="@drawable/search"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
