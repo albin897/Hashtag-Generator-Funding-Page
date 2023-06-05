@@ -2,20 +2,18 @@ package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
 import android.app.Dialog
-import android.content.Context
-import android.content.DialogInterface
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -28,6 +26,10 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
     private lateinit var sharedPrefs: SharedPreferences
     private lateinit var platformName: TextView
+    private lateinit var platformName1: TextView
+    private lateinit var itemContentDescription: TextView
+    private lateinit var platformImage: ImageView
+    private lateinit var platformImage1: ImageView
 
     private val KEY_PLATFORM = "platform"
     private val PLATFORM_INSTAGRAM = 0
@@ -56,9 +58,19 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
             }
         }
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val editor = sharedPrefs.edit()
-
         platformName = view.findViewById(R.id.platformName)
+        platformName1 = view.findViewById(R.id.platformName1)
+        itemContentDescription = view.findViewById(R.id.itemContentDescription)
+        platformImage = view.findViewById(R.id.platformImage)
+        platformImage1 = view.findViewById(R.id.platformImage1)
+
+
+        // Retrieve the saved platform from SharedPreferences
+        val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
+
+        // Set the platform name based on the saved platform
+        setPlatformName(savedPlatform)
+
         selectPlatformTab = view.findViewById(R.id.selectPlatformTab)
 
 
@@ -102,7 +114,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         val radioSnapchat = dialogView.findViewById<RadioButton>(R.id.radioSnapchat)
 
         // Retrieve the saved theme from SharedPreferences
-        val  sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val savedTheme = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
 
         // Set the appropriate radio button based on the saved theme
@@ -151,23 +163,231 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private fun applyTheme(theme: Int) {
         // Apply the selected theme using AppCompatDelegate
         when (theme) {
-            PLATFORM_INSTAGRAM -> platformName.setText(R.string.instagram)
-            PLATFORM_INSTAGRAM_STORIES -> platformName.setText(R.string.instagram_stories)
-            PLATFORM_TIKTOK -> platformName.setText(R.string.tikTok)
-            PLATFORM_TWITTER -> platformName.setText(R.string.twitter)
-            PLATFORM_YOUTUBE -> platformName.setText(R.string.youTube)
-            PLATFORM_FACEBOOK -> platformName.setText(R.string.facebook)
-            PLATFORM_LINKEDIN -> platformName.setText(R.string.linkedIn)
-            PLATFORM_PINTEREST -> platformName.setText(R.string.pinterest)
-            PLATFORM_SNAPCHAT -> platformName.setText(R.string.snapchat)
+            PLATFORM_INSTAGRAM -> {
+                platformName.setText(R.string.instagram)
+                platformName1.setText(R.string.instagram)
+                itemContentDescription.setText(R.string.instagram_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ig
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ig
+                    )
+                )
+            }
+
+            PLATFORM_INSTAGRAM_STORIES -> {
+                platformName.setText(R.string.instagram_stories)
+                platformName1.setText(R.string.instagram_stories)
+                itemContentDescription.setText(R.string.instagram_stories_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ig
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.ig
+                    )
+                )
+            }
+
+            PLATFORM_TIKTOK -> {
+                platformName.setText(R.string.tikTok)
+                platformName1.setText(R.string.tikTok)
+                itemContentDescription.setText(R.string.tiktok_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.tiktok
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.tiktok
+                    )
+                )
+            }
+
+            PLATFORM_TWITTER -> {
+                platformName.setText(R.string.twitter)
+                platformName1.setText(R.string.twitter)
+                itemContentDescription.setText(R.string.twitter_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.twitter
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.twitter
+                    )
+                )
+            }
+
+            PLATFORM_YOUTUBE -> {
+                platformName.setText(R.string.youTube)
+                platformName1.setText(R.string.youTube)
+                itemContentDescription.setText(R.string.youtube_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.youtube
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.youtube
+                    )
+                )
+            }
+
+            PLATFORM_FACEBOOK -> {
+                platformName.setText(R.string.facebook)
+                platformName1.setText(R.string.facebook)
+                itemContentDescription.setText(R.string.facebook_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.facebook
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.facebook
+                    )
+                )
+            }
+
+            PLATFORM_LINKEDIN -> {
+                platformName.setText(R.string.linkedIn)
+                platformName1.setText(R.string.linkedIn)
+                itemContentDescription.setText(R.string.linkedin_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.linkedin
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.linkedin
+                    )
+                )
+            }
+
+            PLATFORM_PINTEREST -> {
+                platformName.setText(R.string.pinterest)
+                platformName1.setText(R.string.pinterest)
+                itemContentDescription.setText(R.string.pinterest_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.pinterest
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.pinterest
+                    )
+                )
+            }
+
+            PLATFORM_SNAPCHAT -> {
+                platformName.setText(R.string.snapchat)
+                platformName1.setText(R.string.snapchat)
+                itemContentDescription.setText(R.string.snapchat_content_description)
+                platformImage.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.snapchat
+                    )
+                )
+                platformImage1.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.snapchat
+                    )
+                )
+            }
         }
 
         // Save the selected theme to SharedPreferences
-        val  sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val editor = sharedPrefs.edit()
         editor.putInt(KEY_PLATFORM, theme)
         editor.apply()
     }
 
+    private fun setPlatformName(platform: Int) {
+        val platformNameResId = when (platform) {
+            PLATFORM_INSTAGRAM -> R.string.instagram
+            PLATFORM_INSTAGRAM_STORIES -> R.string.instagram_stories
+            PLATFORM_TIKTOK -> R.string.tikTok
+            PLATFORM_TWITTER -> R.string.twitter
+            PLATFORM_YOUTUBE -> R.string.youTube
+            PLATFORM_FACEBOOK -> R.string.facebook
+            PLATFORM_LINKEDIN -> R.string.linkedIn
+            PLATFORM_PINTEREST -> R.string.pinterest
+            PLATFORM_SNAPCHAT -> R.string.snapchat
+            else -> R.string.instagram
+        }
+        platformName.setText(platformNameResId)
+        platformName1.setText(platformNameResId)
+
+        val platformNameContentResId = when (platform) {
+            PLATFORM_INSTAGRAM -> R.string.instagram_content_description
+            PLATFORM_INSTAGRAM_STORIES -> R.string.instagram_stories_content_description
+            PLATFORM_TIKTOK -> R.string.tiktok_content_description
+            PLATFORM_TWITTER -> R.string.twitter_content_description
+            PLATFORM_YOUTUBE -> R.string.youtube_content_description
+            PLATFORM_FACEBOOK -> R.string.facebook_content_description
+            PLATFORM_LINKEDIN -> R.string.linkedin_content_description
+            PLATFORM_PINTEREST -> R.string.pinterest_content_description
+            PLATFORM_SNAPCHAT -> R.string.snapchat_content_description
+            else -> R.string.instagram_content_description
+        }
+        itemContentDescription.setText(platformNameContentResId)
+
+
+        val platformImageResId = when (platform) {
+            PLATFORM_INSTAGRAM -> R.drawable.ig
+            PLATFORM_INSTAGRAM_STORIES -> R.drawable.ig
+            PLATFORM_TIKTOK -> R.drawable.tiktok
+            PLATFORM_TWITTER -> R.drawable.twitter
+            PLATFORM_YOUTUBE -> R.drawable.youtube
+            PLATFORM_FACEBOOK -> R.drawable.facebook
+            PLATFORM_LINKEDIN -> R.drawable.linkedin
+            PLATFORM_PINTEREST -> R.drawable.pinterest
+            PLATFORM_SNAPCHAT -> R.drawable.snapchat
+            else -> R.drawable.ig
+        }
+        platformImage.setImageDrawable(
+            ContextCompat.getDrawable(
+                requireContext(),
+                platformImageResId
+            )
+        )
+        platformImage1.setImageDrawable(
+            ContextCompat.getDrawable(
+                requireContext(),
+                platformImageResId
+            )
+        )
+    }
 
 }

@@ -22,4 +22,13 @@
     <string name="dialog_title_theme_selection">\t\n\nChoose Platform\n</string>
     <string name="ok"><b>OK</b></string>
     <string name="cancel"><b>Cancel</b></string>
+    <string name="instagram_content_description">You can use up to 30 hashtags on Instagram, and we suggest using all of them as they can be hidden within the caption.</string>
+    <string name="instagram_stories_content_description">Instagram stories allows 10 hashtags at most. We recommend using 10 hashtags as they can be hidden by making them look smaller in the story.</string>
+    <string name="tiktok_content_description">TikTok allows 120 characters at most. We recommend using 5–8 most related hashtags in your TikTok video caption as best practice.</string>
+    <string name="twitter_content_description">Twitter allows 280 characters at most. We recommend using 3–5 most related hashtags per tweet as best practice</string>
+    <string name="youtube_content_description">YouTube allows 15 hashtags at most. YouTube warns that over-tagging will remove your video from search. We recommend using 3 most related hashtags in the title.</string>
+    <string name="facebook_content_description">Facebook allows as many hashtags as you want. We recommend using 2–5 most related hashtags. Too many hashtags won\'t look good on a Facebook post.</string>
+    <string name="linkedin_content_description">Linkedin allows as many hashtags as you want. We recommend using 5–8 most related hashtags. Too many hashtags won\'t look good on a LinkedIn post.</string>
+    <string name="pinterest_content_description">Pinterest allows 20 hashtags at most. We recommend using 5–8 most related hashtags on your pins as best practice.</string>
+    <string name="snapchat_content_description">Hashtags on snapchat works as a topic on spotlight. Although you can add many hashtags, we recommend adding 2–3 most related hashtags in spotlight.</string>
 </resources>
