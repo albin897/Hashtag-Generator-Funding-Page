@@ -31,4 +31,5 @@
     <string name="linkedin_content_description">Linkedin allows as many hashtags as you want. We recommend using 5–8 most related hashtags. Too many hashtags won\'t look good on a LinkedIn post.</string>
     <string name="pinterest_content_description">Pinterest allows 20 hashtags at most. We recommend using 5–8 most related hashtags on your pins as best practice.</string>
     <string name="snapchat_content_description">Hashtags on snapchat works as a topic on spotlight. Although you can add many hashtags, we recommend adding 2–3 most related hashtags in spotlight.</string>
+    <string name="seperator_question">Select the separator you want to use to  separate the hashtags</string>
 </resources>

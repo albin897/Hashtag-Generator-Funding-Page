@@ -177,79 +177,75 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/seperatorTwo" />
 
+
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/customization1"
+        android:layout_marginTop="10dp"
+        android:id="@+id/card"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="16dp"
-        app:cardCornerRadius="14dp"
+        app:cardCornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/customizations">
+        app:layout_constraintTop_toBottomOf="@+id/customizations">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="8dp">
 
-                <TextView
-                    android:layout_weight="3"
-                    android:id="@+id/tagSeperator"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/jaldi_bold"
-
-                    android:paddingStart="10dp"
-                    android:paddingLeft="8dp"
-                    android:paddingEnd="10dp"
-                    android:paddingRight="8dp"
-                    android:text="Select the separator you want to use to separate the hashtags"
-                    android:textSize="15sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/linearLayoutItemNameHolder" />
-
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"/>
-
-
-            </LinearLayout>
 
 
             <TextView
-                android:id="@+id/tagSeperatorEg"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_medium"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
-                android:paddingEnd="8dp"
-                android:paddingRight="8dp"
-                android:paddingBottom="15dp"
-                android:text="eg: #tag1 #tag2 #tag3"
+                android:layout_marginStart="19dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/bold"
+                android:text="@string/seperator_question"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="@color/text_color"
                 android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/linearLayoutItemNameHolder" />
+                android:paddingRight="16dp"
+                android:layout_marginLeft="19dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:fontFamily="@font/bold"
+                android:text="Space"
+                android:background="@drawable/switch_rounded"
+                android:paddingLeft="5dp"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                android:padding="15dp"
+                android:layout_marginRight="7dp"/>
 
 
         </LinearLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="70dp"
+            android:paddingBottom="15dp"
+            android:text="eg:  #tag1 #tag2 #tag3 ..."
+            android:textSize="14sp"
+            tools:ignore="RtlSymmetry" />
+
 
     </com.google.android.material.card.MaterialCardView>
 

@@ -75,7 +75,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
 
         selectPlatformTab.setOnClickListener {
-            showThemeSelectionDialog()
+            showPlatformSelectionDialog()
 
         }
 
@@ -99,7 +99,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
     }
 
 
-    private fun showThemeSelectionDialog() {
+    private fun showPlatformSelectionDialog() {
         val inflater = LayoutInflater.from(requireContext())
         val dialogView = inflater.inflate(R.layout.dialog_theme_selection, null)
 
@@ -115,10 +115,10 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
         // Retrieve the saved theme from SharedPreferences
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val savedTheme = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
+        val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
 
         // Set the appropriate radio button based on the saved theme
-        when (savedTheme) {
+        when (savedPlatform) {
             PLATFORM_INSTAGRAM -> radioInstagram.isChecked = true
             PLATFORM_INSTAGRAM_STORIES -> radioInstagramStories.isChecked = true
             PLATFORM_TIKTOK -> radioTiktok.isChecked = true
@@ -137,8 +137,8 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
             .setView(dialogView)
             .setPositiveButton(R.string.ok) { _, _ ->
                 val selectedRadioButtonId = radioGroup.checkedRadioButtonId
-                val selectedTheme = getThemeForRadioButtonId(selectedRadioButtonId)
-                applyTheme(selectedTheme)
+                val selectedTheme = getPlatformForRadioButtonId(selectedRadioButtonId)
+                applyPlatform(selectedTheme)
             }
             .setNegativeButton(R.string.cancel, null)
             .create()
@@ -146,7 +146,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         dialog.show()
     }
 
-    private fun getThemeForRadioButtonId(radioButtonId: Int): Int {
+    private fun getPlatformForRadioButtonId(radioButtonId: Int): Int {
         return when (radioButtonId) {
             R.id.radioInstagram -> PLATFORM_INSTAGRAM
             R.id.radioInstagramStories -> PLATFORM_INSTAGRAM_STORIES
@@ -160,7 +160,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         }
     }
 
-    private fun applyTheme(theme: Int) {
+    private fun applyPlatform(theme: Int) {
         // Apply the selected theme using AppCompatDelegate
         when (theme) {
             PLATFORM_INSTAGRAM -> {
