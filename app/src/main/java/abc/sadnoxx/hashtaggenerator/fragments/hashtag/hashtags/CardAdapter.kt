@@ -7,16 +7,18 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
+
 class CardAdapter(private var cardDataList: List<Card>) :
     RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
     private var dataSet: MutableList<Card> = cardDataList.toMutableList()
+
+
 
     class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Define references to the views in the card item layout
@@ -40,6 +42,7 @@ class CardAdapter(private var cardDataList: List<Card>) :
 
         holder.copyButton.setOnClickListener {
             val tagsText = cardData.tags.joinToString(" ")
+//            Log.d("SEPERATORFIND", "onBindViewHolder:  + ${getTagSeparator(holder.itemView.context)} ")
 
             // Copy tags text to clipboard
             val clipboardManager = holder.itemView.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -49,9 +52,10 @@ class CardAdapter(private var cardDataList: List<Card>) :
             // Show a toast message indicating that the text has been copied
             Toast.makeText(holder.itemView.context, "Tags copied", Toast.LENGTH_SHORT).show()
         }
-
-
     }
+
+
+
 
     override fun getItemCount(): Int {
         return dataSet.size
