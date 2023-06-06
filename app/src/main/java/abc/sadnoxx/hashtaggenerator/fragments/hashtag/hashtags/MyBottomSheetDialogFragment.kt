@@ -17,7 +17,9 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.slider.Slider
 
 class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
@@ -28,8 +30,19 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private lateinit var platformName: TextView
     private lateinit var platformName1: TextView
     private lateinit var itemContentDescription: TextView
+    private lateinit var seperatorSelection: TextView
+    private lateinit var exampleText: TextView
     private lateinit var platformImage: ImageView
     private lateinit var platformImage1: ImageView
+    private lateinit var sliderCopyHashtags: Slider
+    private lateinit var copyRangeView: TextView
+    private lateinit var charectersRangeView: TextView
+    private lateinit var sliderDotAboveHashtags: Slider
+    private lateinit var dotRangeView: TextView
+    private lateinit var sliderCharecterCopy: Slider
+    private lateinit var card0: MaterialCardView
+    private lateinit var card1: MaterialCardView
+    private lateinit var card3: MaterialCardView
 
     private val KEY_PLATFORM = "platform"
     private val PLATFORM_INSTAGRAM = 0
@@ -41,6 +54,14 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private val PLATFORM_LINKEDIN = 6
     private val PLATFORM_PINTEREST = 7
     private val PLATFORM_SNAPCHAT = 8
+
+    private val KEY_SEPERATOR = "separator"
+    private val SEPERATOR_SPACE = " "
+    private val SEPERATOR_NOTHING = ""
+    private val SEPERATOR_COMMA = ","
+    private val SEPERATOR_BULLET = "•"
+    private val SEPERATOR_ASTERISK = "*"
+    private val SEPERATOR_TILDE = "~"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,13 +84,29 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         itemContentDescription = view.findViewById(R.id.itemContentDescription)
         platformImage = view.findViewById(R.id.platformImage)
         platformImage1 = view.findViewById(R.id.platformImage1)
-
+        seperatorSelection = view.findViewById(R.id.seperatorSelection)
+        exampleText = view.findViewById(R.id.exampleText)
+        sliderCopyHashtags = view.findViewById(R.id.sliderCopyHashtags)
+        copyRangeView = view.findViewById(R.id.copyRangeView)
+        sliderDotAboveHashtags = view.findViewById(R.id.sliderDotAboveHashtags)
+        dotRangeView = view.findViewById(R.id.dotRangeView)
+        charectersRangeView = view.findViewById(R.id.charectersRangeView)
+        sliderCharecterCopy = view.findViewById(R.id.sliderCharecterCopy)
+        card0 = view.findViewById(R.id.card0)
+        card1 = view.findViewById(R.id.card1)
+        card3 = view.findViewById(R.id.card3)
 
         // Retrieve the saved platform from SharedPreferences
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
+        val savedSeperator = sharedPrefs.getString(KEY_SEPERATOR, SEPERATOR_SPACE)
 
         // Set the platform name based on the saved platform
+
+        showHideOptions(savedPlatform)
         setPlatformName(savedPlatform)
+        if (savedSeperator != null) {
+            setSeperatorName(savedSeperator)
+        }
 
         selectPlatformTab = view.findViewById(R.id.selectPlatformTab)
 
@@ -79,8 +116,123 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
         }
 
+        seperatorSelection.setOnClickListener {
+            showSeperatorSelectionDialog()
+
+        }
+
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val editor = sharedPrefs.edit()
+
+        getAllSliderValues()
+
+        sliderCopyHashtags.addOnChangeListener { slider, value, fromUser ->
+            // Convert the float value to an integer if needed
+            val intValue = value.toInt()
+
+            editor.putInt("sliderCopyValue", intValue)
+            editor.apply()
+
+            // Update the TextView with the new value
+            copyRangeView.text = intValue.toString()
+        }
+
+        sliderDotAboveHashtags.addOnChangeListener { slider, value, fromUser ->
+            // Convert the float value to an integer if needed
+            val intValue = value.toInt()
+
+            editor.putInt("sliderDotAboveValue", intValue)
+            editor.apply()
+
+            // Update the TextView with the new value
+            dotRangeView.text = intValue.toString()
+        }
+
+        sliderCharecterCopy.addOnChangeListener { slider, value, fromUser ->
+            // Convert the float value to an integer if needed
+            val intValue = value.toInt()
+
+            editor.putInt("sliderCharecterCopyValue", intValue)
+            editor.apply()
+
+            // Update the TextView with the new value
+            charectersRangeView.text = intValue.toString()
+        }
+
 
         return view
+    }
+
+    private fun showHideOptions(platform: Int) {
+        when (platform) {
+            PLATFORM_INSTAGRAM -> {
+                card0.visibility = View.VISIBLE
+                card1.visibility = View.VISIBLE
+                card3.visibility = View.GONE
+            }
+
+            PLATFORM_INSTAGRAM_STORIES -> {
+                card0.visibility = View.VISIBLE
+                card1.visibility = View.GONE
+                card3.visibility = View.GONE
+            }
+            PLATFORM_TIKTOK ->  {
+                card0.visibility = View.GONE
+                card1.visibility = View.GONE
+                card3.visibility = View.VISIBLE
+            }
+            PLATFORM_TWITTER ->  {
+                card0.visibility = View.GONE
+                card1.visibility = View.VISIBLE
+                card3.visibility = View.VISIBLE
+            }
+            PLATFORM_YOUTUBE ->  {
+                card0.visibility = View.GONE
+                card1.visibility = View.GONE
+                card3.visibility = View.VISIBLE
+            }
+            PLATFORM_FACEBOOK ->  {
+                card0.visibility = View.VISIBLE
+                card1.visibility = View.VISIBLE
+                card3.visibility = View.GONE
+            }
+            PLATFORM_LINKEDIN ->  {
+                card0.visibility = View.VISIBLE
+                card1.visibility = View.VISIBLE
+                card3.visibility = View.GONE
+            }
+            PLATFORM_PINTEREST ->  {
+                card0.visibility = View.VISIBLE
+                card1.visibility = View.GONE
+                card3.visibility = View.GONE
+            }
+            PLATFORM_SNAPCHAT ->  {
+                card0.visibility = View.VISIBLE
+                card1.visibility = View.VISIBLE
+                card3.visibility = View.GONE
+            }
+            else ->  {
+                card0.visibility = View.VISIBLE
+                card1.visibility = View.VISIBLE
+                card3.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun getAllSliderValues() {
+
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val savedValue = sharedPrefs.getInt("sliderCopyValue", 30)
+        sliderCopyHashtags.value = savedValue.toFloat()
+        copyRangeView.text = savedValue.toString()
+
+        val savedValue1 = sharedPrefs.getInt("sliderDotAboveValue", 10)
+        sliderDotAboveHashtags.value = savedValue1.toFloat()
+        dotRangeView.text = savedValue1.toString()
+
+        val savedValue2 = sharedPrefs.getInt("sliderCharecterCopyValue", 150)
+        sliderCharecterCopy.value = savedValue2.toFloat()
+        dotRangeView.text = savedValue2.toString()
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -162,6 +314,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     private fun applyPlatform(theme: Int) {
         // Apply the selected theme using AppCompatDelegate
+        showHideOptions(theme)
         when (theme) {
             PLATFORM_INSTAGRAM -> {
                 platformName.setText(R.string.instagram)
@@ -388,6 +541,134 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
                 platformImageResId
             )
         )
+    }
+
+
+    private fun showSeperatorSelectionDialog() {
+        val inflater = LayoutInflater.from(requireContext())
+        val dialogView = inflater.inflate(R.layout.dialog_seperator_selection, null)
+
+        val radioSpace = dialogView.findViewById<RadioButton>(R.id.radioSpace)
+        val radioNothing = dialogView.findViewById<RadioButton>(R.id.radioNothing)
+        val radioComma = dialogView.findViewById<RadioButton>(R.id.radioComma)
+        val radioBullet = dialogView.findViewById<RadioButton>(R.id.radioBullet)
+        val radioAsterisk = dialogView.findViewById<RadioButton>(R.id.radioAsterisk)
+        val radioTilde = dialogView.findViewById<RadioButton>(R.id.radioTilde)
+
+
+        // Retrieve the saved theme from SharedPreferences
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+
+        // Set the appropriate radio button based on the saved theme
+        when (sharedPrefs.getString(KEY_SEPERATOR, SEPERATOR_SPACE)) {
+            SEPERATOR_SPACE -> radioSpace.isChecked = true
+            SEPERATOR_NOTHING -> radioNothing.isChecked = true
+            SEPERATOR_COMMA -> radioComma.isChecked = true
+            SEPERATOR_BULLET -> radioBullet.isChecked = true
+            SEPERATOR_ASTERISK -> radioAsterisk.isChecked = true
+            SEPERATOR_TILDE -> radioTilde.isChecked = true
+
+        }
+
+        val radioGroup = dialogView.findViewById<RadioGroup>(R.id.radio_group1)
+
+        val dialog = MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Choose Separator")
+            .setView(dialogView)
+            .setPositiveButton(R.string.ok) { _, _ ->
+                val selectedRadioButtonId = radioGroup.checkedRadioButtonId
+                val selectedTheme = getSeperatorForRadioButtonId(selectedRadioButtonId)
+                applySeperator(selectedTheme)
+            }
+            .setNegativeButton(R.string.cancel, null)
+            .create()
+
+        dialog.show()
+    }
+
+    private fun getSeperatorForRadioButtonId(radioButtonId: Int): String {
+        return when (radioButtonId) {
+            R.id.radioSpace -> SEPERATOR_SPACE
+            R.id.radioNothing -> SEPERATOR_NOTHING
+            R.id.radioComma -> SEPERATOR_COMMA
+            R.id.radioBullet -> SEPERATOR_BULLET
+            R.id.radioAsterisk -> SEPERATOR_ASTERISK
+            R.id.radioTilde -> SEPERATOR_TILDE
+            else -> SEPERATOR_SPACE
+        }
+    }
+
+    private fun applySeperator(seperator: String) {
+        // Apply the selected theme using AppCompatDelegate
+        when (seperator) {
+            SEPERATOR_SPACE -> {
+                seperatorSelection.text = "Space"
+                exampleText.text = "eg: #tag1 #tag2 #tag3..."
+            }
+
+            SEPERATOR_NOTHING -> {
+                seperatorSelection.text = "Nothing"
+                exampleText.text = "eg: #tag1#tag2#tag3..."
+            }
+
+            SEPERATOR_COMMA -> {
+                seperatorSelection.text = "Comma"
+                exampleText.text = "eg: #tag1,#tag2,#tag3..."
+            }
+
+            SEPERATOR_BULLET -> {
+                seperatorSelection.text = "Bullet"
+                exampleText.text = "eg: #tag1•#tag2•#tag3..."
+
+            }
+
+            SEPERATOR_ASTERISK -> {
+                seperatorSelection.text = "Asterisk"
+                exampleText.text = "eg: #tag1*#tag2*#tag3..."
+            }
+
+            SEPERATOR_TILDE -> {
+                seperatorSelection.text = "Tilde"
+                exampleText.text = "eg: #tag1~#tag2~#tag3..."
+            }
+
+
+        }
+
+
+        // Save the selected theme to SharedPreferences
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val editor = sharedPrefs.edit()
+        editor.putString(KEY_SEPERATOR, seperator)
+        editor.apply()
+    }
+
+    private fun setSeperatorName(platform: String) {
+        val platformNameResId = when (platform) {
+            SEPERATOR_SPACE -> "Space"
+            SEPERATOR_NOTHING -> "Nothing"
+            SEPERATOR_COMMA -> "Comma"
+            SEPERATOR_BULLET -> "Bullet"
+            SEPERATOR_ASTERISK -> "Asterisk"
+            SEPERATOR_TILDE -> "Tilde"
+            else -> "Space"
+        }
+        seperatorSelection.text = platformNameResId
+
+
+        val seperatorNameContentResId = when (platform) {
+            SEPERATOR_SPACE -> "eg: #tag1 #tag2 #tag3..."
+            SEPERATOR_NOTHING -> "eg: #tag1#tag2#tag3..."
+            SEPERATOR_COMMA -> "eg: #tag1,#tag2,#tag3..."
+            SEPERATOR_BULLET -> "eg: #tag1•#tag2•#tag3..."
+            SEPERATOR_ASTERISK -> "eg: #tag1*#tag2*#tag3..."
+            SEPERATOR_TILDE -> "eg: #tag1~#tag2~#tag3..."
+
+            else -> "eg: #tag1 #tag2 #tag3..."
+        }
+        exampleText.text = seperatorNameContentResId
+
+
     }
 
 }

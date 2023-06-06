@@ -45,6 +45,7 @@
                 android:layout_marginEnd="18dp"
                 android:layout_marginRight="19dp"
                 android:paddingTop="9dp"
+                android:fontFamily="@font/bold"
                 android:paddingBottom="5dp"
                 android:text="#love #instagood #me #cute #tbt #photooftheday #instamood #iphonesia #tweegram #picoftheday #igers #girl #beautiful #instadaily #summer #instagramhub #iphoneonly #follow #igdaily #bestoftheday #happy #picstitch #instagramer #jj #sky #nofilter #fashion #followme #fun #su"
                 android:textAppearance="?attr/textAppearanceTitleMedium"

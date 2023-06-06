@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RadioGroup
+        android:id="@+id/radio_group1"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+
+        <RadioButton
+            android:id="@+id/radioSpace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="Space" />
+
+        <RadioButton
+            android:id="@+id/radioNothing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="Nothing" />
+
+        <RadioButton
+            android:id="@+id/radioComma"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Comma" />
+
+        <RadioButton
+            android:id="@+id/radioBullet"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Bullet" />
+
+        <RadioButton
+            android:id="@+id/radioAsterisk"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Asterisk" />
+
+        <RadioButton
+            android:id="@+id/radioTilde"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/bold"
+            android:layout_height="wrap_content"
+            android:text="Tilde" />
+
+
+    </RadioGroup>
+
+</LinearLayout>
+
