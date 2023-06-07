@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -140,6 +141,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         sliderDotAboveHashtags.addOnChangeListener { slider, value, fromUser ->
             // Convert the float value to an integer if needed
             val intValue = value.toInt()
+            Log.d("DOTABOVE", "dotabove:    $intValue")
 
             editor.putInt("sliderDotAboveValue", intValue)
             editor.apply()
@@ -187,9 +189,9 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
                 card3.visibility = View.VISIBLE
             }
             PLATFORM_YOUTUBE ->  {
-                card0.visibility = View.GONE
+                card0.visibility = View.VISIBLE
                 card1.visibility = View.GONE
-                card3.visibility = View.VISIBLE
+                card3.visibility = View.GONE
             }
             PLATFORM_FACEBOOK ->  {
                 card0.visibility = View.VISIBLE
@@ -203,7 +205,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
             }
             PLATFORM_PINTEREST ->  {
                 card0.visibility = View.VISIBLE
-                card1.visibility = View.GONE
+                card1.visibility = View.VISIBLE
                 card3.visibility = View.GONE
             }
             PLATFORM_SNAPCHAT ->  {
@@ -230,9 +232,11 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         sliderDotAboveHashtags.value = savedValue1.toFloat()
         dotRangeView.text = savedValue1.toString()
 
+        Log.d("DOTABOVE", "onstart:    $savedValue1")
+
         val savedValue2 = sharedPrefs.getInt("sliderCharecterCopyValue", 150)
         sliderCharecterCopy.value = savedValue2.toFloat()
-        dotRangeView.text = savedValue2.toString()
+        charectersRangeView.text = savedValue2.toString()
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

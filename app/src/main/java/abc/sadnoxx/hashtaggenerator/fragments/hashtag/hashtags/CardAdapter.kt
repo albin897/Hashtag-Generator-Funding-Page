@@ -25,7 +25,8 @@ class CardAdapter(private var cardDataList: List<Card>) :
 
 
     interface OnCopyClickListener {
-        fun onCopyClick(tagsText: String)
+        fun onCopyClick(tagsText1: Card)
+
     }
 
     fun setOnSaveClickListener(listener: OnSaveClickListener) {
@@ -71,8 +72,8 @@ class CardAdapter(private var cardDataList: List<Card>) :
 //        }
 
         holder.copyButton.setOnClickListener {
-            val tagsText = cardData.tags.joinToString(" ")
-            onCopyClickListener?.onCopyClick(tagsText)
+//            val tagsText = cardData.tags.joinToString(" ")
+            onCopyClickListener?.onCopyClick(cardData)
         }
 
         holder.saveButton.setOnClickListener {

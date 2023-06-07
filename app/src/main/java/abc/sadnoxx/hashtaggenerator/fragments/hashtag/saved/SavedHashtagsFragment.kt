@@ -34,7 +34,9 @@ class SavedHashtagsFragment : Fragment() {
 
 
 
-        return rootView    }
+        return rootView
+
+    }
 
 
 
