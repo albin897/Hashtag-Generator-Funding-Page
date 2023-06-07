@@ -6,6 +6,7 @@
     <string name="Hashtags"><b>Hashtags</b></string>
     <string name="tools"><b>Tools</b></string>
     <string name="fonts"><b>Fonts</b></string>
+    <string name="settings"><b>Settings</b></string>
     <string name="fonts_input_box_hint">Write something here...</string>
     <string name="search">Search</string>
     <string name="save"><b>Save</b></string>
@@ -32,4 +33,6 @@
     <string name="pinterest_content_description">Pinterest allows 20 hashtags at most. We recommend using 5–8 most related hashtags on your pins as best practice.</string>
     <string name="snapchat_content_description">Hashtags on snapchat works as a topic on spotlight. Although you can add many hashtags, we recommend adding 2–3 most related hashtags in spotlight.</string>
     <string name="seperator_question">Select the separator you want to use to  separate the hashtags</string>
+    <string name="general"><b>General</b></string>
+    <string name="additional"><b>ADDITIONAL</b></string>
 </resources>

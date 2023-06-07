@@ -54,12 +54,58 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <!--         <androidx.recyclerview.widget.RecyclerView-->
-                <!--             android:layout_width="match_parent"-->
-                <!--             android:layout_height="match_parent"-->
-                <!--             tools:listitem="@layout/list_item"-->
-                <!--             android:id="@+id/recyclerView"/>-->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="17dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:text="Top Hashtags"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="22sp" />
+
+                        <TextView
+                            android:id="@+id/tagTagText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_marginEnd="18dp"
+                            android:layout_marginRight="19dp"
+                            android:paddingTop="9dp"
+                            android:fontFamily="@font/bold"
+                            android:paddingBottom="5dp"
+                            android:text="The top best hashtags that are currently trending in all the sites theses hashtags are handpicked and has been sorted based on the audience."
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="15sp" />
+
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
 
 
 

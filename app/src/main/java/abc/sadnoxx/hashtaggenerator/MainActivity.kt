@@ -2,6 +2,7 @@ package abc.sadnoxx.hashtaggenerator
 
 import abc.sadnoxx.hashtaggenerator.fragments.fonts.FontsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.HashtagMainFragment
+import abc.sadnoxx.hashtaggenerator.fragments.settings.SettingsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.ToolsFragment
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.google.android.material.navigation.NavigationBarView
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         pagerAdapter = ViewPagerAdapter(supportFragmentManager)
         viewPager.adapter = pagerAdapter
 
+        bottomNavigationView.labelVisibilityMode = NavigationBarView.LABEL_VISIBILITY_LABELED
+
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_1 -> {
@@ -42,6 +47,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.item_3 -> {
                     viewPager.currentItem = 2
+                    true
+                }
+                R.id.item_4 -> {
+                    viewPager.currentItem = 3
                     true
                 }
                 else -> false
@@ -88,7 +97,7 @@ class MainActivity : AppCompatActivity() {
     inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
         override fun getCount(): Int {
-            return 3 // Number of fragments in your ViewPager
+            return 4 // Number of fragments in your ViewPager
         }
 
         override fun getItem(position: Int): Fragment {
@@ -96,6 +105,7 @@ class MainActivity : AppCompatActivity() {
                 0 -> ToolsFragment()
                 1 -> HashtagMainFragment()
                 2 -> FontsFragment()
+                3 -> SettingsFragment()
                 else -> throw IllegalArgumentException("Invalid position")
             }
         }
