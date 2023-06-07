@@ -85,17 +85,44 @@ class CardAdapter(private var cardDataList: List<Card>) :
         return dataSet.size
     }
 
+//    fun filterData(query: String) {
+//        if (query.isEmpty()) {
+//            dataSet.clear()
+//            dataSet.addAll(cardDataList)
+//        } else {
+//            dataSet.clear()
+//            dataSet.addAll(cardDataList.filter { cardData ->
+//                cardData.mainText.contains(query, ignoreCase = true) ||
+//                        cardData.tags.any { tag -> tag.contains(query, ignoreCase = true) }
+//            })
+//        }
+//        notifyDataSetChanged()
+//    }
+
     fun filterData(query: String) {
         if (query.isEmpty()) {
             dataSet.clear()
             dataSet.addAll(cardDataList)
         } else {
+            val matchingHeadings = cardDataList.filter { cardData ->
+                cardData.mainText.contains(query, ignoreCase = true)
+            }
+
+            val matchingTags = cardDataList.filter { cardData ->
+                cardData.tags.any { tag -> tag.contains(query, ignoreCase = true) }
+            }
+
             dataSet.clear()
-            dataSet.addAll(cardDataList.filter { cardData ->
-                cardData.mainText.contains(query, ignoreCase = true) ||
-                        cardData.tags.any { tag -> tag.contains(query, ignoreCase = true) }
-            })
+            dataSet.addAll(matchingHeadings)
+
+            val remainingTags = matchingTags.filter { tag ->
+                tag !in matchingHeadings
+            }
+
+            dataSet.addAll(remainingTags)
         }
         notifyDataSetChanged()
     }
+
+
 }
