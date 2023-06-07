@@ -212,8 +212,8 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
-        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 0)
+        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
+        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsToCopy = tagsText1.tags.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
@@ -226,7 +226,7 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 0)
+        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsToCopy = tagsText1.tags.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         return tagsText
@@ -237,7 +237,7 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val maxCharactersToCopy = sharedPrefs.getInt("sliderCharecterCopyValue", 0) // Retrieve the maximum number of characters to copy from shared preferences
+        val maxCharactersToCopy = sharedPrefs.getInt("sliderCharecterCopyValue", 150) // Retrieve the maximum number of characters to copy from shared preferences
         val tagsText = tagsText1.tags.joinToString(separatorCharSequence)
         val truncatedTagsText = if (tagsText.length > maxCharactersToCopy) {
             val truncatedText = tagsText.substring(0, maxCharactersToCopy) // Truncate the tags text to the maximum character limit
@@ -262,8 +262,8 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
-        val maxCharactersToCopy = sharedPrefs.getInt("sliderCharecterCopyValue", 0)
+        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
+        val maxCharactersToCopy = sharedPrefs.getInt("sliderCharecterCopyValue", 240)
         val tagsText = if (maxCharactersToCopy > 0) {
             val truncatedTagsText = tagsText1.tags.joinToString(separatorCharSequence)
                 .take(maxCharactersToCopy) // Limit the tags text to the maximum character count
@@ -282,7 +282,7 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 0)
+        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 15)
         val tagsToCopy = tagsText1.tags.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         return tagsText
@@ -293,8 +293,8 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
-        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 0)
+        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
+        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsToCopy = tagsText1.tags.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
@@ -307,8 +307,8 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
-        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 0)
+        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
+        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsToCopy = tagsText1.tags.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
@@ -321,8 +321,8 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
-        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 0)
+        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
+        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 20)
         val tagsToCopy = tagsText1.tags.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
@@ -335,8 +335,8 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
-        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 0)
+        val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
+        val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsToCopy = tagsText1.tags.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
