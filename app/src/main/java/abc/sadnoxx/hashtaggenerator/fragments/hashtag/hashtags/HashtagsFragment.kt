@@ -1,15 +1,20 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved.SavedCardAdapter
+import android.content.ClipData
+import android.content.ClipboardManager
 import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -17,16 +22,16 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 
-class HashtagsFragment : Fragment() {
+class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener, CardAdapter.OnCopyClickListener  {
 
     private lateinit var searchBar: TextInputEditText
     private lateinit var cardAdapter: CardAdapter
     private lateinit var searchBarTop: TextInputLayout
     private lateinit var fab: ExtendedFloatingActionButton
     private lateinit var fab0: ExtendedFloatingActionButton
+    private var savedCardAdapter: SavedCardAdapter? = null
 
-
-
+    private val savedCards: MutableList<Card> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -66,6 +71,8 @@ class HashtagsFragment : Fragment() {
         val recyclerView: RecyclerView = rootView.findViewById(R.id.recyclerView)
 
         cardAdapter = CardAdapter(CardDataRepository.cardDataList)
+        cardAdapter.setOnSaveClickListener(this)
+        cardAdapter.setOnCopyClickListener(this)
         recyclerView.adapter = cardAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
@@ -98,4 +105,27 @@ class HashtagsFragment : Fragment() {
         return rootView
     }
 
-}
+    override fun onSaveClick(card: Card) {
+        savedCards.add(card)
+        Log.d("TAGCHECKING", "onSaveClick: $savedCards ")
+        savedCardAdapter?.notifyDataSetChanged()
+
+    }
+
+    override fun onCopyClick(tagsText: String) {
+
+            // Copy tags text to clipboard
+            val clipboardManager =
+                requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("Tags", tagsText)
+            clipboardManager.setPrimaryClip(clipData)
+
+            // Show a toast message indicating that the text has been copied
+            Toast.makeText(requireContext(), "Tags copied", Toast.LENGTH_SHORT).show()
+        }
+
+
+
+    }
+
+
