@@ -1,23 +1,27 @@
 package abc.sadnoxx.hashtaggenerator.fragments.settings
 
 import abc.sadnoxx.hashtaggenerator.R
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.materialswitch.MaterialSwitch
 
 
 class SettingsFragment : Fragment() {
 
-
-    private lateinit var themeSelector: MaterialCardView;
+    private lateinit var themeSelector: MaterialCardView
+    private lateinit var sleepSwitch: MaterialSwitch
+    private lateinit var sharedPreferences: SharedPreferences
 
     private val KEY_THEME = "theme"
     private val THEME_LIGHT = 0
@@ -29,10 +33,28 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_settings, container, false)
-        // Inflate the layout for this fragment
-        themeSelector = rootView.findViewById(R.id.card)
 
-        themeSelector.setOnClickListener { v: View? -> showThemeSelectionDialog() }
+        themeSelector = rootView.findViewById(R.id.card)
+        sleepSwitch = rootView.findViewById(R.id.sleepingSwitch)
+
+        themeSelector.setOnClickListener { showThemeSelectionDialog() }
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        sleepSwitch.isChecked = sharedPreferences.getBoolean("sleepChecked", false)
+
+        sleepSwitch.setOnCheckedChangeListener { _, isChecked ->
+            with(sharedPreferences.edit()) {
+                putBoolean("sleepChecked", isChecked)
+                apply()
+            }
+            activity?.window?.run {
+                if (isChecked) {
+                    addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                } else {
+                    clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+                }
+            }
+        }
 
         return rootView
     }
@@ -45,13 +67,8 @@ class SettingsFragment : Fragment() {
         val darkRadioButton = dialogView.findViewById<RadioButton>(R.id.radio_dark)
         val systemRadioButton = dialogView.findViewById<RadioButton>(R.id.radio_system)
 
-        // Retrieve the saved theme from SharedPreferences
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)
-        val activity = requireActivity()
 
-
-        // Set the appropriate radio button based on the saved theme
         when (savedTheme) {
             THEME_LIGHT -> lightRadioButton.isChecked = true
             THEME_DARK -> darkRadioButton.isChecked = true
@@ -63,12 +80,12 @@ class SettingsFragment : Fragment() {
         val dialog = MaterialAlertDialogBuilder(requireContext())
             .setTitle(R.string.dialog_title_theme_selection)
             .setView(dialogView)
-            .setPositiveButton("OK") { dialogInterface, i ->
+            .setPositiveButton("OK") { _, _ ->
                 val selectedRadioButtonId = radioGroup.checkedRadioButtonId
                 val selectedTheme = getThemeForRadioButtonId(selectedRadioButtonId)
                 applyTheme(selectedTheme)
             }
-            .setNegativeButton("cancel", null)
+            .setNegativeButton("Cancel", null)
             .create()
 
         dialog.show()
@@ -83,21 +100,16 @@ class SettingsFragment : Fragment() {
     }
 
     private fun applyTheme(theme: Int) {
-        // Apply the selected theme using AppCompatDelegate
         when (theme) {
             THEME_LIGHT -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             THEME_DARK -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             THEME_SYSTEM -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         }
 
-        // Save the selected theme to SharedPreferences
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val editor = sharedPreferences.edit()
-        editor.putInt(KEY_THEME, theme)
-
-        editor.apply()
+        with(sharedPreferences.edit()) {
+            putInt(KEY_THEME, theme)
+            apply()
+        }
         activity?.recreate()
-
     }
-
 }
