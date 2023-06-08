@@ -8,6 +8,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat.applyTheme
@@ -40,6 +41,16 @@ class MainActivity : AppCompatActivity() {
         val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)
         applyDeviceTheme(savedTheme)
         setContentView(R.layout.activity_main)
+
+
+
+
+        val screenOnFlag = sharedPreferences.getBoolean("sleepChecked", true)
+        if (screenOnFlag) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }else{
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
 
 
 // Apply the saved theme

@@ -1,8 +1,12 @@
 package abc.sadnoxx.hashtaggenerator.fragments.settings
 
 import abc.sadnoxx.hashtaggenerator.R
+import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +19,7 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -29,6 +34,8 @@ class SettingsFragment : Fragment() {
 
     private lateinit var themeSelector: MaterialCardView;
     private lateinit var sleepSwitch: MaterialSwitch
+
+    private lateinit var vibrationsSwitch: MaterialSwitch
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var refreshBtn: ImageView
     private lateinit var latestTxt: TextView
@@ -48,12 +55,19 @@ class SettingsFragment : Fragment() {
         // Inflate the layout for this fragment
         themeSelector = rootView.findViewById(R.id.card)
         sleepSwitch = rootView.findViewById(R.id.sleepingSwitch)
+        vibrationsSwitch = rootView.findViewById(R.id.vibrationsSwitch)
         refreshBtn = rootView.findViewById(R.id.refreshBtn)
         latestTxt = rootView.findViewById(R.id.latestTxt)
         themeNotifier = rootView.findViewById(R.id.themeNotifier)
         newVersion = rootView.findViewById(R.id.newVersion)
 
+        val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
+
+
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+
+
         val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)
         when (savedTheme) {
             THEME_LIGHT -> themeNotifier.text = resources.getString(R.string.light)
@@ -62,20 +76,46 @@ class SettingsFragment : Fragment() {
         }
 
 
-        themeSelector.setOnClickListener { v: View? -> showThemeSelectionDialog() }
+        themeSelector.setOnClickListener {
+            performHapticFeedback(vibrator)
+            showThemeSelectionDialog() }
 
-        sleepSwitch.isChecked = sharedPreferences.getBoolean("sleepChecked", false)
+        sleepSwitch.isChecked = sharedPreferences.getBoolean("sleepChecked", true)
+        vibrationsSwitch.isChecked = sharedPreferences.getBoolean("vibrationSwitch", true)
 
-        sleepSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+
+        vibrationsSwitch.setOnCheckedChangeListener { _, isChecked ->
             // Respond to switch being checked/unchecked
             if (isChecked) {
                 // Switch is checked
+                performHapticFeedback(vibrator)
+                with(sharedPreferences.edit()) {
+                    putBoolean("vibrationSwitch", true)
+                    apply()
+                }
+
+            } else {
+                performHapticFeedback(vibrator)
+                // Switch is unchecked
+                with(sharedPreferences.edit()) {
+                    putBoolean("vibrationSwitch", false)
+                    apply()
+                }
+            }
+        }
+
+        sleepSwitch.setOnCheckedChangeListener { _, isChecked ->
+            // Respond to switch being checked/unchecked
+            if (isChecked) {
+                // Switch is checked
+                performHapticFeedback(vibrator)
                 with(sharedPreferences.edit()) {
                     putBoolean("sleepChecked", true)
                     apply()
                 }
                 activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
             } else {
+                performHapticFeedback(vibrator)
                 // Switch is unchecked
                 with(sharedPreferences.edit()) {
                     putBoolean("sleepChecked", false)
@@ -201,5 +241,20 @@ class SettingsFragment : Fragment() {
         activity?.recreate()
 
     }
+
+    private fun performHapticFeedback(vibrator: Vibrator) {
+
+        val vibrationEnabled = sharedPreferences.getBoolean("vibrationSwitch", true)
+
+        if (vibrationEnabled) {
+        // Trigger haptic feedback for a short duration
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            // Deprecated in API 26
+            vibrator.vibrate(30)
+        }}
+    }
+
 
 }
