@@ -289,7 +289,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         val radioGroup = dialogView.findViewById<RadioGroup>(R.id.radio_group)
 
         val dialog = MaterialAlertDialogBuilder(requireContext())
-            .setTitle(R.string.dialog_title_theme_selection)
+            .setTitle(R.string.dialog_title_platform_selection)
             .setView(dialogView)
             .setPositiveButton(R.string.ok) { _, _ ->
                 val selectedRadioButtonId = radioGroup.checkedRadioButtonId

@@ -52,4 +52,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
 
+    implementation 'com.google.android.play:app-update-ktx:2.1.0'
 }
