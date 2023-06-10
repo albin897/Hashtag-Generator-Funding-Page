@@ -9,4 +9,5 @@
     <color name="material_statusbar">#1C1B1F</color>
     <color name="material_navbar">#2A2831</color>
     <color name="text_color">#FFFFFFFF</color>
+    <color name="red">#EE3030</color>
 </resources>
