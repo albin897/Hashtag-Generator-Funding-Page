@@ -57,7 +57,6 @@ class TopHashtags : Fragment(), TopCardAdapter.OnCopyClickListener {
         if (!copiedStringsList.contains(mainText)) {
             copiedStringsList.add(mainText)
 
-            Log.d("COPYCLICK", "onCopyClick:  $copiedStringsList")
             val concatenatedText = copiedStringsList.joinToString(" ")
             copiedTextView.text = concatenatedText
         }
