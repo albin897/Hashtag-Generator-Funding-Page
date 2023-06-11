@@ -28,13 +28,13 @@ class SavedCardAdapter(private val savedCards: List<Card>) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        private val savedMainTagText: TextView = itemView.findViewById(R.id.SavedmainTagText)
+        private val savedTagTagText: TextView = itemView.findViewById(R.id.SavedtagTagText)
+
         fun bind(card: Card) {
-           val savedMainTagText = itemView.findViewById<TextView>(R.id.SavedmainTagText)
             savedMainTagText.text = card.mainText
-            val savedTagTagText = itemView.findViewById<TextView>(R.id.SavedtagTagText)
-            savedTagTagText.text = card.tags.toString()
-            // val titleTextView = itemView.findViewById<TextView>(R.id.titleTextView)
-            // titleTextView.text = card.title
+            savedTagTagText.text = itemView.context.getString(card.tags)
         }
     }
+
 }

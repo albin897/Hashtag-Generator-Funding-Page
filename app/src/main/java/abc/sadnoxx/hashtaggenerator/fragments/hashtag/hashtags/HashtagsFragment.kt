@@ -22,6 +22,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import org.json.JSONArray
+import org.json.JSONObject
 
 private val KEY_PLATFORM = "platform"
 private val PLATFORM_INSTAGRAM = 0
@@ -41,6 +43,9 @@ private val SEPERATOR_COMMA = ","
 private val SEPERATOR_BULLET = "•"
 private val SEPERATOR_ASTERISK = "*"
 private val SEPERATOR_TILDE = "~"
+
+
+private const val SAVED_CARDS_KEY = "savedCards"
 
 class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
     CardAdapter.OnCopyClickListener {
@@ -129,7 +134,7 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
 
     override fun onSaveClick(card: Card) {
         savedCards.add(card)
-
+        saveSavedCards()
         Log.d("TAG", "onSaveClick: $savedCards")
 
     }
@@ -374,6 +379,22 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         // Show a toast message indicating that the text has been copied
         Toast.makeText(requireContext(), "Tags copied", Toast.LENGTH_SHORT).show()
     }
+
+
+    private fun saveSavedCards() {
+        val savedCardsArray = JSONArray()
+        for (card in savedCards) {
+            val cardJson = JSONObject()
+            cardJson.put("mainText", card.mainText)
+            cardJson.put("tags", card.tags)
+            savedCardsArray.put(cardJson)
+        }
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val editor = sharedPrefs.edit()
+        editor.putString(SAVED_CARDS_KEY, savedCardsArray.toString())
+        editor.apply()
+    }
+
 
 
 }
