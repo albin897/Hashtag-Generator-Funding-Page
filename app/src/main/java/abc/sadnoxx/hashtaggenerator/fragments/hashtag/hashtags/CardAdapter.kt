@@ -11,22 +11,20 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class CardAdapter(private var cardDataList: List<Card>) :
+class CardAdapter(private var cardDataList: List<Card>,
+                  private val context: Context) :
     RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
     private var dataSet: MutableList<Card> = cardDataList.toMutableList()
     private var onSaveClickListener: OnSaveClickListener? = null
-
     private var onCopyClickListener: OnCopyClickListener? = null
 
     interface OnSaveClickListener {
         fun onSaveClick(card: Card)
     }
 
-
     interface OnCopyClickListener {
         fun onCopyClick(tagsText1: Card)
-
     }
 
     fun setOnSaveClickListener(listener: OnSaveClickListener) {
@@ -38,7 +36,6 @@ class CardAdapter(private var cardDataList: List<Card>) :
     }
 
     class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Define references to the views in the card item layout
         val mainTextView: TextView = itemView.findViewById(R.id.mainTagText)
         val tagsTextView: TextView = itemView.findViewById(R.id.tagTagText)
         val copyButton: LinearLayout = itemView.findViewById(R.id.btnCopy)
@@ -46,7 +43,8 @@ class CardAdapter(private var cardDataList: List<Card>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
+        val context = parent.context
+        val itemView = LayoutInflater.from(context)
             .inflate(R.layout.hash_item, parent, false)
         return CardViewHolder(itemView)
     }
@@ -54,25 +52,10 @@ class CardAdapter(private var cardDataList: List<Card>) :
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val cardData = dataSet[position]
 
-        // Bind the data to the views in the card item
         holder.mainTextView.text = cardData.mainText
-        holder.tagsTextView.text = cardData.tags.joinToString(" ")
-
-//        holder.copyButton.setOnClickListener {
-//            val tagsText = cardData.tags.joinToString(" ")
-//
-//            // Copy tags text to clipboard
-//            val clipboardManager =
-//                holder.itemView.context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-//            val clipData = ClipData.newPlainText("Tags", tagsText)
-//            clipboardManager.setPrimaryClip(clipData)
-//
-//            // Show a toast message indicating that the text has been copied
-//            Toast.makeText(holder.itemView.context, "Tags copied", Toast.LENGTH_SHORT).show()
-//        }
+        holder.tagsTextView.text = holder.itemView.context.getString(cardData.tags)
 
         holder.copyButton.setOnClickListener {
-//            val tagsText = cardData.tags.joinToString(" ")
             onCopyClickListener?.onCopyClick(cardData)
         }
 
@@ -85,20 +68,6 @@ class CardAdapter(private var cardDataList: List<Card>) :
         return dataSet.size
     }
 
-//    fun filterData(query: String) {
-//        if (query.isEmpty()) {
-//            dataSet.clear()
-//            dataSet.addAll(cardDataList)
-//        } else {
-//            dataSet.clear()
-//            dataSet.addAll(cardDataList.filter { cardData ->
-//                cardData.mainText.contains(query, ignoreCase = true) ||
-//                        cardData.tags.any { tag -> tag.contains(query, ignoreCase = true) }
-//            })
-//        }
-//        notifyDataSetChanged()
-//    }
-
     fun filterData(query: String) {
         if (query.isEmpty()) {
             dataSet.clear()
@@ -109,20 +78,13 @@ class CardAdapter(private var cardDataList: List<Card>) :
             }
 
             val matchingTags = cardDataList.filter { cardData ->
-                cardData.tags.any { tag -> tag.contains(query, ignoreCase = true) }
+                context.getString(cardData.tags).contains(query, ignoreCase = true)
             }
 
             dataSet.clear()
             dataSet.addAll(matchingHeadings)
-
-            val remainingTags = matchingTags.filter { tag ->
-                tag !in matchingHeadings
-            }
-
-            dataSet.addAll(remainingTags)
+            dataSet.addAll(matchingTags)
         }
         notifyDataSetChanged()
     }
-
-
 }

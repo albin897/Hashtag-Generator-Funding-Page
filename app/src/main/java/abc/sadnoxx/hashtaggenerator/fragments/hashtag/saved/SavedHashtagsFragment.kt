@@ -17,7 +17,6 @@ class SavedHashtagsFragment : Fragment() {
 
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var savedCardAdapter: SavedCardAdapter
     private val savedCards: MutableList<Card> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,11 +25,11 @@ class SavedHashtagsFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_saved_hashtags, container, false)
 
-        recyclerView = rootView.findViewById(R.id.SavedrecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        Log.d("TAGCHECKING", "onSaveClickinsaved: $savedCards ")
-        savedCardAdapter = SavedCardAdapter(savedCards)
-        recyclerView.adapter = savedCardAdapter
+//        recyclerView = rootView.findViewById(R.id.SavedrecyclerView)
+//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+//        Log.d("TAGCHECKING", "onSaveClickinsaved: $savedCards ")
+//        savedCardAdapter = SavedCardAdapter(savedCards)
+//        recyclerView.adapter = savedCardAdapter
 
 
 
