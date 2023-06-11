@@ -3,6 +3,9 @@ package abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.Card
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.CardAdapter
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -11,8 +14,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -34,7 +40,7 @@ class SavedHashtagsFragment : Fragment() {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
         recyclerView = rootView.findViewById(R.id.savedRecyclerView)
-        savedCardAdapter = SavedCardAdapter(savedCards)
+        savedCardAdapter = SavedCardAdapter(savedCards, this::copyToClipboard, this::removeCard)
 
         recyclerView.adapter = savedCardAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -78,6 +84,29 @@ class SavedHashtagsFragment : Fragment() {
         }).toString()
         sharedPreferences.edit().putString(SAVED_CARDS_KEY, updatedSavedCardsJson).apply()
     }
+
+    private fun copyToClipboard(text: Int) {
+        val textString = resources.getString(text)
+        val clipboardManager = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clip = ClipData.newPlainText("Copied Text", textString)
+        clipboardManager.setPrimaryClip(clip)
+        Toast.makeText(requireContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun removeCard(position: Int) {
+        savedCards.removeAt(position)
+        savedCardAdapter.notifyItemRemoved(position)
+
+        // Update the savedCards list in SharedPreferences after removing the card
+        val updatedSavedCardsJson = JSONArray(savedCards.map { card ->
+            val cardJson = JSONObject()
+            cardJson.put("tags", card.tags)
+            cardJson.put("mainText", card.mainText)
+            cardJson
+        }).toString()
+        sharedPreferences.edit().putString(SAVED_CARDS_KEY, updatedSavedCardsJson).apply()
+    }
+
 
 
 }
