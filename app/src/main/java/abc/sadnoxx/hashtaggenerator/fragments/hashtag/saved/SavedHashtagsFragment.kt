@@ -1,5 +1,4 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved
-
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.Card
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.CardAdapter
@@ -15,28 +14,24 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SavedHashtagsFragment : Fragment() {
 
-
     private lateinit var recyclerView: RecyclerView
+    private lateinit var savedCardAdapter: SavedCardAdapter
     private val savedCards: MutableList<Card> = mutableListOf()
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_saved_hashtags, container, false)
 
-//        recyclerView = rootView.findViewById(R.id.SavedrecyclerView)
-//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-//        Log.d("TAGCHECKING", "onSaveClickinsaved: $savedCards ")
-//        savedCardAdapter = SavedCardAdapter(savedCards)
-//        recyclerView.adapter = savedCardAdapter
+        recyclerView = rootView.findViewById(R.id.savedRecyclerView)
+        savedCardAdapter = SavedCardAdapter(savedCards)
 
-
+        recyclerView.adapter = savedCardAdapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         return rootView
-
     }
-
-
-
 }
+1

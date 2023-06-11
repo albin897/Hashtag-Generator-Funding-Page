@@ -1,6 +1,7 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved.SavedHashtagsFragment
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -128,10 +129,11 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
 
     override fun onSaveClick(card: Card) {
         savedCards.add(card)
-        Log.d("TAGCHECKING", "onSaveClick: $savedCards ")
-//        savedCardAdapter?.notifyDataSetChanged()
+
+        Log.d("TAG", "onSaveClick: $savedCards")
 
     }
+
 
     override fun onCopyClick(tagsText1: Card) {
 

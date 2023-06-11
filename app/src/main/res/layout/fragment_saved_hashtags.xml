@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.hashtag.hashtags.HashtagsFragment">
+    tools:context=".fragments.hashtag.saved.SavedHashtagsFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,10 +77,10 @@
                 android:paddingBottom="85dp">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/SavedrecyclerView"
+                    android:id="@+id/savedRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:listitem="@layout/hash_item" />
+                    tools:listitem="@layout/saved_hash_item" />
 
 
             </LinearLayout>
