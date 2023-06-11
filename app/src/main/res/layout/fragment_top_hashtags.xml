@@ -49,11 +49,20 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:background="@drawable/switch_half_rounded"
+
+        <LinearLayout
+            android:id="@+id/bottomSheet"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:background="@drawable/switch_half_rounded"
+            android:orientation="vertical"
+            android:paddingStart="2dp"
+            android:paddingLeft="2dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingRight="20dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -61,48 +70,93 @@
 
 
             <TextView
+
                 android:id="@+id/tagAllText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/bold"
                 android:text=""
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textColor="@color/text_color"
-                android:textSize="15sp"
-                android:paddingBottom="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="15sp" />
+
 
             <LinearLayout
-                android:id="@+id/btnCopyAll"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:padding="7dp"
-                android:background="@drawable/switch_rounded"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintTop_toBottomOf="@id/tagAllText"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="20dp">
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btnRemoveAll"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/copy" />
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/delete" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:text="Remove All"
+                        android:textColor="@color/text_color" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/btnRemoveOne"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
-                    android:text="Copy Selected"
-                    android:textColor="@color/text_color" />
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/do_not_disturb" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:text="Remove ( 1 )"
+                        android:textColor="@color/text_color" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/btnCopyAll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/copy" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:text="Copy All"
+                        android:textColor="@color/text_color" />
+                </LinearLayout>
+
+
             </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -12,14 +12,19 @@ import android.content.Context
 import android.util.Log
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import org.jetbrains.annotations.Nullable
 
 
 class TopHashtags : Fragment(), TopCardAdapter.OnCopyClickListener {
 
 
+    private lateinit var bottomSheet: LinearLayout
     private lateinit var btnCopyAll: LinearLayout
+    private lateinit var btnRemoveOne: LinearLayout
+    private lateinit var btnRemoveAll: LinearLayout
     private lateinit var topCardAdapter: TopCardAdapter
     private val copiedStringsList: MutableList<String> = mutableListOf()
     private lateinit var copiedTextView: TextView
@@ -41,24 +46,53 @@ class TopHashtags : Fragment(), TopCardAdapter.OnCopyClickListener {
         top_recyclerView.adapter = topCardAdapter
         top_recyclerView.layoutManager = LinearLayoutManager(requireContext())
         btnCopyAll = rootView.findViewById(R.id.btnCopyAll)
+        btnRemoveOne = rootView.findViewById(R.id.btnRemoveOne)
+        btnRemoveAll = rootView.findViewById(R.id.btnRemoveAll)
+        bottomSheet = rootView.findViewById(R.id.bottomSheet)
 
-        btnCopyAll.setOnClickListener(View.OnClickListener {
+        btnCopyAll.setOnClickListener {
             val clipboardManager =
                 activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clipData = ClipData.newPlainText("Copied Text", copiedTextView.text)
             clipboardManager.setPrimaryClip(clipData)
-        })
+        }
 
+        btnRemoveOne.setOnClickListener {
+            if (copiedStringsList.isNotEmpty()) {
+                copiedStringsList.removeAt(copiedStringsList.size - 1)
+                val concatenatedText = copiedStringsList.joinToString(" ")
+                copiedTextView.text = concatenatedText
+
+                if (copiedStringsList.isEmpty()) {
+                    bottomSheet.visibility = View.GONE
+                }
+            } else {
+                // Handle the case when the list is empty
+                bottomSheet.visibility = View.GONE
+            }
+        }
+
+
+        btnRemoveAll.setOnClickListener {
+            copiedStringsList.clear()
+            copiedTextView.text = ""
+
+            bottomSheet.visibility = View.GONE
+
+        }
 
         return rootView
     }
 
     override fun onCopyClick(mainText: String) {
+        bottomSheet.visibility = View.VISIBLE
         if (!copiedStringsList.contains(mainText)) {
             copiedStringsList.add(mainText)
 
             val concatenatedText = copiedStringsList.joinToString(" ")
             copiedTextView.text = concatenatedText
+        }else{
+            Toast.makeText(requireContext(),"Already Added",Toast.LENGTH_SHORT).show()
         }
     }
 
