@@ -14,7 +14,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 private const val SAVED_CARDS_KEY = "savedCards"
-class CardAdapter(private var cardDataList: List<Card>,
+class CardAdapter(private var allCardDataList: List<Card>,private var cardDataList: List<Card>,
                   private val context: Context) :
     RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
@@ -92,23 +92,30 @@ class CardAdapter(private var cardDataList: List<Card>,
         return dataSet.size
     }
 
+
+
     fun filterData(query: String) {
         if (query.isEmpty()) {
             dataSet.clear()
             dataSet.addAll(cardDataList)
         } else {
-            val matchingHeadings = cardDataList.filter { cardData ->
+            val matchingHeadings = allCardDataList.filter { cardData ->
                 cardData.mainText.contains(query, ignoreCase = true)
             }
 
-            val matchingTags = cardDataList.filter { cardData ->
+            val matchingTags = allCardDataList.filter { cardData ->
                 context.getString(cardData.tags).contains(query, ignoreCase = true)
             }
 
             dataSet.clear()
-            dataSet.addAll(matchingHeadings)
-            dataSet.addAll(matchingTags)
+
+            val filteredData = (matchingHeadings + matchingTags).distinctBy { cardData ->
+                cardData.mainText
+            }
+
+            dataSet.addAll(filteredData)
         }
         notifyDataSetChanged()
     }
+
 }

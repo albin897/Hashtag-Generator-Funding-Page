@@ -12,7 +12,6 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
-            app:menu="@menu/tools_top_app_bar"
             app:navigationIcon="@drawable/settings"
             app:titleTextColor="@color/text_color"
             app:title="Settings"

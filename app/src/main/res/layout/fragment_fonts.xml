@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/material_navbar"
-            app:menu="@menu/tools_top_app_bar"
             app:navigationIcon="@drawable/fonts"
             app:title="Fonts"
             app:titleTextAppearance="@style/MyAppBarLayout"

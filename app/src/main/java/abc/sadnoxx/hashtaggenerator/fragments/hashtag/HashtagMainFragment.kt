@@ -30,26 +30,7 @@ class HashtagMainFragment : Fragment() {
         tabLayout = rootView.findViewById(R.id.tabLayout)
         viewPager2 = rootView.findViewById(R.id.viewPager2)
 
-        toolbar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.themeToggle -> {
-                    isDarkModeEnabled = !isDarkModeEnabled
 
-                    if (isDarkModeEnabled) {
-                        menuItem.setIcon(R.drawable.dark_mode)
-                    } else {
-                        menuItem.setIcon(R.drawable.light_mode)
-                    }
-
-                    true
-                }
-                R.id.more -> {
-                    // Handle more item (inside overflow menu) press
-                    true
-                }
-                else -> false
-            }
-        }
 
             adapter = HashtagPageAdapter(childFragmentManager, lifecycle)
 

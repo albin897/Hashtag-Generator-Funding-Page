@@ -29,7 +29,7 @@
             android:paddingTop="7dp"
             android:paddingRight="25dp"
             android:paddingBottom="5dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:boxCornerRadiusBottomEnd="25dp"
             app:boxCornerRadiusBottomStart="25dp"
             app:boxCornerRadiusTopEnd="25dp"
@@ -83,6 +83,7 @@
                     tools:listitem="@layout/hash_item" />
 
 
+
             </LinearLayout>
 
 
@@ -92,7 +93,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/floating_action_button0"
+        android:id="@+id/floating_action_button"
         style="?attr/floatingActionButtonSmallStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -104,17 +105,18 @@
         android:layout_marginRight="18dp"
         android:layout_marginBottom="88dp"
         android:fontFamily="@font/open_sans_bold"
-        app:icon="@drawable/tune"
+        app:icon="@drawable/search"
+       android:visibility="gone"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/floating_action_button"
+        android:id="@+id/floating_action_button0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:text="@string/search"
+        app:icon="@drawable/tune"
         android:fontFamily="@font/open_sans_bold"
-        app:icon="@drawable/search"
+        android:text="Filter"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"

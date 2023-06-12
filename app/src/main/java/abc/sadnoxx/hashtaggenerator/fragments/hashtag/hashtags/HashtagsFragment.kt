@@ -56,6 +56,7 @@ class HashtagsFragment : Fragment(),
     private lateinit var fab0: ExtendedFloatingActionButton
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -89,11 +90,13 @@ class HashtagsFragment : Fragment(),
 
 
 
+        var newdata: List<Card> = CardDataRepository.cardDataList.take(5)
+
 
         searchBar = rootView.findViewById(R.id.search_bar)
         val recyclerView: RecyclerView = rootView.findViewById(R.id.recyclerView)
 
-        cardAdapter = CardAdapter(CardDataRepository.cardDataList,requireContext())
+        cardAdapter = CardAdapter(CardDataRepository.cardDataList,newdata,requireContext())
 
         cardAdapter.setOnCopyClickListener(this)
         recyclerView.adapter = cardAdapter
