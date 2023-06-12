@@ -2,23 +2,19 @@ package abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved
 
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.Card
-import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.CardAdapter
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -92,6 +88,9 @@ class SavedHashtagsFragment : Fragment() {
         clipboardManager.setPrimaryClip(clip)
         Toast.makeText(requireContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show()
     }
+
+
+
 
     private fun removeCard(position: Int) {
         savedCards.removeAt(position)

@@ -31,6 +31,8 @@ class SavedCardAdapter(
         return savedCards.size
     }
 
+
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val savedMainTagText: TextView = itemView.findViewById(R.id.SavedmainTagText)

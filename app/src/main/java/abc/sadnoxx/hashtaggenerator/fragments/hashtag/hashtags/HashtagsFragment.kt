@@ -45,9 +45,8 @@ private val SEPERATOR_ASTERISK = "*"
 private val SEPERATOR_TILDE = "~"
 
 
-private const val SAVED_CARDS_KEY = "savedCards"
 
-class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
+class HashtagsFragment : Fragment(),
     CardAdapter.OnCopyClickListener {
 
     private lateinit var searchBar: TextInputEditText
@@ -56,7 +55,6 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
     private lateinit var fab: ExtendedFloatingActionButton
     private lateinit var fab0: ExtendedFloatingActionButton
 
-    private val savedCards: MutableList<Card> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -96,7 +94,7 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         val recyclerView: RecyclerView = rootView.findViewById(R.id.recyclerView)
 
         cardAdapter = CardAdapter(CardDataRepository.cardDataList,requireContext())
-        cardAdapter.setOnSaveClickListener(this)
+
         cardAdapter.setOnCopyClickListener(this)
         recyclerView.adapter = cardAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -132,12 +130,7 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
         return rootView
     }
 
-    override fun onSaveClick(card: Card) {
-        savedCards.add(card)
-        saveSavedCards()
-        Log.d("TAG", "onSaveClick: $savedCards")
 
-    }
 
 
     override fun onCopyClick(tagsText1: Card) {
@@ -381,19 +374,6 @@ class HashtagsFragment : Fragment(), CardAdapter.OnSaveClickListener,
     }
 
 
-    private fun saveSavedCards() {
-        val savedCardsArray = JSONArray()
-        for (card in savedCards) {
-            val cardJson = JSONObject()
-            cardJson.put("mainText", card.mainText)
-            cardJson.put("tags", card.tags)
-            savedCardsArray.put(cardJson)
-        }
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val editor = sharedPrefs.edit()
-        editor.putString(SAVED_CARDS_KEY, savedCardsArray.toString())
-        editor.apply()
-    }
 
 
 

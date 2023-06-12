@@ -1,8 +1,8 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 import abc.sadnoxx.hashtaggenerator.R
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Context
+import android.preference.PreferenceManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,26 +10,26 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import org.json.JSONArray
+import org.json.JSONObject
 
+private const val SAVED_CARDS_KEY = "savedCards"
 class CardAdapter(private var cardDataList: List<Card>,
                   private val context: Context) :
     RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
     private var dataSet: MutableList<Card> = cardDataList.toMutableList()
-    private var onSaveClickListener: OnSaveClickListener? = null
     private var onCopyClickListener: OnCopyClickListener? = null
 
-    interface OnSaveClickListener {
-        fun onSaveClick(card: Card)
-    }
+    private val savedCards: MutableList<Card> = mutableListOf()
+    // Initialize the CardDataManager in the constructor
+
 
     interface OnCopyClickListener {
         fun onCopyClick(tagsText1: Card)
     }
 
-    fun setOnSaveClickListener(listener: OnSaveClickListener) {
-        onSaveClickListener = listener
-    }
+
 
     fun setOnCopyClickListener(listener: OnCopyClickListener) {
         onCopyClickListener = listener
@@ -49,6 +49,8 @@ class CardAdapter(private var cardDataList: List<Card>,
         return CardViewHolder(itemView)
     }
 
+
+
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val cardData = dataSet[position]
 
@@ -59,10 +61,32 @@ class CardAdapter(private var cardDataList: List<Card>,
             onCopyClickListener?.onCopyClick(cardData)
         }
 
-        holder.saveButton.setOnClickListener {
-            onSaveClickListener?.onSaveClick(cardData)
+
+
+       holder.saveButton.setOnClickListener {
+            savedCards.add(cardData)
+            saveSavedCards()
+            Log.d("TAG", "onSaveClick: $savedCards")
         }
     }
+
+        private fun saveSavedCards() {
+            val savedCardsArray = JSONArray()
+            for (card in savedCards) {
+                val cardJson = JSONObject()
+                cardJson.put("mainText", card.mainText)
+                cardJson.put("tags", card.tags)
+                savedCardsArray.put(cardJson)
+            }
+            val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
+            val editor = sharedPrefs.edit()
+            editor.putString(SAVED_CARDS_KEY, savedCardsArray.toString())
+            val logger = savedCardsArray.toString()
+            Log.d("TAG", "jsonarray: $logger")
+            editor.apply()
+        }
+
+
 
     override fun getItemCount(): Int {
         return dataSet.size
