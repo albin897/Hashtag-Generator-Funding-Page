@@ -204,7 +204,7 @@
 
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="19dp"
                 android:layout_marginLeft="19dp"
@@ -277,7 +277,7 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="19dp"
                     android:layout_marginLeft="19dp"
@@ -351,7 +351,7 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="19dp"
                     android:layout_marginLeft="19dp"
@@ -425,7 +425,7 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="19dp"
                     android:layout_marginLeft="19dp"
@@ -438,7 +438,6 @@
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/trailingHashtagsEditorSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -456,7 +455,6 @@
 
 
             <TextView
-                android:id="@+id/trailingHashtags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
@@ -500,7 +498,7 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="19dp"
                     android:layout_marginLeft="19dp"

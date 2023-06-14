@@ -28,24 +28,18 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
-private val KEY_PLATFORM = "platform"
-private val PLATFORM_INSTAGRAM = 0
-private val PLATFORM_INSTAGRAM_STORIES = 1
-private val PLATFORM_TIKTOK = 2
-private val PLATFORM_TWITTER = 3
-private val PLATFORM_YOUTUBE = 4
-private val PLATFORM_FACEBOOK = 5
-private val PLATFORM_LINKEDIN = 6
-private val PLATFORM_PINTEREST = 7
-private val PLATFORM_SNAPCHAT = 8
+private const val KEY_PLATFORM = "platform"
+private const val PLATFORM_INSTAGRAM = 0
+private const val PLATFORM_INSTAGRAM_STORIES = 1
+private const val PLATFORM_TIKTOK = 2
+private const val PLATFORM_TWITTER = 3
+private const val PLATFORM_YOUTUBE = 4
+private const val PLATFORM_FACEBOOK = 5
+private const val PLATFORM_LINKEDIN = 6
+private const val PLATFORM_PINTEREST = 7
+private const val PLATFORM_SNAPCHAT = 8
 
-private val KEY_SEPERATOR = "separator"
-private val SEPERATOR_SPACE = " "
-private val SEPERATOR_NOTHING = ""
-private val SEPERATOR_COMMA = ","
-private val SEPERATOR_BULLET = "•"
-private val SEPERATOR_ASTERISK = "*"
-private val SEPERATOR_TILDE = "~"
+private const val KEY_SEPERATOR = "separator"
 
 
 
@@ -108,7 +102,7 @@ class HashtagsFragment : Fragment(),
 
 
 
-        var newdata: List<Card> = CardDataRepository.cardDataList.take(5)
+        val newdata: List<Card> = CardDataRepository.cardDataList.take(5)
 
 
         searchBar = rootView.findViewById(R.id.search_bar)
@@ -280,13 +274,13 @@ class HashtagsFragment : Fragment(),
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
-        val newTagsText = "$dots$tagsText"
-        return newTagsText
+        return "$dots$tagsText"
     }
 
     private fun modifyTagsForInstagramStories(
@@ -295,11 +289,11 @@ class HashtagsFragment : Fragment(),
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
-        val tagsText = tagsToCopy.joinToString(separatorCharSequence)
-        return tagsText
+        return tagsToCopy.joinToString(separatorCharSequence)
     }
 
     private fun modifyTagsForTikTok(
@@ -336,7 +330,8 @@ class HashtagsFragment : Fragment(),
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxCharactersToCopy = sharedPrefs.getInt("sliderCharecterCopyValue", 240)
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsText = if (maxCharactersToCopy > 0) {
 
@@ -347,8 +342,7 @@ class HashtagsFragment : Fragment(),
             tagsList.joinToString(separatorCharSequence)
         }
         val dots = ".\n".repeat(dotCount)
-        val newTagsText = "$dots$tagsText"
-        return newTagsText
+        return "$dots$tagsText"
     }
 
 
@@ -358,11 +352,11 @@ class HashtagsFragment : Fragment(),
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 15)
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
-        val tagsText = tagsToCopy.joinToString(separatorCharSequence)
-        return tagsText
+        return tagsToCopy.joinToString(separatorCharSequence)
     }
 
     private fun modifyTagsForFacebook(
@@ -372,13 +366,13 @@ class HashtagsFragment : Fragment(),
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
-        val newTagsText = "$dots$tagsText"
-        return newTagsText
+        return "$dots$tagsText"
     }
 
     private fun modifyTagsForLinkedIn(
@@ -388,13 +382,13 @@ class HashtagsFragment : Fragment(),
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
-        val newTagsText = "$dots$tagsText"
-        return newTagsText
+        return "$dots$tagsText"
     }
 
     private fun modifyTagsForPinterest(
@@ -404,13 +398,13 @@ class HashtagsFragment : Fragment(),
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 20)
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
-        val newTagsText = "$dots$tagsText"
-        return newTagsText
+        return "$dots$tagsText"
     }
 
     private fun modifyTagsForSnapchat(
@@ -420,13 +414,13 @@ class HashtagsFragment : Fragment(),
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
         val dots = ".\n".repeat(dotCount)
-        val newTagsText = "$dots$tagsText"
-        return newTagsText
+        return "$dots$tagsText"
     }
 
 // Implement the modifyTagsForTikTok, modifyTagsForTwitter, and other platform-specific functions similarly

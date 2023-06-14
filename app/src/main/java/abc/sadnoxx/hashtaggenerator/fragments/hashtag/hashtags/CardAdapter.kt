@@ -1,6 +1,9 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
+
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.preference.PreferenceManager
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,18 +11,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
 
 private const val SAVED_CARDS_KEY = "savedCards"
-class CardAdapter(private var allCardDataList: List<Card>,private var cardDataList: List<Card>,
-                  private val context: Context) :
+
+class CardAdapter(
+    private var allCardDataList: List<Card>, private var cardDataList: List<Card>,
+    private val context: Context
+) :
     RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
     private var dataSet: MutableList<Card> = cardDataList.toMutableList()
@@ -53,7 +54,6 @@ class CardAdapter(private var allCardDataList: List<Card>,private var cardDataLi
     }
 
 
-
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val cardData = dataSet[position]
 
@@ -66,29 +66,28 @@ class CardAdapter(private var allCardDataList: List<Card>,private var cardDataLi
 
 
 
-       holder.saveButton.setOnClickListener {
+        holder.saveButton.setOnClickListener {
             savedCards.add(cardData)
             saveSavedCards()
             Log.d("TAG", "onSaveClick: $savedCards")
         }
     }
 
-        private fun saveSavedCards() {
-            val savedCardsArray = JSONArray()
-            for (card in savedCards) {
-                val cardJson = JSONObject()
-                cardJson.put("mainText", card.mainText)
-                cardJson.put("tags", card.tags)
-                savedCardsArray.put(cardJson)
-            }
-            val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
-            val editor = sharedPrefs.edit()
-            editor.putString(SAVED_CARDS_KEY, savedCardsArray.toString())
-            val logger = savedCardsArray.toString()
-            Log.d("TAG", "jsonarray: $logger")
-            editor.apply()
+    private fun saveSavedCards() {
+        val savedCardsArray = JSONArray()
+        for (card in savedCards) {
+            val cardJson = JSONObject()
+            cardJson.put("mainText", card.mainText)
+            cardJson.put("tags", card.tags)
+            savedCardsArray.put(cardJson)
         }
-
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
+        val editor = sharedPrefs.edit()
+        editor.putString(SAVED_CARDS_KEY, savedCardsArray.toString())
+        val logger = savedCardsArray.toString()
+        Log.d("TAG", "jsonarray: $logger")
+        editor.apply()
+    }
 
 
     override fun getItemCount(): Int {
@@ -96,30 +95,37 @@ class CardAdapter(private var allCardDataList: List<Card>,private var cardDataLi
     }
 
 
-
     fun filterData(query: String) {
         if (query.isEmpty()) {
             dataSet.clear()
             dataSet.addAll(cardDataList)
+            notifyDataSetChanged()
         } else {
+            val backgroundThread = Thread {
+                val matchingHeadings = allCardDataList.filter { cardData ->
+                    cardData.mainText.contains(query, ignoreCase = true)
+                }
 
-            val matchingHeadings = allCardDataList.filter { cardData ->
-                cardData.mainText.contains(query, ignoreCase = true)
+                val matchingTags = allCardDataList.filter { cardData ->
+                    context.getString(cardData.tags).contains(query, ignoreCase = true)
+                }
+
+                dataSet.clear()
+
+                val filteredData = (matchingHeadings + matchingTags).distinctBy { cardData ->
+                    cardData.mainText
+                }
+
+                val handler = Handler(Looper.getMainLooper())
+                handler.post {
+                    dataSet.addAll(filteredData)
+                    notifyDataSetChanged()
+                }
             }
 
-            val matchingTags = allCardDataList.filter { cardData ->
-                context.getString(cardData.tags).contains(query, ignoreCase = true)
-            }
-
-            dataSet.clear()
-
-            val filteredData = (matchingHeadings + matchingTags).distinctBy { cardData ->
-                cardData.mainText
-            }
-
-            dataSet.addAll(filteredData)
+            backgroundThread.start()
         }
-        notifyDataSetChanged()
     }
 
-    }
+
+}

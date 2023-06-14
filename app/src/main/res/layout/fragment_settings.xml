@@ -12,15 +12,14 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
-            app:navigationIcon="@drawable/settings"
-            app:titleTextColor="@color/text_color"
-            app:title="Settings"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/material_navbar"
-
+            app:navigationIcon="@drawable/settings"
+            app:title="Settings"
             app:titleTextAppearance="@style/MyAppBarLayout"
-            />
+
+            app:titleTextColor="@color/text_color" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -29,13 +28,13 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider_one"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.core.widget.NestedScrollView
@@ -58,12 +57,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="45dp"
+                    android:layout_marginLeft="45dp"
                     android:layout_marginTop="16dp"
                     android:text="@string/general"
                     android:textColor="@color/text_color"
-                    android:textSize="18sp"
 
-                    android:layout_marginLeft="45dp" />
+                    android:textSize="18sp" />
 
 
                 <com.google.android.material.card.MaterialCardView
@@ -88,21 +87,21 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:paddingStart="16dp"
-                            android:src="@drawable/dark_mode"
+                            android:paddingLeft="16dp"
 
-                            android:paddingLeft="16dp" />
+                            android:src="@drawable/dark_mode" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bold"
                             android:text="Theme"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="@color/text_color"
-                            android:textSize="18sp"
-                            android:layout_marginLeft="19dp" />
+                            android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/themeNotifier"
@@ -111,10 +110,10 @@
                             android:layout_gravity="end"
                             android:fontFamily="@font/bold"
                             android:paddingEnd="24dp"
+                            android:paddingRight="24dp"
                             android:text="Auto"
                             android:textColor="@color/text_color"
-                            android:textSize="14sp"
-                            android:paddingRight="24dp" />
+                            android:textSize="14sp" />
 
 
                     </LinearLayout>
@@ -145,16 +144,17 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:paddingStart="16dp"
-                            android:src="@drawable/vibration"
+                            android:paddingLeft="16dp"
 
-                            android:paddingLeft="16dp" />
+                            android:src="@drawable/vibration" />
 
                         <LinearLayout
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="17dp"
-                            android:orientation="vertical"
-                            android:layout_marginLeft="17dp">
+                            android:layout_marginLeft="17dp"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -212,17 +212,19 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_weight="1"
                             android:paddingStart="16dp"
-                            android:src="@drawable/bedtime"
+                            android:paddingLeft="16dp"
 
-                            android:paddingLeft="16dp" />
+                            android:src="@drawable/bedtime" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="19dp"
-                            android:orientation="vertical"
-                            android:layout_marginLeft="19dp">
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -245,10 +247,10 @@
                         </LinearLayout>
 
                         <com.google.android.material.materialswitch.MaterialSwitch
+
                             android:id="@+id/sleepingSwitch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
 
                             android:paddingEnd="16dp"
                             android:paddingRight="16dp" />
@@ -263,23 +265,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="45dp"
+                    android:layout_marginLeft="45dp"
                     android:paddingTop="24dp"
                     android:paddingBottom="15dp"
                     android:text="@string/additional"
                     android:textColor="@color/text_color"
-                    android:textSize="15sp"
 
-                    android:layout_marginLeft="45dp" />
+                    android:textSize="15sp" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card3"
-                    android:visibility="gone"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
+                    android:visibility="gone"
                     app:cardCornerRadius="25dp">
 
                     <LinearLayout
@@ -296,10 +298,10 @@
                             android:layout_gravity="end"
                             android:fontFamily="@font/bold"
                             android:paddingStart="49dp"
+                            android:paddingLeft="49dp"
                             android:text="Changelog"
                             android:textColor="@color/text_color"
-                            android:textSize="14sp"
-                            android:paddingLeft="49dp" />
+                            android:textSize="14sp" />
 
 
                     </LinearLayout>
@@ -308,14 +310,13 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card4"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
-                    android:visibility="visible"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:visibility="visible"
                     app:cardCornerRadius="25dp">
 
                     <LinearLayout
@@ -332,10 +333,10 @@
                             android:layout_gravity="end"
                             android:fontFamily="@font/bold"
                             android:paddingStart="49dp"
+                            android:paddingLeft="49dp"
                             android:text="Report Bugs"
                             android:textColor="@color/text_color"
-                            android:textSize="14sp"
-                            android:paddingLeft="49dp" />
+                            android:textSize="14sp" />
 
 
                     </LinearLayout>
@@ -345,7 +346,6 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card5"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -367,17 +367,17 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="top"
                             android:paddingStart="16dp"
-                            android:src="@drawable/system_update"
+                            android:paddingLeft="16dp"
 
-                            android:paddingLeft="16dp" />
+                            android:src="@drawable/system_update" />
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
                             android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:layout_marginLeft="19dp">
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -388,7 +388,6 @@
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:visibility="gone"
                                 android:id="@+id/latestTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -396,17 +395,17 @@
                                 android:paddingTop="10dp"
                                 android:text="You are using the latest version"
                                 android:textColor="@color/text_color"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:visibility="gone" />
 
                             <LinearLayout
-                                android:visibility="gone"
                                 android:id="@+id/newVersion"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:visibility="gone">
 
                                 <TextView
-                                    android:id="@+id/latestTxt1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/signikanegative_medium"
@@ -417,7 +416,6 @@
 
 
                                 <Button
-                                    android:id="@+id/outlinedButton"
                                     style="?attr/materialButtonOutlinedStyle"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -437,8 +435,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="top"
                             android:paddingEnd="16dp"
-                            android:src="@drawable/refresh"
-                            android:paddingRight="16dp" />
+                            android:paddingRight="16dp"
+                            android:src="@drawable/refresh" />
 
                     </LinearLayout>
 
@@ -447,7 +445,6 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card6"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -469,16 +466,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:paddingStart="16dp"
-                            android:src="@drawable/info"
+                            android:paddingLeft="16dp"
 
-                            android:paddingLeft="16dp" />
+                            android:src="@drawable/info" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="19dp"
-                            android:orientation="vertical"
-                            android:layout_marginLeft="19dp">
+                            android:layout_marginLeft="19dp"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -507,20 +504,19 @@
 
 
                 <TextView
-                    android:layout_marginTop="40dp"
-                    android:padding="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/switch_rounded"
                     android:fontFamily="@font/signikanegative_medium"
+                    android:padding="20dp"
                     android:paddingTop="4dp"
                     android:text="@string/bugs_report"
                     android:textColor="@color/text_color"
                     android:textSize="14sp"
-                    android:background="@drawable/switch_rounded"
-                    android:layout_margin="20dp"
 
                     />
-
 
 
             </LinearLayout>

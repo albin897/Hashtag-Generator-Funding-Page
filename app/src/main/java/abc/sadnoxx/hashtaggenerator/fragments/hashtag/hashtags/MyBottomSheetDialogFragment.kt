@@ -283,10 +283,9 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
         // Retrieve the saved theme from SharedPreferences
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
 
         // Set the appropriate radio button based on the saved theme
-        when (savedPlatform) {
+        when (sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)) {
             PLATFORM_INSTAGRAM -> radioInstagram.isChecked = true
             PLATFORM_INSTAGRAM_STORIES -> radioInstagramStories.isChecked = true
             PLATFORM_TIKTOK -> radioTiktok.isChecked = true

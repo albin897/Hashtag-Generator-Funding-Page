@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+
     <color name="white">#FFFFFFFF</color>
 
 
 
 <!--    material theme-->
 
-    <color name="material_statusbar">#FFFBFE</color>
+<!--    <color name="material_statusbar">#FFFBFE</color>-->
     <color name="material_navbar">#F2ECF6</color>
     <color name="text_color">#FF000000</color>
-    <color name="red">#BC0000</color>
+
     <color name="card_col">#E7E0EC</color>
 
 </resources>

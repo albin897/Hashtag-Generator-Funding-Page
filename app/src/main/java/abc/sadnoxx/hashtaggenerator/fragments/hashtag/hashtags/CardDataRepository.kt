@@ -530,6 +530,7 @@ object CardDataRepository {
         Card("Fashion Week", R.string.Fashion_week),
         Card("Fashion TV", R.string.Fashion_tv),
         Card("Fashion Dresses", R.string.Fashion_fdresses),
+        Card("Mens Fashion", R.string.Fashion_mensfashion),
         Card("Fashion Model", R.string.Fashion_model),
         Card("Fashion Style", R.string.Fashion_style),
         Card("Fashion Magazine", R.string.Fashion_magazine),

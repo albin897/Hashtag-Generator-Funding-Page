@@ -1,7 +1,5 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools.route.tophashtags
 
-import abc.sadnoxx.hashtaggenerator.fragments.tools.route.tophashtags.TopCard
-
 object TopCardDataRepository {
     val TopCardDataList = listOf(
         TopCard("#love", "2.1B"),

@@ -14,11 +14,9 @@ class CategoriesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootView =  inflater.inflate(R.layout.fragment_categories, container, false)
 
 
-
-        return rootView
+        return inflater.inflate(R.layout.fragment_categories, container, false)
     }
 
 

@@ -22,7 +22,6 @@
 
 
         <androidx.core.widget.NestedScrollView
-            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -92,7 +91,8 @@
                 android:orientation="horizontal"
                 android:padding="10dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp">
+                android:layout_marginLeft="10dp"
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:id="@+id/btnRemoveAll"

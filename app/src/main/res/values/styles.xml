@@ -3,7 +3,7 @@
 
 
 
-    <style name="signikanegative_medium">
+    <style name="signikanegative_medium" tools:ignore="UnusedResources">
         <item name="android:fontFamily">@font/signikanegative_medium</item>
     </style>
 
@@ -15,22 +15,22 @@
     </style>
 
 
-    <style name="opensans_bold">
+    <style name="opensans_bold"  tools:ignore="UnusedResources">
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
 
 
-    <style name="opensans_medium">
+    <style name="opensans_medium" tools:ignore="UnusedResources">
         <item name="android:fontFamily">@font/open_sans_medium</item>
     </style>
 
 
-    <style name="jaldi_bold">
+    <style name="jaldi_bold" tools:ignore="UnusedResources">
         <item name="android:fontFamily">@font/jaldi_bold</item>
     </style>
 
 
-    <style name="bold">
+    <style name="bold" tools:ignore="UnusedResources">
         <item name="android:fontFamily">@font/bold</item>
     </style>
 
@@ -47,7 +47,7 @@
         <item name="android:paddingBottom">3dp</item>
     </style>
 
-    <style name="RadioButtonTextStyle" parent="TextAppearance.MaterialComponents.Body1">
+    <style name="RadioButtonTextStyle" parent="TextAppearance.MaterialComponents.Body1"  tools:ignore="UnusedResources">
         <item name="android:textStyle">bold</item>
     </style>
 

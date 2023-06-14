@@ -19,7 +19,6 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -32,7 +31,7 @@ import com.google.android.play.core.install.model.UpdateAvailability
 class SettingsFragment : Fragment() {
 
 
-    private lateinit var themeSelector: MaterialCardView;
+    private lateinit var themeSelector: MaterialCardView
     private lateinit var sleepSwitch: MaterialSwitch
 
     private lateinit var vibrationsSwitch: MaterialSwitch
@@ -68,8 +67,7 @@ class SettingsFragment : Fragment() {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
 
-        val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)
-        when (savedTheme) {
+        when (sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)) {
             THEME_LIGHT -> themeNotifier.text = resources.getString(R.string.light)
             THEME_DARK -> themeNotifier.text = resources.getString(R.string.dark)
             THEME_SYSTEM ->themeNotifier.text = resources.getString(R.string.system_default)
@@ -129,7 +127,7 @@ class SettingsFragment : Fragment() {
 
         refreshBtn.setOnClickListener {
             checkForAppUpdate()
-            Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
 
         }
 
@@ -178,12 +176,11 @@ class SettingsFragment : Fragment() {
 
         // Retrieve the saved theme from SharedPreferences
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)
-//        val activity = requireActivity()
+        //        val activity = requireActivity()
 
 
         // Set the appropriate radio button based on the saved theme
-        when (savedTheme) {
+        when (sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)) {
             THEME_LIGHT -> lightRadioButton.isChecked = true
             THEME_DARK -> darkRadioButton.isChecked = true
             THEME_SYSTEM -> systemRadioButton.isChecked = true
