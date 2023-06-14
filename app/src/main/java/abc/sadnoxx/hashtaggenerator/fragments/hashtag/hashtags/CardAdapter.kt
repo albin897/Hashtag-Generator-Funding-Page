@@ -10,6 +10,10 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -28,7 +32,6 @@ class CardAdapter(private var allCardDataList: List<Card>,private var cardDataLi
     interface OnCopyClickListener {
         fun onCopyClick(tagsText1: Card)
     }
-
 
 
     fun setOnCopyClickListener(listener: OnCopyClickListener) {
@@ -99,6 +102,7 @@ class CardAdapter(private var allCardDataList: List<Card>,private var cardDataLi
             dataSet.clear()
             dataSet.addAll(cardDataList)
         } else {
+
             val matchingHeadings = allCardDataList.filter { cardData ->
                 cardData.mainText.contains(query, ignoreCase = true)
             }
@@ -118,4 +122,4 @@ class CardAdapter(private var allCardDataList: List<Card>,private var cardDataLi
         notifyDataSetChanged()
     }
 
-}
+    }

@@ -25,6 +25,8 @@ import com.google.android.material.slider.Slider
 class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
 
+
+
     private lateinit var selectPlatformTab: LinearLayout
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
     private lateinit var sharedPrefs: SharedPreferences

@@ -1,6 +1,7 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag
 
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.MyBottomSheetDialogFragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,7 +25,7 @@ class HashtagMainFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_hashtag_main, container, false)
 
-        var isDarkModeEnabled = false
+
 
         val toolbar: MaterialToolbar = rootView.findViewById(R.id.topAppBar)
         tabLayout = rootView.findViewById(R.id.tabLayout)
@@ -40,6 +41,18 @@ class HashtagMainFragment : Fragment() {
             viewPager2.adapter = adapter
 
 
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.filterResult -> {
+                    val bottomSheetFragment = MyBottomSheetDialogFragment()
+
+                    bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+                    true
+                }
+
+                else -> false
+            }
+        }
 
             tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {

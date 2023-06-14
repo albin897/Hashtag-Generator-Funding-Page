@@ -5,6 +5,7 @@ import abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved.SavedHashtagsFragmen
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.text.Editable
@@ -16,7 +17,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -54,8 +60,10 @@ class HashtagsFragment : Fragment(),
     private lateinit var searchBarTop: TextInputLayout
     private lateinit var fab: ExtendedFloatingActionButton
     private lateinit var fab0: ExtendedFloatingActionButton
-
-
+    private lateinit var  generateHashSearchBtn: Button
+    private lateinit var platformImage: ImageView
+    private lateinit var platformName: TextView
+    private lateinit var sharedPrefs: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,18 +72,21 @@ class HashtagsFragment : Fragment(),
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_hashtags, container, false)
 
-
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         searchBarTop = rootView.findViewById(R.id.searchbartop)
         fab = rootView.findViewById(R.id.floating_action_button)
         fab0 = rootView.findViewById(R.id.floating_action_button0)
+        generateHashSearchBtn = rootView.findViewById(R.id.generateHashSearchBtn)
+        platformName = rootView.findViewById(R.id.platformName)
+        platformImage = rootView.findViewById(R.id.platformImage)
+//        fab0.setOnClickListener {
+//            val bottomSheetFragment = MyBottomSheetDialogFragment()
+//            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+//        }
 
+        val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
 
-
-        fab0.setOnClickListener {
-            val bottomSheetFragment = MyBottomSheetDialogFragment()
-            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
-        }
-
+        setPlatformName(savedPlatform)
 
         fab.setOnClickListener {
             if (searchBarTop.visibility == View.VISIBLE) {
@@ -101,19 +112,34 @@ class HashtagsFragment : Fragment(),
         cardAdapter.setOnCopyClickListener(this)
         recyclerView.adapter = cardAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        var query : String? = null
 
         searchBar.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val query = s.toString().trim()
-                cardAdapter.filterData(query)
+//                val query = s.toString().trim()
+//                cardAdapter.filterData(query)
             }
 
             override fun afterTextChanged(s: Editable?) {
+                 query = s.toString().trim()
+
+//                if (query.isNullOrEmpty()) {
+//                    query = " " // Set query to empty string if it's null or empty
+//                    cardAdapter.filterData(query ?: "")
+//                }
+
 
             }
         })
+
+
+        generateHashSearchBtn.setOnClickListener {
+            query?.let { it1 -> cardAdapter.filterData(it1) }
+            val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
+        }
 
 
         searchBar.setOnFocusChangeListener { _, hasFocus ->
@@ -133,7 +159,41 @@ class HashtagsFragment : Fragment(),
         return rootView
     }
 
+    private fun setPlatformName(platform: Int) {
+        val platformNameResId = when (platform) {
+            PLATFORM_INSTAGRAM -> R.string.instagram
+            PLATFORM_INSTAGRAM_STORIES -> R.string.instagram_stories
+            PLATFORM_TIKTOK -> R.string.tikTok
+            PLATFORM_TWITTER -> R.string.twitter
+            PLATFORM_YOUTUBE -> R.string.youTube
+            PLATFORM_FACEBOOK -> R.string.facebook
+            PLATFORM_LINKEDIN -> R.string.linkedIn
+            PLATFORM_PINTEREST -> R.string.pinterest
+            PLATFORM_SNAPCHAT -> R.string.snapchat
+            else -> R.string.instagram
+        }
+        platformName.setText(platformNameResId)
 
+
+        val platformImageResId = when (platform) {
+            PLATFORM_INSTAGRAM -> R.drawable.ig
+            PLATFORM_INSTAGRAM_STORIES -> R.drawable.ig
+            PLATFORM_TIKTOK -> R.drawable.tiktok
+            PLATFORM_TWITTER -> R.drawable.twitter
+            PLATFORM_YOUTUBE -> R.drawable.youtube
+            PLATFORM_FACEBOOK -> R.drawable.facebook
+            PLATFORM_LINKEDIN -> R.drawable.linkedin
+            PLATFORM_PINTEREST -> R.drawable.pinterest
+            PLATFORM_SNAPCHAT -> R.drawable.snapchat
+            else -> R.drawable.ig
+        }
+        platformImage.setImageDrawable(
+            ContextCompat.getDrawable(
+                requireContext(),
+                platformImageResId
+            )
+        )
+    }
 
 
     override fun onCopyClick(tagsText1: Card) {

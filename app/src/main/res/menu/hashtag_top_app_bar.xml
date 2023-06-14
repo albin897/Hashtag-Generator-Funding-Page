@@ -9,16 +9,17 @@
     <!--        app:showAsAction="ifRoom" />-->
 
     <item
-        android:id="@+id/themeToggle"
-        android:icon="@drawable/light_mode"
-        android:contentDescription="theme toggle"
+        android:id="@+id/filterResult"
+        android:icon="@drawable/tune"
+        android:contentDescription="Filter Result "
         app:showAsAction="ifRoom"
-        android:title="Theme" />
+        android:title="Filter"
+        />
 
-    <item
-        android:id="@+id/more"
-        android:title="more"
-        android:contentDescription="more"
-        app:showAsAction="never" />
+<!--    <item-->
+<!--        android:id="@+id/more"-->
+<!--        android:title="more"-->
+<!--        android:contentDescription="more"-->
+<!--        app:showAsAction="never" />-->
 
 </menu>
