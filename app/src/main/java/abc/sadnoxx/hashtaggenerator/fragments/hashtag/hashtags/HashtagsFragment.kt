@@ -1,7 +1,7 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
-import abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved.SavedHashtagsFragment
+import abc.sadnoxx.hashtaggenerator.SharedViewModel
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -11,7 +11,6 @@ import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.SpannableStringBuilder
 import android.text.TextWatcher
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -22,14 +21,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import org.json.JSONArray
-import org.json.JSONObject
 
 private val KEY_PLATFORM = "platform"
 private val PLATFORM_INSTAGRAM = 0
@@ -54,6 +51,8 @@ private val SEPERATOR_TILDE = "~"
 
 class HashtagsFragment : Fragment(),
     CardAdapter.OnCopyClickListener {
+
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private lateinit var searchBar: TextInputEditText
     private lateinit var cardAdapter: CardAdapter
@@ -87,6 +86,14 @@ class HashtagsFragment : Fragment(),
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
 
         setPlatformName(savedPlatform)
+
+        sharedViewModel.dataChangedLiveData.observe(viewLifecycleOwner) {
+            // Data has changed in the bottom sheet fragment
+            // Perform appropriate changes in this fragment
+            val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
+
+            setPlatformName(savedPlatform)
+        }
 
         fab.setOnClickListener {
             if (searchBarTop.visibility == View.VISIBLE) {

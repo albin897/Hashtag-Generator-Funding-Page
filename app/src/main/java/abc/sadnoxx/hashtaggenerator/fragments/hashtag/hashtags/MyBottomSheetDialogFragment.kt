@@ -1,6 +1,7 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.SharedViewModel
 import android.app.Dialog
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -15,6 +16,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -24,7 +26,7 @@ import com.google.android.material.slider.Slider
 
 class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
-
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
 
     private lateinit var selectPlatformTab: LinearLayout
@@ -167,6 +169,14 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         return view
     }
 
+    private fun updateData() {
+        // Update the data
+
+        // Notify the change
+        sharedViewModel.notifyDataChanged()
+    }
+
+
     private fun showHideOptions(platform: Int) {
         when (platform) {
             PLATFORM_INSTAGRAM -> {
@@ -297,6 +307,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
                 val selectedRadioButtonId = radioGroup.checkedRadioButtonId
                 val selectedTheme = getPlatformForRadioButtonId(selectedRadioButtonId)
                 applyPlatform(selectedTheme)
+                updateData()
             }
             .setNegativeButton(R.string.cancel, null)
             .create()
