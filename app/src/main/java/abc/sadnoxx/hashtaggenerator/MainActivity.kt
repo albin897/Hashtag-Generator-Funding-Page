@@ -18,20 +18,15 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 
-
+private const val KEY_THEME = "theme"
+private const val THEME_LIGHT = 0
+private const val THEME_DARK = 1
+private const val THEME_SYSTEM = 2
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var viewPager: ViewPager
     private lateinit var pagerAdapter: ViewPagerAdapter
-
-
-    private val KEY_THEME = "theme"
-    private val THEME_LIGHT = 0
-    private val THEME_DARK = 1
-    private val THEME_SYSTEM = 2
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +37,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        viewPager = findViewById(R.id.viewPager)
+        bottomNavigationView = findViewById(R.id.bottom_navigation)
 
+
+
+        //To check and set the screen on feature
         val screenOnFlag = sharedPreferences.getBoolean("sleepChecked", true)
         if (screenOnFlag) {
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
@@ -51,12 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-// Apply the saved theme
-        applyDeviceTheme(savedTheme)
 
-
-        viewPager = findViewById(R.id.viewPager)
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
 
         pagerAdapter = ViewPagerAdapter(supportFragmentManager)
         viewPager.adapter = pagerAdapter
@@ -129,12 +124,6 @@ class MainActivity : AppCompatActivity() {
             THEME_DARK -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             THEME_SYSTEM -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         }
-
-        // Save the selected theme to SharedPreferences
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val editor = sharedPreferences.edit()
-        editor.putInt(KEY_THEME, savedTheme)
-        editor.apply()
     }
 
     inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

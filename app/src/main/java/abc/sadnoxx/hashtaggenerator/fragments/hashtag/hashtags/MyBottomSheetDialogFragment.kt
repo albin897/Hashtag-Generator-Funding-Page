@@ -1,7 +1,6 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
-import abc.sadnoxx.hashtaggenerator.SharedViewModel
 import android.app.Dialog
 import android.content.SharedPreferences
 import android.os.Bundle

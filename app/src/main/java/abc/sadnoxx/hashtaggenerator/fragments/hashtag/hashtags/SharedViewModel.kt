@@ -1,4 +1,4 @@
-package abc.sadnoxx.hashtaggenerator
+package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

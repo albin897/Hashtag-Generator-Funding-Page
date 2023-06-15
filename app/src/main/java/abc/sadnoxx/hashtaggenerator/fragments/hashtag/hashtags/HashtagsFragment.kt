@@ -1,7 +1,6 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
-import abc.sadnoxx.hashtaggenerator.SharedViewModel
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context

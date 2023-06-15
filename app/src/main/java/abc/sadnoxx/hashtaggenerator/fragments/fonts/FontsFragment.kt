@@ -137,7 +137,7 @@ class FontsFragment : Fragment() {
         }
 
 
-// Add a text change listener to the inputTextBox
+        // Add a text change listener to the inputTextBox
         inputTextBox.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
