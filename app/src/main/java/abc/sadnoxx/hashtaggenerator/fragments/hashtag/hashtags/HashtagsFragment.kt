@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
@@ -26,7 +28,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -53,8 +54,6 @@ class HashtagsFragment : Fragment(),
     private lateinit var searchBar: TextInputEditText
     private lateinit var cardAdapter: CardAdapter
     private lateinit var searchBarTop: TextInputLayout
-    private lateinit var fab: ExtendedFloatingActionButton
-    private lateinit var fab0: ExtendedFloatingActionButton
     private lateinit var  generateHashSearchBtn: Button
     private lateinit var platformImage: ImageView
     private lateinit var platformName: TextView
@@ -69,15 +68,10 @@ class HashtagsFragment : Fragment(),
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         searchBarTop = rootView.findViewById(R.id.searchbartop)
-        fab = rootView.findViewById(R.id.floating_action_button)
-        fab0 = rootView.findViewById(R.id.floating_action_button0)
         generateHashSearchBtn = rootView.findViewById(R.id.generateHashSearchBtn)
         platformName = rootView.findViewById(R.id.platformName)
         platformImage = rootView.findViewById(R.id.platformImage)
-//        fab0.setOnClickListener {
-//            val bottomSheetFragment = MyBottomSheetDialogFragment()
-//            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
-//        }
+
 
       val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
@@ -91,15 +85,6 @@ class HashtagsFragment : Fragment(),
 
             setPlatformName(savedPlatform)
         }
-//
-//        fab.setOnClickListener {
-//            if (searchBarTop.visibility == View.VISIBLE) {
-//                searchBarTop.visibility = View.GONE
-//            } else {
-//                searchBarTop.visibility = View.VISIBLE
-//            }
-//        }
-
 
 
 
@@ -122,19 +107,10 @@ class HashtagsFragment : Fragment(),
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//                val query = s.toString().trim()
-//                cardAdapter.filterData(query)
             }
 
             override fun afterTextChanged(s: Editable?) {
                  query = s.toString().trim()
-
-//                if (query.isNullOrEmpty()) {
-//                    query = " " // Set query to empty string if it's null or empty
-//                    cardAdapter.filterData(query ?: "")
-//                }
-
-
             }
         })
 
@@ -446,7 +422,7 @@ class HashtagsFragment : Fragment(),
 
 
 
-    private fun performHapticFeedback(vibrator: Vibrator,) {
+    private fun performHapticFeedback(vibrator: Vibrator) {
 
         val vibrationEnabled = sharedPrefs.getBoolean("vibrationSwitch", true)
 

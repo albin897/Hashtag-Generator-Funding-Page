@@ -3376,6 +3376,10 @@
 
     <string name="Season_Winter">#winter #snow #nature #photography #love #christmas #travel #fashion #mountains #instagood #photooftheday #winterwonderland #naturephotography #akhhyyl #imm4u #ski #picoftheday #instagram #autumn #beautiful #style #art #skiing #summer #sunset #photo #fall #ig #sky #mountain
     </string>
+    <string name="generate_btn_text">Generate Hashtags</string>
+    <string name="searchBox_hint">Enter a hashtag</string>
+    <string name="selected_platform">Selected platform :</string>
+    <string name="platform_image">platform Image</string>
 
 
 </resources>

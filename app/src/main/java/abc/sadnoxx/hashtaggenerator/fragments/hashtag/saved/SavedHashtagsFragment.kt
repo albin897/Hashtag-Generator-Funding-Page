@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +28,7 @@ class SavedHashtagsFragment : Fragment() {
     private lateinit var savedCardAdapter: SavedCardAdapter
     private val savedCards: MutableList<Card> = mutableListOf()
     private lateinit var sharedPreferences: SharedPreferences
-
+    private lateinit var container1: FrameLayout
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,11 +39,14 @@ class SavedHashtagsFragment : Fragment() {
 
         recyclerView = rootView.findViewById(R.id.savedRecyclerView)
         savedCardAdapter = SavedCardAdapter(savedCards, this::copyToClipboard, this::removeCard)
-
+        container1 = rootView.findViewById(R.id.container)
         recyclerView.adapter = savedCardAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         loadSavedCards()
+
+    toffeeView(container)
+
 
         return rootView
     }
@@ -106,6 +111,19 @@ class SavedHashtagsFragment : Fragment() {
         sharedPreferences.edit().putString(SAVED_CARDS_KEY, updatedSavedCardsJson).apply()
     }
 
+
+    private fun toffeeView(container: ViewGroup?) {
+        // Step 1: Check if there are no items in the adapter
+        if (savedCardAdapter.itemCount == 0) {
+            // Step 2: Create the layout for the placeholder
+            val placeholderView = layoutInflater.inflate(R.layout.placeholder_layout, container, false)
+
+            container1.addView(placeholderView)
+        } else {
+            // Step 5: Remove the placeholder layout if there are items available
+            container1.removeAllViews()
+        }
+    }
 
 
 }

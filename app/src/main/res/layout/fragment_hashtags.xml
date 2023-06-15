@@ -19,67 +19,71 @@
             android:background="@color/material_navbar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="5dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_one"
-            android:baselineAligned="false">
+            app:layout_constraintTop_toBottomOf="@id/divider_one">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
 
                 <TextView
-                    android:paddingLeft="50dp"
                     android:layout_width="match_parent"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:textColor="@color/text_color"
+                    android:layout_weight="1"
                     android:fontFamily="@font/bold"
-                    android:text="Selected platform : "
-                    tools:ignore="NestedWeights" />
+                    android:paddingStart="50dp"
+                    android:paddingLeft="50dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/selected_platform"
+                    android:textColor="@color/text_color"
+                    tools:ignore="NestedWeights,RtlSymmetry" />
 
 
                 <LinearLayout
 
-                    android:layout_weight="1"
                     android:id="@+id/selectPlatformTab"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
+                    android:paddingStart="30dp"
                     android:paddingLeft="30dp"
-                    android:paddingStart="30dp">
+                    tools:ignore="RtlSymmetry,UseCompoundDrawables">
 
                     <ImageView
                         android:id="@+id/platformImage"
                         android:layout_width="20dp"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ig" />
+                        android:src="@drawable/ig"
+                        android:contentDescription="@string/platform_image" />
 
                     <TextView
                         android:id="@+id/platformName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jaldi_bold"
+                        android:lines="1"
                         android:paddingStart="8dp"
                         android:paddingLeft="8dp"
-                        android:lines="1"
                         android:paddingTop="20dp"
                         android:paddingBottom="15dp"
-                        android:text="Instagram"
-                        android:textSize="15sp" />
+                        android:text="@string/instagram"
+                        android:textSize="15sp"
+                        tools:ignore="RtlSymmetry" />
 
                 </LinearLayout>
 
@@ -109,20 +113,20 @@
             app:layout_constraintTop_toBottomOf="@id/linearLayout1">
 
 
-
-
-
             <Button
-
-                android:layout_marginTop="10dp"
-                android:layout_gravity="end"
-                android:layout_marginLeft="2dp"
                 android:id="@+id/generateHashSearchBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Generate Hashtags"
-                />
-
+                android:layout_gravity="end"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/card_col"
+                android:fontFamily="@font/jaldi_bold"
+                android:text="@string/generate_btn_text"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                tools:targetApi="lollipop" />
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -130,22 +134,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/open_sans_medium"
-                android:hint="Enter a hashtag"
+                android:hint="@string/searchBox_hint"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:text=""
-                tools:ignore="DuplicateSpeakableTextCheck,VisualLintTextFieldSize" />
+                tools:ignore="DuplicateSpeakableTextCheck,VisualLintTextFieldSize,TextContrastCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.divider.MaterialDivider-->
-<!--            android:id="@+id/divider_two"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@color/material_navbar"-->
-<!--            app:layout_constraintLeft_toLeftOf="parent"-->
-<!--            app:layout_constraintRight_toRightOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/searchbartop" />-->
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -169,7 +165,6 @@
                     tools:listitem="@layout/hash_item" />
 
 
-
             </LinearLayout>
 
 
@@ -177,42 +172,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/floating_action_button"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="88dp"
-        android:fontFamily="@font/open_sans_bold"
-        app:icon="@drawable/search"
-       android:visibility="gone"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:visibility="gone"
-        android:id="@+id/floating_action_button0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        app:icon="@drawable/tune"
-        android:fontFamily="@font/open_sans_bold"
-        android:text="Filter"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="16dp"
-         />
-
-
 
 
 
