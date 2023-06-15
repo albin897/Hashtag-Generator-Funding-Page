@@ -4,8 +4,12 @@ import abc.sadnoxx.hashtaggenerator.fragments.fonts.FontsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.HashtagMainFragment
 import abc.sadnoxx.hashtaggenerator.fragments.settings.SettingsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.ToolsFragment
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.preference.PreferenceManager
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -27,14 +31,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var viewPager: ViewPager
     private lateinit var pagerAdapter: ViewPagerAdapter
-
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)
         applyDeviceTheme(savedTheme)
         setContentView(R.layout.activity_main)
 
+        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
 
         viewPager = findViewById(R.id.viewPager)
@@ -87,6 +92,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onPageSelected(position: Int) {
                 bottomNavigationView.menu.getItem(position).isChecked = true
+                performHapticFeedback(vibrator)
             }
 
             override fun onPageScrollStateChanged(state: Int) {
@@ -142,4 +148,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    private fun performHapticFeedback(vibrator: Vibrator,) {
+
+        val vibrationEnabled = sharedPreferences.getBoolean("vibrationSwitch", true)
+
+        if (vibrationEnabled) {
+            // Trigger haptic feedback for a short duration
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                // Deprecated in API 26
+                vibrator.vibrate(30)
+            }}
+    }
+
 }

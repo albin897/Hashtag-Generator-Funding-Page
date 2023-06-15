@@ -2,7 +2,9 @@ package abc.sadnoxx.hashtaggenerator.fragments.settings
 
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
@@ -12,6 +14,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RadioButton
@@ -33,7 +36,7 @@ class SettingsFragment : Fragment() {
 
     private lateinit var themeSelector: MaterialCardView
     private lateinit var sleepSwitch: MaterialSwitch
-
+    private lateinit var  updateBtn: Button
     private lateinit var vibrationsSwitch: MaterialSwitch
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var refreshBtn: ImageView
@@ -59,8 +62,18 @@ class SettingsFragment : Fragment() {
         latestTxt = rootView.findViewById(R.id.latestTxt)
         themeNotifier = rootView.findViewById(R.id.themeNotifier)
         newVersion = rootView.findViewById(R.id.newVersion)
+        updateBtn= rootView.findViewById(R.id.updateBtn)
+
+
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
+        updateBtn.setOnClickListener {
+            performHapticFeedback(vibrator)
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=abc.sadnoxx.hashtaggenerator")))
+        }
+
+
 
 
 
@@ -127,8 +140,7 @@ class SettingsFragment : Fragment() {
 
         refreshBtn.setOnClickListener {
             checkForAppUpdate()
-//            Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
-
+            performHapticFeedback(vibrator)
         }
 
 

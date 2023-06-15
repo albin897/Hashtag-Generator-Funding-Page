@@ -5,7 +5,10 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.SpannableStringBuilder
@@ -76,6 +79,7 @@ class HashtagsFragment : Fragment(),
 //            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
 //        }
 
+      val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
 
         setPlatformName(savedPlatform)
@@ -87,21 +91,21 @@ class HashtagsFragment : Fragment(),
 
             setPlatformName(savedPlatform)
         }
-
-        fab.setOnClickListener {
-            if (searchBarTop.visibility == View.VISIBLE) {
-                searchBarTop.visibility = View.GONE
-            } else {
-                searchBarTop.visibility = View.VISIBLE
-            }
-        }
-
-
+//
+//        fab.setOnClickListener {
+//            if (searchBarTop.visibility == View.VISIBLE) {
+//                searchBarTop.visibility = View.GONE
+//            } else {
+//                searchBarTop.visibility = View.VISIBLE
+//            }
+//        }
 
 
 
 
-        val newdata: List<Card> = CardDataRepository.cardDataList.take(5)
+
+
+        val newdata: List<Card> = CardDataRepository.cardDataList.take(20)
 
 
         searchBar = rootView.findViewById(R.id.search_bar)
@@ -136,6 +140,7 @@ class HashtagsFragment : Fragment(),
 
 
         generateHashSearchBtn.setOnClickListener {
+            performHapticFeedback(vibrator)
             query?.let { it1 -> cardAdapter.filterData(it1) }
             val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
@@ -425,6 +430,9 @@ class HashtagsFragment : Fragment(),
 // Implement the modifyTagsForTikTok, modifyTagsForTwitter, and other platform-specific functions similarly
 
     private fun copyToClipboard(tagsText: String) {
+
+        val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        performHapticFeedback(vibrator)
         // Copy tags text to clipboard
         val clipboardManager =
             requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -438,6 +446,19 @@ class HashtagsFragment : Fragment(),
 
 
 
+    private fun performHapticFeedback(vibrator: Vibrator,) {
+
+        val vibrationEnabled = sharedPrefs.getBoolean("vibrationSwitch", true)
+
+        if (vibrationEnabled) {
+            // Trigger haptic feedback for a short duration
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                // Deprecated in API 26
+                vibrator.vibrate(30)
+            }}
+    }
 
 
 }

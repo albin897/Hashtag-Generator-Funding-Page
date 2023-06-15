@@ -200,31 +200,29 @@
                     android:layout_marginEnd="16dp"
                     app:cardCornerRadius="25dp">
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp">
 
-
                         <ImageView
+                            android:id="@+id/bedtimeImage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:paddingStart="16dp"
-                            android:paddingLeft="16dp"
-
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="16dp"
                             android:src="@drawable/bedtime" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_toEndOf="@id/bedtimeImage"
                             android:layout_marginStart="19dp"
                             android:layout_marginLeft="19dp"
-                            android:layout_weight="2"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:layout_toRightOf="@id/bedtimeImage">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -240,26 +238,29 @@
                                 android:fontFamily="@font/signikanegative_medium"
                                 android:lines="2"
                                 android:paddingTop="4dp"
-                                android:text="Prevent phone from sleeping while\nthe app is in forground"
+                                android:text="Prevent phone from sleeping while\nthe app is in foreground"
                                 android:textColor="@color/text_color"
                                 android:textSize="13sp" />
 
                         </LinearLayout>
 
-                        <com.google.android.material.materialswitch.MaterialSwitch
 
+
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
                             android:id="@+id/sleepingSwitch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="16dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="16dp" />
 
-                            android:paddingEnd="16dp"
-                            android:paddingRight="16dp" />
-
-
-                    </LinearLayout>
-
-
+                    </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
+
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -416,6 +417,7 @@
 
 
                                 <Button
+                                    android:id="@+id/updateBtn"
                                     style="?attr/materialButtonOutlinedStyle"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
