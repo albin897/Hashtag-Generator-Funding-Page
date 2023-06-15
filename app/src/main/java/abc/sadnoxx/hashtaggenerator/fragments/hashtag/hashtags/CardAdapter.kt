@@ -84,9 +84,8 @@ class CardAdapter(
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
         val editor = sharedPrefs.edit()
         editor.putString(SAVED_CARDS_KEY, savedCardsArray.toString())
-        val logger = savedCardsArray.toString()
-        Log.d("TAG", "jsonarray: $logger")
         editor.apply()
+        savedCards.clear()
     }
 
 
