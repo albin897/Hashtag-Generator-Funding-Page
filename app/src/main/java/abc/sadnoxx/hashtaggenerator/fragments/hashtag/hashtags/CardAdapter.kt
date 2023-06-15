@@ -12,6 +12,8 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -29,11 +31,9 @@ class CardAdapter(
     private val savedCards: MutableList<Card> = mutableListOf()
     // Initialize the CardDataManager in the constructor
 
-
     interface OnCopyClickListener {
         fun onCopyClick(tagsText1: Card)
     }
-
 
     fun setOnCopyClickListener(listener: OnCopyClickListener) {
         onCopyClickListener = listener
@@ -53,7 +53,6 @@ class CardAdapter(
         return CardViewHolder(itemView)
     }
 
-
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val cardData = dataSet[position]
 
@@ -63,8 +62,6 @@ class CardAdapter(
         holder.copyButton.setOnClickListener {
             onCopyClickListener?.onCopyClick(cardData)
         }
-
-
 
         holder.saveButton.setOnClickListener {
             savedCards.add(cardData)
@@ -88,11 +85,9 @@ class CardAdapter(
         savedCards.clear()
     }
 
-
     override fun getItemCount(): Int {
         return dataSet.size
     }
-
 
     fun filterData(query: String) {
         if (query.isEmpty()) {
@@ -100,31 +95,29 @@ class CardAdapter(
             dataSet.addAll(cardDataList)
             notifyDataSetChanged()
         } else {
-            val backgroundThread = Thread {
-                val matchingHeadings = allCardDataList.filter { cardData ->
-                    cardData.mainText.contains(query, ignoreCase = true)
-                }
+            GlobalScope.launch(Dispatchers.Main) {
+                flow {
+                    val matchingHeadings = allCardDataList.filter { cardData ->
+                        cardData.mainText.contains(query, ignoreCase = true)
+                    }
 
-                val matchingTags = allCardDataList.filter { cardData ->
-                    context.getString(cardData.tags).contains(query, ignoreCase = true)
-                }
+                    val matchingTags = allCardDataList.filter { cardData ->
+                        context.getString(cardData.tags).contains(query, ignoreCase = true)
+                    }
 
-                dataSet.clear()
+                    val filteredData = (matchingHeadings + matchingTags).distinctBy { cardData ->
+                        cardData.mainText
+                    }
 
-                val filteredData = (matchingHeadings + matchingTags).distinctBy { cardData ->
-                    cardData.mainText
+                    emit(filteredData)
                 }
-
-                val handler = Handler(Looper.getMainLooper())
-                handler.post {
-                    dataSet.addAll(filteredData)
-                    notifyDataSetChanged()
-                }
+                    .flowOn(Dispatchers.Default)
+                    .collect { filteredData ->
+                        dataSet.clear()
+                        dataSet.addAll(filteredData)
+                        notifyDataSetChanged()
+                    }
             }
-
-            backgroundThread.start()
         }
     }
-
-
 }
