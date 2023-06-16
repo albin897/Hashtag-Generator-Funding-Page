@@ -26,6 +26,9 @@ private const val KEY_THEME = "theme"
 private const val THEME_LIGHT = 0
 private const val THEME_DARK = 1
 private const val THEME_SYSTEM = 2
+
+private const val KEY_SCREEN = "screen"
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
@@ -100,8 +103,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+//        val sharedPrefs = getSharedPreferences(KEY_SCREEN, Context.MODE_PRIVATE)
+        val initialSelection = sharedPreferences.getInt(KEY_SCREEN, 1)
+
+
         // Set initial selection
-        viewPager.currentItem = 1
+        viewPager.currentItem = initialSelection
 
         // for setting color to the status and nav bars
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

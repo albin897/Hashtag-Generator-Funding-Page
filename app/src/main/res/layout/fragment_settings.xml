@@ -219,11 +219,11 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_toEndOf="@id/bedtimeImage"
                             android:layout_marginStart="19dp"
                             android:layout_marginLeft="19dp"
-                            android:orientation="vertical"
-                            android:layout_toRightOf="@id/bedtimeImage">
+                            android:layout_toEndOf="@id/bedtimeImage"
+                            android:layout_toRightOf="@id/bedtimeImage"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -246,24 +246,21 @@
                         </LinearLayout>
 
 
-
-
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                        <com.google.android.material.materialswitch.MaterialSwitch
                             android:id="@+id/sleepingSwitch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_marginEnd="16dp"
-                        android:paddingTop="18dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="16dp" />
+                            android:layout_marginRight="16dp"
+                            android:paddingTop="18dp" />
 
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:visibility="gone"
                     android:id="@+id/startingScreen"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -271,6 +268,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:visibility="visible"
                     app:cardCornerRadius="25dp">
 
                     <LinearLayout
@@ -291,9 +289,9 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_marginStart="17dp"
                             android:layout_marginLeft="17dp"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
                             <TextView
@@ -308,26 +306,24 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/signikanegative_medium"
-                                android:paddingTop="4dp"
                                 android:lines="2"
+                                android:paddingTop="4dp"
                                 android:text="Choose which screen is shown when you launch the app"
                                 android:textColor="@color/text_color"
                                 android:textSize="13sp" />
 
                         </LinearLayout>
 
-<!--                        <com.google.android.material.materialswitch.MaterialSwitch-->
-<!--                            android:id="@+id/startingScreenSwitch"-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:paddingEnd="16dp"-->
-<!--                            android:paddingRight="16dp" />-->
+                        <!--                        <com.google.android.material.materialswitch.MaterialSwitch-->
+                        <!--                            android:id="@+id/startingScreenSwitch"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:paddingEnd="16dp"-->
+                        <!--                            android:paddingRight="16dp" />-->
 
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
-
-
 
 
                 <TextView
@@ -406,12 +402,12 @@
 
 
                         <TextView
-                            android:paddingTop="4dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/bold"
                             android:paddingStart="19dp"
                             android:paddingLeft="19dp"
+                            android:paddingTop="4dp"
                             android:text="Report Bugs / Suggest an edit"
                             android:textColor="@color/text_color"
                             android:textSize="14sp" />

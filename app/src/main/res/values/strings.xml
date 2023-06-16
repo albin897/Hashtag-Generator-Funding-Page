@@ -23,6 +23,7 @@
     <string name="pinterest"><b>Pinterest</b></string>
     <string name="snapchat"><b>Snapchat</b></string>
     <string name="dialog_title_theme_selection">\t\n\nChoose Theme\n</string>
+    <string name="dialog_title_screen_selection">\t\n\nChoose Screen\n</string>
     <string name="light">Light</string>
     <string name="dark">Dark</string>
     <string name="system_default">System default</string>

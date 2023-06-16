@@ -30,7 +30,15 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 
+private const val KEY_THEME = "theme"
+private const val THEME_LIGHT = 0
+private const val THEME_DARK = 1
+private const val THEME_SYSTEM = 2
 
+private const val KEY_SCREEN = "screen"
+private const val SCREEN_TOOLS = 0
+private const val SCREEN_HASHTAGS = 1
+private const val SCREEN_FONTS = 2
 class SettingsFragment : Fragment() {
 
 
@@ -44,10 +52,8 @@ class SettingsFragment : Fragment() {
     private lateinit var themeNotifier: TextView
     private lateinit var newVersion: LinearLayout
     private lateinit var  reportBugsCard: MaterialCardView
-    private val KEY_THEME = "theme"
-    private val THEME_LIGHT = 0
-    private val THEME_DARK = 1
-    private val THEME_SYSTEM = 2
+    private lateinit var   startingScreen: MaterialCardView
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,7 +70,7 @@ class SettingsFragment : Fragment() {
         newVersion = rootView.findViewById(R.id.newVersion)
         updateBtn= rootView.findViewById(R.id.updateBtn)
         reportBugsCard= rootView.findViewById(R.id.reportBugsCard)
-
+        startingScreen= rootView.findViewById(R.id.startingScreen)
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
@@ -91,11 +97,18 @@ class SettingsFragment : Fragment() {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
-
+        //To set the appropriate text for thme card based on the selected theme
         when (sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)) {
             THEME_LIGHT -> themeNotifier.text = resources.getString(R.string.light)
             THEME_DARK -> themeNotifier.text = resources.getString(R.string.dark)
             THEME_SYSTEM ->themeNotifier.text = resources.getString(R.string.system_default)
+        }
+
+
+
+        startingScreen.setOnClickListener {
+            performHapticFeedback(vibrator)
+            showScreenSelectionDialog()
         }
 
 
@@ -156,39 +169,52 @@ class SettingsFragment : Fragment() {
         }
 
 
-
-
-
-
-
-
-
         return rootView
     }
 
-    private fun checkForAppUpdate() {
-        val appUpdateManager = AppUpdateManagerFactory.create(requireContext())
 
-// Returns an intent object that you use to check for an update.
-        val appUpdateInfoTask = appUpdateManager.appUpdateInfo
 
-// Checks that the platform will allow the specified type of update.
-        appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                // This example applies an immediate update. To apply a flexible update
-                || appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
-            ) {
-                Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
-                newVersion.visibility = View.VISIBLE
-                latestTxt.visibility = View.GONE
-            } else {
-                Toast.makeText(requireContext(), "No update available", Toast.LENGTH_SHORT).show()
-                latestTxt.visibility = View.VISIBLE
-                newVersion.visibility = View.GONE
-            }
+
+
+    private fun showScreenSelectionDialog() {
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_screenselection, null)
+
+        val toolsRadioButton = dialogView.findViewById<RadioButton>(R.id.radio_tools)
+        val hashtagsRadioButton = dialogView.findViewById<RadioButton>(R.id.radio_hashtags)
+        val fontsRadioButton = dialogView.findViewById<RadioButton>(R.id.radio_fonts)
+
+        // Retrieve the saved theme from SharedPreferences
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        //        val activity = requireActivity()
+
+
+        // Set the appropriate radio button based on the saved theme
+        when (sharedPreferences.getInt(KEY_SCREEN, SCREEN_HASHTAGS)) {
+            SCREEN_TOOLS -> toolsRadioButton.isChecked = true
+            SCREEN_HASHTAGS -> hashtagsRadioButton.isChecked = true
+            SCREEN_FONTS -> fontsRadioButton.isChecked = true
         }
 
+        val radioGroup = dialogView.findViewById<RadioGroup>(R.id.radio_group)
+
+        val dialog = MaterialAlertDialogBuilder(requireContext())
+            .setTitle(R.string.dialog_title_screen_selection)
+            .setView(dialogView)
+            .setPositiveButton(R.string.ok) { _, _ ->
+                val selectedRadioButtonId = radioGroup.checkedRadioButtonId
+                val selectedScreen = getScreenForRadioButtonId(selectedRadioButtonId)
+                applyScreen(selectedScreen)
+            }
+            .setNegativeButton(R.string.cancel, null)
+            .create()
+
+        dialog.show()
     }
+
+
+
+
 
     private fun showThemeSelectionDialog() {
         val inflater = layoutInflater
@@ -215,7 +241,7 @@ class SettingsFragment : Fragment() {
         val dialog = MaterialAlertDialogBuilder(requireContext())
             .setTitle(R.string.dialog_title_theme_selection)
             .setView(dialogView)
-            .setPositiveButton(R.string.ok) { _, i ->
+            .setPositiveButton(R.string.ok) { _, _ ->
                 val selectedRadioButtonId = radioGroup.checkedRadioButtonId
                 val selectedTheme = getThemeForRadioButtonId(selectedRadioButtonId)
                 applyTheme(selectedTheme)
@@ -226,6 +252,8 @@ class SettingsFragment : Fragment() {
         dialog.show()
     }
 
+
+
     private fun getThemeForRadioButtonId(radioButtonId: Int): Int {
         return when (radioButtonId) {
             R.id.radio_light -> THEME_LIGHT
@@ -234,22 +262,28 @@ class SettingsFragment : Fragment() {
         }
     }
 
+
+    private fun getScreenForRadioButtonId(selectedRadioButtonId: Int): Int {
+        return when (selectedRadioButtonId) {
+            R.id.radio_fonts -> SCREEN_FONTS
+            R.id.radio_hashtags -> SCREEN_HASHTAGS
+            else -> SCREEN_TOOLS
+        }
+    }
+
     private fun applyTheme(theme: Int) {
         // Apply the selected theme using AppCompatDelegate
         when (theme) {
             THEME_LIGHT -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//                themeNotifier.text = resources.getString(R.string.light)
             }
 
             THEME_DARK -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-//                themeNotifier.text = resources.getString(R.string.dark)
             }
 
             THEME_SYSTEM -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-//                themeNotifier.text = resources.getString(R.string.system_default)
             }
         }
 
@@ -263,6 +297,25 @@ class SettingsFragment : Fragment() {
 
     }
 
+
+
+    private fun applyScreen(selectedScreen: Int) {
+//        when(selectedScreen){
+//            SCREEN_TOOLS -> {}
+//            SCREEN_HASHTAGS -> {}
+//            SCREEN_FONTS -> {}
+//        }
+
+        // Save the selected theme to SharedPreferences
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val editor = sharedPreferences.edit()
+        editor.putInt(KEY_SCREEN, selectedScreen)
+
+        editor.apply()
+    }
+
+
+
     private fun performHapticFeedback(vibrator: Vibrator) {
 
         val vibrationEnabled = sharedPreferences.getBoolean("vibrationSwitch", true)
@@ -275,6 +328,31 @@ class SettingsFragment : Fragment() {
             // Deprecated in API 26
             vibrator.vibrate(30)
         }}
+    }
+
+
+    private fun checkForAppUpdate() {
+        val appUpdateManager = AppUpdateManagerFactory.create(requireContext())
+
+// Returns an intent object that you use to check for an update.
+        val appUpdateInfoTask = appUpdateManager.appUpdateInfo
+
+// Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                // This example applies an immediate update. To apply a flexible update
+                || appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
+            ) {
+                Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
+                newVersion.visibility = View.VISIBLE
+                latestTxt.visibility = View.GONE
+            } else {
+                Toast.makeText(requireContext(), "No update available", Toast.LENGTH_SHORT).show()
+                latestTxt.visibility = View.VISIBLE
+                newVersion.visibility = View.GONE
+            }
+        }
+
     }
 
 
