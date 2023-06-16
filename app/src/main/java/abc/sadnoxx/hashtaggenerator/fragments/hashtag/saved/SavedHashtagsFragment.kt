@@ -21,6 +21,8 @@ import org.json.JSONObject
 
 private const val SAVED_CARDS_KEY = "savedCards"
 
+
+
 class SavedHashtagsFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
@@ -53,6 +55,7 @@ class SavedHashtagsFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         loadSavedCards()
+
     }
 
     private fun loadSavedCards() {
@@ -108,6 +111,7 @@ class SavedHashtagsFragment : Fragment() {
             cardJson
         }).toString()
         sharedPreferences.edit().putString(SAVED_CARDS_KEY, updatedSavedCardsJson).apply()
+
     }
 
 

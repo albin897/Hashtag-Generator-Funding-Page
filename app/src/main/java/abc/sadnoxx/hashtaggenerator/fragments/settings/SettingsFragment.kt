@@ -43,7 +43,7 @@ class SettingsFragment : Fragment() {
     private lateinit var latestTxt: TextView
     private lateinit var themeNotifier: TextView
     private lateinit var newVersion: LinearLayout
-
+    private lateinit var  reportBugsCard: MaterialCardView
     private val KEY_THEME = "theme"
     private val THEME_LIGHT = 0
     private val THEME_DARK = 1
@@ -63,7 +63,7 @@ class SettingsFragment : Fragment() {
         themeNotifier = rootView.findViewById(R.id.themeNotifier)
         newVersion = rootView.findViewById(R.id.newVersion)
         updateBtn= rootView.findViewById(R.id.updateBtn)
-
+        reportBugsCard= rootView.findViewById(R.id.reportBugsCard)
 
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
@@ -75,7 +75,19 @@ class SettingsFragment : Fragment() {
 
 
 
+        reportBugsCard.setOnClickListener {
+            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:sadnoxx.dev@gmail.com")
+                putExtra(Intent.EXTRA_SUBJECT, "Bug Report / Suggestion")
+                putExtra(Intent.EXTRA_TEXT, "Please describe the bug you encountered:")
+            }
 
+            if (emailIntent.resolveActivity(requireContext().packageManager) != null) {
+                startActivity(emailIntent)
+            } else {
+                Toast.makeText(requireContext(), "Gmail app not found.", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 

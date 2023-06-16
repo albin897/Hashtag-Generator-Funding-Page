@@ -160,7 +160,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:text="Vibrations"
+                                android:text="@string/vibrations"
                                 android:textColor="@color/text_color"
                                 android:textSize="18sp" />
 
@@ -169,7 +169,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/signikanegative_medium"
                                 android:paddingTop="4dp"
-                                android:text="Haptic feedback when a button is pressed"
+                                android:text="@string/haptic_description"
                                 android:textColor="@color/text_color"
                                 android:textSize="13sp" />
 
@@ -181,7 +181,8 @@
                             android:layout_height="match_parent"
 
                             android:paddingEnd="16dp"
-                            android:paddingRight="16dp" />
+                            android:paddingRight="16dp"
+                            tools:ignore="TouchTargetSizeCheck" />
 
 
                     </LinearLayout>
@@ -254,11 +255,78 @@
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:layout_marginEnd="16dp"
+                        android:paddingTop="18dp"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="16dp" />
 
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:visibility="gone"
+                    android:id="@+id/startingScreen"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="25dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+                            android:src="@drawable/home" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="17dp"
+                            android:layout_marginLeft="17dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:text="Starting Screen"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/signikanegative_medium"
+                                android:paddingTop="4dp"
+                                android:lines="2"
+                                android:text="Choose which screen is shown when you launch the app"
+                                android:textColor="@color/text_color"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+<!--                        <com.google.android.material.materialswitch.MaterialSwitch-->
+<!--                            android:id="@+id/startingScreenSwitch"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:paddingEnd="16dp"-->
+<!--                            android:paddingRight="16dp" />-->
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
 
 
 
@@ -311,6 +379,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/reportBugsCard"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -327,15 +396,23 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp">
 
+                        <ImageView
 
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="end"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+                            android:src="@drawable/settings_suggest" />
+
+
+                        <TextView
+                            android:paddingTop="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:fontFamily="@font/bold"
-                            android:paddingStart="49dp"
-                            android:paddingLeft="49dp"
-                            android:text="Report Bugs"
+                            android:paddingStart="19dp"
+                            android:paddingLeft="19dp"
+                            android:text="Report Bugs / Suggest an edit"
                             android:textColor="@color/text_color"
                             android:textSize="14sp" />
 

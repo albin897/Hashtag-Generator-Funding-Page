@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
@@ -64,6 +65,7 @@ class CardAdapter(
         }
 
         holder.saveButton.setOnClickListener {
+            Toast.makeText(context,"Saved \" ${cardData.mainText}\" Hashtag Group",Toast.LENGTH_SHORT).show()
             savedCards.add(cardData)
             saveSavedCards()
         }
@@ -92,7 +94,6 @@ class CardAdapter(
 
     fun clearSavedCards() {
         savedCards.clear()
-//        saveSavedCards()
     }
 
 

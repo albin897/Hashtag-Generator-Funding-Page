@@ -42,6 +42,14 @@
     <string name="general"><b>General</b></string>
     <string name="additional"><b>ADDITIONAL</b></string>
     <string name="bugs_report">The app is still on developing state. So you may encounter some bugs and app not responding errors. You can report the bugs you notice through the REPORT BUGS card or contact me through the contact me section in playstore. We will look into it and it will be fixed on the upcoming update.</string>
+    <string name="generate_btn_text">Generate Hashtags</string>
+    <string name="searchBox_hint">Enter a hashtag</string>
+    <string name="selected_platform">Selected platform :</string>
+    <string name="platform_image">platform Image</string>
+
+
+
+
 
 
     <string name="MPh_1">#india #love #instagood #photography #photooftheday #travel #nature #instagram #fashion #beautiful #travelphotography #followme #instadaily #mumbai #like4like #style #naturephotography #art #wanderlust #photo #happy #travelgram #incredibleindia #fun #instalike #life #like #cute
@@ -3376,10 +3384,8 @@
 
     <string name="Season_Winter">#winter #snow #nature #photography #love #christmas #travel #fashion #mountains #instagood #photooftheday #winterwonderland #naturephotography #akhhyyl #imm4u #ski #picoftheday #instagram #autumn #beautiful #style #art #skiing #summer #sunset #photo #fall #ig #sky #mountain
     </string>
-    <string name="generate_btn_text">Generate Hashtags</string>
-    <string name="searchBox_hint">Enter a hashtag</string>
-    <string name="selected_platform">Selected platform :</string>
-    <string name="platform_image">platform Image</string>
+    <string name="haptic_description">Haptic feedback when a button is pressed</string>
+    <string name="vibrations">Vibrations</string>
 
 
 </resources>
