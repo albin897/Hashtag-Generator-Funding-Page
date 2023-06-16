@@ -60,6 +60,8 @@ class HashtagsFragment : Fragment(),
     private lateinit var platformName: TextView
     private lateinit var sharedPrefs: SharedPreferences
     private lateinit var  selectPlatformTab:LinearLayout
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -102,6 +104,8 @@ class HashtagsFragment : Fragment(),
         val recyclerView: RecyclerView = rootView.findViewById(R.id.recyclerView)
 
         cardAdapter = CardAdapter(CardDataRepository.cardDataList,newdata,requireContext())
+
+
 
         cardAdapter.setOnCopyClickListener(this)
         recyclerView.adapter = cardAdapter
@@ -441,6 +445,10 @@ class HashtagsFragment : Fragment(),
             }}
     }
 
+    override fun onPause() {
+        super.onPause()
+        cardAdapter.clearSavedCards()
+    }
 
 }
 

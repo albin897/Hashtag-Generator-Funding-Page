@@ -83,12 +83,18 @@ class CardAdapter(
         val checker = savedCardsArray.toString()
         Log.d("TAG", "saveSavedCards: $checker")
         editor.apply()
-        savedCards.clear()
+//        savedCards.clear()
     }
 
     override fun getItemCount(): Int {
         return dataSet.size
     }
+
+    fun clearSavedCards() {
+        savedCards.clear()
+//        saveSavedCards()
+    }
+
 
     fun filterData(query: String) {
         if (query.isEmpty()) {
