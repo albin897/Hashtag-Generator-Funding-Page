@@ -22,6 +22,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -58,7 +59,7 @@ class HashtagsFragment : Fragment(),
     private lateinit var platformImage: ImageView
     private lateinit var platformName: TextView
     private lateinit var sharedPrefs: SharedPreferences
-
+    private lateinit var  selectPlatformTab:LinearLayout
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -71,7 +72,7 @@ class HashtagsFragment : Fragment(),
         generateHashSearchBtn = rootView.findViewById(R.id.generateHashSearchBtn)
         platformName = rootView.findViewById(R.id.platformName)
         platformImage = rootView.findViewById(R.id.platformImage)
-
+        selectPlatformTab =  rootView.findViewById(R.id.selectPlatformTab)
 
       val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
@@ -86,7 +87,11 @@ class HashtagsFragment : Fragment(),
             setPlatformName(savedPlatform)
         }
 
+        selectPlatformTab.setOnClickListener {
+            val bottomSheetFragment = MyBottomSheetDialogFragment()
 
+            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+        }
 
 
 

@@ -66,7 +66,6 @@ class CardAdapter(
         holder.saveButton.setOnClickListener {
             savedCards.add(cardData)
             saveSavedCards()
-            Log.d("TAG", "onSaveClick: $savedCards")
         }
     }
 
@@ -81,6 +80,8 @@ class CardAdapter(
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
         val editor = sharedPrefs.edit()
         editor.putString(SAVED_CARDS_KEY, savedCardsArray.toString())
+        val checker = savedCardsArray.toString()
+        Log.d("TAG", "saveSavedCards: $checker")
         editor.apply()
         savedCards.clear()
     }
@@ -99,11 +100,11 @@ class CardAdapter(
                 flow {
                     val matchingHeadings = allCardDataList.filter { cardData ->
                         cardData.mainText.contains(query, ignoreCase = true)
-                    }
+                    }.take(5)
 
                     val matchingTags = allCardDataList.filter { cardData ->
                         context.getString(cardData.tags).contains(query, ignoreCase = true)
-                    }
+                    }.take(10)
 
                     val filteredData = (matchingHeadings + matchingTags).distinctBy { cardData ->
                         cardData.mainText
