@@ -30,11 +30,52 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_one">
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:paddingBottom="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+
+                        android:paddingStart="20dp"
+                        android:paddingLeft="20dp"
+                        android:text="Popular Tags"
+                        android:textColor="@color/text_color"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:gravity="end"
+
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="90dp"
+                        android:paddingRight="90dp"
+                        android:text="Popularity"
+                        android:textColor="@color/text_color"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/top_recyclerView"
@@ -74,11 +115,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_margin="5dp"
                 android:layout_marginBottom="10dp"
+                android:background="@drawable/card_rounded"
                 android:fontFamily="@font/bold"
                 android:padding="5dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/card_rounded"
                 android:text=" "
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textColor="@color/text_color"
@@ -88,11 +129,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
-                android:baselineAligned="false">
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
                 <LinearLayout
                     android:id="@+id/btnRemoveAll"

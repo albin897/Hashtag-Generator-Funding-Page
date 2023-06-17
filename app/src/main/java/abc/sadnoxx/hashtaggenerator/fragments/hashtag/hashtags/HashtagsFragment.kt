@@ -46,7 +46,6 @@ private const val PLATFORM_SNAPCHAT = 8
 private const val KEY_SEPERATOR = "separator"
 
 
-
 class HashtagsFragment : Fragment(),
     CardAdapter.OnCopyClickListener {
 
@@ -55,11 +54,11 @@ class HashtagsFragment : Fragment(),
     private lateinit var searchBar: TextInputEditText
     private lateinit var cardAdapter: CardAdapter
     private lateinit var searchBarTop: TextInputLayout
-    private lateinit var  generateHashSearchBtn: Button
+    private lateinit var generateHashSearchBtn: Button
     private lateinit var platformImage: ImageView
     private lateinit var platformName: TextView
     private lateinit var sharedPrefs: SharedPreferences
-    private lateinit var  selectPlatformTab:LinearLayout
+    private lateinit var selectPlatformTab: LinearLayout
 
 
     override fun onCreateView(
@@ -74,9 +73,9 @@ class HashtagsFragment : Fragment(),
         generateHashSearchBtn = rootView.findViewById(R.id.generateHashSearchBtn)
         platformName = rootView.findViewById(R.id.platformName)
         platformImage = rootView.findViewById(R.id.platformImage)
-        selectPlatformTab =  rootView.findViewById(R.id.selectPlatformTab)
+        selectPlatformTab = rootView.findViewById(R.id.selectPlatformTab)
 
-      val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
 
         setPlatformName(savedPlatform)
@@ -96,21 +95,20 @@ class HashtagsFragment : Fragment(),
         }
 
 
-
         val newdata: List<Card> = CardDataRepository.cardDataList.take(20)
 
 
         searchBar = rootView.findViewById(R.id.search_bar)
         val recyclerView: RecyclerView = rootView.findViewById(R.id.recyclerView)
 
-        cardAdapter = CardAdapter(CardDataRepository.cardDataList,newdata,requireContext())
+        cardAdapter = CardAdapter(CardDataRepository.cardDataList, newdata, requireContext())
 
 
 
         cardAdapter.setOnCopyClickListener(this)
         recyclerView.adapter = cardAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        var query : String? = null
+        var query: String? = null
 
         searchBar.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -119,7 +117,7 @@ class HashtagsFragment : Fragment(),
             }
 
             override fun afterTextChanged(s: Editable?) {
-                 query = s.toString().trim()
+                query = s.toString().trim()
             }
         })
 
@@ -127,7 +125,8 @@ class HashtagsFragment : Fragment(),
         generateHashSearchBtn.setOnClickListener {
             performHapticFeedback(vibrator)
             query?.let { it1 -> cardAdapter.filterData(it1) }
-            val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            val inputMethodManager =
+                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
         }
 
@@ -290,12 +289,19 @@ class HashtagsFragment : Fragment(),
         separatorCharSequence: CharSequence
     ): String {
         val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val maxCharactersToCopy = sharedPrefs.getInt("sliderCharecterCopyValue", 150) // Retrieve the maximum number of characters to copy from shared preferences
-        val tagsString = resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+        val maxCharactersToCopy = sharedPrefs.getInt(
+            "sliderCharecterCopyValue",
+            150
+        ) // Retrieve the maximum number of characters to copy from shared preferences
+        val tagsString =
+            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsText = tagsList.joinToString(separatorCharSequence)
         val truncatedTagsText = if (tagsText.length > maxCharactersToCopy) {
-            val truncatedText = tagsText.substring(0, maxCharactersToCopy) // Truncate the tags text to the maximum character limit
+            val truncatedText = tagsText.substring(
+                0,
+                maxCharactersToCopy
+            ) // Truncate the tags text to the maximum character limit
 
             // Find the last complete tag within the truncated text
             val lastTagIndex = truncatedText.lastIndexOf(separatorCharSequence.toString())
@@ -430,7 +436,6 @@ class HashtagsFragment : Fragment(),
     }
 
 
-
     private fun performHapticFeedback(vibrator: Vibrator) {
 
         val vibrationEnabled = sharedPrefs.getBoolean("vibrationSwitch", true)
@@ -438,11 +443,17 @@ class HashtagsFragment : Fragment(),
         if (vibrationEnabled) {
             // Trigger haptic feedback for a short duration
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
+                vibrator.vibrate(
+                    VibrationEffect.createOneShot(
+                        30,
+                        VibrationEffect.DEFAULT_AMPLITUDE
+                    )
+                )
             } else {
                 // Deprecated in API 26
                 vibrator.vibrate(30)
-            }}
+            }
+        }
     }
 
     override fun onPause() {

@@ -132,7 +132,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
         getAllSliderValues()
 
-        sliderCopyHashtags.addOnChangeListener { slider, value, fromUser ->
+        sliderCopyHashtags.addOnChangeListener { _, value, _ ->
             // Convert the float value to an integer if needed
             val intValue = value.toInt()
 
@@ -143,7 +143,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
             copyRangeView.text = intValue.toString()
         }
 
-        sliderDotAboveHashtags.addOnChangeListener { slider, value, fromUser ->
+        sliderDotAboveHashtags.addOnChangeListener { _, value, _ ->
             // Convert the float value to an integer if needed
             val intValue = value.toInt()
             Log.d("DOTABOVE", "dotabove:    $intValue")
@@ -155,7 +155,7 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
             dotRangeView.text = intValue.toString()
         }
 
-        sliderCharecterCopy.addOnChangeListener { slider, value, fromUser ->
+        sliderCharecterCopy.addOnChangeListener { _, value, _ ->
             // Convert the float value to an integer if needed
             val intValue = value.toInt()
 

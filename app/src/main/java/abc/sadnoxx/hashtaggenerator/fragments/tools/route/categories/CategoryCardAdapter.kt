@@ -1,7 +1,6 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories
 
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,10 @@ import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.Card
 import android.widget.LinearLayout
 
 
-class CategoryCardAdapter(cardDataList: List<Card>,private val onCopyClickListener: (Int) -> Unit) :
+class CategoryCardAdapter(
+    cardDataList: List<Card>,
+    private val onCopyClickListener: (Int) -> Unit
+) :
     RecyclerView.Adapter<CategoryCardAdapter.ViewHolder>() {
 
     private var dataSet: MutableList<Card> = cardDataList.toMutableList()
@@ -52,7 +54,8 @@ class CategoryCardAdapter(cardDataList: List<Card>,private val onCopyClickListen
         val mainTagText: TextView = itemView.findViewById(R.id.mainTagText)
         val tagTagText: TextView = itemView.findViewById(R.id.tagTagText)
         val btnCopy: LinearLayout = itemView.findViewById(R.id.btnCopy)
-private val saveBtn: LinearLayout = itemView.findViewById(R.id.saveBtn)
+        private val saveBtn: LinearLayout = itemView.findViewById(R.id.saveBtn)
+
         init {
             saveBtn.visibility = View.INVISIBLE
         }
