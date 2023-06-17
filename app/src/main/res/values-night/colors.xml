@@ -10,5 +10,6 @@
     <color name="material_navbar">#2A2831</color>
     <color name="text_color">#FFFFFFFF</color>
 
-    <color name="card_col">#49454F</color>
+<!--    <color name="card_col">#49454F</color>-->
+        <color name="card_col">#2C2C2C</color>
 </resources>
