@@ -3,6 +3,7 @@ package abc.sadnoxx.hashtaggenerator.fragments.tools.route
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories.CategoriesFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.tophashtags.TopHashtags
 import android.os.Build
 import android.preference.PreferenceManager
@@ -49,21 +50,284 @@ class RouteActivity : AppCompatActivity() {
             }
         }
 
+        toolbar.setNavigationOnClickListener {
+            finish()
+        }
 
 
-        val fragmentName = intent.getStringExtra("fragment")
 
-        if (fragmentName == "fragment1") {
-            val fragment1 = TopHashtags()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.frame_router, fragment1)
-                .commit()
-            toolbar.title = "Top Hashtags"
-//        } else if (fragmentName == "fragment2") {
-//            val fragment2 = Fragment2()
-//            supportFragmentManager.beginTransaction()
-//                .replace(R.id.container, fragment2)
-//                .commit()
+        when (val fragmentName = intent.getStringExtra("fragment")) {
+            "fragment1" -> {
+                val fragment1 = TopHashtags()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment1)
+                    .commit()
+                toolbar.title = "Top Hashtags"
+            }
+            "likes" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Likes"
+            }
+            "reels" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Reels"
+            }
+            "followers" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Followers"
+            }
+            "popular" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Popular"
+            }
+            "photography" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Photography"
+            }
+            "gaming" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Gaming"
+            }
+            "brands" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Brands"
+            }
+            "moods" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Moods"
+            }
+            "seasonal" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Seasonal"
+            }
+            "holidays" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Holidays"
+            }
+            "parenting" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Parenting"
+            }
+            "work" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Work"
+            }
+            "electronics" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Electronics"
+            }
+            "weather" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Weather"
+            }
+            "food" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Food"
+            }
+            "travel" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Travel"
+            }
+            "entertainment" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Entertainment"
+            }
+            "party" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Party"
+            }
+            "transportation" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Transportation"
+            }
+            "nature" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Nature"
+            }
+            "makeup" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Makeup"
+            }
+            "fashion" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Fashion"
+            }
+            "weekdays" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Weekdays"
+            }
+            "sports" -> {
+                val fragment2 = CategoriesFragment()
+                val args = Bundle()
+                args.putString("category", fragmentName) // Pass the category name as an argument
+                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "Sports"
+            }
         }
 
 

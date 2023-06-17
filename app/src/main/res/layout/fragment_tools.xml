@@ -12,15 +12,14 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
-            app:navigationIcon="@drawable/tools_title"
-            app:titleTextColor="@color/text_color"
-            app:title="Tools"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/material_navbar"
-
+            app:navigationIcon="@drawable/tools_title"
+            app:title="Tools"
             app:titleTextAppearance="@style/MyAppBarLayout"
-            />
+
+            app:titleTextColor="@color/text_color" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -36,7 +35,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
 
         <androidx.core.widget.NestedScrollView
@@ -59,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -91,14 +89,13 @@
                             android:layout_marginLeft="19dp"
                             android:layout_marginEnd="18dp"
                             android:layout_marginRight="19dp"
-                            android:paddingTop="9dp"
                             android:fontFamily="@font/bold"
+                            android:paddingTop="9dp"
                             android:paddingBottom="5dp"
                             android:text="The top best hashtags that are currently trending in all the sites theses hashtags are handpicked and has been sorted based on the audience."
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="@color/text_color"
                             android:textSize="15sp" />
-
 
 
                     </LinearLayout>
@@ -107,6 +104,716 @@
                 </com.google.android.material.card.MaterialCardView>
 
 
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/categories"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="17dp">
+
+                        <TextView
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:text="Categories "
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="22sp" />
+
+                        <TableLayout
+                            android:paddingTop="10dp"
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/likes"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/thumb" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Likes"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/reels"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/reels" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Reels"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/followers"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/followers" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Followers"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/popular"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/popular" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Popular"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/photography"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/photography" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Photography"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/gaming"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/gaming" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Gaming"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/brands"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/brands" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Brands"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/moods"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/moods" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Moods"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/seasonal"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/seasonal" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Seasonal"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/holidays"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/holidays" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Holidays"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/parenting"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/parenting" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Parenting"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/work"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/work" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Work"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/electronics"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/electronics" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Electronics"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/weather"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/weather" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Weather"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/food"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/food" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Food"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/travel"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/travel" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Travel"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/entertainment"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/nightlife" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Entertainment"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/party"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/party" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Party"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/transportation"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/transportation" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+
+                                        android:text="  Transportation"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/nature"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/nature" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="  Nature"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/makeup"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/makeup" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Makeup"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/fashion"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/fashion" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Fashion"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+
+                            <TableRow>
+
+                                <LinearLayout
+                                    android:id="@+id/weekdays"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/weekdays" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Week Days"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/sports"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/card_categories"
+                                    android:layout_margin="4dp"
+                                    android:padding="20dp"
+                                    android:layout_weight="1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/sports" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="  Sports"
+                                        android:fontFamily="@font/open_sans_bold"
+                                        android:textColor="@color/text_color" />
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+                        </TableLayout>
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
 
 
             </LinearLayout>

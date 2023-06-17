@@ -7,6 +7,10 @@ android {
     namespace 'abc.sadnoxx.hashtaggenerator'
     compileSdk 33
 
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+
     buildFeatures {
         dataBinding true
     }
@@ -15,8 +19,8 @@ android {
         applicationId "abc.sadnoxx.hashtaggenerator"
         minSdk 16
         targetSdk 33
-        versionCode 4
-        versionName "1.0.3"
+        versionCode 5
+        versionName "1.0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -23,6 +23,26 @@ import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.slider.Slider
 
+private const val KEY_PLATFORM = "platform"
+private const val PLATFORM_INSTAGRAM = 0
+private const val PLATFORM_INSTAGRAM_STORIES = 1
+private const val PLATFORM_TIKTOK = 2
+private const val PLATFORM_TWITTER = 3
+private const val PLATFORM_YOUTUBE = 4
+private const val PLATFORM_FACEBOOK = 5
+private const val PLATFORM_LINKEDIN = 6
+private const val PLATFORM_PINTEREST = 7
+private const val PLATFORM_SNAPCHAT = 8
+
+private const val KEY_SEPERATOR = "separator"
+private const val SEPERATOR_SPACE = " "
+private const val SEPERATOR_NOTHING = ""
+private const val SEPERATOR_COMMA = ","
+private const val SEPERATOR_BULLET = "•"
+private const val SEPERATOR_ASTERISK = "*"
+private const val SEPERATOR_TILDE = "~"
+
+
 class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     private val sharedViewModel: SharedViewModel by activityViewModels()
@@ -48,24 +68,6 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private lateinit var card1: MaterialCardView
     private lateinit var card3: MaterialCardView
 
-    private val KEY_PLATFORM = "platform"
-    private val PLATFORM_INSTAGRAM = 0
-    private val PLATFORM_INSTAGRAM_STORIES = 1
-    private val PLATFORM_TIKTOK = 2
-    private val PLATFORM_TWITTER = 3
-    private val PLATFORM_YOUTUBE = 4
-    private val PLATFORM_FACEBOOK = 5
-    private val PLATFORM_LINKEDIN = 6
-    private val PLATFORM_PINTEREST = 7
-    private val PLATFORM_SNAPCHAT = 8
-
-    private val KEY_SEPERATOR = "separator"
-    private val SEPERATOR_SPACE = " "
-    private val SEPERATOR_NOTHING = ""
-    private val SEPERATOR_COMMA = ","
-    private val SEPERATOR_BULLET = "•"
-    private val SEPERATOR_ASTERISK = "*"
-    private val SEPERATOR_TILDE = "~"
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -38,11 +38,11 @@ class TopHashtags : Fragment(), TopCardAdapter.OnCopyClickListener {
         copiedTextView = rootView.findViewById(R.id.tagAllText)
 
 
-        val top_recyclerView: RecyclerView = rootView.findViewById(R.id.top_recyclerView)
+        val topRecyclerView: RecyclerView = rootView.findViewById(R.id.top_recyclerView)
         topCardAdapter = TopCardAdapter(TopCardDataRepository.TopCardDataList)
         topCardAdapter.setOnCopyClickListener(this)
-        top_recyclerView.adapter = topCardAdapter
-        top_recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        topRecyclerView.adapter = topCardAdapter
+        topRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         btnCopyAll = rootView.findViewById(R.id.btnCopyAll)
         btnRemoveOne = rootView.findViewById(R.id.btnRemoveOne)
         btnRemoveAll = rootView.findViewById(R.id.btnRemoveAll)

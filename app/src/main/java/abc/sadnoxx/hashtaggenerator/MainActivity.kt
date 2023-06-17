@@ -103,10 +103,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-//        val sharedPrefs = getSharedPreferences(KEY_SCREEN, Context.MODE_PRIVATE)
+        //For setting initial page based on the user selection
         val initialSelection = sharedPreferences.getInt(KEY_SCREEN, 1)
-
-
         // Set initial selection
         viewPager.currentItem = initialSelection
 
@@ -155,7 +153,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun performHapticFeedback(vibrator: Vibrator,) {
+    private fun performHapticFeedback(vibrator: Vibrator) {
 
         val vibrationEnabled = sharedPreferences.getBoolean("vibrationSwitch", true)
 
