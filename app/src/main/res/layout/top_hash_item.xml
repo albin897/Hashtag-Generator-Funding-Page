@@ -5,6 +5,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
+        android:backgroundTint="@color/card_col"
         android:id="@+id/card"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"

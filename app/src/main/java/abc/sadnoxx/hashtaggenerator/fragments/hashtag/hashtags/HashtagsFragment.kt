@@ -9,6 +9,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.preference.PreferenceManager
@@ -59,7 +60,7 @@ class HashtagsFragment : Fragment(),
     private lateinit var platformName: TextView
     private lateinit var sharedPrefs: SharedPreferences
     private lateinit var selectPlatformTab: LinearLayout
-
+    private lateinit var  noResultText: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,6 +75,7 @@ class HashtagsFragment : Fragment(),
         platformName = rootView.findViewById(R.id.platformName)
         platformImage = rootView.findViewById(R.id.platformImage)
         selectPlatformTab = rootView.findViewById(R.id.selectPlatformTab)
+        noResultText = rootView.findViewById(R.id.noResultText)
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
@@ -122,14 +124,41 @@ class HashtagsFragment : Fragment(),
         })
 
 
+//        generateHashSearchBtn.setOnClickListener {
+//            performHapticFeedback(vibrator)
+//            query?.let { it1 -> cardAdapter.filterData(it1) }
+//            val inputMethodManager =
+//                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//            inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
+//        }
+
         generateHashSearchBtn.setOnClickListener {
             performHapticFeedback(vibrator)
-            query?.let { it1 -> cardAdapter.filterData(it1) }
-            val inputMethodManager =
-                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            val query = searchBar.text.toString()
+            val isDataFiltered = cardAdapter.filterData(query)
+
+            val viewToToggle = noResultText
+
+            if (isDataFiltered) {
+                val handler = Handler()
+                handler.postDelayed({
+                    viewToToggle.visibility = View.VISIBLE
+                }, 500) // Delay of 1 second (1000 milliseconds)
+            } else {
+                viewToToggle.visibility = View.GONE
+            }
+            val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
         }
 
+
+
+//        goToFirstFragmentButton.setOnClickListener {
+//            // Get the parent activity and cast it to MainActivity
+//            val mainActivity = requireActivity() as MainActivity
+//            // Access the ViewPager and set the current item to the 1st fragment
+//            mainActivity.viewPager.currentItem = 0
+//        }
 
         searchBar.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {

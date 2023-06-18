@@ -19,6 +19,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.divider.MaterialDivider
+            android:visibility="gone"
             android:id="@+id/divider_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,14 +59,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--        <com.google.android.material.divider.MaterialDivider-->
-        <!--            android:id="@+id/divider_two"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:background="@color/material_navbar"-->
-        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--            app:layout_constraintRight_toRightOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/searchbartop" />-->
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -97,39 +90,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:visibility="gone"
-        android:id="@+id/floating_action_button0"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="88dp"
-        android:fontFamily="@font/open_sans_bold"
-        app:icon="@drawable/tune"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:visibility="gone"
-        android:id="@+id/floating_action_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:text="@string/search"
-        android:fontFamily="@font/open_sans_bold"
-        app:icon="@drawable/search"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="16dp"
-        />
 
 
 

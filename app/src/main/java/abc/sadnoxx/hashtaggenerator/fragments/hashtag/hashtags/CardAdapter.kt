@@ -94,11 +94,12 @@ class CardAdapter(
     }
 
 
-    fun filterData(query: String) {
+    fun filterData(query: String) : Boolean{
         if (query.isEmpty()) {
             dataSet.clear()
             dataSet.addAll(cardDataList)
             notifyDataSetChanged()
+            return false
         } else {
             GlobalScope.launch(Dispatchers.Main) {
                 flow {
@@ -124,5 +125,7 @@ class CardAdapter(
                     }
             }
         }
+        return dataSet.isNotEmpty()
     }
+
 }

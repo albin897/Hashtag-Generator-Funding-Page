@@ -7,9 +7,9 @@
     <!--    material theme-->
 
 <!--    <color name="material_statusbar">#1C1B1F</color>-->
-    <color name="material_navbar">#2A2831</color>
+    <color name="material_navbar">#1D1D1D</color>
     <color name="text_color">#FFFFFFFF</color>
 
-<!--    <color name="card_col">#49454F</color>-->
+    <color name="card_col1">#1D1D1D</color>
         <color name="card_col">#2C2C2C</color>
 </resources>

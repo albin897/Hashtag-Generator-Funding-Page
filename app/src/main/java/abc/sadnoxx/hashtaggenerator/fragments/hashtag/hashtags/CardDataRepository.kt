@@ -1119,6 +1119,12 @@ object CardDataRepository {
         Card("Monsoon", R.string.Season_Monsoon),
         Card("Autumn", R.string.Season_Autumn),
         Card("Winter", R.string.Season_Winter),
-
-        )
+        Card("Candid", R.string.Candid),
+        Card("Candid 1", R.string.Candid1),
+        Card("Wedding", R.string.wedding),
+        Card("Candid 1", R.string.Candid1),
+        Card("Kerala", R.string.kerala),
+        Card("Mallu", R.string.mallu),
+        Card("Mall", R.string.Mall)
+    )
 }

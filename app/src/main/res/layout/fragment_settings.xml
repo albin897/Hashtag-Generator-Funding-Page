@@ -29,6 +29,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.divider.MaterialDivider
+            android:visibility="gone"
             android:id="@+id/divider_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,6 +124,8 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+
+                    android:backgroundTint="@color/card_col"
                     android:id="@+id/card1"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -193,6 +196,7 @@
 
 
                 <com.google.android.material.card.MaterialCardView
+                    android:backgroundTint="@color/card_col"
                     android:id="@+id/card2"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -262,6 +266,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:backgroundTint="@color/card_col"
                     android:id="@+id/startingScreen"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -376,6 +381,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:backgroundTint="@color/card_col"
                     android:id="@+id/reportBugsCard"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -421,6 +427,7 @@
 
 
                 <com.google.android.material.card.MaterialCardView
+                    android:backgroundTint="@color/card_col"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -521,6 +528,7 @@
 
 
                 <com.google.android.material.card.MaterialCardView
+                    android:backgroundTint="@color/card_col"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -580,6 +588,7 @@
 
 
                 <TextView
+                    android:backgroundTint="@color/card_col"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"

@@ -25,6 +25,8 @@
             android:paddingBottom="17dp">
 
             <TextView
+                android:paddingTop="10dp"
+                android:paddingBottom="8dp"
                 android:id="@+id/mainTagText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
