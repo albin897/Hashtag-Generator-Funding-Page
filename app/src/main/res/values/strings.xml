@@ -30,6 +30,13 @@
     <string name="dialog_title_platform_selection">\t\n\nChoose Platform\n</string>
     <string name="ok"><b>OK</b></string>
     <string name="cancel"><b>Cancel</b></string>
+    <string name="update"><b>Update</b></string>
+    <string name="close"><b>Close</b></string>
+    <string name="not_now"><b>Not Now</b></string>
+    <string name="noupdatedialog"><b>\n\tYou\'re using the latest version!</b></string>
+    <string name="updateavailabledialog"><b>Update is available!</b></string>
+    <string name="updateavailabledialogdescription"><b>Good news! A new version of the app is available</b>.!</string>
+
     <string name="instagram_content_description">You can use up to 30 hashtags on Instagram, and we suggest using all of them as they can be hidden within the caption.</string>
     <string name="instagram_stories_content_description">Instagram stories allows 10 hashtags at most. We recommend using 10 hashtags as they can be hidden by making them look smaller in the story.</string>
     <string name="tiktok_content_description">TikTok allows 120 characters at most. We recommend using 5–8 most related hashtags in your TikTok video caption as best practice.</string>

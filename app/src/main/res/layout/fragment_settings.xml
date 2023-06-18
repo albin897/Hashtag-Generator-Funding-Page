@@ -469,45 +469,45 @@
                                 android:textColor="@color/text_color"
                                 android:textSize="18sp" />
 
-                            <TextView
-                                android:id="@+id/latestTxt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/signikanegative_medium"
-                                android:paddingTop="10dp"
-                                android:text="You are using the latest version"
-                                android:textColor="@color/text_color"
-                                android:textSize="14sp"
-                                android:visibility="gone" />
+<!--                            <TextView-->
+<!--                                android:id="@+id/latestTxt"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:fontFamily="@font/signikanegative_medium"-->
+<!--                                android:paddingTop="10dp"-->
+<!--                                android:text="You are using the latest version"-->
+<!--                                android:textColor="@color/text_color"-->
+<!--                                android:textSize="14sp"-->
+<!--                                android:visibility="gone" />-->
 
-                            <LinearLayout
-                                android:id="@+id/newVersion"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                android:visibility="gone">
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/newVersion"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:orientation="vertical"-->
+<!--                                android:visibility="gone">-->
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/signikanegative_medium"
-                                    android:paddingTop="10dp"
-                                    android:text="A newer version is available to Download"
-                                    android:textColor="@color/text_color"
-                                    android:textSize="14sp" />
-
-
-                                <Button
-                                    android:id="@+id/updateBtn"
-                                    style="?attr/materialButtonOutlinedStyle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="end"
-                                    android:layout_marginTop="17dp"
-                                    android:text="Update" />
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:fontFamily="@font/signikanegative_medium"-->
+<!--                                    android:paddingTop="10dp"-->
+<!--                                    android:text="A newer version is available to Download"-->
+<!--                                    android:textColor="@color/text_color"-->
+<!--                                    android:textSize="14sp" />-->
 
 
-                            </LinearLayout>
+<!--                                <Button-->
+<!--                                    android:id="@+id/updateBtn"-->
+<!--                                    style="?attr/materialButtonOutlinedStyle"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="end"-->
+<!--                                    android:layout_marginTop="17dp"-->
+<!--                                    android:text="Update" />-->
+
+
+<!--                            </LinearLayout>-->
 
 
                         </LinearLayout>

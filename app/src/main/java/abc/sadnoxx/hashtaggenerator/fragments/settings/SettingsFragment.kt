@@ -1,6 +1,7 @@
 package abc.sadnoxx.hashtaggenerator.fragments.settings
 
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.UpdateDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -44,13 +45,10 @@ class SettingsFragment : Fragment() {
 
     private lateinit var themeSelector: MaterialCardView
     private lateinit var sleepSwitch: MaterialSwitch
-    private lateinit var  updateBtn: Button
     private lateinit var vibrationsSwitch: MaterialSwitch
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var refreshBtn: ImageView
-    private lateinit var latestTxt: TextView
     private lateinit var themeNotifier: TextView
-    private lateinit var newVersion: LinearLayout
     private lateinit var  reportBugsCard: MaterialCardView
     private lateinit var   startingScreen: MaterialCardView
 
@@ -65,19 +63,11 @@ class SettingsFragment : Fragment() {
         sleepSwitch = rootView.findViewById(R.id.sleepingSwitch)
         vibrationsSwitch = rootView.findViewById(R.id.vibrationsSwitch)
         refreshBtn = rootView.findViewById(R.id.refreshBtn)
-        latestTxt = rootView.findViewById(R.id.latestTxt)
         themeNotifier = rootView.findViewById(R.id.themeNotifier)
-        newVersion = rootView.findViewById(R.id.newVersion)
-        updateBtn= rootView.findViewById(R.id.updateBtn)
         reportBugsCard= rootView.findViewById(R.id.reportBugsCard)
         startingScreen= rootView.findViewById(R.id.startingScreen)
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-
-        updateBtn.setOnClickListener {
-            performHapticFeedback(vibrator)
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=abc.sadnoxx.hashtaggenerator")))
-        }
 
 
 
@@ -343,13 +333,15 @@ class SettingsFragment : Fragment() {
                 // This example applies an immediate update. To apply a flexible update
                 || appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
             ) {
-                Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
-                newVersion.visibility = View.VISIBLE
-                latestTxt.visibility = View.GONE
+//                Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
+//                newVersion.visibility = View.VISIBLE
+//                latestTxt.visibility = View.GONE
+                context?.let { it1 -> UpdateDialog(it1) }?.showNewVersionDialog()
             } else {
-                Toast.makeText(requireContext(), "No update available", Toast.LENGTH_SHORT).show()
-                latestTxt.visibility = View.VISIBLE
-                newVersion.visibility = View.GONE
+//                Toast.makeText(requireContext(), "No update available", Toast.LENGTH_SHORT).show()
+//                latestTxt.visibility = View.VISIBLE
+//                newVersion.visibility = View.GONE
+                context?.let { it1 -> UpdateDialog(it1) }?.showNoUpdatesDialog()
             }
         }
 
