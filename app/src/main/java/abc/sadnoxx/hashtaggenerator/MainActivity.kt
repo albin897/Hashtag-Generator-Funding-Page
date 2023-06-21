@@ -12,6 +12,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.preference.PreferenceManager
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -21,12 +22,13 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
+import com.google.android.play.core.review.ReviewManagerFactory
 
 private const val KEY_THEME = "theme"
 private const val THEME_LIGHT = 0
 private const val THEME_DARK = 1
 private const val THEME_SYSTEM = 2
-
+private const val LAUNCH_COUNTER_KEY = "launch_counter"
 private const val KEY_SCREEN = "screen"
 
 class MainActivity : AppCompatActivity() {
@@ -43,6 +45,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+
+        val launchCount = sharedPreferences.getInt(LAUNCH_COUNTER_KEY, 0)
+        if (launchCount >= 1) {
+            showFeedbackDialog()        //review dialog
+        }
+
+        // Increment the launch count
+        sharedPreferences.edit().putInt(LAUNCH_COUNTER_KEY, launchCount + 1).apply()
+
+
 
 
         viewPager = findViewById(R.id.viewPager)
@@ -165,6 +177,15 @@ class MainActivity : AppCompatActivity() {
                 // Deprecated in API 26
                 vibrator.vibrate(30)
             }}
+    }
+
+    private fun showFeedbackDialog(){
+        val reviewManager = ReviewManagerFactory.create(applicationContext)
+        reviewManager.requestReviewFlow().addOnCompleteListener{
+            if(it.isSuccessful){
+                reviewManager.launchReviewFlow(this, it.result)
+            }
+        }
     }
 
 }

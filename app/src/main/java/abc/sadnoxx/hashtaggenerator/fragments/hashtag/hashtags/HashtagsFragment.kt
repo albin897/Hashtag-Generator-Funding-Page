@@ -135,21 +135,44 @@ class HashtagsFragment : Fragment(),
         generateHashSearchBtn.setOnClickListener {
             performHapticFeedback(vibrator)
             val query = searchBar.text.toString()
-            val isDataFiltered = cardAdapter.filterData(query)
+            val queryWithoutHash = query.replace("#", "")
+            val filterResultLiveData = cardAdapter.filterData(queryWithoutHash)
+            filterResultLiveData.observe(viewLifecycleOwner) { isDataFiltered ->
+                val viewToToggle = noResultText
 
-            val viewToToggle = noResultText
-
-            if (isDataFiltered) {
-                val handler = Handler()
-                handler.postDelayed({
-                    viewToToggle.visibility = View.VISIBLE
-                }, 500) // Delay of 1 second (1000 milliseconds)
-            } else {
-                viewToToggle.visibility = View.GONE
+                if (!isDataFiltered) {
+                    val handler = Handler()
+                    handler.postDelayed({
+                        viewToToggle.visibility = View.VISIBLE
+                    }, 500) // Delay of 0.5 second (500 milliseconds)
+                } else {
+                    viewToToggle.visibility = View.GONE
+                }
             }
+
             val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
         }
+
+
+//        generateHashSearchBtn.setOnClickListener {
+//            performHapticFeedback(vibrator)
+//            val query = searchBar.text.toString()
+//            val isDataFiltered = cardAdapter.filterData(query)
+//
+//            val viewToToggle = noResultText
+//
+//            if (isDataFiltered) {
+//                val handler = Handler()
+//                handler.postDelayed({
+//                    viewToToggle.visibility = View.VISIBLE
+//                }, 500) // Delay of 1 second (1000 milliseconds)
+//            } else {
+//                viewToToggle.visibility = View.GONE
+//            }
+//            val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//            inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
+//        }
 
 
 

@@ -183,4 +183,7 @@ object CategoryDataRepository {
         Card("Swimming", R.string.activities_Swimming),
         Card("Scuba Diving", R.string.activities_scubaDiving)
     )
+    val allDataListCombined = sportsDataList+weekdaysDataList+fashionDataList+makeupDataList+natureDataList+transportationDataList+partyDataList+entertainmentDataList+travelDataList+
+            foodDataList+likesDataList+reelsDataList+followersDataList+photographyDataList+gamingDataList+brandsDataList+moodsDataList+seasonalDataList+holidaysDataList+parentingDataList+
+            workDataList+electronicsDataList+weatherDataList
 }

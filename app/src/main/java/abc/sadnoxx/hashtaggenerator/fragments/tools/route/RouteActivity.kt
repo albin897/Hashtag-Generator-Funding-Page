@@ -1,5 +1,6 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools.route
 
+import abc.sadnoxx.hashtaggenerator.AboutFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import abc.sadnoxx.hashtaggenerator.R
@@ -327,6 +328,17 @@ class RouteActivity : AppCompatActivity() {
                     .replace(R.id.frame_router, fragment2)
                     .commit()
                 toolbar.title = "Sports"
+            }
+            else  -> {
+                val fragment2 = AboutFragment()
+//                val args = Bundle()
+//                args.putString("category", fragmentName) // Pass the category name as an argument
+//                fragment2.arguments = args
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment2)
+                    .commit()
+                toolbar.title = "About"
             }
         }
 

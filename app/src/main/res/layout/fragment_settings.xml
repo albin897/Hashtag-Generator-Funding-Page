@@ -29,10 +29,10 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.divider.MaterialDivider
-            android:visibility="gone"
             android:id="@+id/divider_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -67,7 +67,6 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:backgroundTint="@color/card_col"
                     android:id="@+id/card"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -75,6 +74,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
                     app:cardCornerRadius="25dp">
 
                     <LinearLayout
@@ -125,7 +125,6 @@
 
                 <com.google.android.material.card.MaterialCardView
 
-                    android:backgroundTint="@color/card_col"
                     android:id="@+id/card1"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -133,6 +132,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
                     app:cardCornerRadius="25dp">
 
                     <LinearLayout
@@ -196,7 +196,6 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:backgroundTint="@color/card_col"
                     android:id="@+id/card2"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -204,6 +203,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
                     app:cardCornerRadius="25dp">
 
                     <RelativeLayout
@@ -266,7 +266,6 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:backgroundTint="@color/card_col"
                     android:id="@+id/startingScreen"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -274,6 +273,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
                     android:visibility="visible"
                     app:cardCornerRadius="25dp">
 
@@ -282,7 +282,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
                         android:paddingTop="20dp"
-                        android:paddingBottom="20dp">
+                        android:paddingBottom="16dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -381,7 +381,6 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:backgroundTint="@color/card_col"
                     android:id="@+id/reportBugsCard"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -389,6 +388,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
                     android:visibility="visible"
                     app:cardCornerRadius="25dp">
 
@@ -427,13 +427,13 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:backgroundTint="@color/card_col"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
                     app:cardCornerRadius="25dp">
 
                     <LinearLayout
@@ -469,45 +469,45 @@
                                 android:textColor="@color/text_color"
                                 android:textSize="18sp" />
 
-<!--                            <TextView-->
-<!--                                android:id="@+id/latestTxt"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:fontFamily="@font/signikanegative_medium"-->
-<!--                                android:paddingTop="10dp"-->
-<!--                                android:text="You are using the latest version"-->
-<!--                                android:textColor="@color/text_color"-->
-<!--                                android:textSize="14sp"-->
-<!--                                android:visibility="gone" />-->
+                            <!--                            <TextView-->
+                            <!--                                android:id="@+id/latestTxt"-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:fontFamily="@font/signikanegative_medium"-->
+                            <!--                                android:paddingTop="10dp"-->
+                            <!--                                android:text="You are using the latest version"-->
+                            <!--                                android:textColor="@color/text_color"-->
+                            <!--                                android:textSize="14sp"-->
+                            <!--                                android:visibility="gone" />-->
 
-<!--                            <LinearLayout-->
-<!--                                android:id="@+id/newVersion"-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="match_parent"-->
-<!--                                android:orientation="vertical"-->
-<!--                                android:visibility="gone">-->
+                            <!--                            <LinearLayout-->
+                            <!--                                android:id="@+id/newVersion"-->
+                            <!--                                android:layout_width="match_parent"-->
+                            <!--                                android:layout_height="match_parent"-->
+                            <!--                                android:orientation="vertical"-->
+                            <!--                                android:visibility="gone">-->
 
-<!--                                <TextView-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:fontFamily="@font/signikanegative_medium"-->
-<!--                                    android:paddingTop="10dp"-->
-<!--                                    android:text="A newer version is available to Download"-->
-<!--                                    android:textColor="@color/text_color"-->
-<!--                                    android:textSize="14sp" />-->
-
-
-<!--                                <Button-->
-<!--                                    android:id="@+id/updateBtn"-->
-<!--                                    style="?attr/materialButtonOutlinedStyle"-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:layout_gravity="end"-->
-<!--                                    android:layout_marginTop="17dp"-->
-<!--                                    android:text="Update" />-->
+                            <!--                                <TextView-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:fontFamily="@font/signikanegative_medium"-->
+                            <!--                                    android:paddingTop="10dp"-->
+                            <!--                                    android:text="A newer version is available to Download"-->
+                            <!--                                    android:textColor="@color/text_color"-->
+                            <!--                                    android:textSize="14sp" />-->
 
 
-<!--                            </LinearLayout>-->
+                            <!--                                <Button-->
+                            <!--                                    android:id="@+id/updateBtn"-->
+                            <!--                                    style="?attr/materialButtonOutlinedStyle"-->
+                            <!--                                    android:layout_width="wrap_content"-->
+                            <!--                                    android:layout_height="wrap_content"-->
+                            <!--                                    android:layout_gravity="end"-->
+                            <!--                                    android:layout_marginTop="17dp"-->
+                            <!--                                    android:text="Update" />-->
+
+
+                            <!--                            </LinearLayout>-->
 
 
                         </LinearLayout>
@@ -528,13 +528,14 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:backgroundTint="@color/card_col"
+                    android:id="@+id/aboutApp"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
                     app:cardCornerRadius="25dp">
 
                     <LinearLayout
@@ -587,19 +588,11 @@
                 </com.google.android.material.card.MaterialCardView>
 
 
-                <TextView
-                    android:backgroundTint="@color/card_col"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:layout_marginTop="40dp"
-                    android:background="@drawable/switch_rounded"
-                    android:fontFamily="@font/signikanegative_medium"
-                    android:padding="20dp"
-                    android:paddingTop="4dp"
-                    android:text="@string/bugs_report"
-                    android:textColor="@color/text_color"
-                    android:textSize="14sp"
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:visibility="visible"
+
 
                     />
 

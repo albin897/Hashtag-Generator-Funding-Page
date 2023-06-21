@@ -2,6 +2,7 @@ package abc.sadnoxx.hashtaggenerator.fragments.settings
 
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.UpdateDialog
+import abc.sadnoxx.hashtaggenerator.fragments.tools.route.RouteActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -15,9 +16,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
@@ -40,6 +39,8 @@ private const val KEY_SCREEN = "screen"
 private const val SCREEN_TOOLS = 0
 private const val SCREEN_HASHTAGS = 1
 private const val SCREEN_FONTS = 2
+
+
 class SettingsFragment : Fragment() {
 
 
@@ -49,9 +50,9 @@ class SettingsFragment : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var refreshBtn: ImageView
     private lateinit var themeNotifier: TextView
-    private lateinit var  reportBugsCard: MaterialCardView
-    private lateinit var   startingScreen: MaterialCardView
-
+    private lateinit var reportBugsCard: MaterialCardView
+    private lateinit var startingScreen: MaterialCardView
+    private lateinit var aboutApp: MaterialCardView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,8 +65,9 @@ class SettingsFragment : Fragment() {
         vibrationsSwitch = rootView.findViewById(R.id.vibrationsSwitch)
         refreshBtn = rootView.findViewById(R.id.refreshBtn)
         themeNotifier = rootView.findViewById(R.id.themeNotifier)
-        reportBugsCard= rootView.findViewById(R.id.reportBugsCard)
-        startingScreen= rootView.findViewById(R.id.startingScreen)
+        reportBugsCard = rootView.findViewById(R.id.reportBugsCard)
+        startingScreen = rootView.findViewById(R.id.startingScreen)
+        aboutApp = rootView.findViewById(R.id.aboutApp)
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
@@ -91,7 +93,7 @@ class SettingsFragment : Fragment() {
         when (sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)) {
             THEME_LIGHT -> themeNotifier.text = resources.getString(R.string.light)
             THEME_DARK -> themeNotifier.text = resources.getString(R.string.dark)
-            THEME_SYSTEM ->themeNotifier.text = resources.getString(R.string.system_default)
+            THEME_SYSTEM -> themeNotifier.text = resources.getString(R.string.system_default)
         }
 
 
@@ -104,7 +106,8 @@ class SettingsFragment : Fragment() {
 
         themeSelector.setOnClickListener {
             performHapticFeedback(vibrator)
-            showThemeSelectionDialog() }
+            showThemeSelectionDialog()
+        }
 
         sleepSwitch.isChecked = sharedPreferences.getBoolean("sleepChecked", true)
         vibrationsSwitch.isChecked = sharedPreferences.getBoolean("vibrationSwitch", true)
@@ -158,12 +161,15 @@ class SettingsFragment : Fragment() {
             performHapticFeedback(vibrator)
         }
 
+        aboutApp.setOnClickListener {
+            val intent = Intent(activity, RouteActivity::class.java)
+            intent.putExtra("fragment", "about")
+            startActivity(intent)
+            performHapticFeedback(vibrator)
+        }
 
         return rootView
     }
-
-
-
 
 
     private fun showScreenSelectionDialog() {
@@ -203,9 +209,6 @@ class SettingsFragment : Fragment() {
     }
 
 
-
-
-
     private fun showThemeSelectionDialog() {
         val inflater = layoutInflater
         val dialogView = inflater.inflate(R.layout.dialog_themeorginal_selection, null)
@@ -241,7 +244,6 @@ class SettingsFragment : Fragment() {
 
         dialog.show()
     }
-
 
 
     private fun getThemeForRadioButtonId(radioButtonId: Int): Int {
@@ -288,7 +290,6 @@ class SettingsFragment : Fragment() {
     }
 
 
-
     private fun applyScreen(selectedScreen: Int) {
 //        when(selectedScreen){
 //            SCREEN_TOOLS -> {}
@@ -305,42 +306,42 @@ class SettingsFragment : Fragment() {
     }
 
 
-
     private fun performHapticFeedback(vibrator: Vibrator) {
 
         val vibrationEnabled = sharedPreferences.getBoolean("vibrationSwitch", true)
 
         if (vibrationEnabled) {
-        // Trigger haptic feedback for a short duration
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
-        } else {
-            // Deprecated in API 26
-            vibrator.vibrate(30)
-        }}
+            // Trigger haptic feedback for a short duration
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(
+                    VibrationEffect.createOneShot(
+                        30,
+                        VibrationEffect.DEFAULT_AMPLITUDE
+                    )
+                )
+            } else {
+                // Deprecated in API 26
+                vibrator.vibrate(30)
+            }
+        }
     }
 
 
     private fun checkForAppUpdate() {
         val appUpdateManager = AppUpdateManagerFactory.create(requireContext())
 
-// Returns an intent object that you use to check for an update.
+    // Returns an intent object that you use to check for an update.
         val appUpdateInfoTask = appUpdateManager.appUpdateInfo
 
 // Checks that the platform will allow the specified type of update.
         appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                // This example applies an immediate update. To apply a flexible update
                 || appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
             ) {
 //                Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
-//                newVersion.visibility = View.VISIBLE
-//                latestTxt.visibility = View.GONE
                 context?.let { it1 -> UpdateDialog(it1) }?.showNewVersionDialog()
             } else {
 //                Toast.makeText(requireContext(), "No update available", Toast.LENGTH_SHORT).show()
-//                latestTxt.visibility = View.VISIBLE
-//                newVersion.visibility = View.GONE
                 context?.let { it1 -> UpdateDialog(it1) }?.showNoUpdatesDialog()
             }
         }

@@ -1,6 +1,7 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories.CategoryDataRepository
 import android.content.Context
 import android.preference.PreferenceManager
 import android.util.Log
@@ -10,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
@@ -92,22 +95,25 @@ class CardAdapter(
     fun clearSavedCards() {
         savedCards.clear()
     }
+    fun filterData(query: String): LiveData<Boolean> {
+        val filterResultLiveData = MutableLiveData<Boolean>()
 
-
-    fun filterData(query: String) : Boolean{
         if (query.isEmpty()) {
             dataSet.clear()
             dataSet.addAll(cardDataList)
             notifyDataSetChanged()
-            return false
+            filterResultLiveData.value = true
         } else {
-            GlobalScope.launch(Dispatchers.Main) {
+             val additionalAddedCardDataList = allCardDataList+CategoryDataRepository.allDataListCombined
+            val coroutineScope = CoroutineScope(Dispatchers.Main)
+            coroutineScope.launch {
                 flow {
-                    val matchingHeadings = allCardDataList.filter { cardData ->
+                    val matchingHeadings = additionalAddedCardDataList.filter { cardData ->
                         cardData.mainText.contains(query, ignoreCase = true)
                     }.take(5)
 
-                    val matchingTags = allCardDataList.filter { cardData ->
+
+                    val matchingTags = additionalAddedCardDataList.filter { cardData ->
                         context.getString(cardData.tags).contains(query, ignoreCase = true)
                     }.take(10)
 
@@ -122,10 +128,48 @@ class CardAdapter(
                         dataSet.clear()
                         dataSet.addAll(filteredData)
                         notifyDataSetChanged()
+                        filterResultLiveData.value = dataSet.isNotEmpty()
                     }
             }
         }
-        return dataSet.isNotEmpty()
+
+        return filterResultLiveData
     }
+
+
+
+//    fun filterData(query: String) : Boolean{
+//        if (query.isEmpty()) {
+//            dataSet.clear()
+//            dataSet.addAll(cardDataList)
+//            notifyDataSetChanged()
+//            return false
+//        } else {
+//            GlobalScope.launch(Dispatchers.Main) {
+//                flow {
+//                    val matchingHeadings = allCardDataList.filter { cardData ->
+//                        cardData.mainText.contains(query, ignoreCase = true)
+//                    }.take(5)
+//
+//                    val matchingTags = allCardDataList.filter { cardData ->
+//                        context.getString(cardData.tags).contains(query, ignoreCase = true)
+//                    }.take(10)
+//
+//                    val filteredData = (matchingHeadings + matchingTags).distinctBy { cardData ->
+//                        cardData.mainText
+//                    }
+//
+//                    emit(filteredData)
+//                }
+//                    .flowOn(Dispatchers.Default)
+//                    .collect { filteredData ->
+//                        dataSet.clear()
+//                        dataSet.addAll(filteredData)
+//                        notifyDataSetChanged()
+//                    }
+//            }
+//        }
+//        return dataSet.isNotEmpty()
+//    }
 
 }
