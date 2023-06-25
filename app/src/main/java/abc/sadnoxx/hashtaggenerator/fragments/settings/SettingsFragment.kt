@@ -1,15 +1,14 @@
 package abc.sadnoxx.hashtaggenerator.fragments.settings
 
+import abc.sadnoxx.hashtaggenerator.HapticUtils
+import abc.sadnoxx.hashtaggenerator.HapticUtils.performHapticFeedback
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.UpdateDialog
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.RouteActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.VibrationEffect
 import android.os.Vibrator
 import android.preference.PreferenceManager
 import android.view.LayoutInflater
@@ -20,7 +19,6 @@ import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
@@ -50,7 +48,6 @@ class SettingsFragment : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var refreshBtn: ImageView
     private lateinit var themeNotifier: TextView
-    private lateinit var reportBugsCard: MaterialCardView
     private lateinit var startingScreen: MaterialCardView
     private lateinit var aboutApp: MaterialCardView
 
@@ -59,37 +56,22 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_settings, container, false)
-        // Inflate the layout for this fragment
+
+
+
         themeSelector = rootView.findViewById(R.id.card)
         sleepSwitch = rootView.findViewById(R.id.sleepingSwitch)
         vibrationsSwitch = rootView.findViewById(R.id.vibrationsSwitch)
         refreshBtn = rootView.findViewById(R.id.refreshBtn)
         themeNotifier = rootView.findViewById(R.id.themeNotifier)
-        reportBugsCard = rootView.findViewById(R.id.reportBugsCard)
         startingScreen = rootView.findViewById(R.id.startingScreen)
         aboutApp = rootView.findViewById(R.id.aboutApp)
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-
-
-
-        reportBugsCard.setOnClickListener {
-            val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:sadnoxx.dev@gmail.com")
-                putExtra(Intent.EXTRA_SUBJECT, "Bug Report / Suggestion")
-                putExtra(Intent.EXTRA_TEXT, "Please describe the bug you encountered:")
-            }
-
-            if (emailIntent.resolveActivity(requireContext().packageManager) != null) {
-                startActivity(emailIntent)
-            } else {
-                Toast.makeText(requireContext(), "Gmail app not found.", Toast.LENGTH_SHORT).show()
-            }
-        }
-
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
-        //To set the appropriate text for thme card based on the selected theme
+
+        //To set the appropriate text for theme card based on the selected theme
         when (sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)) {
             THEME_LIGHT -> themeNotifier.text = resources.getString(R.string.light)
             THEME_DARK -> themeNotifier.text = resources.getString(R.string.dark)
@@ -99,13 +81,13 @@ class SettingsFragment : Fragment() {
 
 
         startingScreen.setOnClickListener {
-            performHapticFeedback(vibrator)
+            performHapticFeedback(vibrator, sharedPreferences)
             showScreenSelectionDialog()
         }
 
 
         themeSelector.setOnClickListener {
-            performHapticFeedback(vibrator)
+            performHapticFeedback(vibrator, sharedPreferences)
             showThemeSelectionDialog()
         }
 
@@ -117,14 +99,14 @@ class SettingsFragment : Fragment() {
             // Respond to switch being checked/unchecked
             if (isChecked) {
                 // Switch is checked
-                performHapticFeedback(vibrator)
+                performHapticFeedback(vibrator, sharedPreferences)
                 with(sharedPreferences.edit()) {
                     putBoolean("vibrationSwitch", true)
                     apply()
                 }
 
             } else {
-                performHapticFeedback(vibrator)
+                performHapticFeedback(vibrator, sharedPreferences)
                 // Switch is unchecked
                 with(sharedPreferences.edit()) {
                     putBoolean("vibrationSwitch", false)
@@ -137,14 +119,14 @@ class SettingsFragment : Fragment() {
             // Respond to switch being checked/unchecked
             if (isChecked) {
                 // Switch is checked
-                performHapticFeedback(vibrator)
+               performHapticFeedback(vibrator, sharedPreferences)
                 with(sharedPreferences.edit()) {
                     putBoolean("sleepChecked", true)
                     apply()
                 }
                 activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
             } else {
-                performHapticFeedback(vibrator)
+              performHapticFeedback(vibrator, sharedPreferences)
                 // Switch is unchecked
                 with(sharedPreferences.edit()) {
                     putBoolean("sleepChecked", false)
@@ -158,14 +140,15 @@ class SettingsFragment : Fragment() {
 
         refreshBtn.setOnClickListener {
             checkForAppUpdate()
-            performHapticFeedback(vibrator)
+            performHapticFeedback(vibrator, sharedPreferences)
         }
 
         aboutApp.setOnClickListener {
             val intent = Intent(activity, RouteActivity::class.java)
             intent.putExtra("fragment", "about")
             startActivity(intent)
-            performHapticFeedback(vibrator)
+            performHapticFeedback(vibrator, sharedPreferences)
+
         }
 
         return rootView
@@ -306,42 +289,17 @@ class SettingsFragment : Fragment() {
     }
 
 
-    private fun performHapticFeedback(vibrator: Vibrator) {
-
-        val vibrationEnabled = sharedPreferences.getBoolean("vibrationSwitch", true)
-
-        if (vibrationEnabled) {
-            // Trigger haptic feedback for a short duration
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(
-                    VibrationEffect.createOneShot(
-                        30,
-                        VibrationEffect.DEFAULT_AMPLITUDE
-                    )
-                )
-            } else {
-                // Deprecated in API 26
-                vibrator.vibrate(30)
-            }
-        }
-    }
-
-
     private fun checkForAppUpdate() {
         val appUpdateManager = AppUpdateManagerFactory.create(requireContext())
 
-    // Returns an intent object that you use to check for an update.
         val appUpdateInfoTask = appUpdateManager.appUpdateInfo
 
-// Checks that the platform will allow the specified type of update.
         appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
                 || appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
             ) {
-//                Toast.makeText(requireContext(), "Update available", Toast.LENGTH_SHORT).show()
                 context?.let { it1 -> UpdateDialog(it1) }?.showNewVersionDialog()
             } else {
-//                Toast.makeText(requireContext(), "No update available", Toast.LENGTH_SHORT).show()
                 context?.let { it1 -> UpdateDialog(it1) }?.showNoUpdatesDialog()
             }
         }

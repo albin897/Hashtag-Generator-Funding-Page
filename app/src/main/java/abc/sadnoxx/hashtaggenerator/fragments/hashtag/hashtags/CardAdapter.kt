@@ -136,40 +136,4 @@ class CardAdapter(
         return filterResultLiveData
     }
 
-
-
-//    fun filterData(query: String) : Boolean{
-//        if (query.isEmpty()) {
-//            dataSet.clear()
-//            dataSet.addAll(cardDataList)
-//            notifyDataSetChanged()
-//            return false
-//        } else {
-//            GlobalScope.launch(Dispatchers.Main) {
-//                flow {
-//                    val matchingHeadings = allCardDataList.filter { cardData ->
-//                        cardData.mainText.contains(query, ignoreCase = true)
-//                    }.take(5)
-//
-//                    val matchingTags = allCardDataList.filter { cardData ->
-//                        context.getString(cardData.tags).contains(query, ignoreCase = true)
-//                    }.take(10)
-//
-//                    val filteredData = (matchingHeadings + matchingTags).distinctBy { cardData ->
-//                        cardData.mainText
-//                    }
-//
-//                    emit(filteredData)
-//                }
-//                    .flowOn(Dispatchers.Default)
-//                    .collect { filteredData ->
-//                        dataSet.clear()
-//                        dataSet.addAll(filteredData)
-//                        notifyDataSetChanged()
-//                    }
-//            }
-//        }
-//        return dataSet.isNotEmpty()
-//    }
-
 }

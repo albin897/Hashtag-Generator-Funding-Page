@@ -1,6 +1,7 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools.route
 
 import abc.sadnoxx.hashtaggenerator.AboutFragment
+import abc.sadnoxx.hashtaggenerator.HapticUtils
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import abc.sadnoxx.hashtaggenerator.R
@@ -33,22 +34,20 @@ class RouteActivity : AppCompatActivity() {
 
 
         // for setting color to the status and nav bars
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // Set the status bar color
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.material_navbar)
-            } else {
-                window.javaClass.getDeclaredMethod("setStatusBarColor", Int::class.java)
-                    .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
-            }
+        // Set the status bar color
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.statusBarColor = ContextCompat.getColor(this, R.color.material_navbar)
+        } else {
+            window.javaClass.getDeclaredMethod("setStatusBarColor", Int::class.java)
+                .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
+        }
 
-            // Set the navigation bar color
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                window.navigationBarColor = ContextCompat.getColor(this, R.color.material_navbar)
-            } else {
-                window.javaClass.getDeclaredMethod("setNavigationBarColor", Int::class.java)
-                    .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
-            }
+        // Set the navigation bar color
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            window.navigationBarColor = ContextCompat.getColor(this, R.color.material_navbar)
+        } else {
+            window.javaClass.getDeclaredMethod("setNavigationBarColor", Int::class.java)
+                .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
         }
 
         toolbar.setNavigationOnClickListener {

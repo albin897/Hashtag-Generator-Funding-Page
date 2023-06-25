@@ -1,5 +1,6 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved
 
+import abc.sadnoxx.hashtaggenerator.HapticUtils
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.Card
 import android.content.ClipData
@@ -7,6 +8,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Vibrator
 import android.preference.PreferenceManager
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,7 +22,6 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 private const val SAVED_CARDS_KEY = "savedCards"
-
 
 
 class SavedHashtagsFragment : Fragment() {
@@ -38,6 +39,8 @@ class SavedHashtagsFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_saved_hashtags, container, false)
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
+
+
         recyclerView = rootView.findViewById(R.id.savedRecyclerView)
         savedCardAdapter = SavedCardAdapter(savedCards, this::copyToClipboard, this::removeCard)
         container1 = rootView.findViewById(R.id.container)
@@ -46,7 +49,7 @@ class SavedHashtagsFragment : Fragment() {
 
         loadSavedCards()
 
-    toffeeView(container)
+        toffeeView(container)
 
 
         return rootView
@@ -89,17 +92,20 @@ class SavedHashtagsFragment : Fragment() {
     }
 
     private fun copyToClipboard(text: Int) {
+        val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        HapticUtils.performHapticFeedback(vibrator, sharedPreferences)
         val textString = resources.getString(text)
-        val clipboardManager = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        val clipboardManager =
+            requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText("Copied Text", textString)
         clipboardManager.setPrimaryClip(clip)
         Toast.makeText(requireContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show()
     }
 
 
-
-
     private fun removeCard(position: Int) {
+        val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        HapticUtils.performHapticFeedback(vibrator, sharedPreferences)
         savedCards.removeAt(position)
         savedCardAdapter.notifyItemRemoved(position)
 
@@ -119,7 +125,8 @@ class SavedHashtagsFragment : Fragment() {
         // Step 1: Check if there are no items in the adapter
         if (savedCardAdapter.itemCount == 0) {
             // Step 2: Create the layout for the placeholder
-            val placeholderView = layoutInflater.inflate(R.layout.placeholder_layout, container, false)
+            val placeholderView =
+                layoutInflater.inflate(R.layout.placeholder_layout, container, false)
 
             container1.addView(placeholderView)
         } else {

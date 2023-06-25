@@ -2,6 +2,7 @@
 
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
+import abc.sadnoxx.hashtaggenerator.HapticUtils.performHapticFeedback
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -60,7 +61,19 @@ class HashtagsFragment : Fragment(),
     private lateinit var platformName: TextView
     private lateinit var sharedPrefs: SharedPreferences
     private lateinit var selectPlatformTab: LinearLayout
-    private lateinit var  noResultText: TextView
+    private lateinit var popularTags: LinearLayout
+    private lateinit var love: LinearLayout
+    private lateinit var noResultText: TextView
+    private lateinit var photography: LinearLayout
+    private lateinit var party: LinearLayout
+    private lateinit var lonely: LinearLayout
+    private lateinit var summer: LinearLayout
+    private lateinit var pubg: LinearLayout
+    private lateinit var birthday: LinearLayout
+    private lateinit var snow: LinearLayout
+    private lateinit var flights: LinearLayout
+    private lateinit var engagement: LinearLayout
+    private lateinit var chocolate: LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -76,6 +89,18 @@ class HashtagsFragment : Fragment(),
         platformImage = rootView.findViewById(R.id.platformImage)
         selectPlatformTab = rootView.findViewById(R.id.selectPlatformTab)
         noResultText = rootView.findViewById(R.id.noResultText)
+        popularTags = rootView.findViewById(R.id.popularTags)
+        love = rootView.findViewById(R.id.love)
+        chocolate = rootView.findViewById(R.id.chocolate)
+        engagement = rootView.findViewById(R.id.engagement)
+        flights = rootView.findViewById(R.id.flights)
+        snow = rootView.findViewById(R.id.snow)
+        birthday = rootView.findViewById(R.id.birthday)
+        pubg = rootView.findViewById(R.id.pubg)
+        summer = rootView.findViewById(R.id.summer)
+        lonely = rootView.findViewById(R.id.lonely)
+        party = rootView.findViewById(R.id.party)
+        photography = rootView.findViewById(R.id.photography)
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
@@ -97,7 +122,7 @@ class HashtagsFragment : Fragment(),
         }
 
 
-        val newdata: List<Card> = CardDataRepository.cardDataList.take(20)
+        val newdata: List<Card> = CardDataRepository.cardDataList.take(0)
 
 
         searchBar = rootView.findViewById(R.id.search_bar)
@@ -116,6 +141,13 @@ class HashtagsFragment : Fragment(),
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (count == 0) {
+                    popularTags.visibility = View.VISIBLE
+                    recyclerView.visibility = View.GONE
+                    noResultText.visibility = View.GONE
+                } else {
+                    popularTags.visibility = View.GONE
+                }
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -123,65 +155,96 @@ class HashtagsFragment : Fragment(),
             }
         })
 
+        searchBarTop.setEndIconOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            searchBar.setText("")
+            cardAdapter.filterData("")
+        }
 
-//        generateHashSearchBtn.setOnClickListener {
-//            performHapticFeedback(vibrator)
-//            query?.let { it1 -> cardAdapter.filterData(it1) }
-//            val inputMethodManager =
-//                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//            inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
-//        }
+
+
+        love.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("love")
+            recyclerView.visibility = View.VISIBLE
+        }
+        chocolate.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("chocolate")
+            recyclerView.visibility = View.VISIBLE
+        }
+        engagement.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("engagement")
+            recyclerView.visibility = View.VISIBLE
+        }
+        flights.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("flights")
+            recyclerView.visibility = View.VISIBLE
+        }
+        snow.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("snow")
+            recyclerView.visibility = View.VISIBLE
+        }
+        birthday.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("birthday")
+            recyclerView.visibility = View.VISIBLE
+        }
+        pubg.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("pubg")
+            recyclerView.visibility = View.VISIBLE
+        }
+        summer.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("summer")
+            recyclerView.visibility = View.VISIBLE
+        }
+        lonely.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("lonely")
+            recyclerView.visibility = View.VISIBLE
+        }
+        party.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("party")
+            recyclerView.visibility = View.VISIBLE
+        }
+        photography.setOnClickListener {
+            performHapticFeedback(vibrator,sharedPrefs)
+            setTagClickListener("photography")
+            recyclerView.visibility = View.VISIBLE
+        }
+
+
 
         generateHashSearchBtn.setOnClickListener {
-            performHapticFeedback(vibrator)
-            val query = searchBar.text.toString()
-            val queryWithoutHash = query.replace("#", "")
-            val filterResultLiveData = cardAdapter.filterData(queryWithoutHash)
-            filterResultLiveData.observe(viewLifecycleOwner) { isDataFiltered ->
-                val viewToToggle = noResultText
+            recyclerView.visibility = View.VISIBLE
+            performHapticFeedback(vibrator,sharedPrefs)
+            val queryWithoutHash = query?.replace("#", "")
+            queryWithoutHash?.let { it1 -> cardAdapter.filterData(it1) }
+                ?.observe(viewLifecycleOwner) { isDataFiltered ->
+                    val viewToToggle = noResultText
 
-                if (!isDataFiltered) {
-                    val handler = Handler()
-                    handler.postDelayed({
-                        viewToToggle.visibility = View.VISIBLE
-                    }, 500) // Delay of 0.5 second (500 milliseconds)
-                } else {
-                    viewToToggle.visibility = View.GONE
+                    if (!isDataFiltered) {
+                        val handler = Handler()
+                        handler.postDelayed({
+                            viewToToggle.visibility = View.VISIBLE
+                        }, 500) // Delay of 0.5 second (500 milliseconds)
+                    } else {
+                        viewToToggle.visibility = View.GONE
+                    }
                 }
-            }
 
-            val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            val inputMethodManager =
+                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
         }
 
 
-//        generateHashSearchBtn.setOnClickListener {
-//            performHapticFeedback(vibrator)
-//            val query = searchBar.text.toString()
-//            val isDataFiltered = cardAdapter.filterData(query)
-//
-//            val viewToToggle = noResultText
-//
-//            if (isDataFiltered) {
-//                val handler = Handler()
-//                handler.postDelayed({
-//                    viewToToggle.visibility = View.VISIBLE
-//                }, 500) // Delay of 1 second (1000 milliseconds)
-//            } else {
-//                viewToToggle.visibility = View.GONE
-//            }
-//            val inputMethodManager = requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//            inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
-//        }
-
-
-
-//        goToFirstFragmentButton.setOnClickListener {
-//            // Get the parent activity and cast it to MainActivity
-//            val mainActivity = requireActivity() as MainActivity
-//            // Access the ViewPager and set the current item to the 1st fragment
-//            mainActivity.viewPager.currentItem = 0
-//        }
 
         searchBar.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
@@ -239,7 +302,6 @@ class HashtagsFragment : Fragment(),
 
     override fun onCopyClick(tagsText1: Card) {
 
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val separatorUsed = sharedPrefs.getString(KEY_SEPERATOR, " ")
         val separatorCharSequence: CharSequence = SpannableStringBuilder(separatorUsed)
 
@@ -311,7 +373,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
@@ -327,7 +388,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
             resources.getString(tagsText1.tags) // Assuming you have access to the resources object
@@ -340,7 +400,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val maxCharactersToCopy = sharedPrefs.getInt(
             "sliderCharecterCopyValue",
             150
@@ -374,7 +433,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxCharactersToCopy = sharedPrefs.getInt("sliderCharecterCopyValue", 240)
         val tagsString =
@@ -397,7 +455,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 15)
         val tagsString =
             resources.getString(tagsText1.tags) // Assuming you have access to the resources object
@@ -410,7 +467,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
@@ -426,7 +482,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
@@ -442,7 +497,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 20)
         val tagsString =
@@ -458,7 +512,6 @@ class HashtagsFragment : Fragment(),
         tagsText1: Card,
         separatorCharSequence: CharSequence
     ): String {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 10)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
@@ -470,12 +523,11 @@ class HashtagsFragment : Fragment(),
         return "$dots$tagsText"
     }
 
-// Implement the modifyTagsForTikTok, modifyTagsForTwitter, and other platform-specific functions similarly
 
     private fun copyToClipboard(tagsText: String) {
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        performHapticFeedback(vibrator)
+        performHapticFeedback(vibrator,sharedPrefs)
         // Copy tags text to clipboard
         val clipboardManager =
             requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -487,26 +539,12 @@ class HashtagsFragment : Fragment(),
         Toast.makeText(requireContext(), "Tags copied", Toast.LENGTH_SHORT).show()
     }
 
-
-    private fun performHapticFeedback(vibrator: Vibrator) {
-
-        val vibrationEnabled = sharedPrefs.getBoolean("vibrationSwitch", true)
-
-        if (vibrationEnabled) {
-            // Trigger haptic feedback for a short duration
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(
-                    VibrationEffect.createOneShot(
-                        30,
-                        VibrationEffect.DEFAULT_AMPLITUDE
-                    )
-                )
-            } else {
-                // Deprecated in API 26
-                vibrator.vibrate(30)
-            }
-        }
+    private fun setTagClickListener(tag: String) {
+        searchBar.setText(tag)
+        cardAdapter.filterData(tag)
     }
+
+
 
     override fun onPause() {
         super.onPause()

@@ -102,7 +102,7 @@
             android:paddingLeft="25dp"
             android:paddingTop="7dp"
             android:paddingRight="25dp"
-            android:paddingBottom="5dp"
+            android:paddingBottom="8dp"
             android:visibility="visible"
             app:boxCornerRadiusBottomEnd="25dp"
             app:boxCornerRadiusBottomStart="25dp"
@@ -112,22 +112,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayout1">
-
-
-            <Button
-                android:id="@+id/generateHashSearchBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginStart="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/card_col"
-                android:fontFamily="@font/jaldi_bold"
-                android:text="@string/generate_btn_text"
-                android:textColor="@color/text_color"
-                android:textSize="16sp"
-                tools:targetApi="lollipop" />
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -141,6 +125,28 @@
                 android:text=""
                 tools:ignore="DuplicateSpeakableTextCheck,VisualLintTextFieldSize,TextContrastCheck" />
 
+
+
+
+
+
+                <Button
+                    android:layout_gravity="end"
+                    android:id="@+id/generateHashSearchBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/card_col"
+                    android:fontFamily="@font/jaldi_bold"
+                    android:text="@string/generate_btn_text"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp"
+                    tools:targetApi="lollipop" />
+
+
+
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -153,16 +159,462 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/searchbartop">
 
+
             <LinearLayout
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingBottom="85dp">
+                android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/popularTags"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:fontFamily="@font/jaldi_bold"
+                    android:paddingStart="12dp"
+                    android:paddingBottom="18dp"
+                    android:text="Popular Searches"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@color/text_color"
+                    android:textSize="18sp"
+                    android:paddingLeft="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/love"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="15dp"
+                        android:paddingRight="15dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  love"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/photography"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="15dp"
+                        android:paddingRight="15dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  photography"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/party"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  party"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/lonely"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="15dp"
+                        android:paddingRight="15dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  lonely"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/summer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="15dp"
+                        android:paddingRight="15dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  summer"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pubg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  pubg"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/birthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="15dp"
+                        android:paddingRight="15dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  birthday"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/snow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="15dp"
+                        android:paddingRight="15dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  snow"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/flights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  flights"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/engagement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="15dp"
+                        android:paddingRight="15dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  engagement"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/chocolate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="15dp"
+                        android:paddingRight="15dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  chocolate"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/handle_shape_new"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingRight="10dp">
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="  sad"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:visibility="gone"
                     tools:listitem="@layout/hash_item" />
 
 
@@ -172,19 +624,19 @@
         </androidx.core.widget.NestedScrollView>
 
         <TextView
-            android:visibility="gone"
             android:id="@+id/noResultText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginLeft="19dp"
             android:fontFamily="@font/bold"
-           android:padding="12dp"
             android:gravity="center"
+            android:padding="12dp"
             android:text="Hashtag group not found. Please check the category section for related tags."
             android:textAppearance="?attr/textAppearanceTitleMedium"
             android:textColor="@color/text_color"
             android:textSize="15sp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -194,7 +646,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

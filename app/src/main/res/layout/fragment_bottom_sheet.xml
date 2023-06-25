@@ -253,6 +253,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:backgroundTint="@color/card_col"
         android:id="@+id/card0"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"
@@ -327,6 +328,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:backgroundTint="@color/card_col"
         android:id="@+id/card1"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"
@@ -401,6 +403,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+
         android:backgroundTint="@color/card_col"
         android:id="@+id/card2"
         style="?attr/materialCardViewFilledStyle"
@@ -409,7 +412,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:cardCornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -475,6 +478,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:backgroundTint="@color/card_col"
         android:id="@+id/card3"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="match_parent"

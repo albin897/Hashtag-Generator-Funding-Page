@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
         applyDeviceTheme(savedTheme)
         setContentView(R.layout.activity_main)
 
-        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
         val launchCount = sharedPreferences.getInt(LAUNCH_COUNTER_KEY, 0)
         if (launchCount >= 1) {
@@ -52,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Increment the launch count
-        sharedPreferences.edit().putInt(LAUNCH_COUNTER_KEY, launchCount + 1).apply()
+        sharedPreferences.edit().putInt(LAUNCH_COUNTER_KEY, launchCount + 3).apply()
 
 
 
@@ -107,7 +106,6 @@ class MainActivity : AppCompatActivity() {
 
             override fun onPageSelected(position: Int) {
                 bottomNavigationView.menu.getItem(position).isChecked = true
-                performHapticFeedback(vibrator)
             }
 
             override fun onPageScrollStateChanged(state: Int) {
@@ -121,22 +119,20 @@ class MainActivity : AppCompatActivity() {
         viewPager.currentItem = initialSelection
 
         // for setting color to the status and nav bars
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // Set the status bar color
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                window.statusBarColor = ContextCompat.getColor(this, R.color.material_navbar)
-            } else {
-                window.javaClass.getDeclaredMethod("setStatusBarColor", Int::class.java)
-                    .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
-            }
+        // Set the status bar color
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.statusBarColor = ContextCompat.getColor(this, R.color.material_navbar)
+        } else {
+            window.javaClass.getDeclaredMethod("setStatusBarColor", Int::class.java)
+                .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
+        }
 
-            // Set the navigation bar color
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                window.navigationBarColor = ContextCompat.getColor(this, R.color.material_navbar)
-            } else {
-                window.javaClass.getDeclaredMethod("setNavigationBarColor", Int::class.java)
-                    .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
-            }
+        // Set the navigation bar color
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            window.navigationBarColor = ContextCompat.getColor(this, R.color.material_navbar)
+        } else {
+            window.javaClass.getDeclaredMethod("setNavigationBarColor", Int::class.java)
+                .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
         }
     }
 
@@ -165,19 +161,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun performHapticFeedback(vibrator: Vibrator) {
 
-        val vibrationEnabled = sharedPreferences.getBoolean("vibrationSwitch", true)
-
-        if (vibrationEnabled) {
-            // Trigger haptic feedback for a short duration
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE))
-            } else {
-                // Deprecated in API 26
-                vibrator.vibrate(30)
-            }}
-    }
 
     private fun showFeedbackDialog(){
         val reviewManager = ReviewManagerFactory.create(applicationContext)

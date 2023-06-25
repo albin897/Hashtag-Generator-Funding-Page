@@ -47,6 +47,8 @@ class ToolsFragment : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_tools, container, false)
 
+
+
         topHashtags = rootView.findViewById(R.id.topHashtags)
         likes = rootView.findViewById(R.id.likes)
         reels = rootView.findViewById(R.id.reels)

@@ -1,10 +1,15 @@
 package abc.sadnoxx.hashtaggenerator.fragments.fonts
 
+import abc.sadnoxx.hashtaggenerator.HapticUtils
+import abc.sadnoxx.hashtaggenerator.HapticUtils.performHapticFeedback
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Vibrator
+import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.fragment.app.Fragment
@@ -51,7 +56,7 @@ class FontsFragment : Fragment() {
     private lateinit var copyButton12: ImageView
     private lateinit var copyButton13: ImageView
     private lateinit var copyButton14: ImageView
-
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,6 +65,9 @@ class FontsFragment : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_fonts, container, false)
 
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
         contentTxt1 = rootView.findViewById(R.id.mainText1)
         contentTxt2 = rootView.findViewById(R.id.mainText2)
@@ -162,6 +170,8 @@ class FontsFragment : Fragment() {
 
         for (i in copyButtons.indices) {
             copyButtons[i].setOnClickListener {
+
+             performHapticFeedback(vibrator, sharedPreferences)
                 copyTextToClipboard(contentTextViews[i].text.toString())
             }
         }

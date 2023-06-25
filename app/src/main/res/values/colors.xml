@@ -16,5 +16,6 @@
     <color name="material_dialog_color">#E2E2EC</color>
     <color name="about_background_col">#F0F0FA</color>
 
+    <color name="card_col2">#D9D9DB</color>
 
 </resources>

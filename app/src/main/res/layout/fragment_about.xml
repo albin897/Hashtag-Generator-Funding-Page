@@ -9,10 +9,10 @@
 
 
     <LinearLayout
-        android:layout_marginTop="40dp"
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,6 +26,7 @@
             android:background="@drawable/switch_rounded_about"
             android:src="@mipmap/ic_launcher_foreground"
             android:visibility="visible" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,13 +46,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/jaldi_bold"
-                android:text="v1.0.8 ( 9 )"
+                android:text="v1.0.13 ( 14 )"
                 android:textSize="18sp" />
 
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jaldi_bold"
+        android:paddingLeft="30dp"
+        android:paddingTop="30dp"
+        android:paddingRight="30dp"
+        android:text="One of the best hashtag generator app you can find out there."
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -61,7 +77,99 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/desc">
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rateAndReview"
+            style="?attr/materialCardViewFilledStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/card_col"
+            android:visibility="visible"
+            app:cardCornerRadius="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:src="@drawable/rate_and_review" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:paddingStart="19dp"
+                    android:paddingTop="4dp"
+                    android:text="Rate and Review"
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/reportBugsCard"
+            style="?attr/materialCardViewFilledStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/card_col"
+            android:visibility="visible"
+            app:cardCornerRadius="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:src="@drawable/settings_suggest" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:paddingStart="19dp"
+                    android:paddingLeft="19dp"
+                    android:paddingTop="4dp"
+                    android:text="Report Bugs / Suggest an edit"
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/contributers"
@@ -69,7 +177,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/card_col"
             android:visibility="visible"
@@ -200,17 +308,21 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:layout_marginTop="150dp"
-            android:gravity="center"
-            android:padding="10dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:text="Made with ❤️ by Sad NoXx" />
-
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Made with ❤️ by Sad NoXx"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
