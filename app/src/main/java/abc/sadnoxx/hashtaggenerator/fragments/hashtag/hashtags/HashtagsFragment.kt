@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.ImageView
@@ -156,7 +157,7 @@ class HashtagsFragment : Fragment(),
         })
 
         searchBarTop.setEndIconOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             searchBar.setText("")
             cardAdapter.filterData("")
         }
@@ -164,66 +165,65 @@ class HashtagsFragment : Fragment(),
 
 
         love.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("love")
             recyclerView.visibility = View.VISIBLE
         }
         chocolate.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("chocolate")
             recyclerView.visibility = View.VISIBLE
         }
         engagement.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("engagement")
             recyclerView.visibility = View.VISIBLE
         }
         flights.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("flights")
             recyclerView.visibility = View.VISIBLE
         }
         snow.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("snow")
             recyclerView.visibility = View.VISIBLE
         }
         birthday.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("birthday")
             recyclerView.visibility = View.VISIBLE
         }
         pubg.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("pubg")
             recyclerView.visibility = View.VISIBLE
         }
         summer.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("summer")
             recyclerView.visibility = View.VISIBLE
         }
         lonely.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("lonely")
             recyclerView.visibility = View.VISIBLE
         }
         party.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("party")
             recyclerView.visibility = View.VISIBLE
         }
         photography.setOnClickListener {
-            performHapticFeedback(vibrator,sharedPrefs)
+            performHapticFeedback(vibrator, sharedPrefs)
             setTagClickListener("photography")
             recyclerView.visibility = View.VISIBLE
         }
 
 
 
-        generateHashSearchBtn.setOnClickListener {
+        fun performSearch() {
             recyclerView.visibility = View.VISIBLE
-            performHapticFeedback(vibrator,sharedPrefs)
             val queryWithoutHash = query?.replace("#", "")
             queryWithoutHash?.let { it1 -> cardAdapter.filterData(it1) }
                 ?.observe(viewLifecycleOwner) { isDataFiltered ->
@@ -238,10 +238,6 @@ class HashtagsFragment : Fragment(),
                         viewToToggle.visibility = View.GONE
                     }
                 }
-
-            val inputMethodManager =
-                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
         }
 
 
@@ -259,6 +255,35 @@ class HashtagsFragment : Fragment(),
                 imm.hideSoftInputFromWindow(searchBar.windowToken, 0)
             }
         }
+
+
+        searchBar.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                // Call your function here
+                performSearch()
+                val inputMethodManager =
+                    requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
+                true
+            } else {
+
+                false
+            }
+        }
+
+
+
+
+        generateHashSearchBtn.setOnClickListener {
+            performHapticFeedback(vibrator, sharedPrefs)
+            performSearch()
+            val inputMethodManager =
+                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.hideSoftInputFromWindow(searchBar.windowToken, 0)
+        }
+
+
+
 
         return rootView
     }
@@ -527,7 +552,7 @@ class HashtagsFragment : Fragment(),
     private fun copyToClipboard(tagsText: String) {
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        performHapticFeedback(vibrator,sharedPrefs)
+        performHapticFeedback(vibrator, sharedPrefs)
         // Copy tags text to clipboard
         val clipboardManager =
             requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -543,7 +568,6 @@ class HashtagsFragment : Fragment(),
         searchBar.setText(tag)
         cardAdapter.filterData(tag)
     }
-
 
 
     override fun onPause() {

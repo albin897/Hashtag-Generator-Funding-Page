@@ -43,10 +43,11 @@
                 android:textSize="30dp" />
 
             <TextView
+                android:id="@+id/versionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/jaldi_bold"
-                android:text="v1.0.13 ( 14 )"
+                android:text="v1.0.0 ( 1 )"
                 android:textSize="18sp" />
 
 

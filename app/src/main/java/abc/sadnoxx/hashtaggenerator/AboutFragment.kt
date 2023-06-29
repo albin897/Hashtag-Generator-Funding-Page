@@ -12,7 +12,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.pm.PackageInfoCompat
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -24,6 +26,8 @@ class AboutFragment : Fragment() {
     private lateinit var rateAndReview: MaterialCardView
     private lateinit var reportBugsCard: MaterialCardView
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var versionTextView: TextView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,7 +39,7 @@ class AboutFragment : Fragment() {
         termsAndConditions = rootView.findViewById(R.id.termsAndConditions)
         rateAndReview = rootView.findViewById(R.id.rateAndReview)
         reportBugsCard = rootView.findViewById(R.id.reportBugsCard)
-
+        versionTextView = rootView.findViewById(R.id.versionTextView)
 
 
 
@@ -43,6 +47,20 @@ class AboutFragment : Fragment() {
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
 
+
+        val packageInfo = requireContext().packageManager.getPackageInfo(
+            requireContext().packageName, 0
+        )
+
+        val versionName = packageInfo.versionName
+        val versionCodeLong = PackageInfoCompat.getLongVersionCode(packageInfo)
+        val versionCode = versionCodeLong.toInt()
+
+
+        val versionText = "v$versionName ( $versionCode )"
+
+
+        versionTextView.text = versionText
 
 
 
