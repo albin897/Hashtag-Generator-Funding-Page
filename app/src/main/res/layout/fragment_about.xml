@@ -126,6 +126,51 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/changelogs"
+            style="?attr/materialCardViewFilledStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/card_col"
+            android:visibility="visible"
+            app:cardCornerRadius="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:src="@drawable/contributers" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bold"
+                    android:paddingStart="19dp"
+                    android:paddingLeft="19dp"
+                    android:paddingTop="4dp"
+                    android:text="ChangeLogs"
+                    android:textColor="@color/text_color"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/reportBugsCard"
             style="?attr/materialCardViewFilledStyle"
             android:layout_width="match_parent"
@@ -216,6 +261,7 @@
 
 
         </com.google.android.material.card.MaterialCardView>
+
 
 
         <com.google.android.material.card.MaterialCardView

@@ -4,23 +4,23 @@ import abc.sadnoxx.hashtaggenerator.fragments.fonts.FontsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.HashtagMainFragment
 import abc.sadnoxx.hashtaggenerator.fragments.settings.SettingsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.ToolsFragment
-import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.os.VibrationEffect
-import android.os.Vibrator
 import android.preference.PreferenceManager
+import android.util.Log
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import androidx.core.content.pm.PackageInfoCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.play.core.review.ReviewManagerFactory
 
@@ -30,6 +30,9 @@ private const val THEME_DARK = 1
 private const val THEME_SYSTEM = 2
 private const val LAUNCH_COUNTER_KEY = "launch_counter"
 private const val KEY_SCREEN = "screen"
+
+private const val PREF_VERSION_CODE_KEY = "version_code"
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +47,26 @@ class MainActivity : AppCompatActivity() {
         applyDeviceTheme(savedTheme)
         setContentView(R.layout.activity_main)
 
+        try {
+            val packageInfo = this.packageManager.getPackageInfo(
+                this.packageName, 0
+            )
+
+
+            val versionCodeLong = PackageInfoCompat.getLongVersionCode(packageInfo)
+
+            val savedVersionCode = sharedPreferences.getInt(PREF_VERSION_CODE_KEY, 0)
+            val appVersionCode = versionCodeLong.toInt()
+
+            if (appVersionCode > savedVersionCode) {
+                showChangelogDialog()
+                sharedPreferences.edit()
+                    .putInt(PREF_VERSION_CODE_KEY, appVersionCode)
+                    .apply()
+            }
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+        }
 
         val launchCount = sharedPreferences.getInt(LAUNCH_COUNTER_KEY, 0)
         if (launchCount >= 15) {
@@ -134,6 +157,22 @@ class MainActivity : AppCompatActivity() {
             window.javaClass.getDeclaredMethod("setNavigationBarColor", Int::class.java)
                 .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
         }
+    }
+
+    private fun showChangelogDialog() {
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_changelog, null)
+        val dialog = MaterialAlertDialogBuilder(this)
+//            .setTitle("Changelogs")
+            .setView(dialogView)
+            .setPositiveButton(R.string.ok) { dialog, _ ->
+                // Positive button click action
+                dialog.dismiss()
+            }
+            .setCancelable(true)
+            .create()
+
+        dialog.show()
     }
 
     private fun applyDeviceTheme(savedTheme: Int) {

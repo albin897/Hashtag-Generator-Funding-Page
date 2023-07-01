@@ -29,10 +29,10 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.divider.MaterialDivider
-            android:visibility="gone"
             android:id="@+id/divider_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +53,6 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:backgroundTint="@color/card_col"
                     android:id="@+id/topHashtags"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -61,6 +60,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -72,18 +72,30 @@
                         android:paddingTop="7dp"
                         android:paddingBottom="17dp">
 
-                        <TextView
-                            android:paddingTop="5dp"
-                            android:paddingBottom="3dp"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginLeft="19dp"
-                            android:fontFamily="@font/signikanegative_medium"
-                            android:text="Top Hashtags"
-                            android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textColor="@color/text_color"
-                            android:textSize="22sp" />
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:paddingLeft="19dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/toptag" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:fontFamily="@font/signikanegative_medium"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="3dp"
+                                android:text="Top Hashtags"
+                                android:textAppearance="?attr/textAppearanceTitleMedium"
+                                android:textColor="@color/text_color"
+                                android:textSize="22sp" />
+
+
+                        </LinearLayout>
 
                         <TextView
                             android:id="@+id/tagTagText"
@@ -109,7 +121,6 @@
 
 
                 <com.google.android.material.card.MaterialCardView
-                    android:backgroundTint="@color/card_col"
                     android:id="@+id/categories"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -118,6 +129,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/card_col"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -130,41 +142,41 @@
                         android:paddingBottom="17dp">
 
                         <TextView
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
                             android:fontFamily="@font/signikanegative_medium"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:text="Categories "
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="@color/text_color"
                             android:textSize="22sp" />
 
                         <TableLayout
-                            android:paddingTop="10dp"
-                            android:padding="5dp"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:paddingTop="10dp">
 
                             <TableRow>
 
                                 <LinearLayout
                                     android:id="@+id/likes"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:src="@drawable/thumb" />
+                                        android:src="@drawable/likes" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -177,14 +189,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/reels"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -208,14 +220,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/followers"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -233,14 +245,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/popular"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -263,14 +275,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/photography"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -288,14 +300,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/gaming"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -319,14 +331,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/brands"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -344,14 +356,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/moods"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -369,18 +381,19 @@
 
 
                             </TableRow>
+
                             <TableRow>
 
                                 <LinearLayout
                                     android:id="@+id/seasonal"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -398,14 +411,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/holidays"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -429,14 +442,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/parenting"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -454,14 +467,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/work"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -479,18 +492,19 @@
 
 
                             </TableRow>
+
                             <TableRow>
 
                                 <LinearLayout
                                     android:id="@+id/electronics"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -508,14 +522,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/weather"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -539,14 +553,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/food"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -564,14 +578,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/travel"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -589,18 +603,19 @@
 
 
                             </TableRow>
+
                             <TableRow>
 
                                 <LinearLayout
                                     android:id="@+id/entertainment"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -618,14 +633,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/party"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -649,14 +664,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/transportation"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -675,14 +690,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/nature"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -692,8 +707,8 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="  Nature"
                                         android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Nature"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -705,14 +720,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/makeup"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -730,14 +745,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/fashion"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -761,14 +776,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/weekdays"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -786,14 +801,14 @@
 
                                 <LinearLayout
                                     android:id="@+id/sports"
-                                    android:elevation="4dp"
-                                    android:background="@drawable/card_categories"
-                                    android:layout_margin="4dp"
-                                    android:padding="20dp"
-                                    android:layout_weight="1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:layout_margin="4dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/card_categories"
+                                    android:elevation="4dp"
+                                    android:orientation="horizontal"
+                                    android:padding="20dp">
 
                                     <ImageView
                                         android:layout_width="wrap_content"
@@ -803,8 +818,8 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="  Sports"
                                         android:fontFamily="@font/open_sans_bold"
+                                        android:text="  Sports"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>

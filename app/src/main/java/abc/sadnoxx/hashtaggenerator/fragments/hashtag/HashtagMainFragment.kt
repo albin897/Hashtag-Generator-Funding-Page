@@ -41,18 +41,18 @@ class HashtagMainFragment : Fragment() {
             viewPager2.adapter = adapter
 
 
-        toolbar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.filterResult -> {
-                    val bottomSheetFragment = MyBottomSheetDialogFragment()
-
-                    bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
-                    true
-                }
-
-                else -> false
-            }
-        }
+//        toolbar.setOnMenuItemClickListener { menuItem ->
+//            when (menuItem.itemId) {
+//                R.id.filterResult -> {
+//                    val bottomSheetFragment = MyBottomSheetDialogFragment()
+//
+//                    bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+//                    true
+//                }
+//
+//                else -> false
+//            }
+//        }
 
             tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {

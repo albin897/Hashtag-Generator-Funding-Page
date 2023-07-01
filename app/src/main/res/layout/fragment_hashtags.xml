@@ -114,6 +114,8 @@
             app:layout_constraintTop_toBottomOf="@id/linearLayout1">
 
 
+
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"

@@ -8,13 +8,13 @@
     <!--        android:contentDescription="search"-->
     <!--        app:showAsAction="ifRoom" />-->
 
-    <item
-        android:id="@+id/filterResult"
-        android:icon="@drawable/tune"
-        android:contentDescription="Filter Result "
-        app:showAsAction="ifRoom"
-        android:title="Filter"
-        />
+<!--    <item-->
+<!--        android:id="@+id/filterResult"-->
+<!--        android:icon="@drawable/tune"-->
+<!--        android:contentDescription="Filter Result "-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:title="Filter"-->
+<!--        />-->
 
 <!--    <item-->
 <!--        android:id="@+id/more"-->

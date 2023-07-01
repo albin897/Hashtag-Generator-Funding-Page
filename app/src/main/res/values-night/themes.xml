@@ -4,6 +4,8 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowBackground">@color/app_background_color</item>
+
 <!--        <item name="android:navigationBarColor" tools:targetApi="lollipop">?attr/colorSurface</item>-->
     </style>
 

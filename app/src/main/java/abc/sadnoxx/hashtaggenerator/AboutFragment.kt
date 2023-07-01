@@ -20,6 +20,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class AboutFragment : Fragment() {
+    private lateinit var changelogs: MaterialCardView
     private lateinit var contributers: MaterialCardView
     private lateinit var privacyPolicy: MaterialCardView
     private lateinit var termsAndConditions: MaterialCardView
@@ -40,8 +41,7 @@ class AboutFragment : Fragment() {
         rateAndReview = rootView.findViewById(R.id.rateAndReview)
         reportBugsCard = rootView.findViewById(R.id.reportBugsCard)
         versionTextView = rootView.findViewById(R.id.versionTextView)
-
-
+        changelogs = rootView.findViewById(R.id.changelogs)
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
@@ -79,6 +79,23 @@ class AboutFragment : Fragment() {
             }
         }
 
+        changelogs.setOnClickListener {
+            performHapticFeedback(vibrator, sharedPreferences)
+                val inflater = layoutInflater
+                val dialogView = inflater.inflate(R.layout.dialog_changelog, null)
+                val dialog = MaterialAlertDialogBuilder(requireContext())
+                    .setView(dialogView)
+                    .setPositiveButton(R.string.ok) { dialog, _ ->
+                        // Positive button click action
+                        dialog.dismiss()
+                    }
+                    .setCancelable(true)
+                    .create()
+
+                dialog.show()
+            }
+
+
         privacyPolicy.setOnClickListener {
             performHapticFeedback(vibrator, sharedPreferences)
             openLinkToOtherSites("https://sadnoxx.github.io/hashtagGenerator/terms/")
@@ -99,7 +116,7 @@ class AboutFragment : Fragment() {
             performHapticFeedback(vibrator, sharedPreferences)
             val view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null)
             view.setOnClickListener {
-                openLinkToOtherSites("https://play.google.com/store/apps/dev?id=6273310203005723815")
+                openLinkToOtherSites("https://github.com/akhhyyl")
             }
 
             context?.let { it1 -> showLinkDialog(it1, view) }

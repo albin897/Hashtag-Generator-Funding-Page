@@ -8,6 +8,7 @@ import abc.sadnoxx.hashtaggenerator.fragments.tools.route.RouteActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.os.Vibrator
 import android.preference.PreferenceManager
@@ -142,7 +143,14 @@ class SettingsFragment : Fragment() {
 
 
         refreshBtn.setOnClickListener {
-            checkForAppUpdate()
+            val connectivityManager = requireContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val networkInfo = connectivityManager.activeNetworkInfo
+
+            if ((networkInfo != null) && networkInfo.isConnected) {
+                checkForAppUpdate()
+            } else {
+                showNoInternetConnectionDialog()
+            }
             performHapticFeedback(vibrator, sharedPreferences)
         }
 
@@ -304,29 +312,13 @@ class SettingsFragment : Fragment() {
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
                 || appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
             ) {
+                dismissLoadingDialog()
                 context?.let { it1 -> UpdateDialog(it1) }?.showNewVersionDialog()
             } else {
+                dismissLoadingDialog()
                 context?.let { it1 -> UpdateDialog(it1) }?.showNoUpdatesDialog()
             }
-
-            dismissLoadingDialog() // Dismiss loading dialog
-          }.addOnFailureListener { exception ->
-            dismissLoadingDialog() // Dismiss loading dialog in case of failure
-
-            if (exception is ApiException) {
-                val statusCode = exception.statusCode
-                if (statusCode == ConnectionResult.NETWORK_ERROR) {
-                    // Handle network error when there is no internet connection
-                    showNoInternetConnectionDialog()
-                } else {
-                    // Handle other API exceptions
-                    showGenericErrorDialog()
-                }
-            } else {
-                // Handle other exceptions
-                showGenericErrorDialog()
-            }
-        }
+          }
 
     }
     private fun showLoadingDialog() {
@@ -344,7 +336,7 @@ class SettingsFragment : Fragment() {
 
     private fun showNoInternetConnectionDialog() {
         val dialog = MaterialAlertDialogBuilder(requireContext())
-            .setMessage("\nConnection Error\n")
+            .setMessage("\n\tNetwork Connection Error")
             .setPositiveButton(R.string.ok) { dialog, _ ->
                 // Positive button click action
                 dialog.dismiss()
@@ -355,16 +347,5 @@ class SettingsFragment : Fragment() {
         dialog.show()
     }
 
-    private fun showGenericErrorDialog() {
-        val dialog = MaterialAlertDialogBuilder(requireContext())
-            .setMessage("\nUnknown error occurred try again\n")
-            .setPositiveButton(R.string.ok) { dialog, _ ->
-                // Positive button click action
-                dialog.dismiss()
-            }
-            .setCancelable(true)
-            .create()
 
-        dialog.show()
-    }
 }
