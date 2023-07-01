@@ -5,7 +5,6 @@ import android.app.Dialog
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -146,7 +145,6 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         sliderDotAboveHashtags.addOnChangeListener { _, value, _ ->
             // Convert the float value to an integer if needed
             val intValue = value.toInt()
-            Log.d("DOTABOVE", "dotabove:    $intValue")
 
             editor.putInt("sliderDotAboveValue", intValue)
             editor.apply()
@@ -241,11 +239,10 @@ class MyBottomSheetDialogFragment : BottomSheetDialogFragment() {
         sliderCopyHashtags.value = savedValue.toFloat()
         copyRangeView.text = savedValue.toString()
 
-        val savedValue1 = sharedPrefs.getInt("sliderDotAboveValue", 10)
+        val savedValue1 = sharedPrefs.getInt("sliderDotAboveValue", 0)
         sliderDotAboveHashtags.value = savedValue1.toFloat()
         dotRangeView.text = savedValue1.toString()
 
-        Log.d("DOTABOVE", "onstart:    $savedValue1")
 
         val savedValue2 = sharedPrefs.getInt("sliderCharecterCopyValue", 150)
         sliderCharecterCopy.value = savedValue2.toFloat()

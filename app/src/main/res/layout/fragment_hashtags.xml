@@ -615,6 +615,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="gone"
+                    android:layout_marginBottom="88dp"
                     tools:listitem="@layout/hash_item" />
 
 
@@ -646,6 +647,21 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/floating_action_button0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:fontFamily="@font/jaldi_bold"
+        android:text="Filter"
+        app:icon="@drawable/tune"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
+        style="?attr/floatingActionButtonSmallStyle"
+        />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

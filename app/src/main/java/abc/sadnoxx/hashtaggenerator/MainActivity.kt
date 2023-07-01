@@ -40,13 +40,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
          sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)
+        val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_LIGHT)
         applyDeviceTheme(savedTheme)
         setContentView(R.layout.activity_main)
 
 
         val launchCount = sharedPreferences.getInt(LAUNCH_COUNTER_KEY, 0)
-        if (launchCount >= 1) {
+        if (launchCount >= 15) {
             showFeedbackDialog()        //review dialog
         }
 

@@ -1125,6 +1125,15 @@ object CardDataRepository {
         Card("Candid 1", R.string.Candid1),
         Card("Kerala", R.string.kerala),
         Card("Mallu", R.string.mallu),
-        Card("Mall", R.string.Mall)
+        Card("Mall", R.string.Mall),
+        Card("Goa", R.string.goa),
+        Card("Murder", R.string.murder),
+        Card("Friends", R.string.friends),
+        Card("Mumbai", R.string.mumbai),
+        Card("Chennai", R.string.chennai),
+        Card("GTA 5", R.string.gta5),
+        Card("Minecraft", R.string.Minecraft),
+        Card("Freefire", R.string.Freefire),
+        Card("Farcry", R.string.Farcry)
     )
 }

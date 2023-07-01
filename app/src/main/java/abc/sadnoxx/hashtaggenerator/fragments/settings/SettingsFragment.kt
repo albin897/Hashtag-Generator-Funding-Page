@@ -72,7 +72,7 @@ class SettingsFragment : Fragment() {
 
 
         //To set the appropriate text for theme card based on the selected theme
-        when (sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)) {
+        when (sharedPreferences.getInt(KEY_THEME, THEME_LIGHT)) {
             THEME_LIGHT -> themeNotifier.text = resources.getString(R.string.light)
             THEME_DARK -> themeNotifier.text = resources.getString(R.string.dark)
             THEME_SYSTEM -> themeNotifier.text = resources.getString(R.string.system_default)
@@ -206,7 +206,7 @@ class SettingsFragment : Fragment() {
 
 
         // Set the appropriate radio button based on the saved theme
-        when (sharedPreferences.getInt(KEY_THEME, THEME_SYSTEM)) {
+        when (sharedPreferences.getInt(KEY_THEME, THEME_LIGHT)) {
             THEME_LIGHT -> lightRadioButton.isChecked = true
             THEME_DARK -> darkRadioButton.isChecked = true
             THEME_SYSTEM -> systemRadioButton.isChecked = true

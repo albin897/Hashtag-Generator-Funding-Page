@@ -81,7 +81,7 @@
                     android:paddingStart="8dp"
                     android:paddingLeft="8dp"
                     android:lines="1"
-                    android:paddingTop="20dp"
+                    android:paddingTop="17dp"
                     android:paddingBottom="15dp"
                     android:text="Instagram"
                     android:textSize="15sp" />
@@ -129,7 +129,7 @@
             android:fontFamily="@font/bold"
             android:paddingStart="8dp"
             android:paddingLeft="8dp"
-            android:paddingTop="11dp"
+            android:paddingTop="17dp"
             android:paddingBottom="15dp"
             android:text="Instagram"
             android:textSize="15sp" />
@@ -375,7 +375,7 @@
                     android:fontFamily="@font/bold"
                     android:padding="15dp"
                     android:paddingLeft="5dp"
-                    android:text="10"
+                    android:text="0"
                     android:textColor="@color/text_color"
                     android:textSize="14sp" />
 
@@ -389,6 +389,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingLeft="20dp"
+                android:value="0.0"
                 android:paddingBottom="15dp"
                 android:stepSize="1.0"
                 android:valueFrom="0.0"
