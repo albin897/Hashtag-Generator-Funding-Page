@@ -19,8 +19,11 @@ import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.api.ApiException
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.materialswitch.MaterialSwitch
@@ -288,11 +291,14 @@ class SettingsFragment : Fragment() {
         editor.apply()
     }
 
-
+    private lateinit var loadingDialog: AlertDialog
     private fun checkForAppUpdate() {
         val appUpdateManager = AppUpdateManagerFactory.create(requireContext())
 
         val appUpdateInfoTask = appUpdateManager.appUpdateInfo
+
+
+        showLoadingDialog() // Show loading dialog
 
         appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
@@ -302,9 +308,63 @@ class SettingsFragment : Fragment() {
             } else {
                 context?.let { it1 -> UpdateDialog(it1) }?.showNoUpdatesDialog()
             }
+
+            dismissLoadingDialog() // Dismiss loading dialog
+          }.addOnFailureListener { exception ->
+            dismissLoadingDialog() // Dismiss loading dialog in case of failure
+
+            if (exception is ApiException) {
+                val statusCode = exception.statusCode
+                if (statusCode == ConnectionResult.NETWORK_ERROR) {
+                    // Handle network error when there is no internet connection
+                    showNoInternetConnectionDialog()
+                } else {
+                    // Handle other API exceptions
+                    showGenericErrorDialog()
+                }
+            } else {
+                // Handle other exceptions
+                showGenericErrorDialog()
+            }
         }
 
     }
+    private fun showLoadingDialog() {
+        val dialogBuilder = MaterialAlertDialogBuilder(requireContext())
+            .setMessage(R.string.loading)
+            .setCancelable(false)
 
+        loadingDialog = dialogBuilder.create()
+        loadingDialog.show()
+    }
 
+    private fun dismissLoadingDialog() {
+        loadingDialog.dismiss()
+    }
+
+    private fun showNoInternetConnectionDialog() {
+        val dialog = MaterialAlertDialogBuilder(requireContext())
+            .setMessage("\nConnection Error\n")
+            .setPositiveButton(R.string.ok) { dialog, _ ->
+                // Positive button click action
+                dialog.dismiss()
+            }
+            .setCancelable(true)
+            .create()
+
+        dialog.show()
+    }
+
+    private fun showGenericErrorDialog() {
+        val dialog = MaterialAlertDialogBuilder(requireContext())
+            .setMessage("\nUnknown error occurred try again\n")
+            .setPositiveButton(R.string.ok) { dialog, _ ->
+                // Positive button click action
+                dialog.dismiss()
+            }
+            .setCancelable(true)
+            .create()
+
+        dialog.show()
+    }
 }
