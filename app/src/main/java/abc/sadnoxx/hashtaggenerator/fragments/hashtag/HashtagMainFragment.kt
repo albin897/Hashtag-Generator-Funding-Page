@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.tabs.TabLayout
 
 class HashtagMainFragment : Fragment() {
@@ -16,7 +17,7 @@ class HashtagMainFragment : Fragment() {
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager2: ViewPager2
     private lateinit var adapter: HashtagPageAdapter
-
+    private lateinit var floating_action_button0: ExtendedFloatingActionButton
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +31,7 @@ class HashtagMainFragment : Fragment() {
         val toolbar: MaterialToolbar = rootView.findViewById(R.id.topAppBar)
         tabLayout = rootView.findViewById(R.id.tabLayout)
         viewPager2 = rootView.findViewById(R.id.viewPager2)
-
+        floating_action_button0 = rootView.findViewById(R.id.floating_action_button0)
 
 
             adapter = HashtagPageAdapter(childFragmentManager, lifecycle)
@@ -41,18 +42,11 @@ class HashtagMainFragment : Fragment() {
             viewPager2.adapter = adapter
 
 
-//        toolbar.setOnMenuItemClickListener { menuItem ->
-//            when (menuItem.itemId) {
-//                R.id.filterResult -> {
-//                    val bottomSheetFragment = MyBottomSheetDialogFragment()
-//
-//                    bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
-//                    true
-//                }
-//
-//                else -> false
-//            }
-//        }
+        floating_action_button0.setOnClickListener{
+            val bottomSheetFragment = MyBottomSheetDialogFragment()
+            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
+        }
+
 
             tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
                 override fun onTabSelected(tab: TabLayout.Tab?) {

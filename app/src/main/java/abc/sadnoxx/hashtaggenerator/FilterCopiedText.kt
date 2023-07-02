@@ -31,11 +31,12 @@ private lateinit var sharedPrefs: SharedPreferences
 class FilterCopiedText {
 
 
-    fun sentTheCardIn(context: Context,tagsText1: String,resources: Resources)(){
-
+    fun sentTheCardIn(context: Context,tagsText1: Card,resources: Resources){
+            val tagsString = tagsText1.tags
+        sentTheCardInWithInt(context,tagsString,resources)
     }
 
-    fun sentTheCardIn(context: Context,tagsText1: Card,resources: Resources) {
+    fun sentTheCardInWithInt(context: Context,tagsText1: Int,resources: Resources) {
 
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
@@ -108,14 +109,14 @@ class FilterCopiedText {
     }
 
     private fun modifyTagsForInstagram(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
@@ -124,20 +125,20 @@ class FilterCopiedText {
     }
 
     private fun modifyTagsForInstagramStories(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         return tagsToCopy.joinToString(separatorCharSequence)
     }
 
     private fun modifyTagsForTikTok(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
@@ -146,7 +147,7 @@ class FilterCopiedText {
             150
         ) // Retrieve the maximum number of characters to copy from shared preferences
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsText = tagsList.joinToString(separatorCharSequence)
         val truncatedTagsText = if (tagsText.length > maxCharactersToCopy) {
@@ -171,14 +172,14 @@ class FilterCopiedText {
 
 
     private fun modifyTagsForTwitter(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
         val maxCharactersToCopy = sharedPrefs.getInt("sliderCharecterCopyValue", 240)
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsText = if (maxCharactersToCopy > 0) {
 
@@ -194,27 +195,27 @@ class FilterCopiedText {
 
 
     private fun modifyTagsForYouTube(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 15)
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         return tagsToCopy.joinToString(separatorCharSequence)
     }
 
     private fun modifyTagsForFacebook(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
@@ -223,14 +224,14 @@ class FilterCopiedText {
     }
 
     private fun modifyTagsForLinkedIn(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
@@ -239,14 +240,14 @@ class FilterCopiedText {
     }
 
     private fun modifyTagsForPinterest(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 20)
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)
@@ -255,14 +256,14 @@ class FilterCopiedText {
     }
 
     private fun modifyTagsForSnapchat(
-        tagsText1: Card,
+        tagsText1: Int,
         resources: Resources,
         separatorCharSequence: CharSequence
     ): String {
         val dotCount = sharedPrefs.getInt("sliderDotAboveValue", 0)
         val maxTagsToCopy = sharedPrefs.getInt("sliderCopyValue", 30)
         val tagsString =
-            resources.getString(tagsText1.tags) // Assuming you have access to the resources object
+            resources.getString(tagsText1) // Assuming you have access to the resources object
         val tagsList = tagsString.split(" ").map { it.trim() }.filter { it.isNotEmpty() }
         val tagsToCopy = tagsList.take(maxTagsToCopy)
         val tagsText = tagsToCopy.joinToString(separatorCharSequence)

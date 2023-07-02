@@ -22,9 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/material_navbar"
+            app:menu="@menu/hashtag_top_app_bar"
             app:navigationIcon="@drawable/hashtag_title"
             app:title="Hashtags"
-            app:menu="@menu/hashtag_top_app_bar"
             app:titleTextAppearance="@style/MyAppBarLayout"
             app:titleTextColor="@color/text_color" />
 
@@ -35,15 +35,15 @@
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/material_navbar"
+        android:gravity="center_horizontal"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/material_navbar"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appBarLayout"
         app:tabIndicatorAnimationMode="elastic"
-        app:tabMode="fixed"
-        android:gravity="center_horizontal" />
+        app:tabMode="fixed" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
@@ -55,5 +55,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/floating_action_button0"
+        style="?attr/floatingActionButtonSmallStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="18dp"
+        android:fontFamily="@font/jaldi_bold"
+        android:text="Filter"
+        app:icon="@drawable/tune"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

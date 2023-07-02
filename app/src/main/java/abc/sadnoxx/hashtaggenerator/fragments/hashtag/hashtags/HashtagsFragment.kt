@@ -77,7 +77,6 @@ class HashtagsFragment : Fragment(),
     private lateinit var flights: LinearLayout
     private lateinit var engagement: LinearLayout
     private lateinit var chocolate: LinearLayout
-    private lateinit var floating_action_button0: ExtendedFloatingActionButton
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -104,7 +103,6 @@ class HashtagsFragment : Fragment(),
         lonely = rootView.findViewById(R.id.lonely)
         party = rootView.findViewById(R.id.party)
         photography = rootView.findViewById(R.id.photography)
-        floating_action_button0 = rootView.findViewById(R.id.floating_action_button0)
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
@@ -165,10 +163,7 @@ class HashtagsFragment : Fragment(),
             cardAdapter.filterData("")
         }
 
-        floating_action_button0.setOnClickListener{
-            val bottomSheetFragment = MyBottomSheetDialogFragment()
-            bottomSheetFragment.show(parentFragmentManager, bottomSheetFragment.tag)
-        }
+
 
         love.setOnClickListener {
             performHapticFeedback(vibrator, sharedPrefs)

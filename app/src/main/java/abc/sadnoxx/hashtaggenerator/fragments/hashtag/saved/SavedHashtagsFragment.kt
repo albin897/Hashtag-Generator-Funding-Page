@@ -1,5 +1,6 @@
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.saved
 
+import abc.sadnoxx.hashtaggenerator.FilterCopiedText
 import abc.sadnoxx.hashtaggenerator.HapticUtils
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.Card
@@ -91,12 +92,12 @@ class SavedHashtagsFragment : Fragment() {
     private fun copyToClipboard(text: Int) {
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         HapticUtils.performHapticFeedback(vibrator, sharedPreferences)
-        val textString = resources.getString(text)
-        val clipboardManager =
-            requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        val clip = ClipData.newPlainText("Copied Text", textString)
-        clipboardManager.setPrimaryClip(clip)
-        Toast.makeText(requireContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show()
+
+
+        val filterCopiedText = FilterCopiedText()
+
+// Call the sentTheCardIn method with the required parameters
+        filterCopiedText.sentTheCardInWithInt(requireContext(), text, resources)
     }
 
 
