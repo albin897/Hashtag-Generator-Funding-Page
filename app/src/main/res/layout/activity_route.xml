@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/material_navbar"
-
+            app:menu="@menu/hashtag_top_app_bar"
             app:titleTextAppearance="@style/MyAppBarLayout"
             />
 

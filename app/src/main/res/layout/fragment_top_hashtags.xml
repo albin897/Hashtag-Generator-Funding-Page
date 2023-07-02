@@ -122,12 +122,12 @@
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:layout_marginBottom="10dp"
-                android:fontFamily="@font/bold"
+                android:fontFamily="@font/jaldi_bold"
                 android:padding="5dp"
                 android:text=" "
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textColor="@color/text_color"
-                android:textSize="15sp" />
+                android:textSize="17sp" />
 
 
             <LinearLayout
@@ -157,7 +157,7 @@
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/signikanegative_medium"
                         android:text=" Clear"
                         android:textColor="@color/text_color" />
                 </LinearLayout>
@@ -182,7 +182,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/signikanegative_medium"
                         android:text=" Remove1"
                         android:textColor="@color/text_color" />
                 </LinearLayout>
@@ -207,8 +207,8 @@
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:text=" Copy All"
+                        android:fontFamily="@font/signikanegative_medium"
+                        android:text=" Copy"
                         android:textColor="@color/text_color" />
                 </LinearLayout>
 

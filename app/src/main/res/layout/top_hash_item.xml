@@ -44,23 +44,23 @@
                         android:id="@+id/tagTagText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/jaldi_bold"
                         android:text="#love"
                          android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textColor="@color/text_color"
-                        android:textSize="15sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:gravity="end"
                         android:id="@+id/tagTagTextNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/jaldi_bold"
                         android:text="123B"
                         android:paddingRight="27dp"
                         android:textAppearance="?attr/textAppearanceTitleMedium"
                         android:textColor="@color/text_color"
-                        android:textSize="15sp" />
+                        android:textSize="17sp" />
 
 
                 </LinearLayout>
@@ -81,7 +81,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
+                        android:fontFamily="@font/signikanegative_medium"
                         android:text="Add"
                         android:textColor="@color/text_color" />
                 </LinearLayout>

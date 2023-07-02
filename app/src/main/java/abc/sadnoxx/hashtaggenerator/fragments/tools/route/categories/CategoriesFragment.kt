@@ -1,5 +1,7 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories
 
+import abc.sadnoxx.hashtaggenerator.FilterCopiedText
+import abc.sadnoxx.hashtaggenerator.HapticUtils
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +13,9 @@ import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.CardDataRepositor
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.SharedPreferences
+import android.os.Vibrator
+import android.preference.PreferenceManager
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +24,7 @@ class CategoriesFragment : Fragment() {
 
     private lateinit var categoryCardAdapter: CategoryCardAdapter
 
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +35,7 @@ class CategoriesFragment : Fragment() {
         val recyclerView: RecyclerView = rootView.findViewById(R.id.recyclerView)
 
 
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
 
         val categoryMap = mapOf(
@@ -71,11 +78,14 @@ class CategoriesFragment : Fragment() {
 
     }
     private fun copyToClipboard(text: Int) {
-        val textString = resources.getString(text)
-        val clipboardManager = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        val clip = ClipData.newPlainText("Copied Text", textString)
-        clipboardManager.setPrimaryClip(clip)
-        Toast.makeText(requireContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show()
+        val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        HapticUtils.performHapticFeedback(vibrator, sharedPreferences)
+
+
+        val filterCopiedText = FilterCopiedText()
+
+// Call the sentTheCardIn method with the required parameters
+        filterCopiedText.sentTheCardInWithInt(requireContext(), text, resources)
     }
 
 }

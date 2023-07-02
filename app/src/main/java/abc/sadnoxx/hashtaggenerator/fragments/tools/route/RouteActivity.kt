@@ -5,6 +5,7 @@ import abc.sadnoxx.hashtaggenerator.HapticUtils
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.MyBottomSheetDialogFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories.CategoriesFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.tophashtags.TopHashtags
 import android.os.Build
@@ -24,6 +25,18 @@ class RouteActivity : AppCompatActivity() {
 
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
 
+
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.filterResult -> {
+                    val bottomSheetFragment = MyBottomSheetDialogFragment()
+                    bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
+                    true
+                }
+
+                else -> false
+            }
+        }
 
         val screenOnFlag = sharedPreferences.getBoolean("sleepChecked", true)
         if (screenOnFlag) {
@@ -330,16 +343,15 @@ class RouteActivity : AppCompatActivity() {
             }
             else  -> {
                 val fragment2 = AboutFragment()
-//                val args = Bundle()
-//                args.putString("category", fragmentName) // Pass the category name as an argument
-//                fragment2.arguments = args
 
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
                 toolbar.title = "About"
             }
+
         }
+        toolbar.menu.findItem(R.id.filterResult)?.isVisible = toolbar.title != "About"
 
 
 
