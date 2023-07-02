@@ -31,8 +31,11 @@ private lateinit var sharedPrefs: SharedPreferences
 class FilterCopiedText {
 
 
+    fun sentTheCardIn(context: Context,tagsText1: String,resources: Resources)(){
 
-    fun sentTheCardIn(context: Context,tagsText1: Card,resources: Resources,) {
+    }
+
+    fun sentTheCardIn(context: Context,tagsText1: Card,resources: Resources) {
 
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)

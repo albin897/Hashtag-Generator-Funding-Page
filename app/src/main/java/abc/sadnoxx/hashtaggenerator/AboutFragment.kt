@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.pm.PackageInfoCompat
@@ -115,7 +116,14 @@ class AboutFragment : Fragment() {
         contributers.setOnClickListener {
             performHapticFeedback(vibrator, sharedPreferences)
             val view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null)
-            view.setOnClickListener {
+            val profile1 = view.findViewById<LinearLayout>(R.id.profile1)
+            val profile2 = view.findViewById<LinearLayout>(R.id.profile2)
+
+            profile1.setOnClickListener {
+                openLinkToOtherSites("https://github.com/sadnoxx")
+            }
+
+            profile2.setOnClickListener {
                 openLinkToOtherSites("https://github.com/akhhyyl")
             }
 
@@ -129,7 +137,7 @@ class AboutFragment : Fragment() {
     private fun showLinkDialog(context: Context, view: View) {
 
         MaterialAlertDialogBuilder(context)
-            .setTitle("Contributors")
+            .setTitle(R.string.contributers)
             .setView(view)
             .setPositiveButton(R.string.close) { dialog, _ ->
                 dialog.dismiss()

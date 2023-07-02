@@ -1,34 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="26dp"
-    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    >
+    <LinearLayout
 
-<!--    <ImageView-->
-<!--        android:id="@+id/image_view"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/link" />-->
-
-    <TextView
-        android:id="@+id/title_text_view"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/profile1"
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dev 02x"
-        android:fontFamily="@font/bold"
-        android:textSize="20sp"/>
+        android:orientation="horizontal"
+        android:paddingBottom="28dp">
 
-    <TextView
-        android:paddingTop="5dp"
-        android:id="@+id/description_text_view"
+        <ImageView
+            android:id="@+id/image_view1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingEnd="16dp"
+            android:src="@drawable/profile" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_text_view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Sad NoXx"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/description_text_view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signikanegative_medium"
+                android:paddingTop="5dp"
+                android:text="Designed and developed the app."
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/profile2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/signikanegative_medium"
-        android:textSize="15sp"
-        android:text="Made a huge contribution to the development of hashtags data repository." />
+        android:orientation="horizontal"
+        android:paddingBottom="18dp">
 
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingEnd="16dp"
+            android:src="@drawable/profile" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bold"
+                android:text="Dev 02x"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/description_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signikanegative_medium"
+                android:paddingTop="5dp"
+                android:text="Made a huge contribution to the development of hashtags data repository."
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

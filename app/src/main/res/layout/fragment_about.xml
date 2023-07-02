@@ -356,20 +356,10 @@
         </com.google.android.material.card.MaterialCardView>
 
 
+
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:padding="20dp"
-        android:text="Made with ❤️ by Sad NoXx"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
