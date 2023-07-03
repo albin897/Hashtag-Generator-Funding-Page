@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val launchCount = sharedPreferences.getInt(LAUNCH_COUNTER_KEY, 0)
-        if (launchCount >= 15) {
+        if (launchCount >= 5) {
             showFeedbackDialog()        //review dialog
         }
 

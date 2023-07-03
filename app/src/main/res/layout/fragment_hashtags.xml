@@ -94,62 +94,66 @@
 
         </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:id="@+id/searchbartop"
+        <LinearLayout
+            android:id="@+id/searchLinear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="25dp"
-            android:paddingTop="7dp"
-            android:paddingRight="25dp"
-            android:paddingBottom="8dp"
-            android:visibility="visible"
-            app:boxCornerRadiusBottomEnd="25dp"
-            app:boxCornerRadiusBottomStart="25dp"
-            app:boxCornerRadiusTopEnd="25dp"
-            app:boxCornerRadiusTopStart="25dp"
-            app:endIconMode="clear_text"
+            android:orientation="horizontal"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayout1">
 
-
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/search_bar"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/searchbartop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/open_sans_medium"
-                android:hint="@string/searchBox_hint"
-                android:imeOptions="actionSearch"
-                android:inputType="text"
-                android:text=""
-                tools:ignore="DuplicateSpeakableTextCheck,VisualLintTextFieldSize,TextContrastCheck" />
+                android:layout_weight="3"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:visibility="visible"
+                app:boxCornerRadiusBottomEnd="25dp"
+                app:boxCornerRadiusBottomStart="25dp"
+                app:boxCornerRadiusTopEnd="25dp"
+                app:boxCornerRadiusTopStart="25dp"
+                app:endIconMode="clear_text">
 
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/open_sans_medium"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text=""
+                    tools:ignore="DuplicateSpeakableTextCheck,VisualLintTextFieldSize,TextContrastCheck" />
 
+            </com.google.android.material.textfield.TextInputLayout>
 
+<!--            <com.google.android.material.imageview.ShapeableImageView-->
+<!--                android:id="@+id/generateHashSearchBtn"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:background="@drawable/handle_shape_new_search"-->
+<!--                android:src="@drawable/search"-->
+<!--                android:layout_weight="0.5" />-->
 
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:layout_gravity="center"
+                android:id="@+id/generateHashSearchBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/search"
+                android:layout_marginEnd="10dp"
+                app:strokeColor="@color/text_color"
+                android:backgroundTint="@color/card_col3"/>
 
+        </LinearLayout>
 
-                <Button
-                    android:layout_gravity="end"
-                    android:id="@+id/generateHashSearchBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="@color/card_col"
-                    android:fontFamily="@font/jaldi_bold"
-                    android:text="@string/generate_btn_text"
-                    android:textColor="@color/text_color"
-                    android:textSize="16sp"
-                    tools:targetApi="lollipop" />
-
-
-
-        </com.google.android.material.textfield.TextInputLayout>
 
 
         <androidx.core.widget.NestedScrollView
@@ -159,465 +163,461 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchbartop">
+            app:layout_constraintTop_toBottomOf="@id/searchLinear">
 
 
             <LinearLayout
-                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="visible">
 
-
-            <LinearLayout
-                android:id="@+id/popularTags"
-                android:visibility="visible"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginLeft="2dp"
-                    android:fontFamily="@font/jaldi_bold"
-                    android:paddingStart="12dp"
-                    android:paddingBottom="18dp"
-                    android:text="Popular Searches"
-                    android:textAppearance="?attr/textAppearanceTitleMedium"
-                    android:textColor="@color/text_color"
-                    android:textSize="18sp"
-                    android:paddingLeft="12dp" />
 
                 <LinearLayout
+                    android:id="@+id/popularTags"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginEnd="10dp">
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:paddingStart="18dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingBottom="18dp"
+                        android:text="Popular Searches:"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textColor="@color/text_color"
+                        android:textSize="18sp" />
 
                     <LinearLayout
-                        android:id="@+id/love"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="15dp"
-                        android:paddingRight="15dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  love"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/photography"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="15dp"
-                        android:paddingRight="15dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  photography"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/party"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingRight="10dp">
+                        android:orientation="horizontal">
 
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
+                        <LinearLayout
+                            android:id="@+id/love"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  party"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="15dp"
+                            android:paddingRight="15dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  love"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/photography"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="15dp"
+                            android:paddingRight="15dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  photography"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/party"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  party"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/lonely"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="15dp"
+                            android:paddingRight="15dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  lonely"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/summer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="15dp"
+                            android:paddingRight="15dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  summer"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/pubg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  pubg"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/birthday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="15dp"
+                            android:paddingRight="15dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  birthday"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/snow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="15dp"
+                            android:paddingRight="15dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  snow"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/flights"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  flights"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/engagement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="15dp"
+                            android:paddingRight="15dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  engagement"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/chocolate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="15dp"
+                            android:paddingRight="15dp">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  chocolate"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/handle_shape_new"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:visibility="invisible">
+
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/search" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/jaldi_bold"
+                                android:text="  sad"
+                                android:textColor="@color/text_color"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginEnd="10dp">
-
-                    <LinearLayout
-                        android:id="@+id/lonely"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="15dp"
-                        android:paddingRight="15dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  lonely"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/summer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="15dp"
-                        android:paddingRight="15dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  summer"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/pubg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingRight="10dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  pubg"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginEnd="10dp">
-
-                    <LinearLayout
-                        android:id="@+id/birthday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="15dp"
-                        android:paddingRight="15dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  birthday"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/snow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="15dp"
-                        android:paddingRight="15dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  snow"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/flights"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingRight="10dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  flights"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginEnd="10dp">
-
-                    <LinearLayout
-                        android:id="@+id/engagement"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="15dp"
-                        android:paddingRight="15dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  engagement"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/chocolate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="15dp"
-                        android:paddingRight="15dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  chocolate"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:visibility="invisible"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/handle_shape_new"
-                        android:orientation="horizontal"
-                        android:paddingStart="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingRight="10dp">
-
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/jaldi_bold"
-                            android:text="  sad"
-                            android:textColor="@color/text_color"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-
-
-
-
-            </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
                     android:layout_marginBottom="88dp"
+                    android:visibility="gone"
                     tools:listitem="@layout/hash_item" />
 
 
@@ -649,8 +649,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

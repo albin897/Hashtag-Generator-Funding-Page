@@ -38,6 +38,9 @@ class FontsFragment : Fragment() {
     private lateinit var contentTxt12: TextView
     private lateinit var contentTxt13: TextView
     private lateinit var contentTxt14: TextView
+    private lateinit var contentTxt15: TextView
+    private lateinit var contentTxt16: TextView
+    private lateinit var contentTxt17: TextView
 
     private lateinit var inputTextBox: TextInputEditText
 
@@ -56,12 +59,14 @@ class FontsFragment : Fragment() {
     private lateinit var copyButton12: ImageView
     private lateinit var copyButton13: ImageView
     private lateinit var copyButton14: ImageView
+    private lateinit var copyButton15: ImageView
+    private lateinit var copyButton16: ImageView
+    private lateinit var copyButton17: ImageView
+
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_fonts, container, false)
 
@@ -83,7 +88,9 @@ class FontsFragment : Fragment() {
         contentTxt12 = rootView.findViewById(R.id.mainText12)
         contentTxt13 = rootView.findViewById(R.id.mainText13)
         contentTxt14 = rootView.findViewById(R.id.mainText14)
-
+        contentTxt15 = rootView.findViewById(R.id.mainText15)
+        contentTxt16 = rootView.findViewById(R.id.mainText16)
+        contentTxt17 = rootView.findViewById(R.id.mainText17)
 
         inputTextBox = rootView.findViewById(R.id.edit_text1)
 
@@ -101,6 +108,10 @@ class FontsFragment : Fragment() {
         copyButton12 = rootView.findViewById(R.id.copyButton12)
         copyButton13 = rootView.findViewById(R.id.copyButton13)
         copyButton14 = rootView.findViewById(R.id.copyButton14)
+        copyButton15 = rootView.findViewById(R.id.copyButton15)
+        copyButton16 = rootView.findViewById(R.id.copyButton16)
+        copyButton17 = rootView.findViewById(R.id.copyButton17)
+
 
 
         inputTextBox.setText(R.string.fonts_input_box_hint)
@@ -117,23 +128,54 @@ class FontsFragment : Fragment() {
             StyledTextConverter.Companion.StyleSet.BOLD_FRAKTUR,
             StyledTextConverter.Companion.StyleSet.CIRCLED,
             StyledTextConverter.Companion.StyleSet.CIRCLED_NEGATIVE,
-            StyledTextConverter.Companion.StyleSet.SUBSCRIPT,
-            StyledTextConverter.Companion.StyleSet.SUPERSCRIPT,
+            StyledTextConverter.Companion.StyleSet.FULL_SQUARED,
+            StyledTextConverter.Companion.StyleSet.SQUARED,
             StyledTextConverter.Companion.StyleSet.SCRIPT,
-            StyledTextConverter.Companion.StyleSet.DOUBLE_STRUCK
+            StyledTextConverter.Companion.StyleSet.DOUBLE_STRUCK,
+            StyledTextConverter.Companion.StyleSet.ASIAN,
+            StyledTextConverter.Companion.StyleSet.PARADISE,
+            StyledTextConverter.Companion.StyleSet.SUPERB
         )
 
         val copyButtons = arrayOf(
-            copyButton1, copyButton2, copyButton3, copyButton4, copyButton5,
-            copyButton6, copyButton7, copyButton8, copyButton9, copyButton10,
-            copyButton11, copyButton12, copyButton13, copyButton14
+            copyButton1,
+            copyButton2,
+            copyButton3,
+            copyButton4,
+            copyButton5,
+            copyButton6,
+            copyButton7,
+            copyButton8,
+            copyButton9,
+            copyButton10,
+            copyButton11,
+            copyButton12,
+            copyButton13,
+            copyButton14,
+            copyButton15,
+            copyButton16,
+            copyButton17
         )
 
 
         val contentTextViews = arrayOf(
-            contentTxt1, contentTxt2, contentTxt3, contentTxt4, contentTxt5,
-            contentTxt6, contentTxt7, contentTxt8, contentTxt9, contentTxt10,
-            contentTxt11, contentTxt12, contentTxt13, contentTxt14
+            contentTxt1,
+            contentTxt2,
+            contentTxt3,
+            contentTxt4,
+            contentTxt5,
+            contentTxt6,
+            contentTxt7,
+            contentTxt8,
+            contentTxt9,
+            contentTxt10,
+            contentTxt11,
+            contentTxt12,
+            contentTxt13,
+            contentTxt14,
+            contentTxt15,
+            contentTxt16,
+            contentTxt17
         )
 
         val welcomeText = inputTextBox.text
@@ -171,7 +213,7 @@ class FontsFragment : Fragment() {
         for (i in copyButtons.indices) {
             copyButtons[i].setOnClickListener {
 
-             performHapticFeedback(vibrator, sharedPreferences)
+                performHapticFeedback(vibrator, sharedPreferences)
                 copyTextToClipboard(contentTextViews[i].text.toString())
             }
         }

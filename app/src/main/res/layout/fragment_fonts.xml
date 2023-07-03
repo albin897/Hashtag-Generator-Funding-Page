@@ -134,8 +134,9 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
+
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card2"
+                    android:id="@+id/card15"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -143,17 +144,15 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/card_col"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
                     >
 
                     <TextView
-
                         style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:text="Sans"
+                        android:text="Asian"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
@@ -164,19 +163,20 @@
                         android:paddingBottom="15dp">
 
                         <TextView
-                            android:id="@+id/mainText2"
+                            android:id="@+id/mainText15"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
+                            android:maxLines="2"
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
                         <ImageView
-                            android:id="@+id/copyButton2"
+                            android:id="@+id/copyButton15"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
@@ -191,7 +191,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card3"
+                    android:id="@+id/card16"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -199,7 +199,6 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/card_col"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
@@ -208,7 +207,7 @@
                     <TextView
                         style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:text="Sans Bold"
+                        android:text="Paradise"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
@@ -219,19 +218,20 @@
                         android:paddingBottom="15dp">
 
                         <TextView
-                            android:id="@+id/mainText3"
+                            android:id="@+id/mainText16"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
+                            android:maxLines="2"
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
                         <ImageView
-                            android:id="@+id/copyButton3"
+                            android:id="@+id/copyButton16"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
@@ -246,6 +246,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card17"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -253,17 +254,15 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/card_col"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
                     >
 
                     <TextView
-
                         style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:text="Sans Italic"
+                        android:text="Superb"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
@@ -274,73 +273,20 @@
                         android:paddingBottom="15dp">
 
                         <TextView
-                            android:id="@+id/mainText4"
+                            android:id="@+id/mainText17"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
+                            android:maxLines="2"
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
                         <ImageView
-                            android:id="@+id/copyButton4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingEnd="10dp"
-                            android:paddingRight="10dp"
-                            android:src="@drawable/copy"
-                            tools:ignore="RtlSymmetry" />
-
-
-                    </LinearLayout>
-
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    style="?attr/materialCardViewFilledStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="16dp"
-                    android:backgroundTint="@color/card_col"
-
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-
-                    >
-
-                    <TextView
-                        style="@style/headingFontText"
-                        android:layout_weight="1"
-                        android:text="Sans Bold Italic"
-                        android:textAppearance="?attr/textAppearanceTitleMedium" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:paddingTop="20dp"
-                        android:paddingBottom="15dp">
-
-                        <TextView
-                            android:id="@+id/mainText5"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="12dp"
-                            android:layout_marginLeft="19dp"
-                            android:layout_weight="1"
-                            android:paddingTop="5dp"
-                            android:text=""
-                            android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
-
-                        <ImageView
-                            android:id="@+id/copyButton5"
+                            android:id="@+id/copyButton17"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
@@ -624,6 +570,8 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
+
+
                 <com.google.android.material.card.MaterialCardView
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -641,7 +589,7 @@
                     <TextView
                         style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:text="Subscript"
+                        android:text="Squared"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
@@ -652,7 +600,7 @@
                         android:paddingBottom="15dp">
 
                         <TextView
-                            android:id="@+id/mainText11"
+                            android:id="@+id/mainText12"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
@@ -664,7 +612,7 @@
                             android:textSize="18sp" />
 
                         <ImageView
-                            android:id="@+id/copyButton11"
+                            android:id="@+id/copyButton12"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
@@ -695,7 +643,7 @@
                     <TextView
                         style="@style/headingFontText"
                         android:layout_weight="1"
-                        android:text="Superscript"
+                        android:text="Full Squared"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <LinearLayout
@@ -706,7 +654,7 @@
                         android:paddingBottom="15dp">
 
                         <TextView
-                            android:id="@+id/mainText12"
+                            android:id="@+id/mainText11"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
@@ -718,7 +666,7 @@
                             android:textSize="18sp" />
 
                         <ImageView
-                            android:id="@+id/copyButton12"
+                            android:id="@+id/copyButton11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingEnd="10dp"
@@ -841,6 +789,227 @@
                 </com.google.android.material.card.MaterialCardView>
 
 
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card2"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+
+                        style="@style/headingFontText"
+                        android:layout_weight="1"
+                        android:text="Sans"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/copy"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card3"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        style="@style/headingFontText"
+                        android:layout_weight="1"
+                        android:text="Sans Bold"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/copy"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+
+                        style="@style/headingFontText"
+                        android:layout_weight="1"
+                        android:text="Sans Italic"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/copy"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <TextView
+                        style="@style/headingFontText"
+                        android:layout_weight="1"
+                        android:text="Sans Bold Italic"
+                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/mainText5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:paddingTop="5dp"
+                            android:text=""
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:id="@+id/copyButton5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/copy"
+                            tools:ignore="RtlSymmetry" />
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
             </LinearLayout>
 
 
@@ -849,3 +1018,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--current count 17-->

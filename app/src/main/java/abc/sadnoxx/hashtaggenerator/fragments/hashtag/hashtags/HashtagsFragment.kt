@@ -5,8 +5,8 @@ package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 import abc.sadnoxx.hashtaggenerator.FilterCopiedText
 import abc.sadnoxx.hashtaggenerator.HapticUtils.performHapticFeedback
 import abc.sadnoxx.hashtaggenerator.R
-import android.content.ClipData
-import android.content.ClipboardManager
+import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.CardDataRepository.cardDataList
+import abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories.CategoryDataRepository.allDataListCombined
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
@@ -24,6 +24,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -34,6 +35,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+import com.google.android.material.imageview.ShapeableImageView
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -56,10 +59,10 @@ class HashtagsFragment : Fragment(),
 
     private val sharedViewModel: SharedViewModel by activityViewModels()
 
-    private lateinit var searchBar: TextInputEditText
+    private lateinit var searchBar: MaterialAutoCompleteTextView
     private lateinit var cardAdapter: CardAdapter
     private lateinit var searchBarTop: TextInputLayout
-    private lateinit var generateHashSearchBtn: Button
+    private lateinit var generateHashSearchBtn: ExtendedFloatingActionButton
     private lateinit var platformImage: ImageView
     private lateinit var platformName: TextView
     private lateinit var sharedPrefs: SharedPreferences
@@ -128,9 +131,35 @@ class HashtagsFragment : Fragment(),
 
 
         searchBar = rootView.findViewById(R.id.search_bar)
+
+
+        val suggestionsList = mutableListOf<String>()
+
+        for (card in cardDataList) {
+            suggestionsList.add(card.mainText)
+        }
+
+        for (card in allDataListCombined) {
+            suggestionsList.add(card.mainText)
+        }
+
+
+        suggestionsList.addAll(listOf(
+//add extra names
+        ))
+
+
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, suggestionsList)
+
+
+
+        searchBar.setAdapter(adapter)
+
+
+
         val recyclerView: RecyclerView = rootView.findViewById(R.id.recyclerView)
 
-        cardAdapter = CardAdapter(CardDataRepository.cardDataList, newdata, requireContext())
+        cardAdapter = CardAdapter(cardDataList, newdata, requireContext())
 
 
 
@@ -340,6 +369,8 @@ class HashtagsFragment : Fragment(),
     private fun setTagClickListener(tag: String) {
         searchBar.setText(tag)
         cardAdapter.filterData(tag)
+        searchBar.requestFocus()
+        searchBar.setSelection(searchBar.text.length)
     }
 
 
