@@ -8,7 +8,7 @@
     <item
         android:id="@+id/item_2"
         android:enabled="true"
-        android:icon="@drawable/hashtag"
+        android:icon="@drawable/hashtag_title"
         android:title="@string/Hashtags"
         />
     <item

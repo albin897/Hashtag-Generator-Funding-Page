@@ -336,6 +336,7 @@
                             android:layout_weight="1"
                             android:paddingTop="5dp"
                             android:text=""
+                            android:maxLines="2"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
@@ -390,6 +391,8 @@
                             android:layout_weight="1"
                             android:paddingTop="5dp"
                             android:text=""
+
+                            android:maxLines="2"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
@@ -443,6 +446,7 @@
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
                             android:paddingTop="5dp"
+                            android:maxLines="2"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
@@ -498,6 +502,7 @@
                             android:layout_weight="1"
                             android:paddingTop="5dp"
                             android:text=""
+                            android:maxLines="2"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
@@ -552,6 +557,7 @@
                             android:layout_weight="1"
                             android:paddingTop="5dp"
                             android:text=""
+                            android:maxLines="2"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
 
@@ -607,6 +613,7 @@
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
                             android:paddingTop="5dp"
+                            android:maxLines="2"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
@@ -661,6 +668,7 @@
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
                             android:paddingTop="5dp"
+                            android:maxLines="2"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
@@ -715,6 +723,7 @@
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
                             android:paddingTop="5dp"
+                            android:maxLines="2"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
@@ -741,7 +750,6 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="16dp"
                     android:backgroundTint="@color/card_col"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -769,6 +777,7 @@
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
                             android:paddingTop="5dp"
+                            android:maxLines="2"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textSize="18sp" />
@@ -825,6 +834,7 @@
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
+                            android:maxLines="2"
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
@@ -878,6 +888,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
+                            android:maxLines="2"
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
                             android:paddingTop="5dp"
@@ -931,6 +942,7 @@
                         <TextView
                             android:id="@+id/mainText4"
                             android:layout_width="0dp"
+                            android:maxLines="2"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
@@ -963,7 +975,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/card_col"
-
+                    android:layout_marginBottom="16dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
 
@@ -989,6 +1001,7 @@
                             android:layout_marginStart="12dp"
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
+                            android:maxLines="2"
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"

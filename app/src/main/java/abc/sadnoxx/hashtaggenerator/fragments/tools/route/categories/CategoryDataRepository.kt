@@ -69,7 +69,26 @@ object CategoryDataRepository {
         Card("Christmas", R.string.Christmas),
         Card("Valentines Day", R.string.ValentinesDay),
         Card("New Year's Eve", R.string.NewYear),
-        Card("Labour Day", R.string.LabourDay)
+        Card("Labour Day", R.string.LabourDay),
+        Card("Easter", R.string.activities_Easter),
+        Card("Thanksgiving", R.string.activities_Thanksgiving),
+        Card("St. Patrick's Day", R.string.activities_St_Patricks_Day),
+        Card("Halloween", R.string.activities_Halloween),
+        Card("Chinese New Year", R.string.activities_Chinese_New_Year),
+        Card("Independence Day (U.S.)", R.string.activities_Independence_Day_US),
+        Card("Oktoberfest", R.string.activities_Oktoberfest),
+        Card(
+            "Día de Muertos (Day of the Dead)",
+            R.string.activities_Día_de_Muertos_Day_of_the_Dead
+        ),Card(
+            "Día de Muertos (Day of the Dead) 1",
+            R.string.activities_Día_de_Muertos_Day_of_the_Dead1
+        ),
+        Card("Hanukkah", R.string.activities_Hanukkah),
+        Card("Ramadan and Eid al-Fitr", R.string.activities_Ramadan_and_Eid_al_Fitr),
+        Card("Diwali", R.string.activities_Diwali),
+        Card("Bodhi Day", R.string.activities_Bodhi_Day)
+
     )
     val parentingDataList = listOf(
         Card("Parenting", R.string.Parenting),
@@ -176,14 +195,23 @@ object CategoryDataRepository {
         Card("Saturday", R.string.Saturday)
     )
     val sportsDataList = listOf(
-        Card("Running", R.string.activities_Run),
-        Card("Tennis", R.string.activities_Tennis),
+
         Card("Sports", R.string.activities_sport),
+        Card("Football", R.string.activities_Football),
+        Card("Cricket", R.string.activities_Cricket),
         Card("Basketball", R.string.activities_Basketball),
+        Card("American Football", R.string.activities_American_Football),
+        Card("Golf", R.string.activities_Golf),
+        Card("Baseball", R.string.activities_Baseball),
+        Card("Tennis", R.string.activities_Tennis),
         Card("Swimming", R.string.activities_Swimming),
+        Card("Boxing", R.string.activities_Boxing),
+        Card("Volleyball", R.string.activities_Volleyball),
+        Card("Running", R.string.activities_Run),
         Card("Scuba Diving", R.string.activities_scubaDiving)
     )
-    val allDataListCombined = sportsDataList+weekdaysDataList+fashionDataList+makeupDataList+natureDataList+transportationDataList+partyDataList+entertainmentDataList+travelDataList+
-            foodDataList+likesDataList+reelsDataList+followersDataList+photographyDataList+gamingDataList+brandsDataList+moodsDataList+seasonalDataList+holidaysDataList+parentingDataList+
-            workDataList+electronicsDataList+weatherDataList
+    val allDataListCombined =
+        sportsDataList + weekdaysDataList + fashionDataList + makeupDataList + natureDataList + transportationDataList + partyDataList + entertainmentDataList + travelDataList +
+                foodDataList + likesDataList + reelsDataList + followersDataList + photographyDataList + gamingDataList + brandsDataList + moodsDataList + seasonalDataList + holidaysDataList + parentingDataList +
+                workDataList + electronicsDataList + weatherDataList
 }

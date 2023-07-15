@@ -1,5 +1,3 @@
-@file:Suppress("DEPRECATION")
-
 package abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags
 
 import abc.sadnoxx.hashtaggenerator.FilterCopiedText
@@ -9,35 +7,28 @@ import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.CardDataRepositor
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories.CategoryDataRepository.allDataListCombined
 import android.content.Context
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.os.VibrationEffect
 import android.os.Vibrator
 import android.preference.PreferenceManager
 import android.text.Editable
-import android.text.SpannableStringBuilder
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 private const val KEY_PLATFORM = "platform"
@@ -127,7 +118,7 @@ class HashtagsFragment : Fragment(),
         }
 
 
-        val newdata: List<Card> = CardDataRepository.cardDataList.take(0)
+        val newdata: List<Card> = cardDataList.take(0)
 
 
         searchBar = rootView.findViewById(R.id.search_bar)
@@ -139,8 +130,15 @@ class HashtagsFragment : Fragment(),
             suggestionsList.add(card.mainText)
         }
 
+//        for (card in allDataListCombined) {
+//            suggestionsList.add(card.mainText)
+//        }
+
+
         for (card in allDataListCombined) {
-            suggestionsList.add(card.mainText)
+            if (!suggestionsList.contains(card.mainText)) {
+                suggestionsList.add(card.mainText)
+            }
         }
 
 

@@ -354,8 +354,9 @@
 
                                 </LinearLayout>
 
+
                                 <LinearLayout
-                                    android:id="@+id/moods"
+                                    android:id="@+id/sports"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -368,13 +369,13 @@
                                     <ImageView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:src="@drawable/moods" />
+                                        android:src="@drawable/sports" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Moods"
+                                        android:text="  Sports"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -799,8 +800,9 @@
 
                                 </LinearLayout>
 
+
                                 <LinearLayout
-                                    android:id="@+id/sports"
+                                    android:id="@+id/moods"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="4dp"
@@ -813,17 +815,16 @@
                                     <ImageView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:src="@drawable/sports" />
+                                        android:src="@drawable/moods" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Sports"
+                                        android:text="  Moods"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
-
 
                             </TableRow>
 
