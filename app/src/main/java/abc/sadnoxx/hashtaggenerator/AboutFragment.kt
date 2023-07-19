@@ -8,7 +8,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Vibrator
 import android.preference.PreferenceManager
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +15,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.pm.PackageInfoCompat
+import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -90,7 +90,7 @@ class AboutFragment : Fragment() {
                         // Positive button click action
                         dialog.dismiss()
                     }
-                    .setCancelable(true)
+                    .setCancelable(false)
                     .create()
 
                 dialog.show()

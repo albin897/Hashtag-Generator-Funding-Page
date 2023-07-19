@@ -6,8 +6,8 @@
 
 
     <TextView
-        android:padding="20dp"
-        android:gravity="center"
+        android:paddingStart="30dp"
+        android:paddingTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ChangeLogs"
@@ -15,27 +15,160 @@
         android:textColor="@color/text_color"
         android:fontFamily="@font/jaldi_bold"
         />
+    <TextView
+        android:id="@+id/version_info"
+        android:paddingStart="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Version 1.0.22 "
+        android:textSize="14dp"
+        android:fontFamily="@font/bold"
+        />
 
 
     <com.google.android.material.divider.MaterialDivider
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"/>
 
-    <TextView
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:gravity="center"
+<!--    <TextView-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/changelog"-->
+<!--        android:textSize="17dp"-->
+<!--        android:textColor="@color/text_color"-->
+<!--        android:fontFamily="@font/jaldi_bold"-->
+<!--        />-->
+
+    <LinearLayout
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/changelog"
-        android:textSize="17dp"
-        android:textColor="@color/text_color"
-        android:fontFamily="@font/jaldi_bold"
-        />
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[Enhancement] New Changelog Design."
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/signikanegative_medium"
+            android:textSize="15sp"
+            android:layout_marginRight="30dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hashtag repository weekly update."
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/signikanegative_medium"
+            android:textSize="15sp"
+            android:layout_marginRight="30dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[Enhancement] Slight UI changes."
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/signikanegative_medium"
+            android:textSize="15sp"
+            android:layout_marginRight="30dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[Feature] Added new languages ( Hindi, Punjabi )"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/signikanegative_medium"
+            android:textSize="15sp"
+            android:layout_marginRight="30dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[Planned] Add more languages."
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/signikanegative_medium"
+            android:textSize="15sp"
+            android:layout_marginRight="30dp"
+            />
+
+    </LinearLayout>
 
 
 
