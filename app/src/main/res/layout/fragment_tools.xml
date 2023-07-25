@@ -89,7 +89,7 @@
                                 android:fontFamily="@font/signikanegative_medium"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="3dp"
-                                android:text="Top Hashtags"
+                                android:text="@string/top_hashtags"
                                 android:textAppearance="?attr/textAppearanceTitleMedium"
                                 android:textColor="@color/text_color"
                                 android:textSize="22sp" />
@@ -108,7 +108,7 @@
                             android:fontFamily="@font/jaldi_bold"
                             android:paddingTop="9dp"
                             android:paddingBottom="5dp"
-                            android:text="The top best hashtags that are currently trending in all the sites theses hashtags are handpicked and has been sorted based on the audience."
+                            android:text="@string/top_hashtag_desc"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="@color/text_color"
                             android:textSize="15sp" />
@@ -149,7 +149,7 @@
                             android:fontFamily="@font/signikanegative_medium"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
-                            android:text="Categories "
+                            android:text="@string/categories"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="@color/text_color"
                             android:textSize="22sp" />
@@ -182,7 +182,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Likes"
+                                        android:text="@string/clikes"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -207,7 +207,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Reels"
+                                        android:text="@string/creels"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -238,7 +238,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Followers"
+                                        android:text="@string/cfollowers"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -263,7 +263,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Popular"
+                                        android:text="@string/cpopular"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -293,7 +293,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Photography"
+                                        android:text="@string/cphotography"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -318,7 +318,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Gaming"
+                                        android:text="@string/cgaming"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -349,7 +349,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Brands"
+                                        android:text="@string/cbrands"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -375,7 +375,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Sports"
+                                        android:text="@string/csports"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -405,7 +405,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Seasonal"
+                                        android:text="@string/cseasonal"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -430,7 +430,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Holidays"
+                                        android:text="@string/cholidays"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -461,7 +461,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Parenting"
+                                        android:text="@string/cparenting"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -486,7 +486,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Work"
+                                        android:text="@string/cwork"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -516,7 +516,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Electronics"
+                                        android:text="@string/celectronics"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -541,7 +541,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Weather"
+                                        android:text="@string/cweather"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -572,7 +572,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Food"
+                                        android:text="@string/cfood"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -597,7 +597,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Travel"
+                                        android:text="@string/ctravel"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -627,7 +627,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Entertainment"
+                                        android:text="@string/centertainment"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -652,7 +652,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Party"
+                                        android:text="@string/cparty"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -684,7 +684,7 @@
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
 
-                                        android:text="  Transportation"
+                                        android:text="@string/ctransportation"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -709,7 +709,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Nature"
+                                        android:text="@string/cnature"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -739,7 +739,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Makeup"
+                                        android:text="@string/cmakeup"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -764,7 +764,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Fashion"
+                                        android:text="@string/cfashion"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -795,7 +795,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Week Days"
+                                        android:text="@string/cweek_days"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>
@@ -821,7 +821,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/open_sans_bold"
-                                        android:text="  Moods"
+                                        android:text="@string/cmoods"
                                         android:textColor="@color/text_color" />
 
                                 </LinearLayout>

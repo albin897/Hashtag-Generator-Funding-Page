@@ -63,7 +63,7 @@
         android:paddingLeft="30dp"
         android:paddingTop="10dp"
         android:paddingRight="30dp"
-        android:text="One of the best hashtag generator app you can find out there."
+        android:text="@string/app_desc"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -115,7 +115,7 @@
                     android:fontFamily="@font/bold"
                     android:paddingStart="19dp"
                     android:paddingTop="4dp"
-                    android:text="Rate and Review"
+                    android:text="@string/rate"
                     android:textColor="@color/text_color"
                     android:textSize="14sp" />
 
@@ -160,7 +160,7 @@
                     android:paddingStart="19dp"
                     android:paddingLeft="19dp"
                     android:paddingTop="4dp"
-                    android:text="ChangeLogs"
+                    android:text="@string/changelogs"
                     android:textColor="@color/text_color"
                     android:textSize="14sp" />
 
@@ -206,7 +206,7 @@
                     android:paddingStart="19dp"
                     android:paddingLeft="19dp"
                     android:paddingTop="4dp"
-                    android:text="Report Bugs / Suggest an edit"
+                    android:text="@string/report_bugs"
                     android:textColor="@color/text_color"
                     android:textSize="14sp" />
 
@@ -252,7 +252,7 @@
                     android:paddingStart="19dp"
                     android:paddingLeft="19dp"
                     android:paddingTop="4dp"
-                    android:text="Contributers"
+                    android:text="@string/contributers"
                     android:textColor="@color/text_color"
                     android:textSize="14sp" />
 
@@ -299,7 +299,7 @@
                     android:paddingStart="19dp"
                     android:paddingLeft="19dp"
                     android:paddingTop="4dp"
-                    android:text="Privacy Policy"
+                    android:text="@string/privacy_policy"
                     android:textColor="@color/text_color"
                     android:textSize="14sp" />
 
@@ -345,7 +345,7 @@
                     android:paddingStart="19dp"
                     android:paddingLeft="19dp"
                     android:paddingTop="4dp"
-                    android:text="Terms and Conditions"
+                    android:text="@string/terms_and_conditions"
                     android:textColor="@color/text_color"
                     android:textSize="14sp" />
 

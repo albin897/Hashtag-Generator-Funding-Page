@@ -13,25 +13,25 @@
         android:layout_marginLeft="10dp">
 
         <RadioButton
-            android:id="@+id/radio_tools"
+            android:id="@+id/english"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bold"
-            android:text="@string/stools" />
+            android:text="  English" />
 
         <RadioButton
-            android:id="@+id/radio_hashtags"
+            android:id="@+id/hindi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bold"
-            android:text="@string/shashtags" />
+            android:text="  Hindi" />
 
-        <RadioButton
-            android:id="@+id/radio_fonts"
-            android:layout_width="match_parent"
-            android:fontFamily="@font/bold"
-            android:layout_height="wrap_content"
-            android:text="@string/sfonts" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/punjabi"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:fontFamily="@font/bold"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="  Punjabi" />-->
     </RadioGroup>
 
 </LinearLayout>

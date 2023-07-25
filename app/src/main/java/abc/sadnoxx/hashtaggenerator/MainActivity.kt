@@ -6,10 +6,10 @@ import abc.sadnoxx.hashtaggenerator.fragments.settings.SettingsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.ToolsFragment
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.util.Log
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -23,6 +23,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.play.core.review.ReviewManagerFactory
+import java.util.Locale
 
 private const val KEY_THEME = "theme"
 private const val THEME_LIGHT = 0
@@ -33,6 +34,10 @@ private const val KEY_SCREEN = "screen"
 
 private const val PREF_VERSION_CODE_KEY = "version_code"
 
+private const val KEY_LANGUAGE = "language1"
+private const val LANGUAGE_ENGLISH = "en"
+private const val LANGUAGE_HINDI = "hi"
+private const val LANGUAGE_PUNJABI = "pn"
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,12 +45,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager
     private lateinit var pagerAdapter: ViewPagerAdapter
     private lateinit var sharedPreferences: SharedPreferences
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
          sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_LIGHT)
+
         applyDeviceTheme(savedTheme)
         setContentView(R.layout.activity_main)
+
+        val savedLanguage = sharedPreferences.getString(KEY_LANGUAGE,LANGUAGE_ENGLISH)
+        setAppLanguage(savedLanguage!!)
+
 
         try {
             val packageInfo = this.packageManager.getPackageInfo(
@@ -210,5 +222,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    private fun setAppLanguage(languageCode: String) {
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+
+        val config = Configuration()
+        config.locale = locale
+
+        // Update the app's configuration with the new locale
+        resources.updateConfiguration(config, resources.displayMetrics)
+       }
+
 
 }

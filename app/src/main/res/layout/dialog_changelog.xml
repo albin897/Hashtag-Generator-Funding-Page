@@ -61,7 +61,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="[Enhancement] New Changelog Design."
+            android:text="[ENHANCEMENT]:New Changelog Design."
             android:textColor="@color/text_color"
             android:fontFamily="@font/signikanegative_medium"
             android:textSize="15sp"
@@ -111,7 +111,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="[Enhancement] Slight UI changes."
+            android:text="[ENHANCEMENT]:Slight UI changes."
             android:textColor="@color/text_color"
             android:fontFamily="@font/signikanegative_medium"
             android:textSize="15sp"
@@ -136,7 +136,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="[Feature] Added new languages ( Hindi, Punjabi )"
+            android:text="[FEATURE][BETA]:Added new languages ( Hindi, Punjabi ) "
             android:textColor="@color/text_color"
             android:fontFamily="@font/signikanegative_medium"
             android:textSize="15sp"
@@ -161,7 +161,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="[Planned] Add more languages."
+            android:text="[PLANNED]:Add more languages."
             android:textColor="@color/text_color"
             android:fontFamily="@font/signikanegative_medium"
             android:textSize="15sp"

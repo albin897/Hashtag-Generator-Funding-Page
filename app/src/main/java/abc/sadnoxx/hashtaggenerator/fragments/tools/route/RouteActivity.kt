@@ -1,16 +1,15 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools.route
 
 import abc.sadnoxx.hashtaggenerator.AboutFragment
-import abc.sadnoxx.hashtaggenerator.HapticUtils
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.MyBottomSheetDialogFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories.CategoriesFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.tophashtags.TopHashtags
 import android.os.Build
+import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.appbar.MaterialToolbar
 
@@ -75,7 +74,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment1)
                     .commit()
-                toolbar.title = "Top Hashtags"
+                  toolbar.title = resources.getString(R.string.top_hashtags)
             }
             "likes" -> {
                 val fragment2 = CategoriesFragment()
@@ -86,7 +85,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Likes"
+                toolbar.title = resources.getString(R.string.clikes)
             }
             "reels" -> {
                 val fragment2 = CategoriesFragment()
@@ -97,7 +96,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Reels"
+                toolbar.title = resources.getString(R.string.creels)
             }
             "followers" -> {
                 val fragment2 = CategoriesFragment()
@@ -108,7 +107,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Followers"
+                toolbar.title = resources.getString(R.string.cfollowers)
             }
             "popular" -> {
                 val fragment2 = CategoriesFragment()
@@ -119,7 +118,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Popular"
+                toolbar.title = resources.getString(R.string.cpopular)
             }
             "photography" -> {
                 val fragment2 = CategoriesFragment()
@@ -130,7 +129,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Photography"
+                toolbar.title = resources.getString(R.string.cphotography)
             }
             "gaming" -> {
                 val fragment2 = CategoriesFragment()
@@ -141,7 +140,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Gaming"
+                toolbar.title = resources.getString(R.string.cgaming)
             }
             "brands" -> {
                 val fragment2 = CategoriesFragment()
@@ -152,7 +151,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Brands"
+                toolbar.title = resources.getString(R.string.cbrands)
             }
             "moods" -> {
                 val fragment2 = CategoriesFragment()
@@ -163,7 +162,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Moods"
+                toolbar.title = resources.getString(R.string.cmoods)
             }
             "seasonal" -> {
                 val fragment2 = CategoriesFragment()
@@ -174,7 +173,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Seasonal"
+                toolbar.title = resources.getString(R.string.cseasonal)
             }
             "holidays" -> {
                 val fragment2 = CategoriesFragment()
@@ -185,7 +184,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Holidays"
+                toolbar.title = resources.getString(R.string.cholidays)
             }
             "parenting" -> {
                 val fragment2 = CategoriesFragment()
@@ -196,7 +195,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Parenting"
+                toolbar.title = resources.getString(R.string.cparenting)
             }
             "work" -> {
                 val fragment2 = CategoriesFragment()
@@ -207,7 +206,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Work"
+                toolbar.title = resources.getString(R.string.cwork)
             }
             "electronics" -> {
                 val fragment2 = CategoriesFragment()
@@ -218,7 +217,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Electronics"
+                toolbar.title = resources.getString(R.string.celectronics)
             }
             "weather" -> {
                 val fragment2 = CategoriesFragment()
@@ -229,7 +228,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Weather"
+                toolbar.title = resources.getString(R.string.cweather)
             }
             "food" -> {
                 val fragment2 = CategoriesFragment()
@@ -240,7 +239,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Food"
+                toolbar.title = resources.getString(R.string.cfood)
             }
             "travel" -> {
                 val fragment2 = CategoriesFragment()
@@ -251,7 +250,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Travel"
+                toolbar.title = resources.getString(R.string.ctravel)
             }
             "entertainment" -> {
                 val fragment2 = CategoriesFragment()
@@ -262,7 +261,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Entertainment"
+                toolbar.title = resources.getString(R.string.centertainment)
             }
             "party" -> {
                 val fragment2 = CategoriesFragment()
@@ -273,7 +272,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Party"
+                toolbar.title = resources.getString(R.string.cparty)
             }
             "transportation" -> {
                 val fragment2 = CategoriesFragment()
@@ -284,7 +283,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Transportation"
+                toolbar.title = resources.getString(R.string.ctransportation)
             }
             "nature" -> {
                 val fragment2 = CategoriesFragment()
@@ -295,7 +294,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Nature"
+                toolbar.title = resources.getString(R.string.cnature)
             }
             "makeup" -> {
                 val fragment2 = CategoriesFragment()
@@ -306,7 +305,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Makeup"
+                toolbar.title = resources.getString(R.string.cmakeup)
             }
             "fashion" -> {
                 val fragment2 = CategoriesFragment()
@@ -317,7 +316,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Fashion"
+                toolbar.title = resources.getString(R.string.cfashion)
             }
             "weekdays" -> {
                 val fragment2 = CategoriesFragment()
@@ -328,7 +327,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Weekdays"
+                toolbar.title = resources.getString(R.string.cweek_days)
             }
             "sports" -> {
                 val fragment2 = CategoriesFragment()
@@ -339,7 +338,7 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "Sports"
+                toolbar.title = resources.getString(R.string.csports)
             }
             else  -> {
                 val fragment2 = AboutFragment()
@@ -347,11 +346,11 @@ class RouteActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.frame_router, fragment2)
                     .commit()
-                toolbar.title = "About"
+                toolbar.title = resources.getString(R.string.about)
             }
 
         }
-        toolbar.menu.findItem(R.id.filterResult)?.isVisible = toolbar.title != "About"
+        toolbar.menu.findItem(R.id.filterResult)?.isVisible = toolbar.title != resources.getString(R.string.about)
 
 
 

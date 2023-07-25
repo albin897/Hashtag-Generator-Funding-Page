@@ -56,7 +56,7 @@
 
                         android:paddingStart="20dp"
                         android:paddingLeft="20dp"
-                        android:text="Popular Tags"
+                        android:text="@string/popular_tags"
                         android:textColor="@color/text_color"
                         android:textSize="15sp" />
 
@@ -72,7 +72,7 @@
                         android:paddingLeft="10dp"
                         android:paddingEnd="90dp"
                         android:paddingRight="90dp"
-                        android:text="Popularity"
+                        android:text="@string/popularity"
                         android:textColor="@color/text_color"
                         android:textSize="15sp" />
 
@@ -158,7 +158,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/signikanegative_medium"
-                        android:text=" Clear"
+                        android:text="@string/tclear"
                         android:textColor="@color/text_color" />
                 </LinearLayout>
 
@@ -183,7 +183,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/signikanegative_medium"
-                        android:text=" Remove1"
+                        android:text="@string/tremove1"
                         android:textColor="@color/text_color" />
                 </LinearLayout>
 
@@ -208,7 +208,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/signikanegative_medium"
-                        android:text=" Copy"
+                        android:text="@string/tcopy"
                         android:textColor="@color/text_color" />
                 </LinearLayout>
 

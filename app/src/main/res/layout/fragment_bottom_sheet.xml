@@ -172,7 +172,7 @@
         android:paddingTop="15dp"
         android:paddingEnd="8dp"
         android:paddingRight="8dp"
-        android:text="Customizations"
+        android:text="@string/customizations"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
@@ -285,7 +285,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/bold"
                     android:paddingRight="16dp"
-                    android:text="How many hashtags do you want to copy?"
+                    android:text="@string/customizations_copy_tags"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />
@@ -360,7 +360,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/bold"
                     android:paddingRight="16dp"
-                    android:text="How many dots to put above your hashtags?"
+                    android:text="@string/customizations_dot_above"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />
@@ -437,7 +437,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/bold"
                     android:paddingRight="16dp"
-                    android:text="Which hashtags do you want to add at the end?"
+                    android:text="@string/customizations_add_at_end"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />
@@ -511,7 +511,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/bold"
                     android:paddingRight="16dp"
-                    android:text="How many Charecters do you want to copy at max?"
+                    android:text="@string/customizations_chr_to_copy"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />

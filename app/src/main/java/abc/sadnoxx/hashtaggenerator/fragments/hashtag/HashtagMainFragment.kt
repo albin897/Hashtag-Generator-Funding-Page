@@ -3,10 +3,10 @@ package abc.sadnoxx.hashtaggenerator.fragments.hashtag
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.MyBottomSheetDialogFragment
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -36,7 +36,7 @@ class HashtagMainFragment : Fragment() {
 
             adapter = HashtagPageAdapter(childFragmentManager, lifecycle)
 
-            tabLayout.addTab(tabLayout.newTab().setText(R.string.Hashtags))
+            tabLayout.addTab(tabLayout.newTab().setText(R.string.Hashtag))
             tabLayout.addTab(tabLayout.newTab().setText(R.string.Saved))
 
             viewPager2.adapter = adapter

@@ -100,7 +100,7 @@
                             android:layout_marginLeft="19dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/bold"
-                            android:text="Theme"
+                            android:text="@string/theme"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
                             android:textColor="@color/text_color"
                             android:textSize="18sp" />
@@ -234,7 +234,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:text="Prevent phone from sleeping"
+                                android:text="@string/screen_on"
                                 android:textColor="@color/text_color"
                                 android:textSize="18sp" />
 
@@ -244,7 +244,7 @@
                                 android:fontFamily="@font/signikanegative_medium"
                                 android:lines="2"
                                 android:paddingTop="4dp"
-                                android:text="Prevent phone from sleeping while\nthe app is in foreground"
+                                android:text="@string/screen_on_desc"
                                 android:textColor="@color/text_color"
                                 android:textSize="13sp" />
 
@@ -304,7 +304,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:text="Starting Screen"
+                                android:text="@string/starting_screen"
                                 android:textColor="@color/text_color"
                                 android:textSize="18sp" />
 
@@ -314,7 +314,7 @@
                                 android:fontFamily="@font/signikanegative_medium"
                                 android:lines="2"
                                 android:paddingTop="4dp"
-                                android:text="Choose which screen is shown when you launch the app"
+                                android:text="@string/starting_screen_desc"
                                 android:textColor="@color/text_color"
                                 android:textSize="13sp" />
 
@@ -345,14 +345,14 @@
                     android:textSize="15sp" />
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/card3"
+                    android:id="@+id/language"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="16dp"
-                    android:visibility="gone"
+                    android:backgroundTint="@color/card_col"
                     app:cardCornerRadius="25dp">
 
                     <LinearLayout
@@ -362,15 +362,35 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="20dp">
 
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+                            android:src="@drawable/translate" />
 
                         <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bold"
+                            android:text="@string/language"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/languageDisplay"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:fontFamily="@font/bold"
-                            android:paddingStart="49dp"
-                            android:paddingLeft="49dp"
-                            android:text="Changelog"
+                            android:paddingEnd="24dp"
+                            android:paddingRight="24dp"
+                            android:text="English"
                             android:textColor="@color/text_color"
                             android:textSize="14sp" />
 
@@ -421,49 +441,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:text="Check for Updates..."
+                                android:text="@string/check_for_updates"
                                 android:textColor="@color/text_color"
                                 android:textSize="18sp" />
 
-                            <!--                            <TextView-->
-                            <!--                                android:id="@+id/latestTxt"-->
-                            <!--                                android:layout_width="wrap_content"-->
-                            <!--                                android:layout_height="wrap_content"-->
-                            <!--                                android:fontFamily="@font/signikanegative_medium"-->
-                            <!--                                android:paddingTop="10dp"-->
-                            <!--                                android:text="You are using the latest version"-->
-                            <!--                                android:textColor="@color/text_color"-->
-                            <!--                                android:textSize="14sp"-->
-                            <!--                                android:visibility="gone" />-->
-
-                            <!--                            <LinearLayout-->
-                            <!--                                android:id="@+id/newVersion"-->
-                            <!--                                android:layout_width="match_parent"-->
-                            <!--                                android:layout_height="match_parent"-->
-                            <!--                                android:orientation="vertical"-->
-                            <!--                                android:visibility="gone">-->
-
-                            <!--                                <TextView-->
-                            <!--                                    android:layout_width="wrap_content"-->
-                            <!--                                    android:layout_height="wrap_content"-->
-                            <!--                                    android:fontFamily="@font/signikanegative_medium"-->
-                            <!--                                    android:paddingTop="10dp"-->
-                            <!--                                    android:text="A newer version is available to Download"-->
-                            <!--                                    android:textColor="@color/text_color"-->
-                            <!--                                    android:textSize="14sp" />-->
-
-
-                            <!--                                <Button-->
-                            <!--                                    android:id="@+id/updateBtn"-->
-                            <!--                                    style="?attr/materialButtonOutlinedStyle"-->
-                            <!--                                    android:layout_width="wrap_content"-->
-                            <!--                                    android:layout_height="wrap_content"-->
-                            <!--                                    android:layout_gravity="end"-->
-                            <!--                                    android:layout_marginTop="17dp"-->
-                            <!--                                    android:text="Update" />-->
-
-
-                            <!--                            </LinearLayout>-->
 
 
                         </LinearLayout>
@@ -522,7 +503,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:text="About "
+                                android:text="@string/about"
                                 android:textColor="@color/text_color"
                                 android:textSize="18sp" />
 
@@ -531,7 +512,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/signikanegative_medium"
                                 android:paddingTop="4dp"
-                                android:text="Learn more about the app"
+                                android:text="@string/about_desc"
                                 android:textColor="@color/text_color"
                                 android:textSize="14sp" />
 
