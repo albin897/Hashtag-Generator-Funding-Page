@@ -26,7 +26,22 @@
             android:fontFamily="@font/bold"
             android:text="  Hindi" />
 
-<!--        <RadioButton-->
+        <RadioButton
+            android:id="@+id/russian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="  Russian" />
+
+        <RadioButton
+            android:id="@+id/german"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="  German" />
+
+
+        <!--        <RadioButton-->
 <!--            android:id="@+id/punjabi"-->
 <!--            android:layout_width="match_parent"-->
 <!--            android:fontFamily="@font/bold"-->

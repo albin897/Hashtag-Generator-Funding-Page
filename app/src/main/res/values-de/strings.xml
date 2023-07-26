@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">Hashtag Generator</string>
+
+
+    <string name="top_hashtags">Top-Hashtags</string>
+    <string name="top_hashtag_desc">Die besten Hashtags, die derzeit auf allen Websites im Trend liegen. Diese Hashtags sind handverlesen und nach Zielgruppe sortiert.</string>
+
+    <string name="not_found">Hashtag-Gruppe nicht gefunden. Bitte überprüfen Sie den Kategoriebereich auf verwandte Tags.</string>
+    <string name="Hashtag">Hashtags</string>
+    <string name="Saved"><b>Gerettet</b></string>
+    <string name="categories">Kategorien</string>
+    <string name="about">Um</string>
+
+
+    <string name="selected_platform">Ausgewählte Plattform:</string>
+    <string name="dialog_title_platform_selection">\t\n\nWählen Sie Plattform\n</string>
+    <string name="instagram"><b>Instagram</b></string>
+    <string name="instagram_content_description">Sie können auf Instagram bis zu 30 Hashtags verwenden. Wir empfehlen, alle zu verwenden, da diese in der Bildunterschrift ausgeblendet werden können.</string>
+    <string name="instagram_stories"><b>Instagram Stories</b></string>
+    <string name="instagram_stories_content_description">Instagram Stories erlauben höchstens 10 Hashtags. Wir empfehlen die Verwendung von 10 Hashtags, da diese ausgeblendet werden können, indem sie in der Story kleiner erscheinen.</string>
+    <string name="tikTok"><b>TikTok</b></string>
+    <string name="tiktok_content_description">TikTok erlaubt maximal 120 Zeichen. Als Best Practice empfehlen wir die Verwendung der 5–8 am häufigsten verwandten Hashtags in Ihrer TikTok-Videounterschrift.</string>
+    <string name="twitter"><b>Twitter</b></string>
+    <string name="twitter_content_description">Twitter erlaubt maximal 280 Zeichen. Als Best Practice empfehlen wir die Verwendung von 3–5 Hashtags mit der höchsten Relevanz pro Tweet</string>
+    <string name="youTube"><b>YouTube</b></string>
+    <string name="youtube_content_description">YouTube erlaubt höchstens 15 Hashtags. YouTube warnt davor, dass Ihr Video durch übermäßiges Taggen aus der Suche entfernt wird. Wir empfehlen die Verwendung der drei am häufigsten verwandten Hashtags im Titel.</string>
+    <string name="facebook"><b>Facebook</b></string>
+    <string name="facebook_content_description">Facebook erlaubt so viele Hashtags, wie Sie möchten. Wir empfehlen die Verwendung von 2–5 am häufigsten verwandten Hashtags. Zu viele Hashtags sehen in einem Facebook-Beitrag nicht gut aus.</string>
+    <string name="linkedIn"><b>LinkedIn</b></string>
+    <string name="linkedin_content_description">Linkedin erlaubt so viele Hashtags, wie Sie möchten. Wir empfehlen die Verwendung von 5–8 Hashtags mit der höchsten Relevanz. Zu viele Hashtags sehen in einem LinkedIn-Beitrag nicht gut aus.</string>
+    <string name="pinterest"><b>Pinterest</b></string>
+    <string name="pinterest_content_description">Pinterest erlaubt höchstens 20 Hashtags. Als Best Practice empfehlen wir die Verwendung der 5–8 am häufigsten verwandten Hashtags für Ihre Pins.</string>
+    <string name="snapchat"><b>Snapchat</b></string>
+    <string name="snapchat_content_description">Hashtags auf Snapchat funktionieren als Thema im Rampenlicht. Obwohl Sie viele Hashtags hinzufügen können, empfehlen wir, zwei bis drei Hashtags mit der höchsten Relevanz ins Rampenlicht zu rücken.</string>
+    <string name="popular_searches">Beliebte Suchanfragen:</string>
+
+    <string name="customizations">Anpassungen</string>
+    <string name="customizations_copy_tags">Wie viele Hashtags möchten Sie kopieren?</string>
+    <string name="customizations_dot_above">Wie viele Punkte sollten Sie über Ihren Hashtags platzieren?</string>
+    <string name="customizations_add_at_end">Welche Hashtags möchten Sie am Ende hinzufügen?</string>
+    <string name="customizations_chr_to_copy">Wie viele Zeichen möchten Sie maximal kopieren?</string>
+    <string name="seperator_question">Wählen Sie das Trennzeichen aus, das Sie zum Trennen der Hashtags verwenden möchten</string>
+
+    <string name="save"><b>Speichern</b></string>
+    <string name="copy"><b>Kopieren</b></string>
+    <string name="remove"><b>Entfernen</b></string>
+
+    <string name="search">Suchen</string>
+
+    <string name="dialog_title_theme_selection">\t\n\nThema wählen\n</string>
+    <string name="theme">Thema</string>
+    <string name="light">\tLicht</string>
+    <string name="dark">\tDunkel</string>
+    <string name="system_default">\tSystemfehler</string>
+    <string name="vibrations">Vibrationen</string>
+    <string name="haptic_description">Haptisches Feedback, wenn eine Taste gedrückt wird</string>
+    <string name="screen_on">Verhindern Sie, dass das Telefon in den Ruhezustand wechselt</string>
+    <string name="screen_on_desc">Verhindern Sie, dass das Telefon in den Ruhezustand wechselt,\nwährend die App im Vordergrund läuft</string>
+    <string name="starting_screen">Startbildschirm</string>
+    <string name="starting_screen_desc">Wählen Sie aus, welcher Bildschirm angezeigt wird, wenn Sie die App starten</string>
+    <string name="dialog_title_screen_selection">\t\n\nWählen Sie Bildschirm\n</string>
+    <string name="stools">\tWerkzeug</string>
+    <string name="shashtags">\tHashtags</string>
+    <string name="sfonts">\tSchriftarten</string>
+    <string name="check_for_updates">Auf Updates prüfen…</string>
+    <string name="loading"><b>\nWird geladen...\n</b></string>
+    <string name="noupdatedialog"><b>\n\tSie verwenden die neueste Version!</b></string>
+    <string name="updateavailabledialog"><b>Update ist verfügbar!</b></string>
+    <string name="updateavailabledialogdescription"><b>Gute Nachrichten! Eine neue Version der App ist verfügbar</b>.!</string>
+    <string name="about_desc">Erfahren Sie mehr über die App</string>
+    <string name="general"><b>Allgemein</b></string>
+    <string name="additional"><b>Zusätzlich</b></string>
+    <string name="language">Sprache (Beta)</string>
+
+    <string name="ok"><b>OK</b></string>
+    <string name="cancel"><b>Stornieren</b></string>
+    <string name="update"><b>Aktualisieren</b></string>
+    <string name="close"><b>Schließen</b></string>
+    <string name="not_now"><b>Nicht jetzt</b></string>
+    <string name="platform_image">Plattformbild</string>
+
+    <string name="contributers"><b>Mitwirkende</b></string>
+    <string name="app_desc">Eine der besten Hashtag-Generator-Apps, die Sie finden können.</string>
+    <string name="rate">Bewerten und bewerten</string>
+    <string name="changelogs">Änderungsprotokolle</string>
+    <string name="report_bugs">Fehler melden / Bearbeitung vorschlagen</string>
+    <string name="privacy_policy">Datenschutz-Bestimmungen</string>
+    <string name="terms_and_conditions">Geschäftsbedingungen</string>
+
+    <string name="filter">Filter</string>
+    <string name="filter_result">Ergebnis filtern</string>
+    <string name="dialog_title_language_selection">\t\n\nSprache wählen\n</string>
+    <string name="popular_tags">beliebte Schlagwörter</string>
+    <string name="popularity">Popularity</string>
+    <string name="add">Hinzufügen</string>
+    <string name="tcopy">\tKopieren</string>
+    <string name="tremove1">\tEntfernen1</string>
+    <string name="tclear">\tKlar</string>
+
+
+</resources>

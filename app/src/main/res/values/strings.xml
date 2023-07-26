@@ -96,6 +96,8 @@
     <string name="tcopy">\tCopy</string>
     <string name="tremove1">\tRemove1</string>
     <string name="tclear">\tClear</string>
+    <string name="russian">Russian</string>
+    <string name="german">German</string>
 
 
 </resources>

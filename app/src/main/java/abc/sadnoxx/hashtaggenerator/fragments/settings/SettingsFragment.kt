@@ -45,6 +45,8 @@ private const val KEY_LANGUAGE = "language1"
 private const val LANGUAGE_ENGLISH = "en"
 private const val LANGUAGE_HINDI = "hi"
 private const val LANGUAGE_PUNJABI = "pn"
+private const val LANGUAGE_RUSSIAN = "ru"
+private const val LANGUAGE_GERMAN = "de"
 
 
 class SettingsFragment : Fragment() {
@@ -102,10 +104,20 @@ class SettingsFragment : Fragment() {
                 setAppLanguage("hi")
             }
 
-            LANGUAGE_PUNJABI -> {
-                languageDisplay.text = resources.getString(R.string.punjabi)
-                setAppLanguage("pn")
+            LANGUAGE_RUSSIAN -> {
+                languageDisplay.text = resources.getString(R.string.russian)
+                setAppLanguage("ru")
             }
+
+            LANGUAGE_GERMAN -> {
+                languageDisplay.text = resources.getString(R.string.german)
+                setAppLanguage("de")
+            }
+
+//            LANGUAGE_PUNJABI -> {
+//                languageDisplay.text = resources.getString(R.string.punjabi)
+//                setAppLanguage("pn")
+//            }
         }
 
 
@@ -278,6 +290,8 @@ class SettingsFragment : Fragment() {
 
         val english = dialogView.findViewById<RadioButton>(R.id.english)
         val hindi = dialogView.findViewById<RadioButton>(R.id.hindi)
+        val russian = dialogView.findViewById<RadioButton>(R.id.russian)
+        val german = dialogView.findViewById<RadioButton>(R.id.german)
 //        val punjabi = dialogView.findViewById<RadioButton>(R.id.punjabi)
 
         // Retrieve the saved theme from SharedPreferences
@@ -289,6 +303,8 @@ class SettingsFragment : Fragment() {
         when (sharedPreferences.getString(KEY_LANGUAGE, LANGUAGE_ENGLISH)) {
             LANGUAGE_ENGLISH -> english.isChecked = true
             LANGUAGE_HINDI -> hindi.isChecked = true
+            LANGUAGE_RUSSIAN -> russian.isChecked = true
+            LANGUAGE_GERMAN -> german.isChecked = true
 //            LANGUAGE_PUNJABI -> punjabi.isChecked = true
         }
 
@@ -313,6 +329,8 @@ class SettingsFragment : Fragment() {
     private fun getLanguageForRadioButtonId(LanguageRadioButtonId: Int): String {
         return when (LanguageRadioButtonId) {
             R.id.hindi -> LANGUAGE_HINDI
+            R.id.russian -> LANGUAGE_RUSSIAN
+            R.id.german -> LANGUAGE_GERMAN
 //            R.id.punjabi -> LANGUAGE_PUNJABI
             else -> LANGUAGE_ENGLISH
         }
@@ -388,6 +406,16 @@ class SettingsFragment : Fragment() {
             LANGUAGE_HINDI -> {
                 setAppLanguage("hi")
                 languageDisplay.text = resources.getString(R.string.hindi)
+            }
+
+            LANGUAGE_RUSSIAN -> {
+                setAppLanguage("ru")
+                languageDisplay.text = resources.getString(R.string.russian)
+            }
+
+            LANGUAGE_GERMAN -> {
+                setAppLanguage("de")
+                languageDisplay.text = resources.getString(R.string.german)
             }
 
 //            LANGUAGE_PUNJABI -> {

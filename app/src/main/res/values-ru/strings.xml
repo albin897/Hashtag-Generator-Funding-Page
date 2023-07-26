@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hashtag Generator</string>
+
+
+    <string name="top_hashtags">Лучшие хэштеги</string>
+    <string name="top_hashtag_desc">Лучшие хэштеги, которые в настоящее время популярны на всех сайтах. Эти хэштеги подобраны вручную и отсортированы в зависимости от аудитории.</string>
+
+    <string name="not_found">Группа с хэштегом не найдена. Пожалуйста, проверьте раздел категории для связанных тегов.</string>
+    <string name="Hashtag">Хэштеги</string>
+    <string name="Saved"><b>Сохранено</b></string>
+    <string name="categories">Категории</string>
+    <string name="about">О</string>
+
+
+    <string name="selected_platform">Выбранная платформа:</string>
+    <string name="dialog_title_platform_selection">\t\nВыберите платформу</string>
+    <string name="instagram"><b>Инстаграм</b></string>
+    <string name="instagram_content_description">Вы можете использовать до 30 хэштегов в Instagram, и мы рекомендуем использовать их все, так как они могут быть скрыты в подписи.</string>
+    <string name="instagram_stories"><b>Истории инстаграма</b></string>
+    <string name="instagram_stories_content_description">Instagram Stories позволяет использовать не более 10 хэштегов. Мы рекомендуем использовать 10 хэштегов, так как их можно скрыть, сделав их меньше в истории.</string>
+    <string name="tikTok"><b>ТИК Так</b></string>
+    <string name="tiktok_content_description">TikTok позволяет использовать не более 120 символов. Мы рекомендуем использовать 5–8 наиболее релевантных хэштегов в подписи к видео TikTok в качестве наилучшей практики.</string>
+    <string name="twitter"><b>Твиттер</b></string>
+    <string name="twitter_content_description">Twitter позволяет использовать не более 280 символов. Мы рекомендуем использовать 3–5 наиболее релевантных хэштегов для каждого твита.</string>
+    <string name="youTube"><b>YouTube</b></string>
+    <string name="youtube_content_description">YouTube позволяет использовать не более 15 хэштегов. YouTube предупреждает, что чрезмерное количество тегов удалит ваше видео из поиска. Мы рекомендуем использовать 3 наиболее релевантных хэштега в заголовке.</string>
+    <string name="facebook"><b>Фейсбук</b></string>
+    <string name="facebook_content_description">Facebook позволяет использовать столько хэштегов, сколько вы хотите. Мы рекомендуем использовать 2–5 наиболее релевантных хэштегов. Слишком много хэштегов не будут хорошо смотреться в посте на Facebook.</string>
+    <string name="linkedIn"><b>LinkedIn</b></string>
+    <string name="linkedin_content_description">Linkedin позволяет использовать столько хэштегов, сколько вы хотите. Мы рекомендуем использовать 5–8 наиболее релевантных хэштегов. Слишком много хэштегов не будут хорошо смотреться в публикации на LinkedIn.</string>
+    <string name="pinterest"><b>Pinterest</b></string>
+    <string name="pinterest_content_description">Pinterest позволяет использовать не более 20 хэштегов. Мы рекомендуем использовать 5–8 наиболее релевантных хэштегов на ваших пинах.</string>
+    <string name="snapchat"><b>Snapchat</b></string>
+    <string name="snapchat_content_description">Хэштеги в Snapchat работают как тема в центре внимания. Хотя вы можете добавить много хэштегов, мы рекомендуем добавить 2–3 наиболее релевантных хэштега в центре внимания.</string>
+    <string name="popular_searches">Популярные запросы:</string>
+
+    <string name="customizations">Настройки</string>
+    <string name="customizations_copy_tags">Сколько хэштегов вы хотите скопировать?</string>
+    <string name="customizations_dot_above">Сколько точек ставить над хэштегами?</string>
+    <string name="customizations_add_at_end">Какие хэштеги вы хотите добавить в конце?</string>
+    <string name="customizations_chr_to_copy">Сколько персонажей вы хотите скопировать максимально?</string>
+    <string name="seperator_question">Выберите разделитель, который вы хотите использовать для разделения хэштегов.</string>
+
+    <string name="save"><b>Сохранять</b></string>
+    <string name="copy"><b>Копировать</b></string>
+    <string name="remove"><b>Удалять</b></string>
+
+    <string name="search">Поиск</string>
+
+    <string name="dialog_title_theme_selection">\t\n\nВыберите тему\n</string>
+    <string name="theme">Тема</string>
+    <string name="light">\tСвет</string>
+    <string name="dark">\tТемный</string>
+    <string name="system_default">\tСистемные установки по умолчанию</string>
+    <string name="vibrations">Вибрации</string>
+    <string name="haptic_description">Тактильная обратная связь при нажатии кнопки</string>
+    <string name="screen_on">Предотвратить спящий режим телефона</string>
+    <string name="screen_on_desc">Предотвратить переход телефона в спящий режим,\nкогда приложение находится на переднем плане</string>
+    <string name="starting_screen">Начальный экран</string>
+    <string name="starting_screen_desc">Выберите, какой экран будет отображаться при запуске приложения</string>
+    <string name="dialog_title_screen_selection">\t\n\nВыберите экран\n</string>
+    <string name="stools">\tИнструменты</string>
+    <string name="shashtags">\tХэштеги</string>
+    <string name="sfonts">\tШрифты</string>
+    <string name="check_for_updates">Проверить наличие обновлений…</string>
+    <string name="loading"><b>\nПроверка обновлений для улучшения работы с приложением. Пожалуйста, подождите несколько секунд...\n</b></string>
+    <string name="noupdatedialog"><b>\n\tВы используете последнюю версию!</b></string>
+    <string name="updateavailabledialog"><b>Обновление доступно!</b></string>
+    <string name="updateavailabledialogdescription"><b>Хорошие новости! Доступна новая версия приложения</b>.!</string>
+    <string name="about_desc">Узнайте больше о приложении</string>
+    <string name="general"><b>Общий</b></string>
+    <string name="additional"><b>Дополнительный</b></string>
+    <string name="language">Язык (Beta)</string>
+
+    <string name="ok"><b>ХОРОШО</b></string>
+    <string name="cancel"><b>Отмена</b></string>
+    <string name="update"><b>Обновлять</b></string>
+    <string name="close"><b>Закрывать</b></string>
+    <string name="not_now"><b>Не сейчас</b></string>
+    <string name="platform_image">Изображение платформы</string>
+
+    <string name="contributers"><b>Авторы</b></string>
+    <string name="app_desc">Одно из лучших приложений для генерации хэштегов, которое вы можете найти.</string>
+    <string name="rate">Оценка и отзыв</string>
+    <string name="changelogs">Журналы изменений</string>
+    <string name="report_bugs">Сообщить об ошибке / Предложить редактирование</string>
+    <string name="privacy_policy">политика конфиденциальности</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+
+    <string name="filter">Фильтр</string>
+    <string name="filter_result">Результат фильтра</string>
+    <string name="dialog_title_language_selection">\t\n\nВыберите язык\n</string>
+    <string name="popular_tags">Популярные теги</string>
+    <string name="popularity">Популярность</string>
+    <string name="add">Добавлять</string>
+    <string name="tcopy">\tКопировать</string>
+    <string name="tremove1">\tУдалять1</string>
+    <string name="tclear">\tПрозрачный</string>
+
+
+</resources>

@@ -36,8 +36,8 @@ private const val PREF_VERSION_CODE_KEY = "version_code"
 
 private const val KEY_LANGUAGE = "language1"
 private const val LANGUAGE_ENGLISH = "en"
-private const val LANGUAGE_HINDI = "hi"
-private const val LANGUAGE_PUNJABI = "pn"
+
+
 
 class MainActivity : AppCompatActivity() {
 
