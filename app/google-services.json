@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517399740561",
+    "project_id": "hashtag-generator-148bb",
+    "storage_bucket": "hashtag-generator-148bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517399740561:android:5f76272214bb2a8d2a7f30",
+        "android_client_info": {
+          "package_name": "abc.sadnoxx.hashtaggenerator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517399740561-bfch2rdgnhvfut63dffurg7qavfc3usf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgFv_NJMJgqq-uvM4vAvnEC7TXwU6JNTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517399740561-bfch2rdgnhvfut63dffurg7qavfc3usf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
