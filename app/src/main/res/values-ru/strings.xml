@@ -56,7 +56,7 @@
     <string name="vibrations">Вибрации</string>
     <string name="haptic_description">Тактильная обратная связь при нажатии кнопки</string>
     <string name="screen_on">Предотвратить спящий режим телефона</string>
-    <string name="screen_on_desc">Предотвратить переход телефона в спящий режим,\nкогда приложение находится на переднем плане</string>
+    <string name="screen_on_desc">Предотвратить переход телефона в спящий режим,когда приложение находится на переднем плане</string>
     <string name="starting_screen">Начальный экран</string>
     <string name="starting_screen_desc">Выберите, какой экран будет отображаться при запуске приложения</string>
     <string name="dialog_title_screen_selection">\t\n\nВыберите экран\n</string>

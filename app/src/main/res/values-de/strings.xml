@@ -55,7 +55,7 @@
     <string name="vibrations">Vibrationen</string>
     <string name="haptic_description">Haptisches Feedback, wenn eine Taste gedrückt wird</string>
     <string name="screen_on">Verhindern Sie, dass das Telefon in den Ruhezustand wechselt</string>
-    <string name="screen_on_desc">Verhindern Sie, dass das Telefon in den Ruhezustand wechselt,\nwährend die App im Vordergrund läuft</string>
+    <string name="screen_on_desc">Verhindern Sie, dass das Telefon in den Ruhezustand wechselt, während die App im Vordergrund läuft</string>
     <string name="starting_screen">Startbildschirm</string>
     <string name="starting_screen_desc">Wählen Sie aus, welcher Bildschirm angezeigt wird, wenn Sie die App starten</string>
     <string name="dialog_title_screen_selection">\t\n\nWählen Sie Bildschirm\n</string>

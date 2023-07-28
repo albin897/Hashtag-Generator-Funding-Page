@@ -55,7 +55,7 @@
     <string name="vibrations">Vibrations</string>
     <string name="haptic_description">Haptic feedback when a button is pressed</string>
     <string name="screen_on">Prevent phone from sleeping</string>
-    <string name="screen_on_desc">Prevent phone from sleeping while\nthe app is in foreground</string>
+    <string name="screen_on_desc">Prevent phone from sleeping while the app is in foreground</string>
     <string name="starting_screen">Starting Screen</string>
     <string name="starting_screen_desc">Choose which screen is shown when you launch the app</string>
     <string name="dialog_title_screen_selection">\t\n\nChoose Screen\n</string>

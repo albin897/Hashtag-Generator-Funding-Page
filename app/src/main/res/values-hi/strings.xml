@@ -59,7 +59,7 @@
     <string name="vibrations">कंपन</string>
     <string name="haptic_description">बटन दबाने पर हैप्टिक फीडबैक</string>
     <string name="screen_on">फ़ोन को सोने से रोकें</string>
-    <string name="screen_on_desc">जब ऐप अग्रभूमि में हो तो \n फ़ोन को निष्क्रिय होने से रोकें</string>
+    <string name="screen_on_desc">जब ऐप अग्रभूमि में हो तो फ़ोन को निष्क्रिय होने से रोकें</string>
     <string name="starting_screen">आरंभिक स्क्रीन</string>
     <string name="starting_screen_desc">चुनें कि जब आप ऐप लॉन्च करेंगे तो कौन सी स्क्रीन दिखाई जाएगी</string>
     <string name="dialog_title_screen_selection">\t\n\nस्क्रीन चुनें\n</string>
