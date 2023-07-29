@@ -97,6 +97,10 @@
     <string name="tcopy">\tКопировать</string>
     <string name="tremove1">\tУдалять1</string>
     <string name="tclear">\tПрозрачный</string>
+    <string name="textFormatter">Форматировщик текста</string>
+    <string name="to_uppercase">В верхний регистр:</string>
+    <string name="to_lowercase">В нижний регистр:</string>
+    <string name="formatter_desc">Отформатируйте абзацы в верхнем или нижнем регистре. Используйте этот инструмент с заглавной буквы в каждом первом слове предложения или каждой первой букве.</string>
 
 
 </resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/about_background_col"
-    tools:context=".AboutFragment">
+    tools:context=".fragments.settings.AboutFragment">
 
 
     <LinearLayout
@@ -70,296 +70,299 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desc">
 
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/rateAndReview"
-            style="?attr/materialCardViewFilledStyle"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/card_col"
-            android:visibility="visible"
-            app:cardCornerRadius="25dp">
+            android:orientation="vertical">
 
-            <LinearLayout
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/rateAndReview"
+                style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                android:visibility="visible"
+                app:cardCornerRadius="25dp">
 
-                <ImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="16dp"
-                    android:src="@drawable/rate_and_review" />
+                    <ImageView
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
-                    android:paddingStart="19dp"
-                    android:paddingTop="4dp"
-                    android:text="@string/rate"
-                    android:textColor="@color/text_color"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:src="@drawable/rate_and_review" />
 
 
-        </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:paddingStart="19dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/rate"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/changelogs"
-            style="?attr/materialCardViewFilledStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/card_col"
-            android:visibility="visible"
-            app:cardCornerRadius="25dp">
 
-            <LinearLayout
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/changelogs"
+                style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                android:visibility="visible"
+                app:cardCornerRadius="25dp">
 
-                <ImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="16dp"
-                    android:paddingLeft="16dp"
-                    android:src="@drawable/contributers" />
+                    <ImageView
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
-                    android:paddingStart="19dp"
-                    android:paddingLeft="19dp"
-                    android:paddingTop="4dp"
-                    android:text="@string/changelogs"
-                    android:textColor="@color/text_color"
-                    android:textSize="14sp" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingLeft="16dp"
+                        android:src="@drawable/contributers" />
 
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:paddingStart="19dp"
+                        android:paddingLeft="19dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/changelogs"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
 
 
-        </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/reportBugsCard"
-            style="?attr/materialCardViewFilledStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/card_col"
-            android:visibility="visible"
-            app:cardCornerRadius="25dp">
 
-            <LinearLayout
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/reportBugsCard"
+                style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="0dp"
+                android:backgroundTint="@color/card_col"
+                android:visibility="visible"
+                app:cardCornerRadius="25dp">
 
-                <ImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="16dp"
-                    android:paddingLeft="16dp"
-                    android:src="@drawable/settings_suggest" />
+                    <ImageView
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
-                    android:paddingStart="19dp"
-                    android:paddingLeft="19dp"
-                    android:paddingTop="4dp"
-                    android:text="@string/report_bugs"
-                    android:textColor="@color/text_color"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingLeft="16dp"
+                        android:src="@drawable/settings_suggest" />
 
 
-        </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:paddingStart="19dp"
+                        android:paddingLeft="19dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/report_bugs"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/contributers"
-            style="?attr/materialCardViewFilledStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/card_col"
-            android:visibility="visible"
-            app:cardCornerRadius="25dp">
+                </LinearLayout>
 
-            <LinearLayout
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/contributers"
+                style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                android:visibility="visible"
+                app:cardCornerRadius="25dp">
 
-                <ImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="16dp"
-                    android:paddingLeft="16dp"
-                    android:src="@drawable/contributers" />
+                    <ImageView
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
-                    android:paddingStart="19dp"
-                    android:paddingLeft="19dp"
-                    android:paddingTop="4dp"
-                    android:text="@string/contributers"
-                    android:textColor="@color/text_color"
-                    android:textSize="14sp" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingLeft="16dp"
+                        android:src="@drawable/contributers" />
 
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:paddingStart="19dp"
+                        android:paddingLeft="19dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/contributers"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
 
 
-        </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
 
 
+            </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/privacyPolicy"
-            style="?attr/materialCardViewFilledStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/card_col"
-            android:visibility="visible"
-            app:cardCornerRadius="25dp">
 
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/privacyPolicy"
+                style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                android:visibility="visible"
+                app:cardCornerRadius="25dp">
 
-                <ImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="16dp"
-                    android:paddingLeft="16dp"
-                    android:src="@drawable/link" />
+                    <ImageView
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
-                    android:paddingStart="19dp"
-                    android:paddingLeft="19dp"
-                    android:paddingTop="4dp"
-                    android:text="@string/privacy_policy"
-                    android:textColor="@color/text_color"
-                    android:textSize="14sp" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingLeft="16dp"
+                        android:src="@drawable/link" />
 
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:paddingStart="19dp"
+                        android:paddingLeft="19dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/privacy_policy"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
 
 
-        </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/termsAndConditions"
-            style="?attr/materialCardViewFilledStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/card_col"
-            android:visibility="visible"
-            app:cardCornerRadius="25dp">
+            </com.google.android.material.card.MaterialCardView>
 
-            <LinearLayout
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/termsAndConditions"
+                style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                android:visibility="visible"
+                app:cardCornerRadius="25dp">
 
-                <ImageView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="16dp"
-                    android:paddingLeft="16dp"
-                    android:src="@drawable/link" />
+                    <ImageView
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
-                    android:paddingStart="19dp"
-                    android:paddingLeft="19dp"
-                    android:paddingTop="4dp"
-                    android:text="@string/terms_and_conditions"
-                    android:textColor="@color/text_color"
-                    android:textSize="14sp" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingLeft="16dp"
+                        android:src="@drawable/link" />
 
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:paddingStart="19dp"
+                        android:paddingLeft="19dp"
+                        android:paddingTop="4dp"
+                        android:text="@string/terms_and_conditions"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
 
 
-        </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                >
 
 
+            </com.google.android.material.card.MaterialCardView>
 
-    </LinearLayout>
-
-
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

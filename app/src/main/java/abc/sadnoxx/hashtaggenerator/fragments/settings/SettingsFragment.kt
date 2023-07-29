@@ -2,7 +2,6 @@ package abc.sadnoxx.hashtaggenerator.fragments.settings
 
 import abc.sadnoxx.hashtaggenerator.HapticUtils.performHapticFeedback
 import abc.sadnoxx.hashtaggenerator.R
-import abc.sadnoxx.hashtaggenerator.UpdateDialog
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.RouteActivity
 import android.content.Context
 import android.content.Intent

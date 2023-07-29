@@ -3,46 +3,46 @@
     <string name="app_name">Hashtag Generator</string>
 
 
-    <string name="top_hashtags">Top Hashtags</string>
-    <string name="top_hashtag_desc">The top best hashtags that are currently trending in all the sites. Theses hashtags are handpicked and have been sorted based on the audience.</string>
+    <string name="top_hashtags">Meilleurs hashtags</string>
+    <string name="top_hashtag_desc">Les meilleurs hashtags qui sont actuellement à la mode sur tous les sites. Ces hashtags sont triés sur le volet et ont été triés en fonction de l\'audience.</string>
 
-    <string name="not_found">Hashtag group not found. Please check the category section for related tags.</string>
+    <string name="not_found">Groupe hashtag introuvable. Veuillez consulter la section des catégories pour les balises associées.</string>
     <string name="Hashtag">Hashtags</string>
-    <string name="Saved"><b>Saved</b></string>
-    <string name="categories">Categories</string>
-    <string name="about">About</string>
+    <string name="Saved"><b>Enregistré</b></string>
+    <string name="categories">Catégories</string>
+    <string name="about">À propos</string>
 
 
-    <string name="selected_platform">Selected platform :</string>
-    <string name="dialog_title_platform_selection">\t\n\nChoose Platform\n</string>
+    <string name="selected_platform">Plateforme sélectionnée :</string>
+    <string name="dialog_title_platform_selection">\t\n\nChoisissez la plate-forme\n</string>
     <string name="instagram"><b>Instagram</b></string>
-    <string name="instagram_content_description">You can use up to 30 hashtags on Instagram, and we suggest using all of them as they can be hidden within the caption.</string>
+    <string name="instagram_content_description">Vous pouvez utiliser jusqu\'à 30 hashtags sur Instagram, et nous vous suggérons de tous les utiliser car ils peuvent être masqués dans la légende.</string>
     <string name="instagram_stories"><b>Instagram Stories</b></string>
-    <string name="instagram_stories_content_description">Instagram stories allows 10 hashtags at most. We recommend using 10 hashtags as they can be hidden by making them look smaller in the story.</string>
+    <string name="instagram_stories_content_description">Les histoires Instagram autorisent 10 hashtags au maximum. Nous vous recommandons d\'utiliser 10 hashtags car ils peuvent être masqués en les faisant paraître plus petits dans l'histoire.</string>
     <string name="tikTok"><b>TikTok</b></string>
-    <string name="tiktok_content_description">TikTok allows 120 characters at most. We recommend using 5–8 most related hashtags in your TikTok video caption as best practice.</string>
+    <string name="tiktok_content_description">TikTok autorise 120 caractères au maximum. Nous vous recommandons d\'utiliser 5 à 8 hashtags les plus liés dans votre légende vidéo TikTok comme meilleure pratique.</string>
     <string name="twitter"><b>Twitter</b></string>
-    <string name="twitter_content_description">Twitter allows 280 characters at most. We recommend using 3–5 most related hashtags per tweet as best practice</string>
+    <string name="twitter_content_description">Twitter autorise 280 caractères au maximum. Nous vous recommandons d\'utiliser 3 à 5 hashtags les plus liés par tweet comme meilleure pratique</string>
     <string name="youTube"><b>YouTube</b></string>
-    <string name="youtube_content_description">YouTube allows 15 hashtags at most. YouTube warns that over-tagging will remove your video from search. We recommend using 3 most related hashtags in the title.</string>
+    <string name="youtube_content_description">YouTube autorise 15 hashtags au maximum. YouTube avertit que le sur-étiquetage supprimera votre vidéo de la recherche. Nous vous recommandons d\'utiliser les 3 hashtags les plus liés dans le titre.</string>
     <string name="facebook"><b>Facebook</b></string>
-    <string name="facebook_content_description">Facebook allows as many hashtags as you want. We recommend using 2–5 most related hashtags. Too many hashtags won\'t look good on a Facebook post.</string>
+    <string name="facebook_content_description">Facebook autorise autant de hashtags que vous le souhaitez. Nous vous recommandons d\'utiliser 2 à 5 hashtags les plus connexes. Trop de hashtags n'auront pas l'air bien sur une publication Facebook.</string>
     <string name="linkedIn"><b>LinkedIn</b></string>
-    <string name="linkedin_content_description">Linkedin allows as many hashtags as you want. We recommend using 5–8 most related hashtags. Too many hashtags won\'t look good on a LinkedIn post.</string>
+    <string name="linkedin_content_description">Linkedin autorise autant de hashtags que vous le souhaitez. Nous vous recommandons d\'utiliser 5 à 8 hashtags les plus connexes. Trop de hashtags n'auront pas l'air bien sur une publication LinkedIn.</string>
     <string name="pinterest"><b>Pinterest</b></string>
-    <string name="pinterest_content_description">Pinterest allows 20 hashtags at most. We recommend using 5–8 most related hashtags on your pins as best practice.</string>
+    <string name="pinterest_content_description">Pinterest autorise 20 hashtags au maximum. Nous vous recommandons d\'utiliser 5 à 8 hashtags les plus connexes sur vos épingles comme meilleure pratique.</string>
     <string name="snapchat"><b>Snapchat</b></string>
-    <string name="snapchat_content_description">Hashtags on snapchat works as a topic on spotlight. Although you can add many hashtags, we recommend adding 2–3 most related hashtags in spotlight.</string>
-    <string name="popular_searches">Popular Searches:</string>
+    <string name="snapchat_content_description">Les hashtags sur Snapchat fonctionnent comme un sujet sous les projecteurs. Bien que vous puissiez ajouter de nombreux hashtags, nous vous recommandons d\'ajouter 2 à 3 hashtags les plus connexes dans Spotlight.</string>
+    <string name="popular_searches">Recherches populaires:</string>
 
-    <string name="customizations">Customizations</string>
-    <string name="customizations_copy_tags">How many hashtags do you want to copy?</string>
-    <string name="customizations_dot_above">How many dots to put above your hashtags?</string>
-    <string name="customizations_add_at_end">Which hashtags do you want to add at the end?</string>
-    <string name="customizations_chr_to_copy">How many Characters do you want to copy at max?</string>
-    <string name="seperator_question">Select the separator you want to use to  separate the hashtags</string>
+    <string name="customizations">Personnalisations</string>
+    <string name="customizations_copy_tags">Combien de hashtags voulez-vous copier ?</string>
+    <string name="customizations_dot_above">Combien de points mettre au dessus de vos hashtags ?</string>
+    <string name="customizations_add_at_end">Quels hashtags voulez-vous ajouter à la fin ?</string>
+    <string name="customizations_chr_to_copy">Combien de personnages voulez-vous copier au maximum ?</string>
+    <string name="seperator_question">Sélectionnez le séparateur que vous souhaitez utiliser pour séparer les hashtags</string>
 
-    <string name="save"><b>Save</b></string>
+    <string name="save"><b>sauver</b></string>
     <string name="copy"><b>Copy</b></string>
     <string name="remove"><b>Remove</b></string>
 

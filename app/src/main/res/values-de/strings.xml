@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Hashtag Generator</string>
 
@@ -96,6 +97,10 @@
     <string name="tcopy">\tKopieren</string>
     <string name="tremove1">\tEntfernen1</string>
     <string name="tclear">\tKlar</string>
+    <string name="textFormatter">Textformatierer</string>
+    <string name="to_uppercase">In Großbuchstaben:</string>
+    <string name="to_lowercase">In Kleinbuchstaben umwandeln:</string>
+    <string name="formatter_desc">Formatieren Sie Absätze in Groß- oder Kleinbuchstaben. Schreiben Sie mit diesem Tool jedes erste Wort des Satzes oder jeden ersten Buchstaben groß.</string>
 
 
 </resources>

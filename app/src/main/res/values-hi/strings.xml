@@ -98,4 +98,8 @@
     <string name="tcopy">\tप्रतिलिपि</string>
     <string name="tremove1">\tनिकालना1</string>
     <string name="tclear">\tसाफ़</string>
+    <string name="textFormatter">टेक्स्ट फ़ॉर्मेटर</string>
+    <string name="to_uppercase">अपरकेस में:</string>
+    <string name="to_lowercase">लोअरकेस में:</string>
+    <string name="formatter_desc">पैराग्राफ को अपरकेस या लोअरकेस में प्रारूपित करें। इस टूल का उपयोग करके वाक्य के प्रत्येक पहले शब्द या प्रत्येक पहले अक्षर को बड़े अक्षरों में लिखें।</string>
 </resources>

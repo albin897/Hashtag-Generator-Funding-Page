@@ -10,6 +10,8 @@
     <string name="english">English</string>
     <string name="hindi">Hindi</string>
     <string name="punjabi">Punjabi</string>
+    <string name="russian">Russian</string>
+    <string name="german">German</string>
 
     <string name="clikes">\tLikes</string>
     <string name="creels">\tReels</string>

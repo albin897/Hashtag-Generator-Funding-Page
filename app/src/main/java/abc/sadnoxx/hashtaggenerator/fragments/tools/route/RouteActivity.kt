@@ -1,8 +1,9 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools.route
 
-import abc.sadnoxx.hashtaggenerator.AboutFragment
 import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.MyBottomSheetDialogFragment
+import abc.sadnoxx.hashtaggenerator.fragments.settings.AboutFragment
+import abc.sadnoxx.hashtaggenerator.fragments.tools.TextFormatter
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories.CategoriesFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.tophashtags.TopHashtags
 import android.os.Build
@@ -75,6 +76,13 @@ class RouteActivity : AppCompatActivity() {
                     .replace(R.id.frame_router, fragment1)
                     .commit()
                   toolbar.title = resources.getString(R.string.top_hashtags)
+            }
+            "textFormatter" -> {
+                val fragment1 = TextFormatter()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.frame_router, fragment1)
+                    .commit()
+                toolbar.title = resources.getString(R.string.textFormatter)
             }
             "likes" -> {
                 val fragment2 = CategoriesFragment()
@@ -350,9 +358,10 @@ class RouteActivity : AppCompatActivity() {
             }
 
         }
-        toolbar.menu.findItem(R.id.filterResult)?.isVisible = toolbar.title != resources.getString(R.string.about)
 
 
+        toolbar.menu.findItem(R.id.filterResult)?.isVisible =  toolbar.title !=  resources.getString(R.string.about)
+//        toolbar.menu.findItem(R.id.filterResult)?.isVisible =  toolbar.title !=  resources.getString(R.string.textFormatter)
 
     }
 

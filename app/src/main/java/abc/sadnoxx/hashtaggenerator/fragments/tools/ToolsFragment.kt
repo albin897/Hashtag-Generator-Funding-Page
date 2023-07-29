@@ -4,11 +4,11 @@ import abc.sadnoxx.hashtaggenerator.R
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.RouteActivity
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 
 class ToolsFragment : Fragment() {
@@ -38,6 +38,7 @@ class ToolsFragment : Fragment() {
     private lateinit var fashion: LinearLayout
     private lateinit var weekdays: LinearLayout
     private lateinit var sports: LinearLayout
+    private lateinit var textFormatter: MaterialCardView
 
 
     override fun onCreateView(
@@ -74,8 +75,13 @@ class ToolsFragment : Fragment() {
         fashion = rootView.findViewById(R.id.fashion)
         weekdays = rootView.findViewById(R.id.weekdays)
         sports = rootView.findViewById(R.id.sports)
+        textFormatter = rootView.findViewById(R.id.textFormatter)
 
 
+
+        textFormatter.setOnClickListener {
+            openRouteActivityWithFragmentTextFormatter()
+        }
 
         topHashtags.setOnClickListener {
             openRouteActivityWithFragment1()
@@ -339,5 +345,12 @@ class ToolsFragment : Fragment() {
         intent.putExtra("fragment", "fragment1")
         startActivity(intent)
     }
+
+    private fun openRouteActivityWithFragmentTextFormatter() {
+        val intent = Intent(activity, RouteActivity::class.java)
+        intent.putExtra("fragment", "textFormatter")
+        startActivity(intent)
+    }
+
 
 }
