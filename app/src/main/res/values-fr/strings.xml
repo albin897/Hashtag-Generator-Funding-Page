@@ -18,7 +18,7 @@
     <string name="instagram"><b>Instagram</b></string>
     <string name="instagram_content_description">Vous pouvez utiliser jusqu\'à 30 hashtags sur Instagram, et nous vous suggérons de tous les utiliser car ils peuvent être masqués dans la légende.</string>
     <string name="instagram_stories"><b>Instagram Stories</b></string>
-    <string name="instagram_stories_content_description">Les histoires Instagram autorisent 10 hashtags au maximum. Nous vous recommandons d\'utiliser 10 hashtags car ils peuvent être masqués en les faisant paraître plus petits dans l'histoire.</string>
+    <string name="instagram_stories_content_description">Les histoires Instagram autorisent 10 hashtags au maximum. Nous vous recommandons d\'utiliser 10 hashtags car ils peuvent être masqués en les faisant paraître plus petits dans l\'histoire.</string>
     <string name="tikTok"><b>TikTok</b></string>
     <string name="tiktok_content_description">TikTok autorise 120 caractères au maximum. Nous vous recommandons d\'utiliser 5 à 8 hashtags les plus liés dans votre légende vidéo TikTok comme meilleure pratique.</string>
     <string name="twitter"><b>Twitter</b></string>
@@ -26,9 +26,9 @@
     <string name="youTube"><b>YouTube</b></string>
     <string name="youtube_content_description">YouTube autorise 15 hashtags au maximum. YouTube avertit que le sur-étiquetage supprimera votre vidéo de la recherche. Nous vous recommandons d\'utiliser les 3 hashtags les plus liés dans le titre.</string>
     <string name="facebook"><b>Facebook</b></string>
-    <string name="facebook_content_description">Facebook autorise autant de hashtags que vous le souhaitez. Nous vous recommandons d\'utiliser 2 à 5 hashtags les plus connexes. Trop de hashtags n'auront pas l'air bien sur une publication Facebook.</string>
+    <string name="facebook_content_description">Facebook autorise autant de hashtags que vous le souhaitez. Nous vous recommandons d\'utiliser 2 à 5 hashtags les plus connexes. Trop de hashtags n\'auront pas l\'air bien sur une publication Facebook.</string>
     <string name="linkedIn"><b>LinkedIn</b></string>
-    <string name="linkedin_content_description">Linkedin autorise autant de hashtags que vous le souhaitez. Nous vous recommandons d\'utiliser 5 à 8 hashtags les plus connexes. Trop de hashtags n'auront pas l'air bien sur une publication LinkedIn.</string>
+    <string name="linkedin_content_description">Linkedin autorise autant de hashtags que vous le souhaitez. Nous vous recommandons d\'utiliser 5 à 8 hashtags les plus connexes. Trop de hashtags n\'auront pas l\'air bien sur une publication LinkedIn.</string>
     <string name="pinterest"><b>Pinterest</b></string>
     <string name="pinterest_content_description">Pinterest autorise 20 hashtags au maximum. Nous vous recommandons d\'utiliser 5 à 8 hashtags les plus connexes sur vos épingles comme meilleure pratique.</string>
     <string name="snapchat"><b>Snapchat</b></string>
@@ -58,22 +58,22 @@
     <string name="screen_on">Empêcher le téléphone de dormir</string>
     <string name="screen_on_desc">Empêcher le téléphone de dormir pendant que l\'application est au premier plan</string>
     <string name="starting_screen">Écran de démarrage</string>
-    <string name="starting_screen_desc">Choisissez l\'écran qui s\'affiche lorsque vous lancez l'application</string>
+    <string name="starting_screen_desc">Choisissez l\'écran qui s\'affiche lorsque vous lancez l\'application</string>
     <string name="dialog_title_screen_selection">\t\n\nChoisissez l\'écran\n</string>
     <string name="stools">\tOutils</string>
     <string name="shashtags">\tHashtags</string>
     <string name="sfonts">\tPolices</string>
     <string name="check_for_updates">Vérifier les mises à jour…</string>
-    <string name="loading"><b>\nRecherche de mises à jour pour améliorer l'expérience de votre application. Patientez s'il-vous-plait...\n</b></string>
-    <string name="noupdatedialog"><b>\n\tVous utilisez la dernière version!</b></string>
-    <string name="updateavailabledialog"><b>La mise à jour est disponible!</b></string>
-    <string name="updateavailabledialogdescription"><b>Bonnes nouvelles! Une nouvelle version de l'application est disponible</b>.!</string>
+    <string name="loading"><b>\nRecherche de mises à jour pour améliorer l\'expérience de votre application. Patientez s\'il-vous-plait...\n</b></string>
+    <string name="noupdatedialog"><b>\n\tVous utilisez la dernière version !</b></string>
+    <string name="updateavailabledialog"><b>La mise à jour est disponible !</b></string>
+    <string name="updateavailabledialogdescription"><b>Bonnes nouvelles! Une nouvelle version de l\'application est disponible</b>.!</string>
     <string name="about_desc">En savoir plus sur l\'application</string>
     <string name="general"><b>Général</b></string>
     <string name="additional"><b>Supplémentaire</b></string>
     <string name="language">Langue (Beta)</string>
 
-    <string name="ok"><b>approuvé</b></string>
+    <string name="ok"><b>bien</b></string>
     <string name="cancel"><b>Annuler</b></string>
     <string name="update"><b>Mise à jour</b></string>
     <string name="close"><b>Fermer</b></string>
@@ -100,7 +100,7 @@
     <string name="textFormatter">Formateur de texte</string>
     <string name="to_uppercase">En majuscule:</string>
     <string name="to_lowercase">En minuscule:</string>
-    <string name="formatter_desc">Formatez les paragraphes en majuscules ou en minuscules. Mettez en majuscule chaque premier mot de la phrase ou chaque première lettre à l'aide de cet outil.</string>
+    <string name="formatter_desc">Formatez les paragraphes en majuscules ou en minuscules. Mettez en majuscule chaque premier mot de la phrase ou chaque première lettre à l\'aide de cet outil.</string>
 
 
 </resources>

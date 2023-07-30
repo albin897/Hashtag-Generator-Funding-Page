@@ -43,9 +43,21 @@ private const val SCREEN_FONTS = 2
 private const val KEY_LANGUAGE = "language1"
 private const val LANGUAGE_ENGLISH = "en"
 private const val LANGUAGE_HINDI = "hi"
-private const val LANGUAGE_PUNJABI = "pn"
 private const val LANGUAGE_RUSSIAN = "ru"
 private const val LANGUAGE_GERMAN = "de"
+
+private const val LANGUAGE_FRENCH = "fr"
+private const val LANGUAGE_INDONESIAN = "de"
+
+private const val LANGUAGE_JAPANESE = "de"
+private const val LANGUAGE_KOREAN = "de"
+private const val LANGUAGE_CHINESE = "de"
+private const val LANGUAGE_ITALIAN = "de"
+
+private const val LANGUAGE_PORTUGUESE = "de"
+private const val LANGUAGE_SPANISH = "de"
+
+
 
 
 class SettingsFragment : Fragment() {
@@ -113,10 +125,10 @@ class SettingsFragment : Fragment() {
                 setAppLanguage("de")
             }
 
-//            LANGUAGE_PUNJABI -> {
-//                languageDisplay.text = resources.getString(R.string.punjabi)
-//                setAppLanguage("pn")
-//            }
+            LANGUAGE_FRENCH -> {
+                languageDisplay.text = resources.getString(R.string.french)
+                setAppLanguage("fr")
+            }
         }
 
 
@@ -291,7 +303,7 @@ class SettingsFragment : Fragment() {
         val hindi = dialogView.findViewById<RadioButton>(R.id.hindi)
         val russian = dialogView.findViewById<RadioButton>(R.id.russian)
         val german = dialogView.findViewById<RadioButton>(R.id.german)
-//        val punjabi = dialogView.findViewById<RadioButton>(R.id.punjabi)
+        val french = dialogView.findViewById<RadioButton>(R.id.french)
 
         // Retrieve the saved theme from SharedPreferences
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
@@ -304,7 +316,7 @@ class SettingsFragment : Fragment() {
             LANGUAGE_HINDI -> hindi.isChecked = true
             LANGUAGE_RUSSIAN -> russian.isChecked = true
             LANGUAGE_GERMAN -> german.isChecked = true
-//            LANGUAGE_PUNJABI -> punjabi.isChecked = true
+            LANGUAGE_FRENCH -> french.isChecked = true
         }
 
         val radioGroup = dialogView.findViewById<RadioGroup>(R.id.radio_group)
@@ -330,7 +342,7 @@ class SettingsFragment : Fragment() {
             R.id.hindi -> LANGUAGE_HINDI
             R.id.russian -> LANGUAGE_RUSSIAN
             R.id.german -> LANGUAGE_GERMAN
-//            R.id.punjabi -> LANGUAGE_PUNJABI
+            R.id.french -> LANGUAGE_FRENCH
             else -> LANGUAGE_ENGLISH
         }
     }
@@ -417,9 +429,10 @@ class SettingsFragment : Fragment() {
                 languageDisplay.text = resources.getString(R.string.german)
             }
 
-//            LANGUAGE_PUNJABI -> {
-//                languageDisplay.text = resources.getString(R.string.punjabi)
-//            }
+            LANGUAGE_FRENCH -> {
+                languageDisplay.text = resources.getString(R.string.french)
+                setAppLanguage("fr")
+            }
         }
 
         // Save the selected theme to SharedPreferences
