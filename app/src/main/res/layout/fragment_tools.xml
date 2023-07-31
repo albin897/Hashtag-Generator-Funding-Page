@@ -156,7 +156,7 @@
                                 android:fontFamily="@font/signikanegative_medium"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="3dp"
-                                android:text="Text Formatter"
+                                android:text="@string/textFormatter"
                                 android:textAppearance="?attr/textAppearanceTitleMedium"
                                 android:textColor="@color/text_color"
                                 android:textSize="22sp" />

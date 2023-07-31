@@ -13,6 +13,12 @@
     <string name="russian">Russian</string>
     <string name="german">German</string>
     <string name="french">French</string>
+    <string name="indonesian">Indonesian</string>
+    <string name="japanese">Japanese</string>
+    <string name="korean">Korean</string>
+    <string name="italian">Italian</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="spanish">Spanish</string>
 
     <string name="clikes">\tLikes</string>
     <string name="creels">\tReels</string>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hashtag Generator</string>
+
+
+    <string name="top_hashtags">I migliori hashtag</string>
+    <string name="top_hashtag_desc">I migliori hashtag migliori che sono attualmente di tendenza in tutti i siti. Questi hashtag sono selezionati con cura e sono stati ordinati in base al pubblico.</string>
+
+    <string name="not_found">Gruppo hashtag non trovato. Si prega di controllare la sezione delle categorie per i tag correlati.</string>
+    <string name="Hashtag">Hashtags</string>
+    <string name="Saved"><b>Salvato</b></string>
+    <string name="categories">Categorie</string>
+    <string name="about">Di</string>
+
+
+    <string name="selected_platform">Piattaforma selezionata:</string>
+    <string name="dialog_title_platform_selection">\t\n\nScegli Piattaforma\n</string>
+    <string name="instagram"><b>Instagram</b></string>
+    <string name="instagram_content_description">Puoi utilizzare fino a 30 hashtag su Instagram e ti consigliamo di utilizzarli tutti in quanto possono essere nascosti all\'interno della didascalia.</string>
+    <string name="instagram_stories"><b>Instagram Stories</b></string>
+    <string name="instagram_stories_content_description">Le storie di Instagram consentono al massimo 10 hashtag. Ti consigliamo di utilizzare 10 hashtag in quanto possono essere nascosti facendoli sembrare più piccoli nella storia.</string>
+    <string name="tikTok"><b>TikTok</b></string>
+    <string name="tiktok_content_description">TikTok consente al massimo 120 caratteri. Ti consigliamo di utilizzare 5–8 hashtag più correlati nella didascalia del tuo video TikTok come best practice.</string>
+    <string name="twitter"><b>Twitter</b></string>
+    <string name="twitter_content_description">Twitter consente al massimo 280 caratteri. Ti consigliamo di utilizzare 3–5 hashtag più correlati per tweet come best practice</string>
+    <string name="youTube"><b>YouTube</b></string>
+    <string name="youtube_content_description">YouTube consente al massimo 15 hashtag. YouTube avverte che l\'overtagging rimuoverà il tuo video dalla ricerca. Ti consigliamo di utilizzare i 3 hashtag più correlati nel titolo.</string>
+    <string name="facebook"><b>Facebook</b></string>
+    <string name="facebook_content_description">Facebook consente tutti gli hashtag che desideri. Ti consigliamo di utilizzare da 2 a 5 hashtag più correlati. Troppi hashtag non staranno bene su un post di Facebook.</string>
+    <string name="linkedIn"><b>LinkedIn</b></string>
+    <string name="linkedin_content_description">Linkedin consente tutti gli hashtag che desideri. Ti consigliamo di utilizzare 5–8 hashtag più correlati. Troppi hashtag non staranno bene su un post di LinkedIn.</string>
+    <string name="pinterest"><b>Pinterest</b></string>
+    <string name="pinterest_content_description">Pinterest consente al massimo 20 hashtag. Ti consigliamo di utilizzare 5–8 hashtag più correlati sui tuoi pin come best practice.</string>
+    <string name="snapchat"><b>Snapchat</b></string>
+    <string name="snapchat_content_description">Gli hashtag su snapchat funzionano come argomento sotto i riflettori. Sebbene tu possa aggiungere molti hashtag, ti consigliamo di aggiungere 2–3 hashtag più correlati sotto i riflettori.</string>
+    <string name="popular_searches">Ricerche popolari:</string>
+
+    <string name="customizations">Personalizzazioni</string>
+    <string name="customizations_copy_tags">Quanti hashtag vuoi copiare?</string>
+    <string name="customizations_dot_above">Quanti punti mettere sopra gli hashtag?</string>
+    <string name="customizations_add_at_end">Quali hashtag vuoi aggiungere alla fine?</string>
+    <string name="customizations_chr_to_copy">Quanti caratteri vuoi copiare al massimo?</string>
+    <string name="seperator_question">Seleziona il separatore che desideri utilizzare per separare gli hashtag</string>
+
+    <string name="save"><b>Salva</b></string>
+    <string name="copy"><b>copia</b></string>
+    <string name="remove"><b>Rimuovere</b></string>
+
+    <string name="search">Ricerca</string>
+
+    <string name="dialog_title_theme_selection">\t\n\nScegli Tema\n</string>
+    <string name="theme">Tema</string>
+    <string name="light">\tLeggero</string>
+    <string name="dark">\tBuio</string>
+    <string name="system_default">\tDefault del sistema</string>
+    <string name="vibrations">Vibrazioni</string>
+    <string name="haptic_description">Feedback tattile quando si preme un pulsante</string>
+    <string name="screen_on">Impedisci al telefono di dormire</string>
+    <string name="screen_on_desc">Impedisci al telefono di dormire mentre l\'app è in primo piano</string>
+    <string name="starting_screen">Schermata iniziale</string>
+    <string name="starting_screen_desc">Scegli la schermata da visualizzare all\'avvio dell\'app</string>
+    <string name="dialog_title_screen_selection">\t\n\nScegli Schermo\n</string>
+    <string name="stools">\tUtensili</string>
+    <string name="shashtags">\tHashtags</string>
+    <string name="sfonts">\tFonts</string>
+    <string name="check_for_updates">Controlla gli aggiornamenti…</string>
+    <string name="loading"><b>\nControllo degli aggiornamenti per migliorare la tua esperienza con l\'app. Per favore aspetta un momento...\n</b></string>
+    <string name="noupdatedialog"><b>\n\tStai utilizzando l\'ultima versione!</b></string>
+    <string name="updateavailabledialog"><b>L\'aggiornamento è disponibile!</b></string>
+    <string name="updateavailabledialogdescription"><b>Buone notizie! È disponibile una nuova versione dell\'app</b>.!</string>
+    <string name="about_desc">Ulteriori informazioni sull\'app</string>
+    <string name="general"><b>Generale</b></string>
+    <string name="additional"><b>Aggiuntivo</b></string>
+    <string name="language">Lingua (Beta)</string>
+
+    <string name="ok"><b>bene</b></string>
+    <string name="cancel"><b>Annulla</b></string>
+    <string name="update"><b>Aggiornamento</b></string>
+    <string name="close"><b>Vicino</b></string>
+    <string name="not_now"><b>Non adesso</b></string>
+    <string name="platform_image">Immagine della piattaforma</string>
+
+    <string name="contributers"><b>Contributori</b></string>
+    <string name="app_desc">Una delle migliori app per la generazione di hashtag che puoi trovare là fuori.</string>
+    <string name="rate">Valuta e recensisci</string>
+    <string name="changelogs">Registri delle modifiche</string>
+    <string name="report_bugs">Segnala bug / Suggerisci una modifica</string>
+    <string name="privacy_policy">politica sulla riservatezza</string>
+    <string name="terms_and_conditions">Termini e Condizioni</string>
+
+    <string name="filter">Filtro</string>
+    <string name="filter_result">Filtra risultato</string>
+    <string name="dialog_title_language_selection">\t\n\nScegli la lingua\n</string>
+    <string name="popular_tags">Tag popolari</string>
+    <string name="popularity">Popolarità</string>
+    <string name="add">Aggiungere</string>
+    <string name="tcopy">\tcopia</string>
+    <string name="tremove1">\tRimuovere1</string>
+    <string name="tclear">\tChiaro</string>
+    <string name="textFormatter">Formattatore di testo</string>
+    <string name="to_uppercase">In maiuscolo:</string>
+    <string name="to_lowercase">In minuscolo:</string>
+    <string name="formatter_desc">Formatta i paragrafi in lettere maiuscole o minuscole. Scrivi in maiuscolo ogni prima parola della frase o ogni prima lettera usando questo strumento.</string>
+
+
+</resources>

@@ -47,15 +47,15 @@ private const val LANGUAGE_RUSSIAN = "ru"
 private const val LANGUAGE_GERMAN = "de"
 
 private const val LANGUAGE_FRENCH = "fr"
-private const val LANGUAGE_INDONESIAN = "de"
+private const val LANGUAGE_INDONESIAN = "in"
 
-private const val LANGUAGE_JAPANESE = "de"
-private const val LANGUAGE_KOREAN = "de"
-private const val LANGUAGE_CHINESE = "de"
-private const val LANGUAGE_ITALIAN = "de"
+private const val LANGUAGE_JAPANESE = "ja"
+private const val LANGUAGE_KOREAN = "ko"
+private const val LANGUAGE_CHINESE = "zh"
+private const val LANGUAGE_ITALIAN = "it"
 
-private const val LANGUAGE_PORTUGUESE = "de"
-private const val LANGUAGE_SPANISH = "de"
+private const val LANGUAGE_PORTUGUESE = "pt"
+private const val LANGUAGE_SPANISH = "es"
 
 
 
@@ -129,6 +129,42 @@ class SettingsFragment : Fragment() {
                 languageDisplay.text = resources.getString(R.string.french)
                 setAppLanguage("fr")
             }
+
+            LANGUAGE_INDONESIAN -> {
+                languageDisplay.text = resources.getString(R.string.indonesian)
+                setAppLanguage("in")
+            }
+
+            LANGUAGE_JAPANESE -> {
+                languageDisplay.text = resources.getString(R.string.japanese)
+                setAppLanguage("ja")
+            }
+
+            LANGUAGE_KOREAN -> {
+                languageDisplay.text = resources.getString(R.string.korean)
+                setAppLanguage("ko")
+            }
+
+            LANGUAGE_ITALIAN -> {
+                languageDisplay.text = resources.getString(R.string.italian)
+                setAppLanguage("it")
+            }
+
+            LANGUAGE_PORTUGUESE -> {
+                languageDisplay.text = resources.getString(R.string.portuguese)
+                setAppLanguage("pt")
+            }
+
+            LANGUAGE_SPANISH -> {
+                languageDisplay.text = resources.getString(R.string.spanish)
+                setAppLanguage("es")
+            }
+
+            LANGUAGE_CHINESE -> {
+                languageDisplay.text = resources.getString(R.string.chinese)
+                setAppLanguage("zh")
+            }
+
         }
 
 
@@ -304,6 +340,14 @@ class SettingsFragment : Fragment() {
         val russian = dialogView.findViewById<RadioButton>(R.id.russian)
         val german = dialogView.findViewById<RadioButton>(R.id.german)
         val french = dialogView.findViewById<RadioButton>(R.id.french)
+        val indonesian = dialogView.findViewById<RadioButton>(R.id.indonesian)
+        val japanese = dialogView.findViewById<RadioButton>(R.id.japanese)
+        val korean = dialogView.findViewById<RadioButton>(R.id.korean)
+        val italian = dialogView.findViewById<RadioButton>(R.id.italian)
+        val portuguese = dialogView.findViewById<RadioButton>(R.id.portuguese)
+        val spanish = dialogView.findViewById<RadioButton>(R.id.spanish)
+        val chinese = dialogView.findViewById<RadioButton>(R.id.chinese)
+
 
         // Retrieve the saved theme from SharedPreferences
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
@@ -317,6 +361,13 @@ class SettingsFragment : Fragment() {
             LANGUAGE_RUSSIAN -> russian.isChecked = true
             LANGUAGE_GERMAN -> german.isChecked = true
             LANGUAGE_FRENCH -> french.isChecked = true
+            LANGUAGE_INDONESIAN -> indonesian.isChecked = true
+            LANGUAGE_JAPANESE -> japanese.isChecked = true
+            LANGUAGE_KOREAN -> korean.isChecked = true
+            LANGUAGE_ITALIAN -> italian.isChecked = true
+            LANGUAGE_PORTUGUESE -> portuguese.isChecked = true
+            LANGUAGE_SPANISH -> spanish.isChecked = true
+            LANGUAGE_CHINESE -> chinese.isChecked = true
         }
 
         val radioGroup = dialogView.findViewById<RadioGroup>(R.id.radio_group)
@@ -343,6 +394,13 @@ class SettingsFragment : Fragment() {
             R.id.russian -> LANGUAGE_RUSSIAN
             R.id.german -> LANGUAGE_GERMAN
             R.id.french -> LANGUAGE_FRENCH
+            R.id.indonesian -> LANGUAGE_INDONESIAN
+            R.id.japanese -> LANGUAGE_JAPANESE
+            R.id.korean -> LANGUAGE_KOREAN
+            R.id.italian -> LANGUAGE_ITALIAN
+            R.id.portuguese -> LANGUAGE_PORTUGUESE
+            R.id.spanish -> LANGUAGE_SPANISH
+            R.id.chinese -> LANGUAGE_CHINESE
             else -> LANGUAGE_ENGLISH
         }
     }
@@ -433,6 +491,42 @@ class SettingsFragment : Fragment() {
                 languageDisplay.text = resources.getString(R.string.french)
                 setAppLanguage("fr")
             }
+
+            LANGUAGE_INDONESIAN -> {
+                languageDisplay.text = resources.getString(R.string.indonesian)
+                setAppLanguage("in")
+            }
+
+            LANGUAGE_JAPANESE -> {
+                languageDisplay.text = resources.getString(R.string.japanese)
+                setAppLanguage("ja")
+            }
+
+            LANGUAGE_KOREAN -> {
+                languageDisplay.text = resources.getString(R.string.korean)
+                setAppLanguage("ko")
+            }
+
+            LANGUAGE_ITALIAN -> {
+                languageDisplay.text = resources.getString(R.string.italian)
+                setAppLanguage("it")
+            }
+
+            LANGUAGE_PORTUGUESE -> {
+                languageDisplay.text = resources.getString(R.string.portuguese)
+                setAppLanguage("pt")
+            }
+
+            LANGUAGE_SPANISH -> {
+                languageDisplay.text = resources.getString(R.string.spanish)
+                setAppLanguage("es")
+            }
+
+            LANGUAGE_CHINESE -> {
+                languageDisplay.text = resources.getString(R.string.chinese)
+                setAppLanguage("zh")
+            }
+
         }
 
         // Save the selected theme to SharedPreferences

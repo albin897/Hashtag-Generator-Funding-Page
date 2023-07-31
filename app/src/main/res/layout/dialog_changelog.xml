@@ -77,6 +77,30 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="30dp"
                     android:fontFamily="@font/signikanegative_medium"
+                    android:text="[FEATURE]:Added new languages ( French, Indonesian, Japanese, Korean, Italian, Portuguese, Spanish ) "
+                    android:textColor="@color/text_color"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="20dp"
+                    android:text="•" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:fontFamily="@font/signikanegative_medium"
                     android:text="[ENHANCEMENT]:New Text Formatter."
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />
@@ -155,29 +179,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="20dp"
-                    android:text="•" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/signikanegative_medium"
-                    android:text="[FEATURE]:Added new languages (  ) "
-                    android:textColor="@color/text_color"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
 
                 <LinearLayout
                     android:padding="8dp"

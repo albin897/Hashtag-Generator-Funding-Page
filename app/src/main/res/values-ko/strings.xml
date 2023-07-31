@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hashtag Generator</string>
+
+
+    <string name="top_hashtags">인기 해시태그</string>
+    <string name="top_hashtag_desc">현재 모든 사이트에서 유행하고 있는 베스트 베스트 해시태그입니다. 이 해시태그는 손으로 직접 선택하고 청중을 기준으로 정렬되었습니다.</string>
+
+    <string name="not_found">해시태그 그룹을 찾을 수 없습니다. 관련 태그는 카테고리 섹션을 확인하세요.</string>
+    <string name="Hashtag">해시태그</string>
+    <string name="Saved"><b>저장됨</b></string>
+    <string name="categories">카테고리</string>
+    <string name="about">에 대한</string>
+
+
+    <string name="selected_platform">선택한 플랫폼:</string>
+    <string name="dialog_title_platform_selection">\t\n\n플랫폼 선택\n</string>
+    <string name="instagram"><b>인스 타 그램</b></string>
+    <string name="instagram_content_description">인스타그램에서는 최대 30개의 해시태그를 사용할 수 있으며 캡션 안에 숨길 수 있으므로 모두 사용하는 것이 좋습니다.</string>
+    <string name="instagram_stories"><b>인스타그램 스토리</b></string>
+    <string name="instagram_stories_content_description">인스타그램 스토리는 최대 10개의 해시태그를 허용합니다. 해시태그는 스토리에서 작게 보이게 숨겨 숨길 수 있으므로 10개의 해시태그 사용을 권장합니다.</string>
+    <string name="tikTok"><b>Tik의 톡</b></string>
+    <string name="tiktok_content_description">TikTok은 최대 120자를 허용합니다. 모범 사례로 TikTok 비디오 캡션에 5–8개의 가장 관련 있는 해시태그를 사용하는 것이 좋습니다.</string>
+    <string name="twitter"><b>트위터</b></string>
+    <string name="twitter_content_description">Twitter는 최대 280자를 허용합니다. 모범 사례로 트윗당 가장 관련성이 높은 해시태그 3~5개를 사용하는 것이 좋습니다.</string>
+    <string name="youTube"><b>유튜브</b></string>
+    <string name="youtube_content_description">YouTube는 최대 15개의 해시태그를 허용합니다. YouTube는 태그를 과도하게 지정하면 검색에서 동영상이 제거된다고 경고합니다. 제목에 가장 관련성이 높은 해시태그 3개를 사용하는 것이 좋습니다.</string>
+    <string name="facebook"><b>페이스북</b></string>
+    <string name="facebook_content_description">Facebook은 원하는 만큼의 해시태그를 허용합니다. 2~5개의 가장 관련 있는 해시태그를 사용하는 것이 좋습니다. 너무 많은 해시태그는 Facebook 게시물에서 보기 좋지 않습니다.</string>
+    <string name="linkedIn"><b>링크드인</b></string>
+    <string name="linkedin_content_description">Linkedin은 원하는 만큼의 해시태그를 허용합니다. 5~8개의 가장 관련 있는 해시태그를 사용하는 것이 좋습니다. 너무 많은 해시태그는 LinkedIn 게시물에서 보기 좋지 않습니다.</string>
+    <string name="pinterest"><b>핀터레스트</b></string>
+    <string name="pinterest_content_description">Pinterest는 최대 20개의 해시태그를 허용합니다. 모범 사례로 핀에 5~8개의 가장 관련 있는 해시태그를 사용하는 것이 좋습니다.</string>
+    <string name="snapchat"><b>스냅챗</b></string>
+    <string name="snapchat_content_description">Snapchat의 해시태그는 스포트라이트를 받는 주제로 작동합니다. 많은 해시태그를 추가할 수 있지만 스포트라이트에서 가장 관련성이 높은 해시태그를 2~3개 추가하는 것이 좋습니다.</string>
+    <string name="popular_searches">인기 검색어:</string>
+
+    <string name="customizations">사용자 정의</string>
+    <string name="customizations_copy_tags">몇 개의 해시태그를 복사하시겠습니까?</string>
+    <string name="customizations_dot_above">해시태그 위에 몇 개의 점을 표시해야 합니까?</string>
+    <string name="customizations_add_at_end">마지막에 추가하고 싶은 해시태그는?</string>
+    <string name="customizations_chr_to_copy">최대 몇 개의 문자를 복사하시겠습니까?</string>
+    <string name="seperator_question">해시태그를 구분하는 데 사용할 구분 기호를 선택하세요.</string>
+
+    <string name="save"><b>구하다</b></string>
+    <string name="copy"><b>복사</b></string>
+    <string name="remove"><b>제거하다</b></string>
+
+    <string name="search">찾다</string>
+
+    <string name="dialog_title_theme_selection">\t\n\n테마 선택\n</string>
+    <string name="theme">주제</string>
+    <string name="light">\t빛</string>
+    <string name="dark">\t어두운</string>
+    <string name="system_default">\t시스템 기본값</string>
+    <string name="vibrations">진동</string>
+    <string name="haptic_description">버튼을 눌렀을 때 햅틱 피드백</string>
+    <string name="screen_on">전화가 잠들지 않도록 방지</string>
+    <string name="screen_on_desc">앱이 포그라운드에 있는 동안 휴대전화가 잠자지 않도록 방지</string>
+    <string name="starting_screen">시작 화면</string>
+    <string name="starting_screen_desc">앱을 실행할 때 표시할 화면 선택</string>
+    <string name="dialog_title_screen_selection">\t\n\n화면 선택\n</string>
+    <string name="stools">\t도구</string>
+    <string name="shashtags">\t해시태그</string>
+    <string name="sfonts">\t글꼴</string>
+    <string name="check_for_updates">업데이트 확인…</string>
+    <string name="loading"><b>\n앱 경험을 향상시키기 위해 업데이트를 확인합니다. 잠시만 기다려주세요...\n</b></string>
+    <string name="noupdatedialog"><b>\n\t최신 버전을 사용 중입니다!</b></string>
+    <string name="updateavailabledialog"><b>업데이트 가능!</b></string>
+    <string name="updateavailabledialogdescription"><b>좋은 소식! 앱의 새 버전을 사용할 수 있습니다.</b>.!</string>
+    <string name="about_desc">앱에 대해 자세히 알아보기</string>
+    <string name="general"><b>일반적인</b></string>
+    <string name="additional"><b>추가의</b></string>
+    <string name="language">언어 (Beta)</string>
+
+    <string name="ok"><b>좋아요</b></string>
+    <string name="cancel"><b>취소</b></string>
+    <string name="update"><b>업데이트</b></string>
+    <string name="close"><b>닫다</b></string>
+    <string name="not_now"><b>지금은 아님</b></string>
+    <string name="platform_image">플랫폼 이미지</string>
+
+    <string name="contributers"><b>기여자</b></string>
+    <string name="app_desc">거기에서 찾을 수 있는 최고의 해시태그 생성기 앱 중 하나입니다.</string>
+    <string name="rate">별점과 리뷰</string>
+    <string name="changelogs">변경 로그</string>
+    <string name="report_bugs">버그 신고 / 수정 제안</string>
+    <string name="privacy_policy">개인 정보 정책</string>
+    <string name="terms_and_conditions">이용약관</string>
+
+    <string name="filter">필터</string>
+    <string name="filter_result">필터 결과</string>
+    <string name="dialog_title_language_selection">\t\n\n언어 선택\n</string>
+    <string name="popular_tags">인기 태그</string>
+    <string name="popularity">인기</string>
+    <string name="add">추가하다</string>
+    <string name="tcopy">\t복사</string>
+    <string name="tremove1">\t제거하다1</string>
+    <string name="tclear">\t분명한</string>
+    <string name="textFormatter">텍스트 포맷터</string>
+    <string name="to_uppercase">대문자로:</string>
+    <string name="to_lowercase">소문자로:</string>
+    <string name="formatter_desc">단락을 대문자 또는 소문자로 포맷합니다. 이 도구를 사용하여 문장의 모든 첫 단어 또는 모든 첫 글자를 대문자로 표기하십시오.</string>
+
+
+</resources>

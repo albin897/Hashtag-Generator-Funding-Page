@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hashtag Generator</string>
+
+
+    <string name="top_hashtags">Hashtag Teratas</string>
+    <string name="top_hashtag_desc">Tagar terbaik teratas yang sedang tren di semua situs. Tagar ini dipilih sendiri dan telah disortir berdasarkan audiens.</string>
+
+    <string name="not_found">Grup tagar tidak ditemukan. Silakan periksa bagian kategori untuk tag terkait.</string>
+    <string name="Hashtag">Tagar</string>
+    <string name="Saved"><b>Diselamatkan</b></string>
+    <string name="categories">Kategori</string>
+    <string name="about">Tentang</string>
+
+
+    <string name="selected_platform">Platform yang dipilih:</string>
+    <string name="dialog_title_platform_selection">\t\n\nPilih Platform\n</string>
+    <string name="instagram"><b>Instagram</b></string>
+    <string name="instagram_content_description">Anda dapat menggunakan hingga 30 tagar di Instagram, dan kami menyarankan untuk menggunakan semuanya karena dapat disembunyikan di dalam teks.</string>
+    <string name="instagram_stories"><b>Instagram Stories</b></string>
+    <string name="instagram_stories_content_description">Cerita Instagram memungkinkan paling banyak 10 tagar. Sebaiknya gunakan 10 tagar karena dapat disembunyikan dengan membuatnya terlihat lebih kecil di cerita.</string>
+    <string name="tikTok"><b>TikTok</b></string>
+    <string name="tiktok_content_description">TikTok memungkinkan maksimal 120 karakter. Kami merekomendasikan penggunaan 5–8 tagar paling terkait di keterangan video TikTok Anda sebagai praktik terbaik.</string>
+    <string name="twitter"><b>Twitter</b></string>
+    <string name="twitter_content_description">Twitter memungkinkan maksimal 280 karakter. Kami merekomendasikan penggunaan 3–5 tagar paling terkait per tweet sebagai praktik terbaik</string>
+    <string name="youTube"><b>YouTube</b></string>
+    <string name="youtube_content_description">YouTube mengizinkan paling banyak 15 tagar. YouTube memperingatkan bahwa memberi tag berlebihan akan menghapus video Anda dari pencarian. Kami merekomendasikan menggunakan 3 tagar paling terkait dalam judul.</string>
+    <string name="facebook"><b>Facebook</b></string>
+    <string name="facebook_content_description">Facebook memungkinkan tagar sebanyak yang Anda inginkan. Kami merekomendasikan penggunaan 2–5 tagar yang paling terkait. Terlalu banyak tagar tidak akan terlihat bagus di kiriman Facebook.</string>
+    <string name="linkedIn"><b>LinkedIn</b></string>
+    <string name="linkedin_content_description">Linkedin memungkinkan tagar sebanyak yang Anda inginkan. Kami merekomendasikan penggunaan 5–8 tagar yang paling terkait. Terlalu banyak tagar tidak akan terlihat bagus di postingan LinkedIn.</string>
+    <string name="pinterest"><b>Pinterest</b></string>
+    <string name="pinterest_content_description">Pinterest memungkinkan paling banyak 20 tagar. Sebaiknya gunakan 5–8 tagar paling terkait di pin Anda sebagai praktik terbaik.</string>
+    <string name="snapchat"><b>Snapchat</b></string>
+    <string name="snapchat_content_description">Tagar di snapchat berfungsi sebagai topik sorotan. Meskipun Anda dapat menambahkan banyak tagar, sebaiknya tambahkan 2–3 tagar paling terkait dalam sorotan.</string>
+    <string name="popular_searches">Pencarian Populer:</string>
+
+    <string name="customizations">Kustomisasi</string>
+    <string name="customizations_copy_tags">Berapa banyak tagar yang ingin Anda salin?</string>
+    <string name="customizations_dot_above">Berapa banyak titik yang harus diletakkan di atas tagar Anda?</string>
+    <string name="customizations_add_at_end">Tagar mana yang ingin Anda tambahkan di bagian akhir?</string>
+    <string name="customizations_chr_to_copy">Maksimal berapa Karakter yang ingin Anda salin?</string>
+    <string name="seperator_question">Pilih pemisah yang ingin Anda gunakan untuk memisahkan tagar</string>
+
+    <string name="save"><b>Menyimpan</b></string>
+    <string name="copy"><b>Menyalin</b></string>
+    <string name="remove"><b>Menghapus</b></string>
+
+    <string name="search">Mencari</string>
+
+    <string name="dialog_title_theme_selection">\t\n\nPilih Tema\n</string>
+    <string name="theme">Tema</string>
+    <string name="light">\tLampu</string>
+    <string name="dark">\tGelap</string>
+    <string name="system_default">\tStandar sistem</string>
+    <string name="vibrations">Getaran</string>
+    <string name="haptic_description">Umpan balik haptic saat tombol ditekan</string>
+    <string name="screen_on">Mencegah telepon dari tidur</string>
+    <string name="screen_on_desc">Cegah ponsel agar tidak tidur saat aplikasi berada di latar depan</string>
+    <string name="starting_screen">Layar Awal</string>
+    <string name="starting_screen_desc">Pilih layar mana yang ditampilkan saat Anda meluncurkan aplikasi</string>
+    <string name="dialog_title_screen_selection">\t\n\nPilih Layar\n</string>
+    <string name="stools">\tPeralatan</string>
+    <string name="shashtags">\tTagar</string>
+    <string name="sfonts">\tFont</string>
+    <string name="check_for_updates">Periksa Pembaruan…</string>
+    <string name="loading"><b>\nMemeriksa pembaruan untuk meningkatkan pengalaman aplikasi Anda. Silakan tunggu beberapa saat...\n</b></string>
+    <string name="noupdatedialog"><b>\n\tAnda menggunakan versi terbaru!</b></string>
+    <string name="updateavailabledialog"><b>Pembaruan tersedia!</b></string>
+    <string name="updateavailabledialogdescription"><b>Kabar baik! Versi baru aplikasi tersedia</b>.!</string>
+    <string name="about_desc">Pelajari lebih lanjut tentang aplikasi</string>
+    <string name="general"><b>Umum</b></string>
+    <string name="additional"><b>Tambahan</b></string>
+    <string name="language">Bahasa (Beta)</string>
+
+    <string name="ok"><b>OKE</b></string>
+    <string name="cancel"><b>Membatalkan</b></string>
+    <string name="update"><b>Memperbarui</b></string>
+    <string name="close"><b>Menutup</b></string>
+    <string name="not_now"><b>Tidak sekarang</b></string>
+    <string name="platform_image">Gambar platform</string>
+
+    <string name="contributers"><b>Kontributor</b></string>
+    <string name="app_desc">Salah satu aplikasi pembuat tagar terbaik yang dapat Anda temukan di luar sana.</string>
+    <string name="rate">Nilai dan Tinjau</string>
+    <string name="changelogs">ChangeLog</string>
+    <string name="report_bugs">Laporkan Bug / Sarankan edit</string>
+    <string name="privacy_policy">Kebijakan pribadi</string>
+    <string name="terms_and_conditions">syarat dan Ketentuan</string>
+
+    <string name="filter">Saring</string>
+    <string name="filter_result">Hasil Saring</string>
+    <string name="dialog_title_language_selection">\t\n\nPilih bahasa\n</string>
+    <string name="popular_tags">Tag Populer</string>
+    <string name="popularity">Kepopuleran</string>
+    <string name="add">Menambahkan</string>
+    <string name="tcopy">\tMenyalin</string>
+    <string name="tremove1">\tMenghapus1</string>
+    <string name="tclear">\tJernih</string>
+    <string name="textFormatter">Pemformat Teks</string>
+    <string name="to_uppercase">Ke huruf besar:</string>
+    <string name="to_lowercase">Ke Huruf Kecil:</string>
+    <string name="formatter_desc">Memformat paragraf menjadi huruf besar atau huruf kecil. Kapitalisasi setiap kata pertama dari kalimat atau setiap huruf pertama menggunakan alat ini.</string>
+
+
+</resources>

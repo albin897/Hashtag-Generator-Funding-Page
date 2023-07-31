@@ -42,19 +42,20 @@ class TextFormatter : Fragment() {
         toLowerCaseCopyButton = rootView.findViewById(R.id.toLowerCaseCopyButton)
         summary = rootView.findViewById(R.id.summary)
 
-        edit_text1.addTextChangedListener(object : TextWatcher {
+        try {
+            edit_text1.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val OrginalString = s.toString()
-              val  UppercaseCharacters = s.toString().uppercase()
-                val LowercaseCharacters = s.toString().lowercase()
-                toUppercaseTextView.text = UppercaseCharacters
-                toLowerCaseTextView.text = LowercaseCharacters
-                getTextStatistics(OrginalString)
+                val orginalString = s.toString()
+              val  uppercaseCharacters = s.toString().uppercase()
+                val lowercaseCharacters = s.toString().lowercase()
+                toUppercaseTextView.text = uppercaseCharacters
+                toLowerCaseTextView.text = lowercaseCharacters
+                getTextStatistics(orginalString)
                 if (s.isNullOrEmpty()){
-                    summary.setText("0 Words \n\n 0 Characters \n\n 0 Characters (without spaces)")
+                    summary.text = "0 Words \n\n 0 Characters \n\n 0 Characters (without spaces)"
 
                 }
             }
@@ -63,7 +64,9 @@ class TextFormatter : Fragment() {
 
             }
 
-        })
+        })}catch ( e: Exception ){
+            Toast.makeText(requireContext(),"Error",Toast.LENGTH_SHORT).show()
+        }
 
         toUpperCaseCopyButton.setOnClickListener {
             val textToCopy = toUppercaseTextView.text.toString()
@@ -96,7 +99,7 @@ private fun copyToClipboard(text: String){
         val characterCountWithSpaces = passage.length
         val characterCountWithoutSpaces = passage.replace("\\s".toRegex(), "").length
 
-        summary.setText("$wordCount Words \n\n $characterCountWithSpaces Characters \n\n $characterCountWithoutSpaces Characters (without spaces)")
+        summary.text = "$wordCount Words \n\n $characterCountWithSpaces Characters \n\n $characterCountWithoutSpaces Characters (without spaces)"
     }
 
 

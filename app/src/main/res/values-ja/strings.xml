@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hashtag Generator</string>
+
+
+    <string name="top_hashtags">人気のハッシュタグ</string>
+    <string name="top_hashtag_desc">すべてのサイトで現在トレンドになっている最高のハッシュタグ。 これらのハッシュタグは厳選され、視聴者に基づいて並べ替えられています。</string>
+
+    <string name="not_found">ハッシュタググループが見つかりません。 関連タグについてはカテゴリーセクションをご確認ください。</string>
+    <string name="Hashtag">ハッシュタグ</string>
+    <string name="Saved"><b>保存されました</b></string>
+    <string name="categories">カテゴリー</string>
+    <string name="about">だいたい</string>
+
+
+    <string name="selected_platform">選択したプラットフォーム:</string>
+    <string name="dialog_title_platform_selection">\t\n\nプラットフォームの選択\n</string>
+    <string name="instagram"><b>Instagram</b></string>
+    <string name="instagram_content_description">Instagram では最大 30 個のハッシュタグを使用できますが、キャプション内に隠すことができるため、すべてのハッシュタグを使用することをお勧めします。</string>
+    <string name="instagram_stories"><b>Instagram Stories</b></string>
+    <string name="instagram_stories_content_description">Instagramのストーリーでは最大10個のハッシュタグを付けることができます。 ハッシュタグはストーリー内で小さく表示することで非表示にできるので、10個にすることをおすすめします。</string>
+    <string name="tikTok"><b>TikTok</b></string>
+    <string name="tiktok_content_description">TikTokでは最大120文字まで使用できます。 ベストプラクティスとして、TikTokビデオキャプションに最も関連性の高いハッシュタグを5〜8個使用することをお勧めします。</string>
+    <string name="twitter"><b>Twitter</b></string>
+    <string name="twitter_content_description">Twitter では最大 280 文字を使用できます。 ベストプラクティスとして、ツイートごとに最も関連性の高いハッシュタグを 3 ～ 5 つ使用することをお勧めします</string>
+    <string name="youTube"><b>YouTube</b></string>
+    <string name="youtube_content_description">YouTube では最大 15 個のハッシュタグを使用できます。 YouTube は、過度にタグ付けすると動画が検索から削除されると警告しています。 タイトルには最も関連性の高い 3 つのハッシュタグを使用することをお勧めします。</string>
+    <string name="facebook"><b>Facebook</b></string>
+    <string name="facebook_content_description">Facebook では、必要な数のハッシュタグを使用できます。 最も関連性の高いハッシュタグを 2 ～ 5 個使用することをお勧めします。 ハッシュタグが多すぎると、Facebook の投稿で見栄えが悪くなります。</string>
+    <string name="linkedIn"><b>LinkedIn</b></string>
+    <string name="linkedin_content_description">Linkedin では、必要な数のハッシュタグを使用できます。 最も関連性の高いハッシュタグを 5 ～ 8 個使用することをお勧めします。 ハッシュタグが多すぎると、LinkedIn の投稿で見栄えが悪くなります。</string>
+    <string name="pinterest"><b>Pinterest</b></string>
+    <string name="pinterest_content_description">Pinterest では最大 20 個のハッシュタグを使用できます。 ベスト プラクティスとして、ピンに最も関連性の高い 5 ～ 8 個のハッシュタグを使用することをお勧めします。</string>
+    <string name="snapchat"><b>Snapchat</b></string>
+    <string name="snapchat_content_description">スナップチャットのハッシュタグはスポットライトのトピックとして機能します。 多くのハッシュタグを追加できますが、最も関連性の高いハッシュタグを 2 ～ 3 個追加することをお勧めします。</string>
+    <string name="popular_searches">人気の検索:</string>
+
+    <string name="customizations">カスタマイズ</string>
+    <string name="customizations_copy_tags">ハッシュタグをいくつコピーしますか?</string>
+    <string name="customizations_dot_above">ハッシュタグの上にドットを何個入れますか?</string>
+    <string name="customizations_add_at_end">最後に付けたいハッシュタグはどれですか？</string>
+    <string name="customizations_chr_to_copy">最大何文字までコピーしますか?</string>
+    <string name="seperator_question">ハッシュタグの区切りに使用する区切り文字を選択します</string>
+
+    <string name="save"><b>保存</b></string>
+    <string name="copy"><b>コピー</b></string>
+    <string name="remove"><b>削除</b></string>
+
+    <string name="search">検索</string>
+
+    <string name="dialog_title_theme_selection">\t\n\nテーマの選択\n</string>
+    <string name="theme">テーマ</string>
+    <string name="light">\tライト</string>
+    <string name="dark">\t暗い</string>
+    <string name="system_default">\tシステムのデフォルト</string>
+    <string name="vibrations">振動</string>
+    <string name="haptic_description">ボタンを押したときの触覚フィードバック</string>
+    <string name="screen_on">電話がスリープ状態になるのを防ぐ</string>
+    <string name="screen_on_desc">アプリがフォアグラウンドにあるときに携帯電話がスリープしないようにする</string>
+    <string name="starting_screen">開始画面</string>
+    <string name="starting_screen_desc">アプリ起動時に表示される画面を選択します</string>
+    <string name="dialog_title_screen_selection">\t\n\n画面の選択\n</string>
+    <string name="stools">\tツール</string>
+    <string name="shashtags">\tハッシュタグ</string>
+    <string name="sfonts">\tフォント</string>
+    <string name="check_for_updates">アップデートを確認…</string>
+    <string name="loading"><b>\nアプリのエクスペリエンスを向上させるためのアップデートをチェックしています。 しばらくお待ちください...\n</b></string>
+    <string name="noupdatedialog"><b>\n\t最新バージョンを使用しています。</b></string>
+    <string name="updateavailabledialog"><b>アップデートが利用可能です!</b></string>
+    <string name="updateavailabledialogdescription"><b>朗報です！ アプリの新しいバージョンが利用可能になりました</b>.!</string>
+    <string name="about_desc">アプリについて詳しく見る</string>
+    <string name="general"><b>全般的</b></string>
+    <string name="additional"><b>追加</b></string>
+    <string name="language">言語 (Beta)</string>
+
+    <string name="ok"><b>よし</b></string>
+    <string name="cancel"><b>キャンセル</b></string>
+    <string name="update"><b>アップデート</b></string>
+    <string name="close"><b>近い</b></string>
+    <string name="not_now"><b>今はやめろ</b></string>
+    <string name="platform_image">プラットフォームイメージ</string>
+
+    <string name="contributers"><b>貢献者</b></string>
+    <string name="app_desc">最高のハッシュタグ生成アプリの 1 つです。</string>
+    <string name="rate">評価と批評</string>
+    <string name="changelogs">変更ログ</string>
+    <string name="report_bugs">バグを報告する / 編集を提案する</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+    <string name="terms_and_conditions">規約と条件</string>
+
+    <string name="filter">フィルター</string>
+    <string name="filter_result">フィルタ結果</string>
+    <string name="dialog_title_language_selection">\t\n\n言語を選択\n</string>
+    <string name="popular_tags">人気のタグ</string>
+    <string name="popularity">人気</string>
+    <string name="add">追加</string>
+    <string name="tcopy">\tコピー</string>
+    <string name="tremove1">\t削除1</string>
+    <string name="tclear">\tクリア</string>
+    <string name="textFormatter">テキストフォーマッタ</string>
+    <string name="to_uppercase">大文字にするには:</string>
+    <string name="to_lowercase">小文字にするには:</string>
+    <string name="formatter_desc">段落を大文字または小文字にフォーマットします。 このツールを使用すると、文の最初の単語または最初の文字がすべて大文字になります。</string>
+
+
+</resources>

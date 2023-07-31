@@ -101,7 +101,7 @@
     <string name="to_uppercase">To Uppercase:</string>
     <string name="to_lowercase">To Lowercase:</string>
     <string name="formatter_desc">Format paragraphs into uppercase or lowercase. Capitalize every first word of the sentence or every first letter using this tool.</string>
-
+    <string name="chinese">Chinese</string>
 
 
 </resources>
