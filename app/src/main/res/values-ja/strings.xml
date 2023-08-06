@@ -14,7 +14,7 @@
 
 
     <string name="selected_platform">選択したプラットフォーム:</string>
-    <string name="dialog_title_platform_selection">\t\n\nプラットフォームの選択\n</string>
+    <string name="dialog_title_platform_selection">プラットフォームの選択</string>
     <string name="instagram"><b>Instagram</b></string>
     <string name="instagram_content_description">Instagram では最大 30 個のハッシュタグを使用できますが、キャプション内に隠すことができるため、すべてのハッシュタグを使用することをお勧めします。</string>
     <string name="instagram_stories"><b>Instagram Stories</b></string>

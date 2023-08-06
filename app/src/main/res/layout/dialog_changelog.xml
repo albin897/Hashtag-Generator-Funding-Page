@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
                 android:paddingStart="30dp"
-                android:text="Version 1.0.26 "
+                android:text="Version 1.0.28 "
                 android:textSize="14dp" />
 
 
@@ -48,64 +48,7 @@
                 android:layout_marginBottom="20dp"
                 android:visibility="invisible" />
 
-            <!--    <TextView-->
-            <!--        android:layout_marginRight="30dp"-->
-            <!--        android:layout_marginLeft="25dp"-->
-            <!--        android:layout_width="match_parent"-->
-            <!--        android:layout_height="wrap_content"-->
-            <!--        android:text="@string/changelog"-->
-            <!--        android:textSize="17dp"-->
-            <!--        android:textColor="@color/text_color"-->
-            <!--        android:fontFamily="@font/jaldi_bold"-->
-            <!--        />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="20dp"
-                    android:text="•" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/signikanegative_medium"
-                    android:text="[FEATURE]:Added new languages ( French, Indonesian, Japanese, Korean, Italian, Portuguese, Spanish ) "
-                    android:textColor="@color/text_color"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="20dp"
-                    android:text="•" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/signikanegative_medium"
-                    android:text="[ENHANCEMENT]:New Text Formatter."
-                    android:textColor="@color/text_color"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -149,62 +92,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="30dp"
                     android:fontFamily="@font/signikanegative_medium"
-                    android:text="[FIX]:UI text overlap fixes."
-                    android:textColor="@color/text_color"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="20dp"
-                    android:text="•" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:fontFamily="@font/signikanegative_medium"
-                    android:text="[FIX]:About page scroll view fix."
+                    android:text="[FIX]: Sudden Crash on android 6 devices."
                     android:textColor="@color/text_color"
                     android:textSize="15sp" />
 
             </LinearLayout>
 
 
-
-                <LinearLayout
-                    android:padding="8dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="•"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="25dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="[FIX]:Vertical orientation dialog option invisibility fix."
-                        android:textColor="@color/text_color"
-                        android:fontFamily="@font/signikanegative_medium"
-                        android:textSize="15sp"
-                        android:layout_marginRight="30dp"
-                        />
-
-                </LinearLayout>
 
 
         </LinearLayout>

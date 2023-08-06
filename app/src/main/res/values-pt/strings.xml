@@ -14,7 +14,7 @@
 
 
     <string name="selected_platform">Plataforma selecionada:</string>
-    <string name="dialog_title_platform_selection">\t\n\nEscolha a plataforma\n</string>
+    <string name="dialog_title_platform_selection">Escolha a plataforma</string>
     <string name="instagram"><b>Instagram</b></string>
     <string name="instagram_content_description">Você pode usar até 30 hashtags no Instagram, e sugerimos usar todas elas, pois podem ficar escondidas na legenda.</string>
     <string name="instagram_stories"><b>Instagram Stories</b></string>

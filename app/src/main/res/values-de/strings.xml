@@ -14,7 +14,7 @@
 
 
     <string name="selected_platform">Ausgewählte Plattform:</string>
-    <string name="dialog_title_platform_selection">\t\n\nWählen Sie Plattform\n</string>
+    <string name="dialog_title_platform_selection">Wählen Sie Plattform</string>
     <string name="instagram"><b>Instagram</b></string>
     <string name="instagram_content_description">Sie können auf Instagram bis zu 30 Hashtags verwenden. Wir empfehlen, alle zu verwenden, da diese in der Bildunterschrift ausgeblendet werden können.</string>
     <string name="instagram_stories"><b>Instagram Stories</b></string>
