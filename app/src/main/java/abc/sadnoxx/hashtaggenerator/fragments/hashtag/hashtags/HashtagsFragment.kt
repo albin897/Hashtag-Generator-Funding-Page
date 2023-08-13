@@ -7,6 +7,7 @@ import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.CardDataRepositor
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories.CategoryDataRepository.allDataListCombined
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Vibrator
@@ -76,13 +77,20 @@ class HashtagsFragment : Fragment(),
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_hashtags, container, false)
+        val layoutResId = if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M) {
+            R.layout.fragment_hashtags_android_six // Use the default layout for Android 6 and above
+        } else {
+            R.layout.fragment_hashtags // Use the alternative layout for Android 6
+        }
+
+        val rootView = inflater.inflate(layoutResId, container, false)
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         searchBarTop = rootView.findViewById(R.id.searchbartop)
         generateHashSearchBtn = rootView.findViewById(R.id.generateHashSearchBtn)
         platformName = rootView.findViewById(R.id.platformName)
-        platformImage = rootView.findViewById(R.id.platformImage)
+        if (Build.VERSION.SDK_INT != Build.VERSION_CODES.M) {
+        platformImage = rootView.findViewById(R.id.platformImage)}
         selectPlatformTab = rootView.findViewById(R.id.selectPlatformTab)
         noResultText = rootView.findViewById(R.id.noResultText)
         popularTags = rootView.findViewById(R.id.popularTags)
@@ -331,27 +339,27 @@ class HashtagsFragment : Fragment(),
         }
         platformName.setText(platformNameResId)
 
-
-        val platformImageResId = when (platform) {
-            PLATFORM_INSTAGRAM -> R.drawable.ig
-            PLATFORM_INSTAGRAM_STORIES -> R.drawable.ig
-            PLATFORM_TIKTOK -> R.drawable.tiktok
-            PLATFORM_TWITTER -> R.drawable.twitter
-            PLATFORM_YOUTUBE -> R.drawable.youtube
-            PLATFORM_FACEBOOK -> R.drawable.facebook
-            PLATFORM_LINKEDIN -> R.drawable.linkedin
-            PLATFORM_PINTEREST -> R.drawable.pinterest
-            PLATFORM_SNAPCHAT -> R.drawable.snapchat
-            else -> R.drawable.ig
-        }
-        platformImage.setImageDrawable(
-            ContextCompat.getDrawable(
-                requireContext(),
-                platformImageResId
+        if (Build.VERSION.SDK_INT != Build.VERSION_CODES.M) {
+            val platformImageResId = when (platform) {
+                PLATFORM_INSTAGRAM -> R.drawable.ig
+                PLATFORM_INSTAGRAM_STORIES -> R.drawable.ig
+                PLATFORM_TIKTOK -> R.drawable.tiktok
+                PLATFORM_TWITTER -> R.drawable.twitter
+                PLATFORM_YOUTUBE -> R.drawable.youtube
+                PLATFORM_FACEBOOK -> R.drawable.facebook
+                PLATFORM_LINKEDIN -> R.drawable.linkedin
+                PLATFORM_PINTEREST -> R.drawable.pinterest
+                PLATFORM_SNAPCHAT -> R.drawable.snapchat
+                else -> R.drawable.ig
+            }
+            platformImage.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    platformImageResId
+                )
             )
-        )
+        }
     }
-
 
     override fun onCopyClick(tagsText1: Card) {
 // Create an instance of FilterCopiedText
