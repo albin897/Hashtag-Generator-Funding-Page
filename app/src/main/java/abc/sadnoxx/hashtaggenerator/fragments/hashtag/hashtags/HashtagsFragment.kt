@@ -29,6 +29,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
@@ -114,6 +115,9 @@ class HashtagsFragment : Fragment(),
         party = rootView.findViewById(R.id.party)
         photography = rootView.findViewById(R.id.photography)
 
+
+
+        loadInterAd()
 
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
@@ -372,12 +376,28 @@ class HashtagsFragment : Fragment(),
     }
 
     override fun onCopyClick(tagsText1: Card) {
-// Create an instance of FilterCopiedText
         val filterCopiedText = FilterCopiedText()
+        if(mInterstitialAd != null){
+
+            mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback(){
+                override fun onAdDismissedFullScreenContent() {
+                    super.onAdDismissedFullScreenContent()
+                    filterCopiedText.sentTheCardIn(requireContext(), tagsText1, resources)
+                }
+            }
+            mInterstitialAd?.show(requireActivity())
+        }else{
+            filterCopiedText.sentTheCardIn(requireContext(), tagsText1, resources)
+        }
 
 
-// Call the sentTheCardIn method with the required parameters
-        filterCopiedText.sentTheCardIn(requireContext(), tagsText1, resources)
+
+//// Create an instance of FilterCopiedText
+//
+//
+//
+//// Call the sentTheCardIn method with the required parameters
+//
 
     }
 
@@ -395,7 +415,9 @@ class HashtagsFragment : Fragment(),
 
                 mInterstitialAd = interstitialAd
             }
-        })
+        }
+
+        )
     }
 
     private fun setTagClickListener(tag: String) {
