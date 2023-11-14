@@ -28,6 +28,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputLayout
@@ -50,6 +54,10 @@ class HashtagsFragment : Fragment(),
     CardAdapter.OnCopyClickListener {
 
     private val sharedViewModel: SharedViewModel by activityViewModels()
+
+
+
+    private var mInterstitialAd: InterstitialAd? = null
 
     private lateinit var searchBar: MaterialAutoCompleteTextView
     private lateinit var cardAdapter: CardAdapter
@@ -105,6 +113,8 @@ class HashtagsFragment : Fragment(),
         lonely = rootView.findViewById(R.id.lonely)
         party = rootView.findViewById(R.id.party)
         photography = rootView.findViewById(R.id.photography)
+
+
 
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         val savedPlatform = sharedPrefs.getInt(KEY_PLATFORM, PLATFORM_INSTAGRAM)
@@ -365,12 +375,28 @@ class HashtagsFragment : Fragment(),
 // Create an instance of FilterCopiedText
         val filterCopiedText = FilterCopiedText()
 
+
 // Call the sentTheCardIn method with the required parameters
         filterCopiedText.sentTheCardIn(requireContext(), tagsText1, resources)
 
     }
 
+    private fun loadInterAd() {
 
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(requireContext(),"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+
+                mInterstitialAd = interstitialAd
+            }
+        })
+    }
 
     private fun setTagClickListener(tag: String) {
         searchBar.setText(tag)

@@ -19,6 +19,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationBarView
@@ -41,6 +46,7 @@ private const val LANGUAGE_ENGLISH = "en"
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var mAdView : AdView
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var viewPager: ViewPager
     private lateinit var pagerAdapter: ViewPagerAdapter
@@ -54,6 +60,10 @@ class MainActivity : AppCompatActivity() {
 
         applyDeviceTheme(savedTheme)
         setContentView(R.layout.activity_main)
+
+        loadBannerAd()
+
+
 
         val savedLanguage = sharedPreferences.getString(KEY_LANGUAGE,LANGUAGE_ENGLISH)
         setAppLanguage(savedLanguage!!)
@@ -181,6 +191,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun showChangelogDialog() {
         val inflater = layoutInflater
         val dialogView = inflater.inflate(R.layout.dialog_changelog, null)
@@ -242,6 +254,45 @@ class MainActivity : AppCompatActivity() {
         // Update the app's configuration with the new locale
         resources.updateConfiguration(config, resources.displayMetrics)
        }
+
+    private fun loadBannerAd(){
+        MobileAds.initialize(this) {}
+
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
+
+
+        mAdView.adListener = object: AdListener() {
+            override fun onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            override fun onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+
+            override fun onAdFailedToLoad(adError : LoadAdError) {
+                // Code to be executed when an ad request fails.
+            }
+
+            override fun onAdImpression() {
+                // Code to be executed when an impression is recorded
+                // for an ad.
+            }
+
+            override fun onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            override fun onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+        }
+
+    }
 
 
 }
