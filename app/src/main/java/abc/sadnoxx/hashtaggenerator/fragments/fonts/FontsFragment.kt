@@ -1,6 +1,5 @@
 package abc.sadnoxx.hashtaggenerator.fragments.fonts
 
-import abc.sadnoxx.hashtaggenerator.HapticUtils
 import abc.sadnoxx.hashtaggenerator.HapticUtils.performHapticFeedback
 import abc.sadnoxx.hashtaggenerator.R
 import android.content.ClipData
@@ -12,18 +11,24 @@ import android.os.Vibrator
 import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.textfield.TextInputEditText
 
 
 class FontsFragment : Fragment() {
 
 
+    private var mInterstitialAd: InterstitialAd? = null
     private lateinit var contentTxt1: TextView
     private lateinit var contentTxt2: TextView
     private lateinit var contentTxt3: TextView
@@ -73,7 +78,7 @@ class FontsFragment : Fragment() {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-
+        loadInterAd()
         contentTxt1 = rootView.findViewById(R.id.mainText1)
         contentTxt2 = rootView.findViewById(R.id.mainText2)
         contentTxt3 = rootView.findViewById(R.id.mainText3)
@@ -223,12 +228,41 @@ class FontsFragment : Fragment() {
         return rootView
     }
 
+    private fun loadInterAd() {
+
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(requireContext(),"ca-app-pub-5904433074528629/6490304035", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+
+                mInterstitialAd = interstitialAd
+            }
+        }
+
+        )
+    }
+
     // Function to copy text to clipboard
     private fun copyTextToClipboard(text: String) {
         val clipboardManager =
             requireActivity().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+        if(mInterstitialAd != null){
+
+            mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback(){
+                override fun onAdDismissedFullScreenContent() {
+                    super.onAdDismissedFullScreenContent()
         val clipData = ClipData.newPlainText("Styled Text", text)
         clipboardManager.setPrimaryClip(clipData)
-
+                }
+            }
+            mInterstitialAd?.show(requireActivity())
+        }else{
+            val clipData = ClipData.newPlainText("Styled Text", text)
+            clipboardManager.setPrimaryClip(clipData)
     }
-}
+} }
