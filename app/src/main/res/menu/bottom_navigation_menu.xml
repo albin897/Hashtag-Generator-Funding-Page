@@ -3,23 +3,23 @@
     <item
         android:id="@+id/item_1"
         android:enabled="true"
-        android:icon="@drawable/tools"
+        android:icon="@drawable/baseline_home_24"
         android:title="@string/tools"/>
     <item
         android:id="@+id/item_2"
         android:enabled="true"
-        android:icon="@drawable/hashtag_title"
+        android:icon="@drawable/baseline_home_24"
         android:title="@string/Hashtags"
         />
     <item
         android:id="@+id/item_3"
         android:enabled="true"
-        android:icon="@drawable/fonts"
+        android:icon="@drawable/baseline_home_24"
         android:title="@string/fonts"/>
 
     <item
         android:id="@+id/item_4"
         android:enabled="true"
-        android:icon="@drawable/settings"
+        android:icon="@drawable/baseline_home_24"
         android:title="@string/settings"/>
 </menu>

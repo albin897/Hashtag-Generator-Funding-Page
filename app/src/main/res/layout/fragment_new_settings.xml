@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".NewSettingsFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_square"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                style="?attr/materialCardViewFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                app:cardCornerRadius="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:text="My profile"
+                        android:textColor="@color/text_color_new"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginEnd="19dp"
+                        android:text="Sign in to synchronize your profile from the cloud."
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/customButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="19dp"
+                        android:layout_marginStart="19dp"
+                        android:fontFamily="@font/bold"
+                        android:layout_marginEnd="19dp"
+                        android:text="Continue"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:background="@drawable/custom_button_background"
+                        android:padding="12dp"/>
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:visibility="gone"
+                style="?attr/materialCardViewFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                app:cardCornerRadius="14dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="19dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:text="Albin T T"
+                        android:textColor="@color/text_color"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bold"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="19dp"
+                        android:layout_marginEnd="19dp"
+                        android:text="axtr897@gmail.com"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+                    <ImageView
+                        android:layout_marginRight="30dp"
+                        android:layout_gravity="end|center"
+                        android:id="@+id/profileImageView"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/travel"
+                        android:background="@drawable/circular_background"
+                        android:scaleType="centerCrop" />
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card1"
+                style="?attr/materialCardViewFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                app:cardCornerRadius="14dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/general"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/text_color_new"
+                        android:textSize="20sp"
+                        />
+
+
+                    <LinearLayout
+                        android:id="@+id/themeSelector"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/dark_mode" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/theme"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/themeNotifier"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/bold"
+                            android:paddingEnd="24dp"
+                            android:paddingRight="24dp"
+                            android:text="Auto"
+                            android:textColor="@color/text_color"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerInsetStart="56dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:src="@drawable/vibration" />
+
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="19dp"-->
+<!--                            android:layout_marginLeft="19dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:fontFamily="@font/bold"-->
+<!--                            android:text="@string/vibrations"-->
+<!--                            android:textAppearance="?attr/textAppearanceTitleMedium"-->
+<!--                            android:textColor="@color/text_color"-->
+<!--                            android:textSize="16sp" />-->
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/vibrationsSwitch"
+                            android:layout_marginEnd="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/vibrations"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/jaldi_bold"/>
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerInsetStart="56dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:src="@drawable/bedtime" />
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/sleepingSwitch"
+                            android:layout_marginEnd="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Screen Timeout"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/jaldi_bold"/>
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerInsetStart="56dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/startingScreen"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+                            android:src="@drawable/home" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/starting_screen"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="end"-->
+<!--                            android:fontFamily="@font/bold"-->
+<!--                            android:paddingEnd="24dp"-->
+<!--                            android:paddingRight="24dp"-->
+<!--                            android:text="Auto"-->
+<!--                            android:textColor="@color/text_color"-->
+<!--                            android:textSize="14sp" />-->
+
+
+                    </LinearLayout>
+
+<!--                    <com.google.android.material.divider.MaterialDivider-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        app:dividerInsetStart="56dp"/>-->
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="?attr/materialCardViewFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/card_col"
+                app:cardCornerRadius="14dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/additional"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/text_color_new"
+                        android:textSize="20sp"
+                        />
+
+
+
+                    <LinearLayout
+                        android:id="@+id/language"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+                            android:src="@drawable/translate" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/language"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/languageDisplay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/bold"
+                            android:paddingEnd="24dp"
+                            android:paddingRight="24dp"
+                            android:text="English"
+                            android:textColor="@color/text_color"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerInsetStart="56dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/refreshBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/system_update" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/check_for_updates"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:paddingEnd="16dp"
+                            android:paddingRight="16dp"
+                            android:src="@drawable/refresh" />
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerInsetStart="56dp"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/aboutApp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/info" />
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/about"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:visibility="gone"
+                android:id="@+id/card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#191925"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="19dp"
+                android:layout_marginEnd="19dp"
+                app:cardCornerRadius="10dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="#B33A3A"
+                    android:fontFamily="@font/jaldi_bold"
+                    android:text="Log out"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textSize="17sp" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dividerInsetStart="56dp"
+                android:layout_marginTop="15dp"
+                android:visibility="invisible"/>
+        </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
@@ -220,6 +221,7 @@ class FontsFragment : Fragment() {
 
                 performHapticFeedback(vibrator, sharedPreferences)
                 copyTextToClipboard(contentTextViews[i].text.toString())
+                Toast.makeText(requireContext(),"Copied",Toast.LENGTH_SHORT).show()
             }
         }
 

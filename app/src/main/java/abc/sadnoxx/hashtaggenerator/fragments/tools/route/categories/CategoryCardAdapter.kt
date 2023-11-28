@@ -1,14 +1,14 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools.route.categories
 
 
+import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.Card
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import abc.sadnoxx.hashtaggenerator.R
-import abc.sadnoxx.hashtaggenerator.fragments.hashtag.hashtags.Card
-import android.widget.LinearLayout
 
 
 class CategoryCardAdapter(
@@ -22,7 +22,7 @@ class CategoryCardAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.hash_item, parent, false)
+            .inflate(R.layout.categories_hash_item, parent, false)
         return ViewHolder(view)
     }
 

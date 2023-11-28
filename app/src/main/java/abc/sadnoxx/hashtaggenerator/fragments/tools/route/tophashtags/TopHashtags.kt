@@ -14,17 +14,12 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
 
 class TopHashtags : Fragment(), TopCardAdapter.OnCopyClickListener {
 
 
-    private var mInterstitialAd: InterstitialAd? = null
+//    private var mInterstitialAd: InterstitialAd? = null
     private lateinit var bottomSheet: LinearLayout
     private lateinit var btnCopyAll: LinearLayout
     private lateinit var btnRemoveOne: LinearLayout
@@ -40,7 +35,7 @@ class TopHashtags : Fragment(), TopCardAdapter.OnCopyClickListener {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_top_hashtags, container, false)
 
-        loadInterAd()
+//        loadInterAd()
         copiedTextView = rootView.findViewById(R.id.tagAllText)
 
 
@@ -58,22 +53,12 @@ class TopHashtags : Fragment(), TopCardAdapter.OnCopyClickListener {
             val clipboardManager =
                 activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
 
-            if(mInterstitialAd != null){
 
-                mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback(){
-                    override fun onAdDismissedFullScreenContent() {
-                        super.onAdDismissedFullScreenContent()
-            val clipData = ClipData.newPlainText("Copied Text", copiedTextView.text)
-            clipboardManager.setPrimaryClip(clipData)
-                    }
-                }
-                mInterstitialAd?.show(requireActivity())
-            }else{
                 val clipData = ClipData.newPlainText("Copied Text", copiedTextView.text)
                 clipboardManager.setPrimaryClip(clipData)
-            
+            Toast.makeText(requireContext(),"Tags Copied",Toast.LENGTH_SHORT).show()
             }
-        }
+
 
         btnRemoveOne.setOnClickListener {
             if (copiedStringsList.isNotEmpty()) {
@@ -102,24 +87,6 @@ class TopHashtags : Fragment(), TopCardAdapter.OnCopyClickListener {
         return rootView
     }
 
-    private fun loadInterAd() {
-
-        var adRequest = AdRequest.Builder().build()
-
-        InterstitialAd.load(requireContext(),"ca-app-pub-5904433074528629/6490304035", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-
-                mInterstitialAd = null
-            }
-
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-
-                mInterstitialAd = interstitialAd
-            }
-        }
-
-        )
-    }
 
 
     override fun onCopyClick(mainText: String) {

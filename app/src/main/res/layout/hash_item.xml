@@ -26,12 +26,11 @@
 
             <TextView
                 android:paddingTop="10dp"
-                android:paddingBottom="12dp"
                 android:id="@+id/mainTagText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:fontFamily="@font/signikanegative_medium"
+                android:fontFamily="@font/jaldi_bold"
                 android:text="Love"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textColor="@color/text_color"
@@ -40,7 +39,6 @@
             <TextView
 
                 android:padding="9dp"
-                android:background="@drawable/handle_shape_new"
                 android:id="@+id/tagTagText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -68,20 +66,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
                     android:gravity="center"
+                    android:background="@drawable/handle_shape_new_color_inverted"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
                         android:src="@drawable/bookmark" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:fontFamily="@font/signikanegative_medium"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:fontFamily="@font/jaldi_bold"
                         android:textColor="@color/text_color"
                         android:text="@string/save" />
                 </LinearLayout>
@@ -91,20 +94,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/handle_shape_new_color_inverted"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
                         android:src="@drawable/copy" />
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:fontFamily="@font/signikanegative_medium"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:fontFamily="@font/jaldi_bold"
                         android:textColor="@color/text_color"
                         android:text="@string/copy" />
                 </LinearLayout>

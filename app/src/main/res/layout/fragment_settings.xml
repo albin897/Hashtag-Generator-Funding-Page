@@ -6,26 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".fragments.settings.SettingsFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/material_navbar"
-            app:navigationIcon="@drawable/settings"
-            app:title="Settings"
-            app:titleTextAppearance="@style/MyAppBarLayout"
-
-            app:titleTextColor="@color/text_color" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/rounded_square"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.divider.MaterialDivider

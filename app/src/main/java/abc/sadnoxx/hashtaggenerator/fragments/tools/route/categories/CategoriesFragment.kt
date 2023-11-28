@@ -15,17 +15,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
 class CategoriesFragment : Fragment() {
 
     private lateinit var categoryCardAdapter: CategoryCardAdapter
 
-    private var mInterstitialAd: InterstitialAd? = null
+//    private var mInterstitialAd: InterstitialAd? = null
     private lateinit var sharedPreferences: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +31,7 @@ class CategoriesFragment : Fragment() {
 
         val recyclerView: RecyclerView = rootView.findViewById(R.id.recyclerView)
 
-        loadInterAd()
+//        loadInterAd()
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
 
@@ -80,24 +75,24 @@ class CategoriesFragment : Fragment() {
 
     }
 
-    private fun loadInterAd() {
-
-        var adRequest = AdRequest.Builder().build()
-
-        InterstitialAd.load(requireContext(),"ca-app-pub-5904433074528629/6490304035", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-
-                mInterstitialAd = null
-            }
-
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-
-                mInterstitialAd = interstitialAd
-            }
-        }
-
-        )
-    }
+//    private fun loadInterAd() {
+//
+//        var adRequest = AdRequest.Builder().build()
+//
+//        InterstitialAd.load(requireContext(),"ca-app-pub-5904433074528629/6490304035", adRequest, object : InterstitialAdLoadCallback() {
+//            override fun onAdFailedToLoad(adError: LoadAdError) {
+//
+//                mInterstitialAd = null
+//            }
+//
+//            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+//
+//                mInterstitialAd = interstitialAd
+//            }
+//        }
+//
+//        )
+//    }
 
     private fun copyToClipboard(text: Int) {
         val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
@@ -105,19 +100,9 @@ class CategoriesFragment : Fragment() {
 
 
         val filterCopiedText = FilterCopiedText()
-        if(mInterstitialAd != null){
 
-            mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback(){
-                override fun onAdDismissedFullScreenContent() {
-                    super.onAdDismissedFullScreenContent()
-// Call the sentTheCardIn method with the required parameters
-        filterCopiedText.sentTheCardInWithInt(requireContext(), text, resources)
-    }
-            }
-            mInterstitialAd?.show(requireActivity())
-        }else{
             filterCopiedText.sentTheCardInWithInt(requireContext(), text, resources)
-        }
+
     }
 
 }

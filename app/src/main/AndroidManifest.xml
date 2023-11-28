@@ -9,6 +9,7 @@
     <queries>
         <intent>
             <action android:name="android.intent.action.SENDTO" />
+
             <data android:scheme="mailto" />
         </intent>
     </queries>
@@ -23,11 +24,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HashtagGenerator"
         tools:targetApi="31">
+        <activity
+            android:name=".RouteModifiedActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-5904433074528629~7054492389"/>
-
+            android:value="ca-app-pub-5904433074528629~7054492389" />
 
         <activity
             android:name=".fragments.tools.route.RouteActivity"

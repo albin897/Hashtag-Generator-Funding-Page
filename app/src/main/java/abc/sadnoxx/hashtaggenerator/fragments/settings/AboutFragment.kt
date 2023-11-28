@@ -17,17 +17,16 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.fragment.app.Fragment
-import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class AboutFragment : Fragment() {
-    private lateinit var changelogs: MaterialCardView
-    private lateinit var contributers: MaterialCardView
-    private lateinit var privacyPolicy: MaterialCardView
-    private lateinit var termsAndConditions: MaterialCardView
-    private lateinit var rateAndReview: MaterialCardView
-    private lateinit var reportBugsCard: MaterialCardView
+    private lateinit var changelogs: LinearLayout
+    private lateinit var contributers: LinearLayout
+    private lateinit var privacyPolicy: LinearLayout
+    private lateinit var termsAndConditions: LinearLayout
+    private lateinit var rateAndReview: LinearLayout
+    private lateinit var reportBugsCard: LinearLayout
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var versionTextView: TextView
 

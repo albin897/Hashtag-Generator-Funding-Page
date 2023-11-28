@@ -4,7 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".fragments.tools.TextFormatter">
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jaldi_bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/textFormatter"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textSize="23sp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/searchbartop"
@@ -14,7 +29,7 @@
         app:endIconMode="clear_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/heading">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_text1"
@@ -160,17 +175,96 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/summary"
-                android:gravity="center"
-                android:textSize="18dp"
-                android:fontFamily="@font/open_sans_bold"
-                android:layout_margin="15dp"
-                android:paddingTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0 Words \n\n 0 characters \n\n 0 Characters (without spaces)"/>
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Words Count"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:id="@+id/wordsCnt"
+                        android:text="0"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:textSize="18sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="8dp"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Charecters Count"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:id="@+id/CharectersCnt"
+                        android:text="0"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:textSize="18sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="8dp"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Charecters(without spaces)"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:id="@+id/CharecWithoutSpaceCnt"
+                        android:text="0"
+                        android:fontFamily="@font/jaldi_bold"
+                        android:textSize="18sp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="8dp"/>
+
+
+                </TableRow>
+            </TableLayout>
 
 
         </LinearLayout>

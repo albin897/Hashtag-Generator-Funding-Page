@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:paddingTop="15dp"
+    android:paddingBottom="20dp"
     tools:context=".fragments.tools.route.categories.CategoriesFragment">
 
     <androidx.recyclerview.widget.RecyclerView

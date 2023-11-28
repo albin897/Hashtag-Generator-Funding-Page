@@ -41,7 +41,7 @@
         <item name="android:textSize">12sp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginStart" tools:targetApi="jelly_bean_mr1">12dp</item>
+        <item name="android:layout_marginStart" >12dp</item>
         <item name="android:layout_marginLeft">19dp</item>
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">3dp</item>

@@ -7,15 +7,25 @@
     <!--    material theme-->
 
 <!--    <color name="material_statusbar">#1C1B1F</color>-->
-    <color name="material_navbar">#1D1D1D</color>
+
+    <color name="background_color">#191925</color>
+    <color name="card_col">#242333</color>
+    <color name="bottom_nav_col">#242333</color>
+    <color name="bottom_nav_inactive_col">#FFFFFFFF</color>
+    <color name="bottom_nav_active_col">#6A47FB</color>
+    <color name="text_color_new">#FFFFFFFF</color>
+    <color name="text_color_inverted">#FFFFFFFF</color>
+
+
+    <color name="new_nav_color">#242333</color>
+    <color name="material_navbar">#191925</color>
     <color name="text_color">#FFFFFFFF</color>
 
     <color name="card_col1">#1D1D1D</color>
-        <color name="card_col">#2C2C2C</color>
     <color name="material_dialog_color">#2D3039</color>
     <color name="about_background_col">#171C20</color>
 
-    <color name="app_background_color">#111B21</color>
+    <color name="app_background_color">#242333</color>
     <color name="card_col2">#49494C</color>
 
 

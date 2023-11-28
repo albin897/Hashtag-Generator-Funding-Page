@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/"
+    android:layout_height="match_parent"
+   >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/background_color">
+
+
+
+    <TableLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:padding="16dp"
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categories"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/jaldi_bold"
+        android:textSize="26sp"
+        android:textColor="@color/text_color"
+        android:gravity="center"/>
+
+    <!-- Table Header -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Item 1 -->
+        <LinearLayout
+            android:id="@+id/likes"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:src="@drawable/likes"
+               android:padding="20dp"
+               android:layout_height="90dp"
+               android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:paddingTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Likes"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 2 -->
+        <LinearLayout
+            android:id="@+id/reels"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/reels"
+                android:padding="20dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reels"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 3 -->
+        <LinearLayout
+            android:id="@+id/followers"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/followers"
+                android:padding="20dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Followers"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </TableRow>
+
+    <!-- Table Rows with Items -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Item 1 -->
+            <LinearLayout
+                android:id="@+id/popular"
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/popular"
+                    android:padding="22dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/square_with_more_corner_radius"/>
+
+                <TextView
+                    android:textSize="14dp"
+                    android:paddingTop="3dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="popular"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <!-- Item 2 -->
+            <LinearLayout
+                android:id="@+id/photography"
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/photography"
+                    android:padding="20dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/square_with_more_corner_radius"/>
+
+                <TextView
+                    android:textSize="14dp"
+                    android:paddingTop="3dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Photography"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <!-- Item 3 -->
+            <LinearLayout
+                android:id="@+id/gaming"
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/gaming"
+                    android:padding="20dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/square_with_more_corner_radius"/>
+
+                <TextView
+                    android:textSize="14dp"
+                    android:paddingTop="3dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gaming"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+        </TableRow> <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Item 1 -->
+        <LinearLayout
+            android:id="@+id/brands"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/brands"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brands"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 2 -->
+        <LinearLayout
+            android:id="@+id/sports"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/sports"
+                android:padding="18dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sports"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 3 -->
+        <LinearLayout
+            android:id="@+id/seasonal"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/seasonal"
+                android:padding="20dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Seasonal"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </TableRow> <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Item 1 -->
+        <LinearLayout
+            android:id="@+id/holidays"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/holidays"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Holidays"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 2 -->
+        <LinearLayout
+            android:id="@+id/parenting"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/parenting"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:paddingTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parenting"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 3 -->
+        <LinearLayout
+            android:id="@+id/work"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/work"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Work"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </TableRow> <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Item 1 -->
+        <LinearLayout
+            android:id="@+id/electronics"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/electronics"
+                android:padding="20dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Electronics"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 2 -->
+        <LinearLayout
+            android:id="@+id/weather"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/weather"
+                android:padding="20dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Weather"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 3 -->
+        <LinearLayout
+            android:id="@+id/food"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/food"
+                android:padding="23dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Food"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </TableRow> <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Item 1 -->
+        <LinearLayout
+            android:id="@+id/travel"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/travel"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:paddingTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Travel"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 2 -->
+        <LinearLayout
+            android:id="@+id/entertainment"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/nightlife"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:paddingTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Entertainment"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 3 -->
+        <LinearLayout
+            android:id="@+id/party"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/party"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:paddingTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Party"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </TableRow> <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Item 1 -->
+        <LinearLayout
+            android:id="@+id/transportation"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/transportation"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="13dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transportation"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 2 -->
+        <LinearLayout
+            android:id="@+id/nature"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/nature"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nature"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 3 -->
+        <LinearLayout
+            android:id="@+id/makeup"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/makeup"
+                android:padding="22dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Makeup"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </TableRow> <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Item 1 -->
+        <LinearLayout
+            android:id="@+id/fashion"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/fashion"
+                android:padding="18dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fashion"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 2 -->
+        <LinearLayout
+            android:id="@+id/weekdays"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/weekdays"
+                android:padding="24dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Weekdays"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <!-- Item 3 -->
+        <LinearLayout
+            android:id="@+id/moods"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@drawable/moods"
+                android:padding="18dp"
+                android:layout_height="90dp"
+                android:background="@drawable/square_with_more_corner_radius"/>
+
+            <TextView
+                android:textSize="14dp"
+                android:paddingTop="3dp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Moods"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </TableRow>
+
+    <!-- Repeat the above TableRow for the remaining 22 items -->
+    </TableLayout>
+
+    </LinearLayout>
+</ScrollView>

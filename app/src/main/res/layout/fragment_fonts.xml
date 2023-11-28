@@ -6,26 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".fragments.fonts.FontsFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/material_navbar"
-            app:navigationIcon="@drawable/fonts"
-            app:title="Fonts"
-            app:titleTextAppearance="@style/MyAppBarLayout"
-            app:titleTextColor="@color/text_color" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/rounded_square"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.divider.MaterialDivider
@@ -37,6 +23,19 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/fonts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fonts"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/jaldi_bold"
+            android:textSize="27sp"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/searchbartop"
             android:layout_width="match_parent"
@@ -45,13 +44,12 @@
             app:endIconMode="clear_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider_one">
+            app:layout_constraintTop_toBottomOf="@id/fonts">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Input Text"
                 android:maxLines="2"
                 android:text=""
                 android:textColor="@color/text_color" />
@@ -173,7 +171,7 @@
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="12sp" />
 
                         <ImageView
                             android:id="@+id/copyButton15"
@@ -228,7 +226,7 @@
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:id="@+id/copyButton16"
@@ -504,7 +502,7 @@
                             android:text=""
                             android:maxLines="2"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:id="@+id/copyButton9"
@@ -559,7 +557,7 @@
                             android:text=""
                             android:maxLines="2"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:id="@+id/copyButton10"
@@ -616,7 +614,7 @@
                             android:maxLines="2"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:id="@+id/copyButton12"
@@ -838,7 +836,7 @@
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:id="@+id/copyButton2"
@@ -894,7 +892,7 @@
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:id="@+id/copyButton3"
@@ -950,7 +948,7 @@
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:id="@+id/copyButton4"
@@ -1005,7 +1003,7 @@
                             android:paddingTop="5dp"
                             android:text=""
                             android:textAppearance="?attr/textAppearanceTitleMedium"
-                            android:textSize="18sp" />
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:id="@+id/copyButton5"

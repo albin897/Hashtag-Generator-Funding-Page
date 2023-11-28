@@ -25,7 +25,9 @@ class TextFormatter : Fragment() {
     private lateinit var toLowerCaseTextView: TextView
     private lateinit var toUpperCaseCopyButton: ImageView
     private lateinit var toLowerCaseCopyButton: ImageView
-    private lateinit var summary: TextView
+    private lateinit var wordsCnt: TextView
+    private lateinit var CharectersCnt: TextView
+    private lateinit var CharecWithoutSpaceCnt: TextView
 
 
     override fun onCreateView(
@@ -40,7 +42,9 @@ class TextFormatter : Fragment() {
         toLowerCaseTextView = rootView.findViewById(R.id.toLowerCaseTextView)
         toUpperCaseCopyButton = rootView.findViewById(R.id.toUpperCaseCopyButton)
         toLowerCaseCopyButton = rootView.findViewById(R.id.toLowerCaseCopyButton)
-        summary = rootView.findViewById(R.id.summary)
+        wordsCnt = rootView.findViewById(R.id.wordsCnt)
+        CharectersCnt = rootView.findViewById(R.id.CharectersCnt)
+        CharecWithoutSpaceCnt = rootView.findViewById(R.id.CharecWithoutSpaceCnt)
 
         try {
             edit_text1.addTextChangedListener(object : TextWatcher {
@@ -55,7 +59,9 @@ class TextFormatter : Fragment() {
                 toLowerCaseTextView.text = lowercaseCharacters
                 getTextStatistics(orginalString)
                 if (s.isNullOrEmpty()){
-                    summary.text = "0 Words \n\n 0 Characters \n\n 0 Characters (without spaces)"
+                    wordsCnt.text = "0"
+                    CharectersCnt.text = "0"
+                    CharecWithoutSpaceCnt.text = "0"
 
                 }
             }
@@ -99,7 +105,9 @@ private fun copyToClipboard(text: String){
         val characterCountWithSpaces = passage.length
         val characterCountWithoutSpaces = passage.replace("\\s".toRegex(), "").length
 
-        summary.text = "$wordCount Words \n\n $characterCountWithSpaces Characters \n\n $characterCountWithoutSpaces Characters (without spaces)"
+        wordsCnt.text = "$wordCount"
+        CharectersCnt.text = "$characterCountWithSpaces"
+        CharecWithoutSpaceCnt.text = "$characterCountWithoutSpaces"
     }
 
 

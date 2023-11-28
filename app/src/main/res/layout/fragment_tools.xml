@@ -6,22 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.tools.ToolsFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/material_navbar"
-            app:navigationIcon="@drawable/tools_title"
-            app:title="Tools"
-            app:titleTextAppearance="@style/MyAppBarLayout"
-
-            app:titleTextColor="@color/text_color" />
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -45,6 +30,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/rounded_square_tools"
             app:layout_constraintTop_toBottomOf="@id/divider_one">
 
             <LinearLayout
@@ -53,6 +39,7 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:visibility="gone"
                     android:id="@+id/topHashtags"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -153,13 +140,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
-                                android:fontFamily="@font/signikanegative_medium"
+                                android:fontFamily="@font/jaldi_bold"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="3dp"
                                 android:text="@string/textFormatter"
                                 android:textAppearance="?attr/textAppearanceTitleMedium"
                                 android:textColor="@color/text_color"
-                                android:textSize="22sp" />
+                                android:textSize="25sp" />
 
 
                         </LinearLayout>
@@ -173,7 +160,6 @@
                             android:layout_marginEnd="18dp"
                             android:layout_marginRight="19dp"
                             android:fontFamily="@font/jaldi_bold"
-                            android:paddingTop="9dp"
                             android:paddingBottom="5dp"
                             android:text="@string/formatter_desc"
                             android:textAppearance="?attr/textAppearanceTitleMedium"
@@ -187,6 +173,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:visibility="gone"
                     android:id="@+id/categories"
                     style="?attr/materialCardViewFilledStyle"
                     android:layout_width="match_parent"
@@ -901,6 +888,36 @@
 
 
                 </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/asd"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/card_col"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <TextView
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/jaldi_bold"
+                    android:text="More Tools Will Be Added Soon."
+                    android:textColor="@color/text_color" />
 
 
             </LinearLayout>

@@ -1,16 +1,24 @@
 package abc.sadnoxx.hashtaggenerator.fragments.tools
 
 import abc.sadnoxx.hashtaggenerator.R
+import abc.sadnoxx.hashtaggenerator.RouteModifiedActivity
 import abc.sadnoxx.hashtaggenerator.fragments.tools.route.RouteActivity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.google.android.material.card.MaterialCardView
 
+private const val KEY_THEME = "theme"
+private const val THEME_LIGHT = 0
+private const val THEME_DARK = 1
+private const val THEME_SYSTEM = 2
 class ToolsFragment : Fragment() {
 
   private lateinit var topHashtags: MaterialCardView
@@ -40,6 +48,7 @@ class ToolsFragment : Fragment() {
     private lateinit var sports: LinearLayout
     private lateinit var textFormatter: MaterialCardView
 
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,7 +57,8 @@ class ToolsFragment : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_tools, container, false)
 
-
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        applyFragmentTheme()
 
         topHashtags = rootView.findViewById(R.id.topHashtags)
         likes = rootView.findViewById(R.id.likes)
@@ -191,6 +201,14 @@ class ToolsFragment : Fragment() {
 
 
         return rootView
+    }
+
+    private fun applyFragmentTheme() {
+        when (sharedPreferences.getInt(KEY_THEME, THEME_LIGHT)) {
+            THEME_LIGHT -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            THEME_DARK -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            THEME_SYSTEM -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        }
     }
 
     private fun openRouteActivityWithSports() {
@@ -347,7 +365,7 @@ class ToolsFragment : Fragment() {
     }
 
     private fun openRouteActivityWithFragmentTextFormatter() {
-        val intent = Intent(activity, RouteActivity::class.java)
+        val intent = Intent(activity, RouteModifiedActivity::class.java)
         intent.putExtra("fragment", "textFormatter")
         startActivity(intent)
     }

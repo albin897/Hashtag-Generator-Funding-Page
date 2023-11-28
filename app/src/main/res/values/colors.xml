@@ -8,11 +8,19 @@
 <!--    material theme-->
 
 <!--    <color name="material_statusbar">#FFFBFE</color>-->
+
+    <color name="background_color">#F5F4F9</color>
+    <color name="card_col">#E7E0EC</color>
+    <color name="bottom_nav_col">#F2ECF6</color>
+    <color name="bottom_nav_inactive_col">#242333</color>
+    <color name="bottom_nav_active_col">#0C0925</color>
+    <color name="text_color_new">#0C0925</color>
+    <color name="text_color_inverted">#FFFFFFFF</color>
+
     <color name="material_navbar">#F2ECF6</color>
     <color name="text_color">#FF000000</color>
-
+    <color name="new_nav_color">#242333</color>
     <color name="card_col1">#F2ECF6</color>
-    <color name="card_col">#E7E0EC</color>
     <color name="material_dialog_color">#E2E2EC</color>
     <color name="about_background_col">#F0F0FA</color>
     <color name="app_background_color">#F0F0FA</color>

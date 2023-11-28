@@ -1,8 +1,6 @@
 package abc.sadnoxx.hashtaggenerator
 
 import abc.sadnoxx.hashtaggenerator.fragments.fonts.FontsFragment
-import abc.sadnoxx.hashtaggenerator.fragments.hashtag.HashtagMainFragment
-import abc.sadnoxx.hashtaggenerator.fragments.settings.SettingsFragment
 import abc.sadnoxx.hashtaggenerator.fragments.tools.ToolsFragment
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -19,11 +17,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationBarView
@@ -46,7 +39,6 @@ private const val LANGUAGE_ENGLISH = "en"
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var mAdView : AdView
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var viewPager: ViewPager
     private lateinit var pagerAdapter: ViewPagerAdapter
@@ -54,14 +46,14 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val savedTheme = sharedPreferences.getInt(KEY_THEME, THEME_LIGHT)
 
         applyDeviceTheme(savedTheme)
+        super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
-        loadBannerAd()
 
 
 
@@ -114,17 +106,6 @@ class MainActivity : AppCompatActivity() {
             window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
 
-//        // Creates a button that mimics a crash when pressed
-//        val crashButton = Button(this)
-//        crashButton.text = "Test Crash"
-//        crashButton.setOnClickListener {
-//            throw RuntimeException("Test Crash") // Force a crash
-//        }
-
-//        addContentView(crashButton, ViewGroup.LayoutParams(
-//            ViewGroup.LayoutParams.MATCH_PARENT,
-//            ViewGroup.LayoutParams.WRAP_CONTENT))
-
 
 
         pagerAdapter = ViewPagerAdapter(supportFragmentManager)
@@ -154,12 +135,33 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+//        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+//            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+//                // Not needed
+//            }
+//
+//            override fun onPageSelected(position: Int) {
+//                bottomNavigationView.menu.getItem(position).isChecked = true
+//            }
+//
+//            override fun onPageScrollStateChanged(state: Int) {
+//                // Not needed
+//            }
+//        })
+
         viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
                 // Not needed
             }
 
             override fun onPageSelected(position: Int) {
+                // Update the theme when a new page is selected
+                val currentFragment = pagerAdapter.instantiateItem(viewPager, position) as? Fragment
+                currentFragment?.let {
+                    applyFragmentTheme(it)
+                }
+
+                // Update the bottom navigation view
                 bottomNavigationView.menu.getItem(position).isChecked = true
             }
 
@@ -167,6 +169,7 @@ class MainActivity : AppCompatActivity() {
                 // Not needed
             }
         })
+
 
         //For setting initial page based on the user selection
         val initialSelection = sharedPreferences.getInt(KEY_SCREEN, 1)
@@ -176,19 +179,29 @@ class MainActivity : AppCompatActivity() {
         // for setting color to the status and nav bars
         // Set the status bar color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            window.statusBarColor = ContextCompat.getColor(this, R.color.material_navbar)
+            window.statusBarColor = ContextCompat.getColor(this, R.color.background_color)
         } else {
             window.javaClass.getDeclaredMethod("setStatusBarColor", Int::class.java)
-                .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
+                .invoke(window, ContextCompat.getColor(this, R.color.background_color))
         }
 
         // Set the navigation bar color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            window.navigationBarColor = ContextCompat.getColor(this, R.color.material_navbar)
+            window.navigationBarColor = ContextCompat.getColor(this, R.color.background_color)
         } else {
             window.javaClass.getDeclaredMethod("setNavigationBarColor", Int::class.java)
-                .invoke(window, ContextCompat.getColor(this, R.color.material_navbar))
+                .invoke(window, ContextCompat.getColor(this, R.color.background_color))
         }
+    }
+
+    // Inside your MainActivity
+    private fun applyFragmentTheme(fragment: Fragment) {
+        when (sharedPreferences.getInt(KEY_THEME, THEME_LIGHT)) {
+            THEME_LIGHT -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            THEME_DARK -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            THEME_SYSTEM -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        }
+        recreate() // Recreate the activity to apply the theme
     }
 
 
@@ -218,7 +231,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+//    inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+//
+//        override fun getCount(): Int {
+//            return 4 // Number of fragments in your ViewPager
+//        }
+//
+//        override fun getItem(position: Int): Fragment {
+//            return when (position) {
+//                0 -> ToolsFragment()
+//                1 -> MainScreenFragment()
+//                2 -> FontsFragment()
+//                3 -> NewSettingsFragment()
+//                else -> throw IllegalArgumentException("Invalid position")
+//            }
+//        }
+//    }
+
+
+    inner class ViewPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_SET_USER_VISIBLE_HINT) {
 
         override fun getCount(): Int {
             return 4 // Number of fragments in your ViewPager
@@ -227,14 +258,13 @@ class MainActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             return when (position) {
                 0 -> ToolsFragment()
-                1 -> HashtagMainFragment()
+                1 -> MainScreenFragment()
                 2 -> FontsFragment()
-                3 -> SettingsFragment()
+                3 -> NewSettingsFragment()
                 else -> throw IllegalArgumentException("Invalid position")
             }
         }
     }
-
 
     private fun showFeedbackDialog(){
         val reviewManager = ReviewManagerFactory.create(applicationContext)
@@ -255,44 +285,6 @@ class MainActivity : AppCompatActivity() {
         resources.updateConfiguration(config, resources.displayMetrics)
        }
 
-    private fun loadBannerAd(){
-        MobileAds.initialize(this) {}
-
-        mAdView = findViewById(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        mAdView.loadAd(adRequest)
-
-
-        mAdView.adListener = object: AdListener() {
-            override fun onAdClicked() {
-                // Code to be executed when the user clicks on an ad.
-            }
-
-            override fun onAdClosed() {
-                // Code to be executed when the user is about to return
-                // to the app after tapping on an ad.
-            }
-
-            override fun onAdFailedToLoad(adError : LoadAdError) {
-                // Code to be executed when an ad request fails.
-            }
-
-            override fun onAdImpression() {
-                // Code to be executed when an impression is recorded
-                // for an ad.
-            }
-
-            override fun onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-            }
-
-            override fun onAdOpened() {
-                // Code to be executed when an ad opens an overlay that
-                // covers the screen.
-            }
-        }
-
-    }
 
 
 }

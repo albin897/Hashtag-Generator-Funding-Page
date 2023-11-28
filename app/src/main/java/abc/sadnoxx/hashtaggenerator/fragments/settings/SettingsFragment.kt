@@ -2,7 +2,7 @@ package abc.sadnoxx.hashtaggenerator.fragments.settings
 
 import abc.sadnoxx.hashtaggenerator.HapticUtils.performHapticFeedback
 import abc.sadnoxx.hashtaggenerator.R
-import abc.sadnoxx.hashtaggenerator.fragments.tools.route.RouteActivity
+import abc.sadnoxx.hashtaggenerator.RouteModifiedActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -247,7 +247,7 @@ class SettingsFragment : Fragment() {
         }
 
         aboutApp.setOnClickListener {
-            val intent = Intent(activity, RouteActivity::class.java)
+            val intent = Intent(activity, RouteModifiedActivity::class.java)
             intent.putExtra("fragment", "about")
             startActivity(intent)
             performHapticFeedback(vibrator, sharedPreferences)

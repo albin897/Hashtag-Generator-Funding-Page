@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/about_background_col"
+    android:background="@color/background_color"
     tools:context=".fragments.settings.AboutFragment">
 
 
@@ -86,280 +86,269 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/rateAndReview"
+                android:id="@+id/card1"
                 style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="16dp"
                 android:backgroundTint="@color/card_col"
-                android:visibility="visible"
-                app:cardCornerRadius="25dp">
+                app:cardCornerRadius="14dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp">
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
 
-                    <ImageView
 
-                        android:layout_width="wrap_content"
+
+
+                    <LinearLayout
+                        android:id="@+id/rateAndReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/rate_and_review" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/rate"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingStart="16dp"
-                        android:src="@drawable/rate_and_review" />
+                        app:dividerInsetStart="56dp"/>
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/changelogs"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/contributers" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/changelogs"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:paddingStart="19dp"
-                        android:paddingTop="4dp"
-                        android:text="@string/rate"
-                        android:textColor="@color/text_color"
-                        android:textSize="14sp" />
+                        app:dividerInsetStart="56dp"/>
 
+                    <LinearLayout
+                        android:id="@+id/reportBugsCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/settings_suggest" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/report_bugs"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerInsetStart="56dp"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/contributers"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/contributers" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/contributers"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerInsetStart="56dp"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/privacyPolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/link" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/privacy_policy"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+
+
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerInsetStart="56dp"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/termsAndConditions"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingStart="16dp"
+                            android:paddingLeft="16dp"
+
+                            android:src="@drawable/link" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginLeft="19dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jaldi_bold"
+                            android:text="@string/terms_and_conditions"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="@color/text_color"
+                            android:textSize="16sp" />
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/changelogs"
-                style="?attr/materialCardViewFilledStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/card_col"
-                android:visibility="visible"
-                app:cardCornerRadius="25dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp">
-
-                    <ImageView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="16dp"
-                        android:paddingLeft="16dp"
-                        android:src="@drawable/contributers" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:paddingStart="19dp"
-                        android:paddingLeft="19dp"
-                        android:paddingTop="4dp"
-                        android:text="@string/changelogs"
-                        android:textColor="@color/text_color"
-                        android:textSize="14sp" />
-
-
-                </LinearLayout>
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/reportBugsCard"
-                style="?attr/materialCardViewFilledStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="0dp"
-                android:backgroundTint="@color/card_col"
-                android:visibility="visible"
-                app:cardCornerRadius="25dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp">
-
-                    <ImageView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="16dp"
-                        android:paddingLeft="16dp"
-                        android:src="@drawable/settings_suggest" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:paddingStart="19dp"
-                        android:paddingLeft="19dp"
-                        android:paddingTop="4dp"
-                        android:text="@string/report_bugs"
-                        android:textColor="@color/text_color"
-                        android:textSize="14sp" />
-
-
-                </LinearLayout>
-
-
             </com.google.android.material.card.MaterialCardView>
 
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/contributers"
-                style="?attr/materialCardViewFilledStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/card_col"
-                android:visibility="visible"
-                app:cardCornerRadius="25dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp">
-
-                    <ImageView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="16dp"
-                        android:paddingLeft="16dp"
-                        android:src="@drawable/contributers" />
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:paddingStart="19dp"
-                        android:paddingLeft="19dp"
-                        android:paddingTop="4dp"
-                        android:text="@string/contributers"
-                        android:textColor="@color/text_color"
-                        android:textSize="14sp" />
 
 
-                </LinearLayout>
 
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/privacyPolicy"
-                style="?attr/materialCardViewFilledStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/card_col"
-                android:visibility="visible"
-                app:cardCornerRadius="25dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp">
-
-                    <ImageView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="16dp"
-                        android:paddingLeft="16dp"
-                        android:src="@drawable/link" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:paddingStart="19dp"
-                        android:paddingLeft="19dp"
-                        android:paddingTop="4dp"
-                        android:text="@string/privacy_policy"
-                        android:textColor="@color/text_color"
-                        android:textSize="14sp" />
-
-
-                </LinearLayout>
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/termsAndConditions"
-                style="?attr/materialCardViewFilledStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:backgroundTint="@color/card_col"
-                android:visibility="visible"
-                app:cardCornerRadius="25dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingTop="20dp"
-                    android:paddingBottom="20dp">
-
-                    <ImageView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="16dp"
-                        android:paddingLeft="16dp"
-                        android:src="@drawable/link" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/bold"
-                        android:paddingStart="19dp"
-                        android:paddingLeft="19dp"
-                        android:paddingTop="4dp"
-                        android:text="@string/terms_and_conditions"
-                        android:textColor="@color/text_color"
-                        android:textSize="14sp" />
-
-
-                </LinearLayout>
-
-                >
-
-
-            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
