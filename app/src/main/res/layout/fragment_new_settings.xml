@@ -86,7 +86,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:visibility="gone"
+                android:visibility="visible"
                 style="?attr/materialCardViewFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -516,7 +516,7 @@
 
 
             <com.google.android.material.card.MaterialCardView
-                android:visibility="gone"
+                android:visibility="visible"
                 android:id="@+id/card6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -546,7 +546,7 @@
                 android:layout_height="wrap_content"
                 app:dividerInsetStart="56dp"
                 android:layout_marginTop="15dp"
-                android:visibility="invisible"/>
+                android:visibility="visible"/>
         </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>

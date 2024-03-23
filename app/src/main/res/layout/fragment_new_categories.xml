@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/"
     android:layout_height="match_parent"
-   >
+    android:background="@color/background_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <ImageView
+           android:id="@+id/close"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintLeft_toLeftOf="parent"
+           android:layout_marginStart="30dp"
+           android:layout_marginTop="30dp"
+           android:background="@drawable/circular_background"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/close_circle_svgrepo_com"/>
+
 
     <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/background_color">
+        android:orientation="vertical">
+
 
 
 
@@ -22,7 +41,10 @@
         android:padding="16dp"
         >
 
-    <TextView
+
+
+
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Categories"
@@ -32,6 +54,8 @@
         android:textSize="26sp"
         android:textColor="@color/text_color"
         android:gravity="center"/>
+
+
 
     <!-- Table Header -->
     <TableRow
@@ -683,4 +707,7 @@
     </TableLayout>
 
     </LinearLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

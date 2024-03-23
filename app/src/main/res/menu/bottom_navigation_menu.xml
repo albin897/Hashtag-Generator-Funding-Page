@@ -3,23 +3,23 @@
     <item
         android:id="@+id/item_1"
         android:enabled="true"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/tools_svgrepo_com"
         android:title="@string/tools"/>
     <item
         android:id="@+id/item_2"
         android:enabled="true"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/hashtag_svgrepo_com"
         android:title="@string/Hashtags"
         />
     <item
         android:id="@+id/item_3"
         android:enabled="true"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/fonts_hand_drawn_symbol_outline_svgrepo_com"
         android:title="@string/fonts"/>
 
     <item
         android:id="@+id/item_4"
         android:enabled="true"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/setting_2_svgrepo_com"
         android:title="@string/settings"/>
 </menu>

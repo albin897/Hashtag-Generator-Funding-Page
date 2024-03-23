@@ -3,6 +3,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
 
-    <solid android:color="#FF5733" /> <!-- Set the desired background color for the circle -->
+    <solid android:color="@color/background_color" /> <!-- Set the desired background color for the circle -->
 
 </shape>
